@@ -7,7 +7,7 @@ A **native file** is a data file without any specific structure, containing a se
 !!! note
 	This overview section is too short.
 
-## Callbacks
+## Progress Callbacks
 
 Some of the native file functions, `⎕NCOPY`, `⎕NMOVE`, and `⎕NINFO`, support a variant option to enable progress callbacks.
 

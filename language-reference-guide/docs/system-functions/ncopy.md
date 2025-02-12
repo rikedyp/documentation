@@ -174,7 +174,7 @@ backups/UserCommand20.cache
 
 ## ProgressCallback Option
 
-The `ProgressCallback` option is described in the [programming reference guide](../../../programming-reference-guide/native-files/#progress-callbacks). The details specific to `⎕NCOPY` are listed below.
+The `ProgressCallback` option is described in the [programming reference guide](../../../programming-reference-guide/native-files#progress-callbacks). The details specific to `⎕NCOPY` are listed below.
 
 * The first element of the right argument to the callback function is the character vector `⎕NCOPY`.
 

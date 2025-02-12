@@ -65,7 +65,7 @@ When using the Wildcard option, matching of names is done case insensitively on 
 
 ## ProgressCallback Option
 
-The `ProgressCallback` option is described in the [programming reference guide](../../../programming-reference-guide/native-files/#progress-callbacks). The details specific to `⎕NINFO` are listed below.
+The `ProgressCallback` option is described in the [programming reference guide](../../../programming-reference-guide/native-files#progress-callbacks). The details specific to `⎕NINFO` are listed below.
 
 * The first element of the right argument to the callback function is the character vector `⎕NINFO`.
 * The third element of the right argument (the information namespace) contains an extra field named `Info`, which is a vector with the same length as the `Last` field; one item per item being processed. The elements of the `Info` vector contains the information requested by the `⎕NINFO` call.
