@@ -172,7 +172,11 @@ backups/def_uk.dse
 backups/UserCommand20.cache
 ```
 
+## ProgressCallback Option
 
+The `ProgressCallback` option is described in the [programming reference guide](../../../programming-reference-guide/native-files/#progress-callbacks). The details specific to `⎕NCOPY` are listed below.
+
+* The first element of the right argument to the callback function is the character vector `⎕NCOPY`.
 
 ## Notes
 
@@ -180,8 +184,3 @@ backups/UserCommand20.cache
 - If any source name is a symbolic link it is dereferenced; that is, the source or directory it references is copied rather than the link itself.
 - In the result `R`, a directory together with all its contents is counted once. A directory may be partially copied if the IfExists option is set to `'Replace'` or `'ReplaceIfNewer'`).
 - If an error occurs during the copy process then processing will immediately stop and an error will be signalled. The operation is not atomic; some items may be copied before this happens. In the event of an error there will be no result and therefore no indication of how many names were copied before the error occurred.
-
-### ProgressCallback Option
-
-TODO: reference new section in programming reference guide.
-

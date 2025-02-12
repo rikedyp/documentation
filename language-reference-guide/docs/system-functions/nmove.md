@@ -136,6 +136,12 @@ backups/def_uk.dse
 backups/UserCommand20.cache
 ```
 
+## ProgressCallback Option
+
+The `ProgressCallback` option is described in the [programming reference guide](../../../programming-reference-guide/native-files/#progress-callbacks). The details specific to `⎕NMOVE` are listed below.
+
+* The first element of the right argument to the callback function is the character vector `⎕NMOVE`.
+
 ## Note
 
 When `⎕NMOVE` copies and deletes files:
@@ -144,7 +150,3 @@ When `⎕NMOVE` copies and deletes files:
 - File modification times will be preserved but other attributes such as file ownership may be changed.
 - Read permissions will be needed on all files within a directory which is moved.
 - If the operation fails at any point and an error is signalled it is possible that there may be files and/or directories left duplicated in both the source and destination. It is not possible that a file or directory may be removed from the source without having been copied to the destination.
-
-### ProgressCallback Option
-
-TODO: reference new section in programming reference guide.

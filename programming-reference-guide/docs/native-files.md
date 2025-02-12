@@ -12,11 +12,11 @@ A **native file** is a data file without any specific structure, containing a se
 Some of the native file functions, `⎕NCOPY`, `⎕NMOVE`, and `⎕NINFO`, support a variant option to enable progress callbacks.
 
 ### Overview
-If this option is enabled, the system function invokes an APL callback function as the file operation (move or copy) proceeds. A system object is used to communicate between the system function and the callback. The file operation has 4 distinct stages:
+If this option is enabled, the system function invokes an APL callback function as the file operation proceeds. A system object is used to communicate between the system function and the callback. The file operation has 4 distinct stages:
 
 1. The start of the operation. The callback is invoked before any files are scanned or processed. This gives the application the opportunity to set parameters that control the frequency of callbacks during the operation itself.
 2. The optional scan phase during which the system function enumerates the files that will be involved in the copy or move operation. The file count obtained is used to set the `Limit` field. The application may use this subsequently to indicate the degree of progress.
-3. The main processing (move or copy) of the files.
+3. The main processing of the files.
 4. The end of the operation.
 
 
@@ -45,7 +45,7 @@ The right argument given to the callback function is a 3-element vector:
 
 
 |-----|--------|------------------------------------------------------------------------------------------------------------------------|
-|`[1]`|Function|Character vector which identifies the function that caused the callback to be executed; either `'⎕NCOPY'` or `'⎕NMOVE'.`|
+|`[1]`|Function|Character vector which identifies the function that caused the callback to be executed.                                 |
 |`[2]`|Event   |Character vector describing the event that lead to the callback being executed. See below.                              |
 |`[3]`|Info    |Reference to a namespace containing information about the event. See below.                                             |
 
@@ -91,14 +91,14 @@ This is a namespace which contains options that control future invocations of th
 
 |Field|Default|Description|
 |---|---|---|
-|`ScanFirst`|1|Specifies if the file operation should do a "scan pass" before moving/copying the files. This stage just enumerates  the files to determine how many there are. This will ensure `Limit` has a realistic value when the actual processing of the files happens. The overhead is small in comparision with the time it takes to process the files. The `ScanFirst` field is only inspected right after the first invocation of the callback function, with the event code `'Start'` .|
+|`ScanFirst`|1|Specifies if the file operation should do a "scan pass" before moving/copying the files. This stage just enumerates  the files to determine how many there are. This will ensure `Limit` has a realistic value when the actual processing of the files happens. The overhead is usually small in comparision with the time it takes to process the files. The `ScanFirst` field is only inspected right after the first invocation of the callback function, with the event code `'Start'` .|
 |`Delay`|0|Specifies the number of milliseconds to wait, until the callback will be called again. If all file operations finish before this time, the callback function is called anyway, with the event code `'Done'` . If a slow file operation is happening (such as copying a big file), the actual delay before the callback is invoked might be longer than the value of `Delay` .|
 |`Skip`|0|Specifies a number of files to skip between invocations of the callback function. If you are only interested in getting a callback for each 10th file, you should set this option to 9 for example.|
 |`LastFileCount`|1|An integer, specifying the maximum number of the latest filenames to be stored in the `Last` field. The default is to only store the last file processed, but if `Delay` or `Skip` are non-zero, multiple files could have been processed between calls to the callback function. A value of 5 for example, will make sure that the 5 last files processed before calling the callback, will have their names in the `Last` field. The `Last` field might have fewer elements than `LastFileCount` , if the number of files processed since the last call is less than `LastFileCount` . The special value `¯1` indicates that the `Last` field should contain **all** the last files since the last call (no limit).|
 
 
 
-The result of the callback function must be a Boolean scalar, indicating whether or not the `⎕NCOPY` or `⎕NMOVE` should continue or stop.
+The result of the callback function must be a Boolean scalar, indicating whether or not the system function should continue or stop.
 
 
 1: Execution should continue.
