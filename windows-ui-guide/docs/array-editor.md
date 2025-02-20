@@ -1,46 +1,62 @@
 <h1 class="heading"><span class="name">Array Editor</span></h1>
 
-The Array Editor[^1] allows you to edit arbitrary arrays. It is invoked by either:
+The Array Editor[^1] allows you to edit arbitrary arrays using [array notation](FIXME).
 
-- Clicking the ![](img/edit-numbers-icon.png) icon in the Session toolbar when the mouse pointer is over the name of a suitable variable.
-- Calling the user command `]array.edit`, specifying the name of a suitable variable as its argument.
-- Calling it directly via `⎕NA`
+Any of the following invokes it:
 
-The Array Editor draws data using a format that is similar to the output of the `DISPLAY` function. For example:
+- Click the ![](img/edit-array-icon.png) icon in the Session toolbar when the mouse pointer is over the name of a suitable variable.
+- Call the system command `)ED` and prefixing the variable name with a diamond; for example: `)ED ⋄q`
+- Call the system function `⎕ED` with a left argument `'⋄'`; for example, `'⋄'⎕ED'q'`.
+
+The Array Editor presents the array in array notation for you to edit. 
 
 ![](img/array-editor.png)
 
-## Documentation
+<!-- ## Documentation
 
 Full documentation for the Array Editor, including a list of the keystrokes it uses, is available from the Help menu in the Array Editor's window.
+ -->
+
+## Apply code within the editor
+
+You can prefix an array with a function.
+The Array Editor will apply it when you fix the array.
+
+For example, suppose the function `lower` maps upper-case characters to lower case.
+In the Array Editor
+```apl
+lower[
+ (
+  'Hello'
+ )
+ (
+  'World'
+ )
+]
+```
+fixes as
+```
+┌─────┐
+│hello│
+├─────┤
+│world│
+└─────┘
+```
+
 
 ## Supported Arrays
 
-The Array Editor supports arrays that  consist solely of characters and/or numbers. You may not use it to edit an array that contains an object reference or a `⎕OR`.
-
-### Reject unsupported data
-
-The way that the Arrays Editor reacts to unsupported arrays is determined by the value of the **Reject unsupported data** option which is accessed by the *Options/Reject unsupported data* menu item on the Array Editor menubar.
-
-If this is set to true (the default), and you try to edit an array containing an object reference, the Array Editor will refuse to start and the system will generate an error message.
-```apl
-      ⎕SE.NumEd.numed: Unexpected error in array editor:
-	DOMAIN ERROR  Argument contained data that is 
-       neither simple or nested.
-```
-
-If this option is cleared, the Array editor will start but you will not be able to do anything. It is therefore advisable that you leave this option set.
+The Array Editor supports arrays that consist solely of characters and/or numbers. It signals a NONCE ERROR if the array contains an object reference or a `⎕OR`.
 
 ## Notes
 
-- The Array Editor is supplied only with Unicode Editions of Dyalog APL/W. Please visit www.davidliebtag.com for details about availability and support for Classic Editions of Dyalog APL/W.
+- The Array Editor is supplied only with Unicode Editions of Dyalog APL/W. 
 - Namespaces are not supported.
 - Internal representations returned by `⎕OR` are not supported.
-- Only one instance of the Array Editor may be executed at a time.
-- All calls to interpreter primitives use a value of 3 for `⎕ML`.
-- Negative numbers must be represented using high minus signs. For example, `¯3` not `-3`.
+<!-- - Negative numbers must be represented using high minus signs. For example, `¯3` not `-3`. -->
 
-### Implementation
+<!-- 
+s### Implementation
 
 The Array Editor is implemented by a DLL named `dlaedit.dll` (32-bit) or `dlaedit64.dll` (64-bit).
 
@@ -67,6 +83,6 @@ The result is the newly altered array.
 New←DyalogEditArray Old 0
 New←DyalogEditArrayTitle Old 0 Name
 ```
+ -->
 
-[^1]: Array Editor Version 1 Release 1 © Copyright davidliebtag.com 2012, 2015
-[^2]: Note that these are not standard ⎕NA calls, but rather use an extension to ⎕NA, called Direct Workspace Access. Dyalog does not intend to make this feature generally available at present: if you are interested in this feature please contact sales@dyalog.com.
+[^1]: The Array Editor replaces an earlier tool written by David Liebtag.
