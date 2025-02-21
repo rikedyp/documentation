@@ -1,13 +1,11 @@
 <h1 class="heading"><span class="name">Array Notation</span></h1>
 
-!!! note "Array notation was introduced in Version 20.0."
 
-
-Array notation extends [vector notation](vector-notation.md) to literals for arrays of higher rank and for namespaces, and lets literals span multiple lines:
+Array notation extends [vector notation](vector-notation.md) to define arrays of higher rank, and namespaces, and lets these definitions span multiple lines:
 
 -   **Parentheses** embrace vector literals and namespace name-value pairs
 -   **Square brackets** embrace higher-rank arrays
--   **Diamonds** and **linebreaks** separate array elements
+-   **Diamonds** and **linebreaks** separate array elements and name-value pairs
 
 Some examples show how these work.
 
