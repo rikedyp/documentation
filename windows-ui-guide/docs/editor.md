@@ -393,6 +393,48 @@ Finally, with all the sections opened:
 
 ![](img/editor-sections-4.png)
 
+### Array Notation
+
+The Editor allows you to edit arbitrary arrays using [array notation](../../programming-reference-guide/introduction/arrays/array-notation).
+
+Any of the following invokes it:
+
+- Click the ![](img/edit-array-icon.png) icon in the Session toolbar when the mouse pointer is over the name of a suitable variable.
+- Call the system command `)ED` and prefix the variable name with a diamond; for example: `)ED ⋄q`
+- Call the system function `⎕ED` with a left argument `'⋄'`; for example, `'⋄'⎕ED'q'`.
+
+The Editor presents the array in array notation for you to edit.
+
+![](img/array-editor.png)
+
+
+You can prefix an array with a function.
+The Editor will apply it when you fix the array.
+
+For example, suppose the function `lower` maps upper-case characters to lower case.
+In the Array Editor
+```apl
+lower[
+ (
+  'Hello'
+ )
+ (
+  'World'
+ )
+]
+```
+fixes or reformats as
+```apl
+┌─────┐
+│hello│
+├─────┤
+│world│
+└─────┘
+```
+
+Internal representations returned by `⎕OR` are not supported.
+
+
 ### Editing Classes
 
 The picture below shows the result of opening the `ComponentFile` class. Notice how each function is delineated separately and that each function is individually line-numbered.
