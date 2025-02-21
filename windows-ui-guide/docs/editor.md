@@ -400,21 +400,33 @@ The Editor allows you to edit arbitrary arrays using [array notation](../../prog
 Any of the following invokes it:
 
 - Click the ![](img/edit-array-icon.png) icon in the Session toolbar when the mouse pointer is over the name of a suitable variable.
+- Click the ![](img/edit-array-icon.png) icon in the Editor toolbar.
 - Call the system command `)ED` and prefix the variable name with a diamond; for example: `)ED ⋄q`
 - Call the system function `⎕ED` with a left argument `'⋄'`; for example, `'⋄'⎕ED'q'`.
 
-The Editor presents the array in array notation for you to edit.
+The Editor presents the array for you to edit in array notation.
 
 ![](img/array-editor.png)
 
 
-You can prefix an array with a function.
-The Editor will apply it when you fix the array.
+You can include APL expressions:
+the Editor will evaluate them when you fix or format the array.
 
-For example, suppose the function `lower` maps upper-case characters to lower case.
-In the Array Editor
+For example, in the session:
 ```apl
-lower[
+      x←[
+       (
+        'Hello'
+       )
+       (
+        'World'
+       )
+      ]
+      )ED ⋄ x
+```
+In the Editor, insert `⎕C`:
+```apl
+⎕C[
  (
   'Hello'
  )
@@ -423,8 +435,20 @@ lower[
  )
 ]
 ```
-fixes or reformats as
+It reformats as
 ```apl
+[
+ (
+  'hello'
+ )
+ (
+  'world'
+ )
+]
+```
+and fixes as
+```apl
+      x
 ┌─────┐
 │hello│
 ├─────┤
@@ -432,7 +456,6 @@ fixes or reformats as
 └─────┘
 ```
 
-Internal representations returned by `⎕OR` are not supported.
 
 
 ### Editing Classes

@@ -3,7 +3,7 @@
 
 Array notation extends [vector notation](vector-notation.md) to define arrays of higher rank, and namespaces, and lets these definitions span multiple lines:
 
--   **Parentheses** embrace vector literals and namespace name-value pairs
+-   **Parentheses** embrace vector definitions and namespace name-value pairs
 -   **Square brackets** embrace higher-rank arrays
 -   **Diamonds** and **linebreaks** separate array elements and name-value pairs
 
@@ -61,6 +61,10 @@ Mice |
            3 'INDEX ERROR'
            4 'RANK ERROR']
 5 2
+      ⍴expenses←0⌿[    ⍝ typed template matrix
+      'Glasgow' 125.84
+      ]
+0 2
 ```
 
 ### Column Matrix { .example }
@@ -152,45 +156,55 @@ jill
 
 ## Specification
 
-The new syntactic constructs were previously errors in every mainstream APL implementation and therefore introduce no backward incompatibilities.
+The new syntactic forms were previously errors in every mainstream APL implementation and therefore introduce no backward incompatibilities.
 
-### Broken Parentheses And Square Brackets
+In the following:
 
-*Broken* here means interrupted by one or more statement separators (diamonds `⋄` or line breaks).
+-   A *name-value pair* is an APL name followed by a colon and a value expression.
+-   A *separator* is a diamond or line break, and *separated* means separated by them.
+-   An *empty* value expression or name-value pair is two separators with nothing but white space between them.
 
-Statement separators encapsulated in a dfn or further contained in array notation do not break a parenthesis or bracket.
-For example, in
+### Namespace
 
-    ({1=⍵:'y' ⋄ 'n'}?2)
+A namespace is defined by a parenthesised separated list of zero or more name-value pairs.
 
-the diamond is part of the dfn and does not break the surrounding parenthesis.
+Empty name-value pairs define no namespace members.
 
+### Vector
 
-### Empty Round Parentheses
+A vector is defined by a parenthesised separated list of two or more value expressions.
 
-Empty round parentheses `()` create an empty namespace, equivalent to `⎕NS⍬`.
+Empty value expressions define no vector elements.
 
-### Broken Round Parentheses
+### Matrices And Higher-rank Arrays
 
-A broken round parenthesis creates a
+An array of rank 2 or higher is defined by a bracketed separated list of value expressions, which constitute the major cells of the array.
 
--   **namespace** if it encapsulates a list of name-value pairs: each pair defines a member of the namespace
--   **vector** if it encapsulates a list of value expressions; the result of each is an element in the vector
+Short elements are padded to fill, and scalars are treated as length-1 vectors.
 
+!!! info "Nested separators"
 
-A *name-value pair* is a valid APL identifier followed by a colon and a value expression.
+    Separators in a list of value expressions or name-value pairs make an enclosing parenthesis or bracket *broken*.
 
-!!! warning "Mixing name-value pairs and value expressions is a syntax error."
+    Separators encapsulated in a dfn or further contained in array notation do not break a parenthesis or bracket.
+    For example, in
 
-### Broken Square Brackets
+        ({1=⍵:'y' ⋄ 'n'}?2)
 
-A broken square bracket creates an **array** where the result of each value expression forms a major cell (equivalent to Mix applied to a vector of these), with scalars interpreted as one-element vectors.
+    the diamond is part of the dfn and does not break the surrounding parenthesis.
 
+### Unsupported
+
+-   Scripted and external objects
+-   Non-array namespace members
+-   Reference loops
+-   Class instances
+-   Internal representations returned by `⎕OR`
 
 
 ### Formal Syntax
 
-The array notation can be described using Extended Backus–Naur form, where `expression` is any traditional APL expression:
+The array notation can be described in this form[^ebnf], where `expression` is any traditional APL expression:
 
     value ::= expression | list | block | space
     list  ::= '(' ( ( value sep )+ value? | ( sep value )+ sep? ) ')'
@@ -200,8 +214,10 @@ The array notation can be described using Extended Backus–Naur form, where `ex
 
 
 ![Syntax diagram](/img/array-notation-syntax.png)
-<!-- Eventually replace weith Mermaid diagram. -->
+<!-- Eventually replace with Mermaid diagram. -->
 
 !!! note "Sep values"
 
     The list of `sep` values is for illustration purposes and is to match the line breaks recognised by the APL implementation. However, these three values should be handled when reading Unicode text files.
+
+[^ebnf]: Extended Backus–Naur.
