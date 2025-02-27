@@ -6,11 +6,11 @@ Over time, certain features supplied by Dyalog - be they part of the language, f
 * It was originally experimental and has now been formally integragted into the product - such as the I-Beam function which was obsoleted by `⎕JSON` which replaced it.
 * It is associated with hardware or technology which is itself becoming obsolete - such as 32-bit processes and address spaces limited to 4GB in size.
 
-When this happens the feature becomes **deprecated**, meaning it may not be developed or extended further and its use in new developments may be discouraged, and in some cases Dyalog may even announce plans to formally remove them at a specified point in the future - for announcements about any features to which this currently applies, see the [Release Notes](xxxLINKxxx).
+When this happens the feature becomes **deprecated**, meaning it may not be developed or extended further and its use in new developments may be discouraged. In some cases Dyalog may subsequently announce plans for the formal removal of deprecated features at a specified point in the future - for announcements about any features to which this currently applies, see the [Release Notes](xxxLINKxxx).
 
 ## Identifying uses of deprecated features
 
-If the planned removal features is announced is important to be able to identify *if* and *where* they are still being used within applications so that appropriate preparations can be made. To do this, Dyalog can be configured to log their use in a file.
+If the planned removal of features is announced it is important to be able to identify *if* and *where* they are still being used within applications so that appropriate preparations can be made. To do this, Dyalog can be configured to log their use in a file.
 
 !!! note
     Once logging is enabled it will remain so until disabled again or the interpreter exits. Logging does not automatically restart when an interpreter is restarted, nor is the log configuration stored in a saved workspace and resored on load.
@@ -46,7 +46,7 @@ and check that no errors occurred when writing to the logfile:
 └─┴┘
 ```
 
-If the result of [`109⌶`](../../../language-reference-guide/the-i-beam-operator/log-file-for-deprecations)does not have a 0 in the first element, an error occurred and the second element will include a description of what it was.
+If the result of [`109⌶`](../../../language-reference-guide/the-i-beam-operator/log-file-for-deprecations) does not have a 0 in the first element, an error occurred and the second element will include a description of what it was.
 
 Entries written to the logfile will be lines of complete JSON5 text. They can be simply examined using `]open` or by loading the file into an editor, or they may be read and reformatted using `⎕NGET` and `⎕JSON`, for example:
 
