@@ -6,9 +6,15 @@
 
 [Behind](../primitive-operators/behind.md)
 ```apl
-	WRITE
-		THE
-			EXAMPLE
+      ⍝ Is it a palindrome?
+      ⌽⍛≡ 'Dyalog' 
+0
+      ⌽⍛≡ 'racecar'
+1
+
+      ⍝ Drop from the right
+      4-⍛↓'Dyalog APL'
+Dyalog
 ```
 
 [Language Elements](./language-elements.md)

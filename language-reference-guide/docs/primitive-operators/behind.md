@@ -18,7 +18,13 @@ The Behind operator allows functions to be *glued* together to build up more com
 
 <h2 class="example">Examples</h2>
 ```apl
-	WRITE
-		THE
-			EXAMPLES
+      ⍝ Is it a palindrome?
+      ⌽⍛≡ 'Dyalog' 
+0
+      ⌽⍛≡ 'racecar'
+1
+
+      ⍝ Drop from the right
+      4-⍛↓'Dyalog APL'
+Dyalog
 ```
