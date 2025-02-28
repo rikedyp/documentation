@@ -1,14 +1,14 @@
 <h1 class="heading"><span class="name">Behind</span> <span class="command">{R}←{X}f⍛gY</span></h1>
 
 !!! note "Classic Edition"
-    The symbol `⍛` is not available in Classic Edition, and the Behind operator is instead represented by `⎕U235b`.
+    The symbol `⍛` is not available in Classic Edition, and the Behind operator is instead represented by `⎕U235B`.
 
 `f` can be any monadic function which returns a result. Its result must be suitable as the left argument to the funtion `g`.
 
 `g` can be any dyadic function, and it does not need to return a result.
 
 `Y` can be any array that is suitable as the right argument to the function `g`.
-If `X` is omitted, `Y` must also be suitable as the right argument to the function `X`.
+If `X` is omitted, `Y` must also be suitable as the right argument to the function `f`.
 
 `X` can be any array that is suitable as the right argument to the function `f`.
 
