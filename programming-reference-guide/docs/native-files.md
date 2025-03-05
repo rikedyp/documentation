@@ -60,7 +60,7 @@ Event is a character vector which indicates the stage of the copy or move operat
 |---|---|
 |`'Start'`|Reported by the first invocation of the callback which occurs before any files are scanned or processed. This may be used to set the parameters that control the operation. See **Options** .|
 |`'Scan'`|Indicates that the system function is in the initial phase of scanning the files in order to calculate `Limit` . See **ScanFirst** .|
-|`'Progress'`|Indicates that the system function is at the main stage of the operation and is moving, copying or inspecting the files.|
+|`'Progress'`|Indicates that the system function is at the main stage of the operation and is processing the files.|
 |`'Done'`|Indicates that all files have been processed.|
 
 
