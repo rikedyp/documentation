@@ -57,11 +57,13 @@ When some or all of the elements in `X` are nested vectors consisting of a numer
 
 The current file position property (`8`) identifies where `⎕NREAD` would next read from or `⎕NAPPEND` would next write to and is only pertinent when the corresponding value in `Y` is a tie number. It is reported as 0 for named files and directories.
 
+The values in `X` are processed in the order given, in ravel order. Duplicates are allowed.
+
 When querying file properties: each simple value in `X` identifies a property of the file(s) or directory(ies) identified by `Y` whose value is to be returned in the result `R`. If the value in `X` is not defined in the table above, `⍬` (Zilde) is returned in the corresponding element of `R`.
 
 When setting file properties: each nested vector in `X` identifies a property of the file(s) or directory(ies) identified by `Y` and a value to which the property is to be set. The new value is returned in the result `R`. If the value in `X` does not specify a settable property, or is not defined in the table above, or if the property cannot be set, an error will be signalled.
 
-If omitted, the default value of `X` is 0. Values in `X` may be specified in any order and duplicates are allowed.
+If omitted, the default value of `X` is 0.
 
 `R` is the same shape as `X` and each element contains value(s) determined by the property specified in the corresponding element in `X`. The depth of `R` depends upon whether or not the Wildcard option is enabled. If, for any reason, the function is unable to obtain a property value, (for example, if the file is in use exclusively by another process) the default value shown in the last column is returned instead.
 
