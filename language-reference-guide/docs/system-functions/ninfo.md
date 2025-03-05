@@ -8,7 +8,7 @@ This function returns information about one or more files or directories. `Y` ma
 
 ## Variant Options
 
-`⎕NINFO` may be applied using the Variant operator with the options  Wildcard (the Principal option), Recurse and Follow.
+`⎕NINFO` may be applied using the Variant operator with the options  Wildcard (the Principal option), Recurse, Follow and ProgressCallback.
 
 ## Wildcard Option (Boolean)
 
@@ -65,9 +65,9 @@ When using the Wildcard option, matching of names is done case insensitively on 
 
 ## ProgressCallback Option
 
-The `ProgressCallback` option is described in the [programming reference guide](../../../programming-reference-guide/native-files#progress-callbacks). The details specific to `⎕NINFO` are listed below.
+The `ProgressCallback` option is described in the [programming reference guide](../../../programming-reference-guide/native-files#progress-callbacks). The details specific to `⎕NINFO` are as follows:
 
-* The first element of the right argument to the callback function is the character vector `⎕NINFO`.
+* The first element of the right argument to the callback function is the character vector `'⎕NINFO'`.
 * The third element of the right argument (the information namespace) contains an extra field named `Info`, which is a vector with the same length as the `Last` field; one item per item being processed. The elements of the `Info` vector contains the information requested by the `⎕NINFO` call.
 * The scan phase is relatively more expensive in `⎕NINFO` callbacks compared to `⎕NCOPY` callbacks. If the value of the `Limit` field is not required to be accurate, the user may consider disabling the scan phase.
 

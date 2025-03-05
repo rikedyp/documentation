@@ -16,7 +16,7 @@ The shy result `R` contains count(s) of top-level items moved. If `Y` is a singl
 
 ## Variant Options
 
-`⎕NMOVE` may be applied using the  Variant operator with the options Wildcard (the Principal option), IfExists, RenameOnly and ProcessCallback.
+`⎕NMOVE` may be applied using the  Variant operator with the options Wildcard (the Principal option), IfExists, RenameOnly and ProgressCallback.
 
 ## Wildcard Option (Boolean)
 
@@ -138,9 +138,9 @@ backups/UserCommand20.cache
 
 ## ProgressCallback Option
 
-The `ProgressCallback` option is described in the [programming reference guide](../../../programming-reference-guide/native-files#progress-callbacks). The details specific to `⎕NMOVE` are listed below.
+The `ProgressCallback` option is described in the [programming reference guide](../../../programming-reference-guide/native-files#progress-callbacks). The details specific to `⎕NMOVE` are as follows:
 
-* The first element of the right argument to the callback function is the character vector `⎕NMOVE`.
+* The first element of the right argument to the callback function is the character vector `'⎕NMOVE'`.
 
 ## Note
 

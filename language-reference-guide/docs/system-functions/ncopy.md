@@ -28,7 +28,7 @@ The shy result `R` contains count(s) of top-level items copied. If `Y` is a sing
 ## Variant Options
 
 
-`⎕NCOPY` may be applied using the   Variant operator with the options Wildcard (the Principal option), IfExists, PreserveAttributes and ProcessCallback.
+`⎕NCOPY` may be applied using the   Variant operator with the options Wildcard (the Principal option), IfExists, PreserveAttributes and ProgressCallback.
 
 ## Wildcard Option (Boolean)
 
@@ -176,7 +176,7 @@ backups/UserCommand20.cache
 
 The `ProgressCallback` option is described in the [programming reference guide](../../../programming-reference-guide/native-files#progress-callbacks). The details specific to `⎕NCOPY` are listed below.
 
-* The first element of the right argument to the callback function is the character vector `⎕NCOPY`.
+* The first element of the right argument to the callback function is the character vector `'⎕NCOPY'`.
 
 ## Notes
 
