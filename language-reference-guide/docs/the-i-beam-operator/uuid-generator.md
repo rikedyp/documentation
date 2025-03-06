@@ -11,7 +11,7 @@ This function generates a UUID (Universally Unique IDentifier) according to the 
 
 Other values are either unsupported, undefined or reserved.
 
-UUIDs are also known as GUIDs (Globally Unique Identifiers); the terms are equivalent.
+UUIDs are also known as GUIDs (Globally Unique IDentifiers); the terms are equivalent.
 
 <h2 class="example">Example</h2>
 ```apl
