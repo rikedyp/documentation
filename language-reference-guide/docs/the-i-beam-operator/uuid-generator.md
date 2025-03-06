@@ -1,8 +1,17 @@
 <h1 class="heading"><span class="name">UUID Generator</span> <span class="command">R←120⌶Y</span></h1>
 
-`Y` is the UUID version, and must be 4.
+This function generates a UUID (Universally Unique IDentifier) according to the [RFC 9562](https://datatracker.ietf.org/doc/html/rfc9562) specification. 
 
-The result `R` is a character vector containing a [RFC 9562](https://datatracker.ietf.org/doc/html/rfc9562) UUID of the specified version.
+`Y` specifies the UUID Version required, from the table below. The result `R` is a vector containing the generated 36-character UUID.
+
+|Version|Description|
+|---|--------------------------------------|
+| 4 | Randomly or pseudorandomly generated |
+| 7 | Unix Epoch time-based                |
+
+Other values are either unsupported, undefined or reserved.
+
+UUIDs are also known as GUIDs (Globally Unique Identifiers); the terms are equivalent.
 
 <h2 class="example">Example</h2>
 ```apl
