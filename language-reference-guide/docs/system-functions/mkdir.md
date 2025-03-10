@@ -37,11 +37,11 @@ The optional left argument `X` is the numeric scalar 0, 1, 2 or 3 and modifies t
 `⎕MKDIR` may be applied using the Variant operator with the option Unique. There is no primary option.
 
 ## Unique Option (Boolean)
-The Unique option specifies whether the base name (see [File Name Parts](nparts.md)) in `X` is modified so that the name is made unique (does not already exist).
+The Unique option specifies whether the base name (see [File Name Parts](nparts.md)) in `Y` is modified so that the name is made unique (does not already exist).
 
 |---|---|
-|0 { .shaded } |the directory named by `X` will be created|
-|`1`|The name in `X` is modified by extending the base name with random characters. If a unique name cannot be created then an error will be signalled. The actual name of the directory is returned in the result `R`.|
+|0 { .shaded } |the directory named by `Y` will be created|
+|`1`|The name in `Y` is modified by extending the base name with random characters. If a unique name cannot be created then an error will be signalled. The actual name of the directory is returned in the result `R`.|
 
 <h2 class="example">Examples</h2>
 ```apl
