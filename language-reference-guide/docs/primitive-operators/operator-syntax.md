@@ -74,4 +74,4 @@ Function composition refers to the "gluing" together of two functions using a dy
 
 ![behind compositions](../img/behind-compositions.png)
 
-When any of these are applied monadically, the dotted branch falls away, and with the exception of Behind, they are all equivalent to each other and to `h(x)=(f∘g)(x)` of traditional mathematics.
+When any of these are applied monadically, the dotted branch falls away, and with the exception of _behind_, they are all equivalent to each other and to `h(x)=(f∘g)(x)` of traditional mathematics.
