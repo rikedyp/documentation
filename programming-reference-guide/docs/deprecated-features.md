@@ -1,43 +1,42 @@
 <h1 class="heading"><span class="name">Deprecated Features</span></h1>
 
-Over time, certain features supplied by Dyalog - be they part of the language, functionality within the development environments, or the supplied samples or Tools - may become obsolete or simply not as useful as they once were. There are many reasons why this may happen; some examples are:
+Over time, certain features supplied by Dyalog, be they part of the language, functionality within the development environments, or the supplied samples or Tools, may become obsolete or cease to be useful. There are many reasons why this may happen; some examples are:
 
-* A superior alternative has been introduced - as an example, `⎕TC` (terminal control) allows the generation of certain Unicode characters, but `⎕UCS` was later added which provides this functionality too - and more.
-* It was originally experimental and has now been formally integragted into the product - such as the I-Beam function which was obsoleted by `⎕JSON` which replaced it.
-* It is associated with hardware or technology which is itself becoming obsolete - such as 32-bit processes and address spaces limited to 4GB in size.
+* A superior alternative has been introduced. For example, Dyalog now recommends using `⎕UCS` instead of `⎕TC` (which generates only the newline, backspace and tabstop characters).
+* The feature was originally implemented as an I-beam but has since been superseded by a formal addition to Dyalog APL. For example `⎕JSON` replaced an earlier I-beam.
+* The feature is associated with hardware or technology which is itself becoming obsolete - such as 32-bit processes and address spaces limited to 4GB in size.
 
-When this happens the feature becomes **deprecated**, meaning it may not be developed or extended further and its use in new developments may be discouraged. In some cases Dyalog may subsequently announce plans for the formal removal of deprecated features at a specified point in the future - for announcements about any features to which this currently applies, see the [Release Notes](xxxLINKxxx).
+In such circumstances the feature becomes **deprecated**; it is unlikely to be developed or extended further and its use in new developments may be discouraged, and in some cases Dyalog may even announce that it will be removed in a specific version. (Such announcements are included in the [Release Notes](xxxLINKxxx).)
 
 ## Identifying uses of deprecated features
 
-If the planned removal of features is announced it is important to be able to identify *if* and *where* they are still being used within applications so that appropriate preparations can be made. To do this, Dyalog can be configured to log their use in a file.
+In cases when removing the feature is considered to be sufficiently significant, Dyalog will enable the ability to identify where the feature is being used.
 
-!!! note
-    Once logging is enabled it will remain so until disabled again or the interpreter exits. Logging does not automatically restart when an interpreter is restarted, nor is the log configuration stored in a saved workspace and resored on load.
+To use this, Dyalog can be configured to log the feature's use to a file. Logging must be configured and enabled/disabled in each APL process - information about logging is not retained.  
 
-To enable logging, first use [`109⌶`](../../../language-reference-guide/the-i-beam-operator/log-file-for-deprecations) to specify the file to which log messages should be written, for example:
+Two steps are necessary before logging to a file will begin:  you must call [`109⌶`](../../../language-reference-guide/the-i-beam-operator/log-file-for-deprecations) to specify the name of the file into which the JSON5 log messages will be written, and you must call [`13⌶`](../../../language-reference-guide/the-i-beam-operator/deprecated-features) to specify which specific features should be logged.
 
-```apl
-      'logfile.txt'(109⌶)0
-```
-
-If this file already exists, new log messages will be appended to it.
-
-Next, select which features should be logged using [`13⌶`](../../../language-reference-guide/the-i-beam-operator/deprecated-features). The names by which the features are identified are specified in the [Release Notes](LINK), but the name 'All' may be used to enable logging of all such features, viz:
+To specify the log file, use `109⌶` with a right argument of 0; for example 
 
 ```apl
-      13⌶'All'
+      'deprecated_log.json'(109⌶)0
 ```
 
-At this point, an application can be run and tested as normal.
+Note: If you do not set the name of the log file, then all logging information will be silently discarded.
 
-Then, if desired, stop logging:
+To select which features should be logged call `13⌶`. The right argument is a list of the names by which the features are identified.  This list will appear in the [Release Notes](xxxLINKxxx) for the appropriate version of Dyalog APL. There are two reserved names which can be used: `'All'` is used to enable logging of all such features, and `'None'` can the used to disable all logging.
+
+Each time `13⌶` is called, the new list of features _replaces_ the existing list: if the list is empty then all logging will be disabled.
+
+Every subsequent use of the selected features is logged and each line in the file contains a complete JSON5 object which includes a description of the feature and the SI Stack at the point it was called.
+
+The log file can be examined using any text editor, or from within Dyalog:
 
 ```apl
-      13⌶'None'
+      log_entries←(⎕JSON⍠('Dialect' 'JSON5')('Compact' 0))⍣2¨⊃⎕NGET 'deprecated_log.json5' 1
 ```
 
-and check that no errors occurred when writing to the logfile:
+If an error occurs when writing to the log file, further logging is suspended. `109⌶` with a right argument of 1 checks whether this happened and the result is non-zero with an error description if it did; for example
 
 ```apl
       (109⌶)1
@@ -46,12 +45,3 @@ and check that no errors occurred when writing to the logfile:
 └─┴┘
 ```
 
-If the result of [`109⌶`](../../../language-reference-guide/the-i-beam-operator/log-file-for-deprecations) does not have a 0 in the first element, an error occurred and the second element will include a description of what it was.
-
-Entries written to the logfile will be lines of complete JSON5 text. They can be simply examined using `]open` or by loading the file into an editor, or they may be read and reformatted using `⎕NGET` and `⎕JSON`, for example:
-
-```apl
-      (⎕JSON⍠('Dialect' 'JSON5')('Compact' 0))⍣2¨⊃⎕NGET 'logfile.txt' 1
-```
-
-The log entries will include a description of the deprecated feature being used and the SIstack at the time.
