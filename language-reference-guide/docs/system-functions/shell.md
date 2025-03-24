@@ -5,8 +5,9 @@
 `Y` describes the command to execute. `Y` is specified as either a character vector or a vector of character vectors.
 `R` contains information about the termination reason, along with output collected.
 
-The system function is cross-platform, but the command specification is inherently operating-system specific.
-Some shells, such as PowerShell, are cross-platform, which can help minimise the problem.
+The system function is cross-platform, but the command specification will depend on the platform's shell, the program being invoked, and the expected format of the command line arguments.
+`⎕SHELL` calls are only as cross-platform as the programs they execute.
+Many command line tools which might be useful when building cross-platform applications, such as `git` and `aws-cli` *are* cross-platform tools, which makes this less of a problem in practice.
 
 ### Using the System's Shell
 When `Y` is a character vector, the contents are executed using the system's shell.
