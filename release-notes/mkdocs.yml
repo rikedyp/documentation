@@ -1,4 +1,4 @@
-site_name: Release Notes Dyalog v20
+site_name: Dyalog v20.0 Release Notes
 theme:
   favicon: img/favicon-32.png
   logo: img/dyalog-white.svg
@@ -47,6 +47,8 @@ markdown_extensions:
   - toc:
       title: On this page
 nav:
-  - About Dyalog v20: index.md
+  - About Dyalog v20.0:
+     - index.md
+     - Interoperability: interoperability.md
   - New and Enhanced Features: new-enhanced.md
   - Minor Updates and Bug Fixes: minor-updates.md

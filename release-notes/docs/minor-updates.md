@@ -1,4 +1,6 @@
+!!! Info "Information"  
+    THIS DOCUMENT IS STILL UNDER DEVELOPMENT
+	
 # Minor Updates and Bug Fixes
 
-!!! note
-    This is a stub page
+This page describes minor updates and bug fixes included in Dyalog v20.0.
