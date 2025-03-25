@@ -44,8 +44,11 @@ Ordered arrays are indexed by position, as in `vec[3]` or `mat[2 4;5]`.
 1 4 1 4
 2 7 1 8
 3 1 4 2
+```
 
-      ⍝ short elements are filled
+Short items are padded.
+
+```apl
       ⍴mice←['Three'
              'Blind'
              'Mice']
@@ -54,6 +57,11 @@ Ordered arrays are indexed by position, as in `vec[3]` or `mat[2 4;5]`.
 Three|
 Blind|
 Mice |
+```
+
+See [Mix](../../language-reference-guide/primitive-functions/mix/) for details.
+
+```apl
 
       ⍴RC←[0 'OK'
            1 'WS FULL'
@@ -70,6 +78,10 @@ Mice |
 ### Column Matrix { .example }
 
 ```apl
+      [ 1 ⋄ 2 ⋄ 3 ]
+1
+2
+3
       (,⊂'Three') ≡ ('Three' ⋄)
 1
       ⍴¨cm3←[('Three' ⋄)
@@ -108,26 +120,34 @@ Mice |
 
 ## Namespaces
 
-Namespaces can be thought of as ‘semantic arrays’ (or dictionaries, or objects): unordered, and indexed by names rather than positions.
-
 Array notation allows you to write a namespace literal as zero or more name-value pairs, embraced by parentheses.
 
 ```apl
-      mt←()              ⍝ empty namespace
-      ()()()             ⍝ vector of empty namespaces
-      ( () ⋄ () ⋄ () )   ⍝ vector of empty namespaces
-      n←(x:'hello')      ⍝ n.x is vector
+      ()                       ⍝ empty namespace
+#.[Namespace]
+      ()()                     ⍝ vector of empty namespaces
+ #.[Namespace]  #.[Namespace]
+      ( () ⋄ () )              ⍝ vector of empty namespaces
+ #.[Namespace]  #.[Namespace]
 
-      (x:['hello'        ⍝ n.x is matrix
+      n←(x:'hello')
+      n.x
+hello
+
+      m←(x:['hello'
         'world'])
+      ⍴≢m.x                    ⍝ matrix
+2
 
-      (y:(x:'hello'))    ⍝ nested namespaces
+      (y:(x:'hello'))          ⍝ nested namespaces
+#.[Namespace]
 
       (
         FirstName:'Wolfgang'
         LastName:'Mozart'
         Age:35
       )
+#.[Namespace]
 ```
 
 ### Scoping In Namespace Literals
@@ -138,7 +158,7 @@ Array and namespace literals can include value expressions.
       LUE←(answer:7×6)   ⍝ Life, the Universe, and Everything
 ```
 
-Any assignments (made with `←`) in a value expression are made *in the scope around the namespace*, and persist there.
+Any expressions are evaluated in the scope around the namespace.
 
 ```apl
       long←'bobby'
