@@ -14,7 +14,7 @@ The result `R` is a vector of zero or more names, per the table below.
 |`'Enabled'`    |List all features for which logging is enabled            |_                                                      _|
 |`'List'`       |List names all deprecated features                        |Names of all deprecated features (non-shy)              |
 
-The list of deprecated Feature names varies with each version of Dyalog and is listed in the [Release Notes](xxxLINKxxx). The feature name `'User'` is always defined and enables logging of APL workspaces and samples which identify themselves as deprecated using [`14⌶`](deprecated-apl-code.md), and the workspaces and samples supplied by Dyalog which do that are also listed there.
+The list of deprecated Feature names varies with each version of Dyalog and is listed in the [Release Notes](xxxLINKxxx).
 
 !!! Note
     The log file must also be configured using [109⌶](log-file-for-deprecations.md).
@@ -32,11 +32,16 @@ Each log entry is a complete JSON5 object definition which includes the followin
 <h2 class="example">Example</h2>
 
 ```apl
+      13⌶'List'
+ This  That  TheOther 
       13⌶'Enabled'
 
-      13⌶'User'
+      13⌶'That'
       13⌶'Enabled'
- User
+ That
+      13⌶'All'
+      13⌶'Enabled'
+ This  That  TheOther
 ```
 
-See also [Deprecated feature log file](log-file-for-deprecations.md), [Deprecated APL Code](deprecated-apl-code.md).
+See also [Deprecated feature log file](log-file-for-deprecations.md).

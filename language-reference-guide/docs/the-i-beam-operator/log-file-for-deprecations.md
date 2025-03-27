@@ -27,4 +27,4 @@ old_logfile.txt
 └─┴┘
 ```
 
-See also [Log use of deprecated features](deprecated-features.md), [Deprecated APL Code](deprecated-apl-code.md).
+See also [Log use of deprecated features](deprecated-features.md).
