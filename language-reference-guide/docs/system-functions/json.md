@@ -15,7 +15,7 @@ If specified, `X` must be a numeric scalar with the value `0` (import JSON) or `
                 
 Although this system function was designed with an optional left argument, it is strongly recommended that the argument should always be used.
                 
-Other options for `⎕JSON` are `Format`, `Compact`, `Null`, `HighRank`, `Charset` and `Dialect` which are specified using the [Variant operator](../primitive-operators/variant.md), `⍠`. The Principal Option is `Format`.
+Other options for `⎕JSON` are `Format`, `Compact`, `Null`, `HighRank`, `Charset` and `Dialect` which are specified using `⍠` (see [Variant operator](../primitive-operators/variant.md)). The Principal Option is `Format`.
                 
 The `Dialect` Variant option is either `'JSON'` (the default) or`'JSON5'`. The latter enables [JSON5](https://json5.org/) extensions on import and export.
                 
