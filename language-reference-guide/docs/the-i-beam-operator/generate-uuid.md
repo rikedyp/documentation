@@ -2,16 +2,14 @@
 
 This function generates a [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) (Universally Unique IDentifier) according to the [RFC 9562](https://datatracker.ietf.org/doc/html/rfc9562) specification.
 
-A UUID is a label used to uniquely identify objects in computer systems and does not depend on a central registration authority or coordination between the parties generating them. UUIDs are also known as GUIDs (Globally Unique IDentifiers).
+A UUID is a label that uniquely identifies objects in computer systems; it does not depend on a central registration authority or co-ordination between the parties generating them. UUIDs are also known as GUIDs (Globally Unique IDentifiers).
 
-`Y` specifies the UUID Version required.
+`Y` specifies the UUID version required. Supported values of `Y` are:
 
-|`Y`| Version                                                       |
-|---|---------------------------------------------------------------|
-| 4 | UUIDv4: random values                                         |
-| 7 | UUIDv7: time-ordered (based on Unix Epoch) plus random values |
-
-Other values are either unsupported, undefined or reserved.
+|`Y`| Version                                                                                       |
+|---|-----------------------------------------------------------------------------------------------|
+| 4 | UUIDv4: random values                                                                         |
+| 7 | UUIDv7: a combination of values that are time-ordered (based on Unix Epoch) and random values |
 
 The result `R` is a vector containing the generated 36-character UUID.
 
