@@ -1,23 +1,26 @@
 <h1 class="heading"><span class="name">Log use of deprecated features</span> <span class="command">{R}←(13⌶)Y</span></h1>
 
-Controls which deprecated features are logged when used. For an overview of deprecated features see [Deprecated features](../../../../programming-reference-guide/deprecated-features) within the Programming Reference Guide.
+Controls which deprecated features are logged when logging is enabled.
 
-`Y` is a character vector, or a vector of character vectors, each containing the name of a deprecated feature, or one of the names defined in the table below. Subsequent uses of the selected deprecated features will be logged.
+For an overview of deprecated features see [Deprecated features](../../../../programming-reference-guide/deprecated-features) within the Programming Reference Guide.
+
+`Y` is a character vector, or a vector of character vectors, each containing the name of a deprecated feature, or one of the names defined in the table below. The list of deprecated feature names varies with each version of Dyalog and is listed in the [Release Notes](xxxLINKxxx).
+
+Subsequent uses of the selected deprecated features will be logged, provided that [109⌶](log-file-for-deprecations.md) has been called to set the name of the log file.
+
+If `13⌶` is called again, the list of features which are logged is replaced; to disable all logging `Y` can have the value `'None'` or can be an empty vector.
 
 The result `R` is a vector of zero or more names, per the table below.
 
-|Value(s) in Y|Meaning                                                   |Value(s) in R                                           |
-|---------------|----------------------------------------------------------|--------------------------------------------------------|
-|*Feature names*|Enable logging of the specified deprecated features (only)|Names of features for which logging is enabled (shy)    |
-|`'All'`        |Enable logging of all deprecated features                 |Names of features for which logging is enabled (non-shy)|
-|`'None'`       |Enable logging of no deprecated features                  |                                                        |
-|`'Enabled'`    |List all features for which logging is enabled            |_                                                      _|
-|`'List'`       |List names all deprecated features                        |Names of all deprecated features (non-shy)              |
+|Value(s) in Y|Meaning                                          |Value(s) in R                                           |
+|---------------|-----------------------------------------------|--------------------------------------------------------|
+|*Feature names*|Enable logging of the specified features       |Names of features for which logging is enabled (shy)    |
+|`'All'`        |Enable logging of all deprecated features      |Names of features for which logging is enabled (non-shy)|
+|`'None'`       |Enable logging of no deprecated features       |                                                        |
+|`'Enabled'`    |List all features for which logging is enabled |_                                                      _|
+|`'List'`       |List names all possible features               |Names of all deprecated features (non-shy)              |
 
-The list of deprecated Feature names varies with each version of Dyalog and is listed in the [Release Notes](xxxLINKxxx).
-
-!!! Note
-    The log file must also be configured using [109⌶](log-file-for-deprecations.md).
+Before any logging information is created, the log file must also be configured using [109⌶](log-file-for-deprecations.md). Without selecting a log file, all logging is silently discarded.
 
 Each log entry is a complete JSON5 object definition which includes the following items:
 
@@ -36,9 +39,9 @@ Each log entry is a complete JSON5 object definition which includes the followin
  This  That  TheOther 
       13⌶'Enabled'
 
-      13⌶'That'
+      13⌶'That' 'This'
       13⌶'Enabled'
- That
+ This  That
       13⌶'All'
       13⌶'Enabled'
  This  That  TheOther

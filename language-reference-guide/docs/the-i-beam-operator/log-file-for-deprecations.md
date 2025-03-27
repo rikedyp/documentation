@@ -6,15 +6,15 @@ Manages the file used to log the use of deprecated features. For an overview of 
 
 ## Set or query the log file name (Y = 0)
 
-If `X` is omitted, the result `R` is the name of the log file. An empty character vector is returned when there is none.
+If `X` is omitted, the result `R` is the name of the log file. An empty character vector is returned if a name had not been set.
 
-If `X` is specified it is a character vector containing the name of the log file, or an empty character vector for none. Any existing file is closed, the specified file is opened and subsequent log messages will be appended to it. The shy result `R` is the previous name of the log file.
+Otherwise, `X` is a simple character scalar or vector containing a valid filename, or is empty. Any existing log file is closed and, if `X` is not empty, the specified file is opened and subsequent log messages will be appended to it. The shy result R is the previous name of the log file.
 
-An error will be signalled if the specified file cannot be accessed, However, if a message cannot subsequently be appended to the file, any running application will not be interrupted; instead, further logging will stop, and the file status can be queried using `Y=1`.
+An error will be signalled if the specified file cannot be opened in append mode. However, if messages cannot subsequently be written to it, the running application will continue uninterrupted and the messages will be silently discarded. The log file status can be queried at any time.
 
 ## Query log file status (Y = 1)
 
-`X` must be omitted. The result `R` is a two element vector consisting of a numeric status code (0 indicating no error), and a character vector which contains text describing any error.
+`X` must be omitted. The result `R` is a two element vector consisting of a numeric status code (0 indicating no error), and a character vector which contains text describing the error that was encountered (empty if no error).
 
 <h2 class="example">Example</h2>
 
