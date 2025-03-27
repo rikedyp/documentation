@@ -30,7 +30,6 @@ The column labelled *O/S* indicates if a function applies only on Windows (W), o
 |-------|--------------------------------------------------------------------------------------|------|
 |`8`    |[Inverted Table Index-of](./inverted-table-index-of.md)                               |&nbsp;|
 |`13`   |[Deprecated Features](./deprecated-features.md)                                       |&nbsp;|
-|`14`   |[Deprecated APL Code](./deprecated-apl-code.md)                                       |&nbsp;|
 |`109`  |[Log File for Deprecations](./logfile-for-deprecations.md)                            |&nbsp;|
 |`85`   |[Execute Expression](./execute-expression.md)                                         |&nbsp;|
 |`127`  |[Overwrite Free Pockets](./overwrite-free-pockets.md)                                 |&nbsp;|
