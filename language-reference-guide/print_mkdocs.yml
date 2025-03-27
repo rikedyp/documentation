@@ -346,9 +346,7 @@ nav:
           - Fix Definition: system-functions/fx.md
           - Instances: system-functions/instances.md
           - Index Origin: system-functions/io.md
-          - JSON Convert:
-              - Introduction: system-functions/json.md
-              - JSON Name Mangling: system-functions/json-name-manglling.md
+          - JSON Convert: system-functions/json.md
           - Key Label: system-functions/kl.md
           - Line Count: system-functions/lc.md
           - Load Workspace: system-functions/load.md
