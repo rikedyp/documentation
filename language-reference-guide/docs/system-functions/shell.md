@@ -5,9 +5,8 @@
 `Y` describes the command to execute. `Y` is specified as either a character vector or a vector of character vectors.
 `R` contains information about the termination reason, along with output collected.
 
-The system function is cross-platform, but the command specification will depend on the platform's shell, the program being invoked, and the expected format of the command line arguments.
-`⎕SHELL` calls are only as cross-platform as the programs they execute.
-Many command line tools which might be useful when building cross-platform applications, such as `git` and `aws-cli` *are* cross-platform tools, which makes this less of a problem in practice.
+Although `⎕SHELL` itself is cross-platform, the command specification depends on the platform's shell, the program being invoked, and the expected format of the command line arguments – `⎕SHELL` calls are only as cross-platform as the programs they execute.
+In practice, many command line tools that are useful when building cross-platform applications, such as `git` and `aws-cli`, *are* cross-platform tools, which makes this less likely to be an issue.
 
 ### Using the System's Shell
 When `Y` is a character vector, the contents are executed using the system's shell.
@@ -36,7 +35,7 @@ d-----        26-11-2024     12:56                ullu
 
 When `Y` is a vector of character vectors or an enclosed character vector, the first element of the array is treated as a program name, and the rest as individual arguments. The program is executed directly, without invoking the system's shell first. The program name can be an absolute path, a relative path, or the name of an executable in the current search path (operating-system specific). When the program is specified as a relative path, the name is resolved relative to the working directory, which can be set with the [`WorkingDir`](#workingdir) variant.
 
-In general, if the command does not depend on any shell features, both formats of `Y` can be used, but using direct execution should be preferred as it has lower overhead.
+If the command does not depend on any shell features, then direct execution should be used as it has lower overhead.
 
 ## Return Value
 
