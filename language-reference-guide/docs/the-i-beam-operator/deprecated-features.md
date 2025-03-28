@@ -8,7 +8,7 @@ For an overview of deprecated features see [Deprecated features](../../../../pro
 
 Subsequent uses of the selected deprecated features will be logged, provided that [109⌶](log-file-for-deprecations.md) has been called to set the name of the log file.
 
-If `13⌶` is called again, the list of features which are logged is replaced; to disable all logging `Y` can have the value `'None'` or can be an empty vector.
+If `13⌶` is called again, the list of features which are logged is replaced.
 
 The result `R` is a vector of zero or more names, per the table below.
 
@@ -16,7 +16,7 @@ The result `R` is a vector of zero or more names, per the table below.
 |---------------|-----------------------------------------------|--------------------------------------------------------|
 |*Feature names*|Enable logging of the specified features       |Names of features for which logging is enabled (shy)    |
 |`'All'`        |Enable logging of all deprecated features      |Names of features for which logging is enabled (non-shy)|
-|`'None'`       |Enable logging of no deprecated features       |                                                        |
+|`'None'`       |Disable logging of deprecated features         |                                                        |
 |`'Enabled'`    |List all features for which logging is enabled |_                                                      _|
 |`'List'`       |List names all possible features               |Names of all deprecated features (non-shy)              |
 

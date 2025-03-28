@@ -6,7 +6,7 @@ Manages the file used to log the use of deprecated features. For an overview of 
 
 ## Set or query the log file name (Y = 0)
 
-If `X` is omitted, the result `R` is the name of the log file. An empty character vector is returned if a name had not been set.
+If `X` is omitted, the result `R` is the name of the log file currently being written to. An empty character vector is returned if a name had not been set.
 
 Otherwise, `X` is a simple character scalar or vector containing a valid filename, or is empty. Any existing log file is closed and, if `X` is not empty, the specified file is opened and subsequent log messages will be appended to it. The shy result R is the previous name of the log file.
 
