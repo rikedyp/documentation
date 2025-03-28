@@ -198,11 +198,11 @@ Empty value expressions define no vector elements.
 
 ### Matrices And Higher-rank Arrays
 
-An array of rank 2 or higher is defined by a bracketed separated list of value expressions, which constitute the major cells of the array.
+An array of rank 2 or higher is defined by a bracketed, separated list of value expressions, which constitute the major cells of the array.
 
 Short elements are padded to fill, and scalars are treated as length-1 vectors.
 
-!!! info "Nested separators"
+!!! info "Information"
 
     Separators in a list of value expressions or name-value pairs make an enclosing parenthesis or bracket *broken*.
 
@@ -215,16 +215,18 @@ Short elements are padded to fill, and scalars are treated as length-1 vectors.
 
 ### Unsupported
 
--   Scripted and external objects
--   Non-array namespace members
--   Reference loops
--   Class instances
--   Internal representations returned by `⎕OR`
+The following are not supported by array notation:
+
+-   scripted and external objects
+-   non-array namespace members
+-   reference loops
+-   class instances
+-   internal representations returned by `⎕OR`
 
 
 ### Formal Syntax
 
-The array notation can be described in this form[^ebnf], where `expression` is any traditional APL expression:
+The array notation can be described in this form, where `expression` is any traditional APL expression:
 
     value ::= expression | list | block | space
     list  ::= '(' ( ( value sep )+ value? | ( sep value )+ sep? ) ')'
@@ -236,8 +238,5 @@ The array notation can be described in this form[^ebnf], where `expression` is a
 ![Syntax diagram](/img/array-notation-syntax.png)
 <!-- Eventually replace with Mermaid diagram. -->
 
-!!! note "Sep values"
+The list of `sep` values is for illustration purposes and is to match the line breaks recognised by the APL implementation. However, these three values should be handled when reading Unicode text files.
 
-    The list of `sep` values is for illustration purposes and is to match the line breaks recognised by the APL implementation. However, these three values should be handled when reading Unicode text files.
-
-[^ebnf]: Extended Backus–Naur.
