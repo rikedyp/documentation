@@ -7,13 +7,10 @@ Array notation extends [vector notation](vector-notation.md) to define arrays of
 -   **Square brackets** embrace higher-rank arrays
 -   **Diamonds** and **linebreaks** separate array elements and name-value pairs
 
-Some examples show how these work.
 
+## Examples
 
-## Ordered Arrays
-
-Ordered arrays are indexed by position, as in `vec[3]` or `mat[2 4;5]`.
-
+Some examples of different kinds of arrays defined with array notation.
 
 ### Nested Vector { .example }
 
@@ -47,6 +44,7 @@ Ordered arrays are indexed by position, as in `vec[3]` or `mat[2 4;5]`.
 ```
 
 Short items are padded.
+(See [Mix](../../language-reference-guide/primitive-functions/mix/) for details.)
 
 ```apl
       ⍴mice←['Three'
@@ -57,11 +55,6 @@ Short items are padded.
 Three|
 Blind|
 Mice |
-```
-
-See [Mix](../../language-reference-guide/primitive-functions/mix/) for details.
-
-```apl
 
       ⍴RC←[0 'OK'
            1 'WS FULL'
@@ -120,7 +113,7 @@ See [Mix](../../language-reference-guide/primitive-functions/mix/) for details.
 
 ## Namespaces
 
-Array notation allows you to write a namespace literal as zero or more name-value pairs, embraced by parentheses.
+Array notation allows you to write a namespace literal as zero or more name-value pairs, spanned by parentheses.
 
 ```apl
       ()                       ⍝ empty namespace
@@ -186,13 +179,13 @@ In the following:
 
 ### Namespace
 
-A namespace is defined by a parenthesised separated list of zero or more name-value pairs.
+A namespace is defined by a parenthesised, separated list of zero or more name-value pairs.
 
 Empty name-value pairs define no namespace members.
 
 ### Vector
 
-A vector is defined by a parenthesised separated list of two or more value expressions.
+A vector is defined by a parenthesised, separated list of two or more value expressions.
 
 Empty value expressions define no vector elements.
 
