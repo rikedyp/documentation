@@ -231,5 +231,4 @@ The array notation can be described in this form, where `expression` is any trad
 ![Syntax diagram](/img/array-notation-syntax.png)
 <!-- Eventually replace with Mermaid diagram. -->
 
-The list of `sep` values is for illustration purposes and is to match the line breaks recognised by the APL implementation. However, these three values should be handled when reading Unicode text files.
 
