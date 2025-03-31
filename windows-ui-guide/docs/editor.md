@@ -73,11 +73,17 @@ Minimising an edit window causes it to be displayed as a Dyalog *Edit* icon, wit
 
 ## Selecting Text
 
-You may select text in an Editor window by clicking the left or right mouse button over any character, dragging out a highlighed area, and then releasing the mouse button. When using the left button, moving up or down one line extends the selection from the beginning of that line, so the selection may be ragged. The right button selects a rectangularr box.
+You may select text in an Editor window by clicking the left or right mouse button over any character, dragging out a highlighed area, and then releasing the mouse button. When using the left button, moving up or down one line extends the selection from the beginning of that line, so the selection may be ragged. The right button selects a rectangular box.
 
 ### Editor ToolBar
 
-![](img/editor-toolbar.png)
+The buttons on the Editor toolbar vary according to what you are editing:
+
+Array<br>![](img/editor-toolbar-array.png)
+
+Function or operator<br>![](img/editor-toolbar-fn.png)
+
+Class<br>![](img/editor-toolbar-class.png)
 
 In the table below, the first image shows the appearance of the toolbutton with Native Look and Feel enabled; the second with it disabled.
 
@@ -102,9 +108,7 @@ In the table below, the first image shows the appearance of the toolbutton with 
 
 ### The File Menu
 
-![](img/editor-file-menu.png)
-
-The *File* menu illustrated above is displayed when editing a simple object and provides the following options.
+The *File* menu is displayed when editing a simple object and provides the following options.
 
 |Item|Description|
 |---|---|
@@ -124,7 +128,7 @@ The *File* menu illustrated above is displayed when editing a simple object and 
 
 ### The File Menu (editing a script)
 
-![](img/editor-file-menu-class.png)
+When a script is being edited, the File menu shows these items:
 
 |---------------------------|------------------------------------------------------------|
 |Fix whole script           |Fixes the entire script                                     |
@@ -150,8 +154,6 @@ In addition, the Configuration Dialog (see [Fixing Scripts](configuration-dialog
 ### The Edit Menu
 
 The *Edit* menu provides a means to execute those commands that are concerned with editing text. The Edit menu and the actions it provides are described below.
-
-![](img/editor-edit-menu.png)
 
 |Item|Description|
 |---|---|
@@ -182,22 +184,19 @@ Once displayed, each of the two dialog boxes remains on the screen until it is e
 
 ### The Syntax Menu
 
-![](img/editor-syntax-menu.png)
+The *Syntax* menu provides options to specify  how the data displayed in the Editor window is to be syntax coloured. For workspace objects, the default is *APL* for functions and operators, and *Nothing* for variables.
 
-The *Syntax* menu illustrated above provides options to specify  how the data displayed in the Editor window is to be syntax coloured. For workspace objects, the default is *APL* for functions and operators, and *Nothing* for variables.
-
-|Item   |Syntax Colour as|
-|-------|----------------|
-|Nothing|Variable        |
-|APL    |Function        |
-|JSON   |JSON array      |
-|XML    |XML array       |
+|Item          |Syntax Colour as|
+|--------------|----------------|
+|Nothing       |Variable        |
+|APL           |Function        |
+|JSON          |JSON array      |
+|XML           |XML array       |
+|Array notation|Array notation  |
 
 ### The Window Menu
 
 The *Window* menu provides a means to control the display of the various edit windows. The *Window* menu and the actions it provides are described below.
-
-![](img/editor-window-menu.png)
 
 |Item             |Description                                                      |
 |-----------------|--------------------------------------------------------------|
@@ -210,9 +209,7 @@ The *Window* menu provides a means to control the display of the various edit wi
 
 ### The Refactor Menu
 
-![](img/editor-refactor-menu.png)
-
-The *Refactor* menu illustrated above applies only when editing a Class and provides the following options. In each case, the user must highlight a name in the Edit window, and then select one of these options to insert the appropriate template for that name into the body of the Class.
+The *Refactor* menu appears only when editing a Class and provides the following options. In each case, you must highlight a name in the Edit window, and then select one of these options to insert the appropriate template for that name into the body of the Class.
 
 |Item                |Description                                          |
 |--------------------|-----------------------------------------------------|
@@ -222,9 +219,7 @@ The *Refactor* menu illustrated above applies only when editing a Class and prov
 
 ### The View Menu
 
-![](img/editor-view-menu.png)
-
-The *View* menu, illustrated above, provides the following actions.
+The *View* menu provides the following actions.
 
 |Item|Description|
 |---|---|
@@ -314,22 +309,15 @@ When you position the caret over a name, control word, or simple text or to the 
 
 ### Aligning Comments
 
-When you press the <AC> key, or select Align Comments in the Editor's context menu, the alignment of the comments in every line in the function will be changed so that the left-most comment (Lamp) symbol is in the same column as the cursor, except that:
+When you press the <AC> key, or select *Align Comments* in the Editor's context menu, the alignment of the comments in every line in the function will be changed so that the left-most comment (Lamp) symbol is in the same column as the cursor, except that:
 
 - Comment symbols that are preceded only by white space, that is, comments in lines that contain no code, are ignored and are not adjusted in any way.
-- Comment symbols that lie between the first column and the first tab stop will remain in or be moved to the first column. For information on setting tab stops, see 
-
-Installation & Configuration Guide:
-
-Configuration Dialog (Edit/Trace Tab).
+- Comment symbols that lie between the first column and the first tab stop will remain in or be moved to the first column. For information on setting tab stops, see *Installation & Configuration Guide*: [Configuration Dialog (Edit/Trace Tab)](../../../../windows-installation-and-configuration-guide/configuring-the-ide/configuration-dialog/configuration-dialog-trace-edit-tab/).
 - Comment symbols will not move further left than the end of the statement.
 
 When a comment is re-aligned, text to the right of the left-most comment symbol (including spaces and other comment symbols) will remain fixed in relation to  that symbol.
 
-Note that there is no keystroke associated with this command by default; the user must define one. See 
-Installation & Configuration Guide: 
-
-Configuration Dialog (Keyboard Shortcuts Tab).
+Note that there is no keystroke associated with this command by default; you must define one. See *Installation & Configuration Guide*: [Configuration Dialog (Keyboard Shortcuts Tab)](../../../../windows-installation-and-configuration-guide/configuring-the-ide/configuration-dialog/configuration-dialog-keyboard-shortcuts-tab/).
 
 ### Stop, Trace and Monitor Controls
 
