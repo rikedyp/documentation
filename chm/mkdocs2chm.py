@@ -560,7 +560,9 @@ def extract_headers(filename: str) -> List[str]:
     with open(filename, 'r', encoding='utf-8') as f:
         data = f.read()
 
-    h1 = extract_h1(data)
+    # Note: extract headers, but discard the command span, as the Windows search
+    # results list display cannot cope with UTF8...
+    h1 = extract_h1(data, for_title=True) 
     if h1:
         results.append(h1)
 
