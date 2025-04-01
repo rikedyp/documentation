@@ -216,6 +216,7 @@ The following are not supported by array notation:
 -   class instances
 -   internal representations returned by `⎕OR`
 
+While one can include the last three items when writing in array notation, they cannot be displayed in the notation.
 
 ### Formal Syntax
 
