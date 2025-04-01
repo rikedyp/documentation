@@ -81,9 +81,9 @@ The buttons on the Editor toolbar vary according to what you are editing:
 
 Array<br>![](img/editor-toolbar-array.png)
 
-Function or operator<br>![](img/editor-toolbar-fn.png)
+Function or operator<br>![](img/editor-toolbar-function.png)
 
-Class<br>![](img/editor-toolbar-class.png)
+Class or namespace script<br>![](img/editor-toolbar-script.png)
 
 In the table below, the first image shows the appearance of the toolbutton with Native Look and Feel enabled; the second with it disabled.
 
@@ -91,6 +91,7 @@ In the table below, the first image shows the appearance of the toolbutton with 
 |---|---|
 |![](img/trace-theme-14-00.png) ![](img/editor-line-numbers-icon.png) Toggle line numbers|Toggles Line numbers on/off|
 |![](img/editor-toggle-treeview-icon.png) ![](img/nlf-disabled/editor-toggle-treeview-icon.png) Toggle tree view|Toggles the treeview on/off. See **Editing Classes** .|
+|![](img/edit-array-icon.png) Edit in Array Notation |Switches Editor to Array Notation syntax if possible.|
 |![](img/editor-previous-location-icon.png) ![](img/nlf-disabled/editor-previous-location-icon.png) Previous Location|Certain operations (such as selecting an item in the treeview)  reposition the caret in the Editor window. This button moves the caret back to its previous location.|
 |![](img/trace-theme-12-00.png) ![](img/editor-comment-icon.png) Comment selected text|Inserts a comment symbol to the left of the selection in each of the selected lines.|
 |![](img/trace-theme-13-00.png) ![](img/editor-uncomment-icon.png) Uncomment selected text|Removes the comment symbol (if present) from the left-most column of the selection in each of the selected lines.|
