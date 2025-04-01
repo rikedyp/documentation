@@ -369,7 +369,7 @@ def purge_css(css: str, html_content: str) -> str:
     # Serialise the new stylesheet    
     return new_stylesheet.cssText.decode('utf-8')
 
-def convert_to_html(filenames: List[str], css: str, macros: dict, transforms: List[Callable[[str], str]], project) -> List[str]:
+def convert_to_html(filenames: List[str], css: str, macros: dict, transforms: List[Callable[[str], str]], project: str, top_level_files: List[str]) -> List[str]:
     """
     Convert each Markdown file and convert to HTML, using the same rendering library as
     mkdocs, with the same set of extensions. We expand the mkdocs-macro {{ templates }}
@@ -381,25 +381,31 @@ def convert_to_html(filenames: List[str], css: str, macros: dict, transforms: Li
     """
     converted: List[str] = []
 
-    head = """
+    head_template = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
 """
     
     converted: List[str] = []    
 
     for file in filenames:
-        # Handle both root-level files and files in docs subdirectories
-        if '/docs/' in file:
-            path, oldname = file.split('/docs/', maxsplit=1)
-            newname = str(os.path.join(os.path.basename(path), oldname.replace('.md', '.htm')))
-        else:
-            # For root-level files, just use the basename
+        if file in top_level_files:
+            # Top-level files go directly in project/
             newname = os.path.basename(file).replace('.md', '.htm')
-            
+        elif '/docs/' in file:
+            # Sub-site files go in project/sub-site/
+            path, oldname = file.split('/docs/', maxsplit=1)
+            sub_site = os.path.basename(path)
+            newname = os.path.join(sub_site, oldname.replace('.md', '.htm'))
+        else:
+            # Fallback for files without /docs/
+            newname = os.path.basename(file).replace('.md', '.htm')
+
         realpath_newname = str(os.path.join(project, newname))
         os.makedirs(os.path.dirname(realpath_newname), exist_ok=True)
 
@@ -431,6 +437,22 @@ def convert_to_html(filenames: List[str], css: str, macros: dict, transforms: Li
         body = body.replace('``', '')  # Empty code blocks aren't rendered correctly
 
         body = fix_links_html(body)
+
+        # Extract the H1 content for use in the title tag, setting for_title=True
+        # to only extract the name part (excluding command span)
+        title = extract_h1(body, for_title=True)
+        
+        # Use a default title if no H1 is found
+        if not title:
+            # Use the filename without extension as a fallback title
+            title = os.path.splitext(os.path.basename(file))[0].replace('_', ' ').title()
+            
+            # For special files like welcome.md, use a more appropriate title
+            if file.endswith('welcome.md'):
+                title = "Welcome to Dyalog APL"
+
+        # Format the head with the title
+        head = head_template.format(title=title)
 
         # Optimise CSS specifically for this page: only use selectors referring to 
         # ids, classes and tags on the actual page.
@@ -504,21 +526,25 @@ def static_assets(src_dir='assets', project='project') -> Tuple[List[str], str, 
     return assets, css, css_files
 
 
-def extract_h1(data: str) -> str:
+def extract_h1(data: str, for_title: bool = False) -> str:
     """
-    Some files will have a raw HTML <h1> for styling reasons.
+    Extract text from the first h1 tag, handling special styling with spans.
     """
     soup = BeautifulSoup(data, 'html.parser')
     if h1 := soup.find('h1'):
         if name_span := h1.find('span', class_='name'):
+            # If for_title is True, return only the name
+            if for_title:
+                return name_span.get_text().strip().replace('"', '').replace('`', '')
+            
+            # Otherwise, return name + command if command exists
             command_span = h1.find('span', class_='command')
-            name = name_span.get_text() if name_span else None
-            command = command_span.get_text() if command_span else None
-            if name and command:
-                return f"{name} {command}".strip()
-            elif name:
-                return name.strip().replace('"', '').replace('`', '')
+            if command_span:
+                return f"{name_span.get_text()} {command_span.get_text()}".strip()
+            else:
+                return name_span.get_text().strip().replace('"', '').replace('`', '')
         else:
+            # No special spans, just return the full h1 text
             return h1.get_text().strip().replace('"', '').replace('`', '')
     return ''
 
@@ -534,7 +560,9 @@ def extract_headers(filename: str) -> List[str]:
     with open(filename, 'r', encoding='utf-8') as f:
         data = f.read()
 
-    h1 = extract_h1(data)
+    # Note: extract headers, but discard the command span, as the Windows search
+    # results list display cannot cope with UTF8...
+    h1 = extract_h1(data, for_title=True) 
     if h1:
         results.append(h1)
 
@@ -581,25 +609,34 @@ def write_index_data(entries: List[Tuple[str, str]], filename: str) -> None:
         idxfh.write("</body></html>\n")
 
 
-def find_toplevel_dirs(filename: str, remove: List[str]) -> List[str]:
+def find_nav_files_and_dirs(filename: str, remove: List[str]) -> Tuple[List[str], List[str]]:
     """
-    Find the toplevel document dirs -- these are the ones that are
-    pulled into the main mkdocs.yml file via !include
+    Extract both top-level directories (from !include directives) and standalone Markdown files
+    directly listed in the nav section of the mkdocs.yml file.
+    
+    Returns:
+        Tuple[List[str], List[str]]: (included_dirs, standalone_files)
     """
     yaml = YAML()
-    with (open(filename, 'r', encoding='utf-8')) as f:
+    with open(filename, 'r', encoding='utf-8') as f:
         data = yaml.load(f)
-    tlds = []
+    
+    included_dirs = []
+    standalone_files = []
+    
     for d in data['nav']:
         key, value = next(iter(d.items()))
         if key not in remove:
-            if m := re.match(r'!include\s+([^"]+)', value):
-                tlds.append(m.group(1))
+            if isinstance(value, str):
+                if m := re.match(r'!include\s+([^"]+)', value):
+                    included_dirs.append(m.group(1))  # Path from !include
+                elif value.endswith('.md'):
+                    standalone_files.append(os.path.join('docs', value))  # Direct .md file reference
+    
+    return included_dirs, standalone_files
 
-    return tlds
 
-
-def generate_hfp(project: str, chmfile: str, files: List[str], images: List[str], assets: List[str], title: str) -> None:
+def generate_hfp(project: str, chmfile: str, files: List[str], images: List[str], assets: List[str], title: str, codepage: int = 65001) -> None:
     """
     Generates a project .hfp file for the chmcmd chm compiler, listing all .htm-files
     in the directory tree, plus the _index.hhk and _table_of_contents.hhc files.
@@ -621,7 +658,7 @@ def generate_hfp(project: str, chmfile: str, files: List[str], images: List[str]
     cfg.appendChild(filegroup)
 
     count = doc.createElement("Count")
-    count.setAttribute("Value", str(len(files) + len(images)))
+    count.setAttribute("Value", str(len(files) + len(images) + len(assets)))
     filegroup.appendChild(count)
 
     fcount = 0
@@ -652,7 +689,7 @@ def generate_hfp(project: str, chmfile: str, files: List[str], images: List[str]
     settings.appendChild(searchable)
 
     if start_page is None:
-        start_page = 'index.htm'
+        start_page = 'welcome.htm'
     dflt = doc.createElement("DefaultPage")
     dflt.setAttribute("Value", start_page)
     settings.appendChild(dflt)
@@ -668,6 +705,25 @@ def generate_hfp(project: str, chmfile: str, files: List[str], images: List[str]
     fnt = doc.createElement("DefaultFont")
     fnt.setAttribute("Value", "")
     settings.appendChild(fnt)
+    
+    # Add CodePage setting
+    cp = doc.createElement("CodePage")
+    cp.setAttribute("Value", str(codepage))
+    settings.appendChild(cp)
+    
+    # Hard-coded Language ID for UK English (0x0809)
+    lang = doc.createElement("Language")
+    lang.setAttribute("Value", "0x0809")
+    settings.appendChild(lang)
+    
+    # Add additional CHM-specific settings that might help with search
+    binary_index = doc.createElement("BinaryIndex")
+    binary_index.setAttribute("Value", "True")
+    settings.appendChild(binary_index)
+    
+    full_text_search = doc.createElement("FullTextSearch")
+    full_text_search.setAttribute("Value", "True")
+    settings.appendChild(full_text_search)
 
     with open(outfile, 'w', encoding="utf-8") as f:
         f.write(doc.toprettyxml(indent="  "))
@@ -864,6 +920,8 @@ if __name__ == "__main__":
     parser.add_argument('--config', type=str, help='JSON config file for additional options')
     parser.add_argument('--git-info', type=str, help='Git branch and commit info')
     parser.add_argument('--build-date', type=str, help='Build date')
+    parser.add_argument('--codepage', type=int, default=65001, help='CodePage to use (default: 65001 for UTF-8)')
+
 
     args = parser.parse_args()
 
@@ -878,9 +936,7 @@ if __name__ == "__main__":
 
     os.makedirs(args.project_dir, exist_ok=True)
 
-    # Parse the nav section. If this is a monorepo (in 99% of the cases it will be),
-    # macro-expand any !include directives
-
+    # Parse config for excludes
     excludes = []
     if args.config:
         try:
@@ -890,15 +946,22 @@ if __name__ == "__main__":
         except (json.JSONDecodeError, FileNotFoundError) as e:
             sys.exit(f'--> Error reading config file: {e}')
 
+    # Parse mkdocs.yml
     yml_data = parse_mkdocs_yml(args.mkdocs_yml, remove=excludes)
-    includes = find_toplevel_dirs(args.mkdocs_yml, remove=excludes)
+
+    # Find top-level dirs and standalone files from nav
+    included_dirs, standalone_files = find_nav_files_and_dirs(args.mkdocs_yml, remove=excludes)
 
     version = yml_data["extra"].get("version_majmin")
     if not version:
         sys.exit(f'--> source mkdocs.yml has no Dyalog version set')
 
-    # Find all source Markdown files and images
-    md_files, image_files = find_source_files(os.path.dirname(args.mkdocs_yml), includes)
+    # Find all source Markdown files from included directories
+    md_files_from_dirs, image_files = find_source_files(os.path.dirname(args.mkdocs_yml), included_dirs)
+
+    # Add standalone Markdown files from nav, with absolute paths
+    standalone_files_abs = [os.path.abspath(os.path.join(os.path.dirname(args.mkdocs_yml), f)) for f in standalone_files]
+    md_files = md_files_from_dirs + standalone_files_abs
 
     # Add welcome.md to the start of the files list
     md_files.insert(0, os.path.abspath(args.welcome))
@@ -928,7 +991,8 @@ if __name__ == "__main__":
         transforms=[
             table_captions
         ],
-        project=args.project_dir
+        project=args.project_dir,
+        top_level_files=standalone_files_abs
     )
 
     # Generate the CHM ToC
@@ -942,8 +1006,7 @@ if __name__ == "__main__":
 
     # Generate the CHM project config file
     chm_name = "dyalog.chm"
-
-    generate_hfp(args.project_dir, chm_name, html_files, copied_images, assets, title=f'Dyalog version {version}')
+    generate_hfp(args.project_dir, chm_name, html_files, copied_images, assets, title=f'Dyalog version {version}', codepage=args.codepage)
 
     # Run the compiler
     output = Popen(['chmcmd', 'dyalog.hfp'], cwd=args.project_dir)

@@ -1,3 +1,9 @@
+
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  3501⌶
+</div>
+
 <h1 class="heading"><span class="name">Connected to Ride</span> <span class="command">R←(3501⌶)Y</span></h1>
 
 `Y` can be any value and is ignored.

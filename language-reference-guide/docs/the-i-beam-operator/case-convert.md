@@ -1,3 +1,9 @@
+
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  819⌶
+</div>
+
 <h1 class="heading"><span class="name">Case Convert</span> <span class="command">R←{X}(819⌶)Y</span></h1>
 
 !!! note

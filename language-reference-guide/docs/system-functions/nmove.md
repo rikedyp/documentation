@@ -48,11 +48,11 @@ The RenameOnly option  determines what happens when it is not possible to rename
 |0 { .shaded }  |The source will be copied and the original deleted|
 |`1`|The move will fail                                |
 
-<h2 class="example">Examples</h2>
+## Examples
 
 A number of possibilities exist, illustrated by the following examples. In all cases, if the source is a file, the file is moved. If the source is a directory, the directory and all of its contents are moved.
 
-### Examples (single source, Wildcard is 0)
+### Single source, Wildcard is 0
 
 - The source name must be an existent file or directory.
 - If the destination name does not exist but its path name does exist, the source is moved to the destination name.
@@ -77,7 +77,7 @@ i:/Documents/Dyalog APL-64 17.0 Unicode Files/
 backups/default.dlf  
 ```
 
-### Examples (single source, Wildcard is 1)
+### Single source, Wildcard is 1
 
 - The source name may include wildcard characters which matches a number of existing files and/or directories. The destination name must be an existing directory.
 - The files and/or directories that match the pattern specified by the source name are moved into the destination directory. If there are no matches, zero copies are made.
@@ -96,7 +96,7 @@ backups/def_uk.dse
 backups/UserCommand20.cache
 ```
 
-### Examples (multiple sources, Wildcard is 0)
+### Multiple sources, Wildcard is 0
 
 - Each source name must specify a single file or directory which must exist. The destination name must be an existing directory.
 - Each of the files and/or directories specified by the source base names are moved to the destination directory.
@@ -117,7 +117,7 @@ backups/default.dlf
 backups/def_uk.dse 
 ```
 
-### Examples (multiple sources, Wildcard is 1)
+### Multiple sources, Wildcard is 1
 
 - The destination name must be an existing directory.
 - Each of the files and/or directories that match the patterns specified by the source names (if any) are moved to the destination directory.

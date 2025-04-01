@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  1200⌶
+</div>
+
 <h1 class="heading"><span class="name">Format Date-time</span><span class="command">R←X(1200⌶)Y</span></h1>
 
 `Y` is a numeric array of any shape, where every element contains a Dyalog Date Number that represents a date between 1

@@ -1,3 +1,9 @@
+
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  8468⌶
+</div>
+
 <h1 class="heading"><span class="name">Hash Table Size</span> <span class="command">{R}←8468⌶Y</span></h1>
 
 Increases the amount of workspace allocated to internal hash tables. These tables are created when a set primitive is executed or by the Hash Array function (`1500⌶`).

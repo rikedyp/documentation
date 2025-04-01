@@ -1,3 +1,9 @@
+
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  2023⌶
+</div>
+
 <h1 class="heading"><span class="name">Close All Windows</span> <span class="command">R←2023⌶Y</span></h1>
 
 Under Windows the option, *Windows -> Close All Windows* allows the user to close all open Editor and Tracer Windows, but does not reset the *state indicator*.

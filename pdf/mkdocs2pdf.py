@@ -821,14 +821,23 @@ def toc_friendly_headings(soup: BeautifulSoup) -> None:
             # Replace the old heading with the new structure
             heading.replace_with(heading_container)
 
-
 def toplevel_docs(nav: List[Dict[str, str]]) -> Dict[str, str]:
     result = {}
     for entry in nav:
         for doc_name, include_path in entry.items():
-            path = include_path.split(' ')[1]
-            first_component = path.split('/')[1]
-            result[first_component] = doc_name
+            if "!include" in include_path:
+                # This is a directory include
+                path = include_path.split(' ')[1]
+                first_component = path.split('/')[1]
+                result[first_component] = doc_name
+            else:
+                # This is a direct file reference
+                path_parts = include_path.split('/')
+                # Use the filename without extension as the key
+                if len(path_parts) > 0:
+                    filename = path_parts[-1]
+                    file_base = os.path.splitext(filename)[0]
+                    result[file_base] = doc_name
     return result
 
 def process_document(document_path):
