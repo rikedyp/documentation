@@ -11,7 +11,7 @@ Simple scalars and vectors are displayed in a single line beginning at the left 
 
 ## Print Precision
 
-The print precision ([system variable `⎕PP`](../../../../language-reference-guide/system-functions/pp/), default 10) determines the number of significant digits to be printed. The fractional part of the number is rounded in the last digit if it cannot be represented within the print precision. Leading zeros, and trailing zeros after a decimal point, are omitted, as are decimal points for integers.
+The [`⎕PP`](../../../../language-reference-guide/system-functions/pp/) system variable determines the number of significant digits to be printed. The fractional part of the number is rounded in the last digit if it cannot be represented within the print precision. Leading zeros, and trailing zeros after a decimal point, are omitted, as are decimal points for integers.
 
 ```apl
       0.1 1.0 1.12
@@ -24,7 +24,7 @@ A 2 BC
 0.3333333333 0.5 0.1666666667
 ```
 
-If a number cannot be fully represented in `⎕PP` significant digits, or if the number requires more than five leading zeros after the decimal point, it is represented in scaled form.  The mantissa displays up to `⎕PP` significant digits, omitting trailing zeros.
+If a number cannot be fully represented in `⎕PP` significant digits, or if the number requires more than five leading zeros after the decimal point, it is represented in scaled form. The mantissa displays up to `⎕PP` significant digits, omitting trailing zeros.
 
 ```apl
       ⎕PP←3
@@ -35,7 +35,7 @@ If a number cannot be fully represented in `⎕PP` significant digits, or if the
 
 ## Simple Matrices
 
-Simple matrices are displayed in rectangular form, with one line per matrix row.
+Simple matrices are displayed in rectangular form, with one line for each matrix row.
 
 ```apl
       2 4⍴'HANDFIST'
@@ -54,8 +54,7 @@ A column is treated as numeric if it contains any numeric elements.
 Numeric columns are right-justified; others are left-justified.
 Numeric columns are separated from their neighbours by a single column of blanks.
 
-A numeric column aligns any decimal points or `E` characters (for scaled formats), adding trailing zeros to the mantissae if necessary. Integers are right-adjusted one place to the left of the decimal points (if any).
-
+A numeric column aligns any decimal points or E characters (for scaled formats), adding trailing zeros to the mantissae if necessary. Integers are right-adjusted one place to the left of any decimal points.
 ```apl
       2 3⍴2 4 6.1 8 10.24 12
 2  4     6.1
@@ -133,9 +132,14 @@ The power of this form of display is made apparent when formatting informal repo
  Rolls      1000    90.03  1200
 ```
 
+## Array Notation
+
+In the [Windows IDE](../../../../windows-ui-guide) you can have arrays displayed using [Array Notation](array-notation.md) when it is possible to do so.
+
+
 ## Print Width
 
-If the display of an array is wider than the print width, as set by the [system variable `⎕PW`](../../../../language-reference-guide/system-functions/pw/), it will be folded at or before `⎕PW` and the folded portions indented six spaces.  The display of a simple numeric or mixed array may be folded at a width less than `⎕PW` so that individual numbers are not split across a page boundary.
+If the display of an array is wider than the print width, as defined by the [`⎕PW`](../../../../language-reference-guide/system-functions/pw/) system variable, it will be folded at or before `⎕PW` and the folded portions indented six spaces.  The display of a simple numeric or mixed array may be folded at a width less than `⎕PW` so that individual numbers are not split across a page boundary.
 
 ```apl
       ⎕PW←40
@@ -186,7 +190,7 @@ The user command `]Display` illustrates the structure of an array.
 
 ```
 
-An explanation of the symbols that appear in the borders can be seen by running `]Display -?`
+An explanation of the symbols that appear in the borders can be seen by running `]Display -??`
 
 ## The ]Boxing User Command
 
