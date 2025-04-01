@@ -57,20 +57,17 @@ A number of possibilities exist, illustrated by the following examples. In all c
 - The source name must be an existent file or directory.
 - If the destination name does not exist but its path name does exist, the source is moved to the destination name.
 - If the destination name is an existing directory the source name is moved to that directory.
+
 ```apl
-       ⊃1 ⎕NPARTS ''
+      ⊃1 ⎕NPARTS ''
 i:/Documents/Dyalog APL-64 17.0 Unicode Files/
- 
+
 ⍝ Rename the Session file
       ⊢'session.dlf' ⎕NMOVE 'default.dlf'
-```
-
-```apl
-
 1
       ⊢ ⎕MKDIR 'backups' ⍝ Make a backups directory
 1
- ⍝ Move the Session file to backups directory
+⍝ Move the Session file to backups directory
       ⊢'backups'⎕NMOVE'default.dlf'
 1
       ↑⊃0 (⎕NINFO⍠1) 'backups\*'
@@ -81,6 +78,7 @@ backups/default.dlf
 
 - The source name may include wildcard characters which matches a number of existing files and/or directories. The destination name must be an existing directory.
 - The files and/or directories that match the pattern specified by the source name are moved into the destination directory. If there are no matches, zero copies are made.
+
 ```apl
        ⊃1 ⎕NPARTS ''
 i:/Documents/Dyalog APL-64 17.0 Unicode Files/
@@ -100,14 +98,13 @@ backups/UserCommand20.cache
 
 - Each source name must specify a single file or directory which must exist. The destination name must be an existing directory.
 - Each of the files and/or directories specified by the source base names are moved to the destination directory.
+
 ```apl
        ⊃1 ⎕NPARTS ''
 i:/Documents/Dyalog APL-64 17.0 Unicode Files/
 
       ⊢ ⎕MKDIR 'backups' ⍝ Make a backups directory
 1
-```
-```apl
 
 ⍝ Move 2 files to backups directory
       ⊢'backups'⎕NMOVE'default.dlf' 'def_uk.dse'
@@ -121,6 +118,7 @@ backups/def_uk.dse
 
 - The destination name must be an existing directory.
 - Each of the files and/or directories that match the patterns specified by the source names (if any) are moved to the destination directory.
+
 ```apl
       ⊃1 ⎕NPARTS ''
 i:/Documents/Dyalog APL-64 17.0 Unicode Files/
@@ -145,7 +143,7 @@ When `⎕NMOVE` copies and deletes files:
 - Read permissions will be needed on all files within a directory which is moved.
 - If the operation fails at any point and an error is signalled it is possible that there may be files and/or directories left duplicated in both the source and destination. It is not possible that a file or directory may be removed from the source without having been copied to the destination.
 
-### ProgressCallback Option
+## ProgressCallback Option
 
 ### Overview
 
