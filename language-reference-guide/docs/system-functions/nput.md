@@ -60,7 +60,7 @@ The NEOL variant option specifies how embedded line separators are treated.
 
 |----|-------------------------------------------------------------------------------------------------------------|
 |`0` |embedded line separator characters are preserved as is,and a `newline` is added to the last line if required.|
-|`1` |every embedded LF is replaced by `newline`                                                                   |
+|`1` {: .shaded} |every embedded LF is replaced by `newline`                                                                   |
 |`2` |every embedded line separator character is replaced by `newline`                                             |
 |`¯1`|same as 0 except that a `newline` is not added to the last line                                              |
 
