@@ -186,13 +186,13 @@ Once displayed, each of the two dialog boxes remains on the screen until it is e
 
 The *Syntax* menu provides options to specify  how the data displayed in the Editor window is to be syntax coloured. For workspace objects, the default is *APL* for functions and operators, and *Nothing* for variables.
 
-|Item          |Syntax Colour as|
-|--------------|----------------|
-|Nothing       |Variable        |
-|APL           |Function        |
-|JSON          |JSON array      |
-|XML           |XML array       |
-|Array notation|Array notation  |
+|Item          |Effect                  |
+|--------------|------------------------|
+|Nothing       |Nothing                 |
+|APL           |Colour as APL           |
+|JSON          |Colour as JSON          |
+|XML           |Colour as XML           |
+|Array Notation|Show as Array Notation  |
 
 ### The Window Menu
 
