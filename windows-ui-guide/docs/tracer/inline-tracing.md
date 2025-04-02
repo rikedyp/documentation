@@ -1,34 +1,36 @@
-<h1 class="heading"><span class="name">Trace Primitives</span></h1>
+<h1 class="heading"><span class="name">Inline Tracing</span></h1>
 
-The ability to trace primitives is an extension to the Tracer that allows you to step through the execution of individual primitives within expressions, examining intermediate results and arguments of sub-expressions. It enables an in-depth inspection of complex expressions typed directly into the session, and can be used in conjunction with the traditional tracing mode to skip over lines you're not interested in and step through primitive-by-primitive in complex expressions where required.
+*Inline Tracing* is an extension to the Tracer that allows you to step through the execution of individual primitives within expressions, examining intermediate results and arguments of sub-expressions. It enables an in-depth inspection of complex expressions typed directly into the session, and can be used in conjunction with the traditional tracing mode to skip over lines you're not interested in and step through primitive-by-primitive in complex expressions where required.
 
 !!! note
-    _Trace Primitives_ is not an entirely accurate name: it is tracing with the (approximate) granularity of primitives, though it does stop on non-primitives.
+    _Inline Tracing_ is tracing with the (approximate) granularity of primitives, though it does stop on non-primitives, such as inlined dfns.
 
 ## Getting started
 
-There is a command **&lt;TP&gt;** called *Trace Primitive* with the default keyboard shortcut <kbd>shift</kbd>+<kbd>alt</kbd>+<kbd>enter</kbd> which is used to trace primitives.
+There is a command **&lt;IT&gt;** called *Inline Trace* with the default keyboard shortcut <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>enter</kbd> which is used to trace inline.
 
-To start tracing primitives, position the cursor within an expression and do one of the following:
+To start inline tracing, position the cursor within an expression and do one of the following:
 
-- enter the _Trace Primitive_ command (**&lt;TP&gt;**) in the session.
-- select **Action > Trace Primitives…** from the Session menu bar.
-- select **Action > Trace Primitives…** from the Session window's context menu.
+- enter the _Inline Trace_ command (**&lt;IT&gt;**) in the session.
+- select **Action > Trace Inline…** from the Session menu bar.
+- select **Action > Trace Inline…** from the Session window's context menu.
 - click the **Next Primitive** icon <span class="toolbar-icon" style="background-position: -432px 0"></span> in the Tracer toolbar.
 
 The Tracer opens with primitive tracing activated.
 
 <h2 class="example">Example</h2>
-In a Session, enter the expression `(+/÷≢)⍳10` and start tracing primitives.
+
+In a Session, enter the expression `(+/÷≢)⍳10` and start inline tracing.
 
 ![](../img/tp-start.png)
 
-The red outline around the `⍳ `in the Tracer shows the next primitive to be executed. Enter **&lt;TP&gt;** or click the **Next Primitive** icon in the Tracer toolbar to see how the execution progresses through the expression.
-The **Next Primitive** icon is always present in the Tracer. The **&lt;TP&gt;** command lets you open a Tracer on an expression that has been typed directly in the Session.
+The red outline around the `⍳` in the Tracer shows the next primitive to be executed. Enter **&lt;IT&gt;** or click the **Next Primitive** icon in the Tracer toolbar to see how the execution progresses through the expression.
+
+The **Next Primitive** icon is always present in the Tracer. The **&lt;IT&gt;** command lets you open a Tracer on an expression that has been typed directly in the Session.
 
 ### Aspect Panes
 
-When tracing primitives, there are several more aspects of an expression that can be inspected beyond the default ones for left and right arguments, available under the **Windows** menu in the Tracer. These are divided into two sections; items 1-4 apply to the current function, and items 5-9 apply to the previously-executed function. They are:
+When tracing inline, there are several more aspects of an expression that can be inspected beyond the default ones for left and right arguments, available under the **Windows** menu in the Tracer. These are divided into two sections; items 1-4 apply to the current function, and items 5-9 apply to the previously-executed function. They are:
 
 1. **Left Argument**
 
@@ -98,7 +100,7 @@ When a docked aspect pane is the focus, the Session's **Options** menu enables c
 
 - **Trace idioms**
 
-    Whether specific expressions that the interpreter might treat as special cases (for example, idioms) are included when tracing primitives. If this option is not selected, such expressions are treated as atomic functions.
+    Whether specific expressions that the interpreter might treat as special cases (for example, idioms) are included when tracing inline. If this option is not selected, such expressions are treated as atomic functions.
  
 - **Use Array Notation**
 
@@ -112,13 +114,13 @@ The following screenshot illustrates the effect of choosing **Show functions as 
 
 A line of code can comprise a set of expressions separated by diamonds. In this situation, you might only want to trace into some of them and skip others; this can be done by using the command **&lt;ER&gt;** (by default, this is <kbd>enter</kbd>).
 
-For example, consider a line that consists of three diamond-separated expressions; you want to skip the first two, and trace primitives in the third one:
+For example, consider a line that consists of three diamond-separated expressions; you want to skip the first two, and trace into the third one:
 
 ```apl
 a ← 3 3⍴⍳9 ⋄ b ← ⍉a ⋄ a + b
 ```
 
-Enter the expressions in the Session, and start primitive tracing. You should see:
+Enter the expressions in the Session, and start inline tracing. You should see:
 
 ![](../img/tbt-diamond1.png)
 
@@ -126,7 +128,7 @@ with the first expression highlighted (red outline). Enter **&lt;ER&gt;** (<kbd>
 
 ![](../img/tbt-diamond2.png)
 
-The second expression is now highlighted. Enter **&lt;ER&gt;** (<kbd>enter</kbd>) again to execute the second expression, then enter **&lt;TP&gt;** (<kbd>alt</kbd>+<kbd>shift</kbd>+<kbd>enter</kbd>) to start tracing the primitives in the third expression:
+The second expression is now highlighted. Enter **&lt;ER&gt;** (<kbd>enter</kbd>) again to execute the second expression, then enter **&lt;IT&gt;** (<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>enter</kbd>) to start tracing the primitives in the third expression:
 
 ![](../img/tbt-diamond3.png)
 

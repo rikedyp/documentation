@@ -58,7 +58,7 @@ In **Floating** mode,
 
 The Tracer is implemented as a single dockable window that displays the function that is currently being executed. There are several subsidiary information panes which are also fully dockable. The first of these (*SIStack*) displays the current function calling stack; the second (*Threads*) displays a list of running threads.
 
- There are also two docked, but minimised panes, named **Left Argument** and **Right Argument**. They will open up automatically if you [trace primitives](trace-primitives.md).
+ There are also two docked, but minimised panes, named **Left Argument** and **Right Argument**. They will open up automatically if you [trace inline](inline-tracing.md).
 
 In the default Session files, the Tracer is docked along the bottom edge of the Session window. When you invoke the Tracer, it springs up as illustrated below. In this example, the function being traced is `⎕SE.UCMD`, which is invoked by typing a user-command, in this case `]APLCart`.
 
@@ -74,7 +74,7 @@ The Tracer may be controlled from the keyboard, or by using the *Trace Tools* wh
 |---|---|---|---|---|
 |<span class="toolbar-icon" style="background-position: -64px 0"></span>|Exec|**&lt;ER&gt;**|<kbd>Enter</kbd>|Execute expression|
 |<span class="toolbar-icon" style="background-position: -80px 0"></span>|Trace|**&lt;TC&gt;**|<kbd>Ctrl</kbd>+<kbd>Enter</kbd>|Trace expression|
-|<span class="toolbar-icon" style="background-position: -432px 0"></span>|Trace Primitive|**&lt;TP&gt;**|<kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>Enter</kbd>|Trace Primitive|
+|<span class="toolbar-icon" style="background-position: -432px 0"></span>|Inline Trace|**&lt;IT&gt;**|<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Enter</kbd>|Trace inline|
 |<span class="toolbar-icon" style="background-position: 0 0"></span>|Back|**&lt;BK&gt;**|<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Bksp</kbd>|Go back one line|
 |<span class="toolbar-icon" style="background-position: -16px 0"></span>|Fwd|**&lt;FD&gt;**|<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd>|Skip current line|
 |<span class="toolbar-icon" style="background-position: -96px 0"></span>|Continue|**&lt;BH&gt;**|&nbsp;|Stop on next line of calling function|
@@ -114,7 +114,7 @@ At this stage, the state indicator is as follows:
 ⎕SE.UCMD[2]
 ```
 
-See also the section on [tracing primitives](trace-primitives.md).
+See also the section on [inline tracing](inline-tracing.md).
 
 ## Controlling Execution
 
