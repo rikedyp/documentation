@@ -81,7 +81,7 @@ nav:
   - Source as Typed: source-as-typed.md
   - The Tracer: 
       - tracer/index.md
-      - Trace Primitives: tracer/trace-primitives.md
+      - Inline Tracing: tracer/inline-tracing.md
   - The Threads Tool: threads-tool.md
   - Debugging Threads: debugging-threads.md
   - The Event Viewer: event-viewer.md
