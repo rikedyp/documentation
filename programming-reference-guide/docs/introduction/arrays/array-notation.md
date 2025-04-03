@@ -7,13 +7,10 @@ Array notation extends [vector notation](vector-notation.md) to define arrays of
 -   **Square brackets** embrace higher-rank arrays
 -   **Diamonds** and **linebreaks** separate array elements and name-value pairs
 
-Some examples show how these work.
 
+## Examples
 
-## Ordered Arrays
-
-Ordered arrays are indexed by position, as in `vec[3]` or `mat[2 4;5]`.
-
+Some examples of different kinds of arrays defined with array notation.
 
 ### Nested Vector { .example }
 
@@ -47,6 +44,7 @@ Ordered arrays are indexed by position, as in `vec[3]` or `mat[2 4;5]`.
 ```
 
 Short items are padded.
+(See [Mix](../../language-reference-guide/primitive-functions/mix/) for details.)
 
 ```apl
       ⍴mice←['Three'
@@ -57,11 +55,6 @@ Short items are padded.
 Three|
 Blind|
 Mice |
-```
-
-See [Mix](../../language-reference-guide/primitive-functions/mix/) for details.
-
-```apl
 
       ⍴RC←[0 'OK'
            1 'WS FULL'
@@ -120,7 +113,7 @@ See [Mix](../../language-reference-guide/primitive-functions/mix/) for details.
 
 ## Namespaces
 
-Array notation allows you to write a namespace literal as zero or more name-value pairs, embraced by parentheses.
+Array notation allows you to write a namespace literal as zero or more name-value pairs, spanned by parentheses.
 
 ```apl
       ()                       ⍝ empty namespace
@@ -186,23 +179,23 @@ In the following:
 
 ### Namespace
 
-A namespace is defined by a parenthesised separated list of zero or more name-value pairs.
+A namespace is defined by a parenthesised, separated list of zero or more name-value pairs.
 
 Empty name-value pairs define no namespace members.
 
 ### Vector
 
-A vector is defined by a parenthesised separated list of two or more value expressions.
+A vector is defined by a parenthesised, separated list of two or more value expressions.
 
 Empty value expressions define no vector elements.
 
 ### Matrices And Higher-rank Arrays
 
-An array of rank 2 or higher is defined by a bracketed separated list of value expressions, which constitute the major cells of the array.
+An array of rank 2 or higher is defined by a bracketed, separated list of value expressions, which constitute the major cells of the array.
 
 Short elements are padded to fill, and scalars are treated as length-1 vectors.
 
-!!! info "Nested separators"
+!!! info "Information"
 
     Separators in a list of value expressions or name-value pairs make an enclosing parenthesis or bracket *broken*.
 
@@ -215,16 +208,19 @@ Short elements are padded to fill, and scalars are treated as length-1 vectors.
 
 ### Unsupported
 
--   Scripted and external objects
--   Non-array namespace members
--   Reference loops
--   Class instances
--   Internal representations returned by `⎕OR`
+The following are not supported by array notation:
 
+-   scripted and external objects
+-   non-array namespace members
+-   reference loops
+-   class instances
+-   internal representations returned by `⎕OR`
+
+While one can include the last three items when writing in array notation, they cannot be displayed in the notation.
 
 ### Formal Syntax
 
-The array notation can be described in this form[^ebnf], where `expression` is any traditional APL expression:
+The array notation can be described in this form, where `expression` is any traditional APL expression:
 
     value ::= expression | list | block | space
     list  ::= '(' ( ( value sep )+ value? | ( sep value )+ sep? ) ')'
@@ -236,8 +232,4 @@ The array notation can be described in this form[^ebnf], where `expression` is a
 ![Syntax diagram](/img/array-notation-syntax.png)
 <!-- Eventually replace with Mermaid diagram. -->
 
-!!! note "Sep values"
 
-    The list of `sep` values is for illustration purposes and is to match the line breaks recognised by the APL implementation. However, these three values should be handled when reading Unicode text files.
-
-[^ebnf]: Extended Backus–Naur.
