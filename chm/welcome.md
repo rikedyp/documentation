@@ -26,4 +26,6 @@ The documentation is updated throughout the life of each version of Dyalog; the 
 
 If you report an issue with the documentation, could you please include the following information in your report: Version {{ version_majmin }}, revision {{ build_date }}:{{ git_info }}.
 
+Except where otherwise noted, this content is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) licence. 
+
 Please note that unless otherwise stated, all the examples in the documentation assume `⎕IO` is 1, and `⎕ML` is 1.

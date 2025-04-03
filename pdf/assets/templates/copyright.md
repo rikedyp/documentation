@@ -9,8 +9,6 @@ Document Revision: {REVISION}
 
 Unless stated otherwise, all examples in this document assume that `⎕IO ⎕ML ← 1`
 
-<i>No part of this publication may be reproduced in any form by any means without the prior written permission of Dyalog Limited.
-
 Dyalog Limited makes no representations or warranties with respect to the contents hereof and specifically disclaims any implied warranties of merchantability or fitness for any particular purpose. Dyalog Limited reserves the right to revise this publication without notification.
 
 email: support@dyalog.com<br>
@@ -26,3 +24,5 @@ Windows® is a registered trademark of Microsoft Corporation in the U.S. and oth
 macOS® and OS X® (operating system software) are registered trademarks of Apple Inc. in the U.S. and other countries.
 
 All other trademarks and copyrights are acknowledged.</i>
+
+Except where otherwise noted, this content is licensed under a [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) licence. 
