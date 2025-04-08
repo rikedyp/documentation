@@ -752,7 +752,7 @@ def normalise_links(soup: BeautifulSoup, documents: Dict[str, str], table_refs: 
                     new_tag = soup.new_tag('i')
                     new_tag.string = a_text
                     a_tag.replace_with(new_tag)
-                    print(f'--> Warning: can't resolve absolute link "{href}"')
+                    print(f"--> Warning: can't resolve absolute link '{href}'")
             else:
                 # Internal link: resolve using source file path
                 parent_article = a_tag.find_parent('article')
