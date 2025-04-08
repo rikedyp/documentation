@@ -15,7 +15,7 @@
             "subtitle": "Interfaces Guide",
             "filename": "Dyalog_for_Microsoft_Windows_Interface_Guide.pdf"
         },
-        "object-reference": {
+        "object-reference-transformed": {
             "title": "Dyalog for Microsoft Windows",
             "subtitle": "Object Reference Guide",
             "filename": "Dyalog_for_Microsoft_Windows_Object_Reference_Guide.pdf"

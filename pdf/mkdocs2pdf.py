@@ -399,25 +399,17 @@ def update_seq_stack(seq_stack, s):
 
 
 def convert_to_html(filenames: Iterator[str], prefix: str, title: str, macros: dict,
-    transforms: List[Callable[[str], str]], create_toc: bool = True, enumerate_sections: bool = True, syntax_hilite: bool = True, git_info = '', build_date = '') -> Tuple[Dict[str, str], str]:
+    transforms: List[Callable[[str], str]], create_toc: bool = True, enumerate_sections: bool = True, 
+    syntax_hilite: bool = True, git_info = '', build_date = '') -> Tuple[Dict[str, str], str, Dict[str, str]]:
     """
     Markdown to HTML, using the same markdown extensions as our mkdocs site. Concatenate all converted files
     into a single HTML file, wrapping into <section>s of <article>s.
-
-    We need to cope with two "chapter" cases when generating the table of contents:
-
-    nav:
-      - Case 1: 
-        - Introduction: directory/chapter1.md
-      - Case 2: chapter2.md
-
     """
     
-    def process_markdown(file_path, remove_first_heading=False):
+    def process_markdown(file_path, article_id, remove_first_heading=False):
         """
         Convert Markdown to HTML, using the same extensions as used by our mkdocs setup.
         """
-
         extensions = [
             'admonition',                # https://python-markdown.github.io/extensions/admonition/
             'attr_list',                 # https://python-markdown.github.io/extensions/attr_list/
@@ -432,7 +424,10 @@ def convert_to_html(filenames: Iterator[str], prefix: str, title: str, macros: d
         else:
             extensions.append('fenced_code')
         
-        extension_configs = {'toc': {'slugify': markdown.extensions.toc.slugify_unicode}}
+        def custom_slugify(value, separator):
+            return article_id + '-' + slugify_unicode(value, separator)
+        
+        extension_configs = {'toc': {'slugify': custom_slugify}}
 
         with open(file_path, "r", encoding="utf-8") as f:
             md = f.read()
@@ -470,6 +465,7 @@ def convert_to_html(filenames: Iterator[str], prefix: str, title: str, macros: d
     front_matter = ' class="front-matter"'
     section_map = {}
     seq_stack = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    path_to_id = {}  # New mapping from file paths to article IDs
     
     # Process all files
     for keypath, file in filenames:
@@ -534,8 +530,9 @@ def convert_to_html(filenames: Iterator[str], prefix: str, title: str, macros: d
             test_id = article_id + f'-{tie_breaker}'
         article_id = test_id
         
-        # Update section map
+        # Update mappings
         section_map[article_id] = '.'.join(str(c) for c in seq_stack if c > 0)
+        path_to_id[file] = article_id  # Map file path to article ID
         
         # Add to TOC (except for top-level file articles since they're already in TOC)
         if not is_top_level:
@@ -545,6 +542,7 @@ def convert_to_html(filenames: Iterator[str], prefix: str, title: str, macros: d
         articles += f'<article id="{article_id}">\n'
         html_content = process_markdown(
             os.path.join(prefix, file), 
+            article_id,  # Pass article_id to process_markdown
             remove_first_heading=is_top_level
         )
         
@@ -595,7 +593,7 @@ def convert_to_html(filenames: Iterator[str], prefix: str, title: str, macros: d
 </body>
 </html>
 """
-    return section_map, result
+    return section_map, result, path_to_id  # Return path_to_id
 
 def copy_directory(src, dst):
     """
@@ -676,11 +674,11 @@ def fix_links(b: str) -> str:
     # Exclude markdown images (which start with !)
     return re.sub(r'(?<!!)\[([^]]*)]\(([^)]+)\)', link_transform, b)
 
-def normalise_links(soup: BeautifulSoup, documents: Dict[str, str], table_refs: Dict[str, int], section_map: Dict[str, str], rewrite_links: bool = True) -> None:
+def normalise_links(soup: BeautifulSoup, documents: Dict[str, str], table_refs: Dict[str, int], 
+                    section_map: Dict[str, str], path_to_id: Dict[str, str], rewrite_links: bool = True) -> None:
     """
-    As we've changed the structure from many documents to a single document, all internal links will need
-    rewriting. Also: options to rewrite links to be more "print friendly", by changing the link text to the
-    section number to which they refer.
+    Rewrite internal links to point to correct article IDs within the single HTML file using file path resolution.
+    Optionally rewrite link text to section numbers for print-friendliness.
     """
 
     def in_table(tag):
@@ -701,11 +699,10 @@ def normalise_links(soup: BeautifulSoup, documents: Dict[str, str], table_refs: 
         # Convert slug to readable text
         return text.replace('-', ' ').title()
 
-    # Find all articles and their ids
-    # articles = soup.find_all('article')
-    # article_ids = {article['id'] for article in articles}
-
-    # Find all articles and their ids, excluding the copyright page
+    # Create inverse mapping from article IDs to file paths
+    id_to_path = {v: k for k, v in path_to_id.items()}
+    
+    # Find all articles and their IDs, excluding copyright page
     articles = soup.find_all('article')
     article_ids = {
         article['id'] for article in articles 
@@ -737,67 +734,70 @@ def normalise_links(soup: BeautifulSoup, documents: Dict[str, str], table_refs: 
             path = path_parts[0]
             anchor = path_parts[1] if len(path_parts) > 1 else None
             
-            components = extract_components(path)
-            if not components:
+            if not path:
                 continue
 
-            # Reference to another of our documentation components.
-            if components[0] in documents:
-                # Note: the URL determines the text, not the anchor!
-                # <a href="../../../programming-reference-guide/component-files/component-files/#file-access-control">File Access Control</a>
-                #
-                # becomes 
-                #
-                # <i>Programming Reference Guide: Component Files</i>
-                
-                # Create new italicised text
-                new_tag = soup.new_tag('i')
-                
-                # Build the text content
-                text_parts = [documents[components[0]]]
-                
-                # Add the last non-anchor component if it exists
-                if len(components) > 1:
-                    text_parts.append(unslug(components[-1]))
-                
-                new_tag.string = ': '.join(text_parts)
-                a_tag.replace_with(new_tag)
-                continue
-
-            # Internal link processing
-            matched = False
-            for article_id in article_ids:
-                if all(component in article_id for component in components):
-                    a_tag['href'] = f"#{article_id}"
-                    matched = True
-
-                    if rewrite_links:
-                        if 'class' in a_tag.attrs:
-                            a_tag['class'].append('internal-link')
-                        else:
-                            a_tag['class'] = ['internal-link']
-
-                        if in_table(a_tag):
-                            break
-
-                        if reference := section_map.get(article_id):
-                            if '.' in reference:
-                                a_tag.string = f'Section {reference}'
-                            else:
-                                a_tag.string = f'Chapter {reference}'
-                    break
-
-            if not matched:
-                # Try to fix a bad link: compare only the last component
-                for article_id in article_ids:
-                    if components[-1] in article_id:
-                        a_tag['href'] = f"#{article_id}"
-                        break
-                else:
-                    print(f'--> Can\'t match "{href}" to an article id')
+            if path.startswith('/'):
+                # Handle potential inter-document links
+                components = extract_components(path)
+                if components and components[0] in documents:
                     new_tag = soup.new_tag('i')
-                    new_tag.string = a_tag.get_text().replace('"', '')
+                    text_parts = [documents[components[0]]]
+                    if len(components) > 1:
+                        text_parts.append(unslug(components[-1]))
+                    new_tag.string = ': '.join(text_parts)
                     a_tag.replace_with(new_tag)
+                else:
+                    # For unresolvable absolute links, replace with italicized text
+                    new_tag = soup.new_tag('i')
+                    new_tag.string = a_text
+                    a_tag.replace_with(new_tag)
+                    print(f'--> Warning: absolute link "{href}" replaced with italicized text')
+            else:
+                # Internal link: resolve using source file path
+                parent_article = a_tag.find_parent('article')
+                if parent_article and 'id' in parent_article.attrs:
+                    source_id = parent_article['id']
+                    if source_id in id_to_path:
+                        source_path = id_to_path[source_id]
+                        source_dir = os.path.dirname(source_path)
+                        target_rel_path = os.path.normpath(os.path.join(source_dir, path)).replace('.htm', '.md').replace('.html', '.md')
+                        if target_rel_path in path_to_id:
+                            target_id = path_to_id[target_rel_path]
+                            if anchor:
+                                new_href = f"#{target_id}-{anchor}"
+                            else:
+                                new_href = f"#{target_id}-header"
+                            a_tag['href'] = new_href
+                            if rewrite_links:
+                                if 'class' in a_tag.attrs:
+                                    a_tag['class'].append('internal-link')
+                                else:
+                                    a_tag['class'] = ['internal-link']
+                                if not in_table(a_tag):
+                                    if reference := section_map.get(target_id):
+                                        if '.' in reference:
+                                            a_tag.string = f'Section {reference}'
+                                        else:
+                                            a_tag.string = f'Chapter {reference}'
+                        else:
+                            # Replace unresolvable link with italicized text
+                            new_tag = soup.new_tag('i')
+                            new_tag.string = a_text
+                            a_tag.replace_with(new_tag)
+                            print(f'--> Warning: target path "{target_rel_path}" not found; replaced with italicized text')
+                    else:
+                        # Replace link with italicized text if source ID not found
+                        new_tag = soup.new_tag('i')
+                        new_tag.string = a_text
+                        a_tag.replace_with(new_tag)
+                        print(f'--> Warning: source article ID "{source_id}" not found; replaced with italicized text')
+                else:
+                    # Replace link with italicized text if no parent article found
+                    new_tag = soup.new_tag('i')
+                    new_tag.string = a_text
+                    a_tag.replace_with(new_tag)
+                    print(f'--> Warning: no parent article found for link "{href}"; replaced with italicized text')
 
 def toc_friendly_headings(soup: BeautifulSoup) -> None:
     # Find all headings with class "heading"
@@ -876,7 +876,7 @@ def process_document(document_path):
 
     # Convert each Markdown file to HTML, and concatenate to a single string
     source = f'{args.project_dir}/{document_path}.htm'
-    section_map, html_content = convert_to_html(
+    section_map, html_content, path_to_id = convert_to_html(  # Receive path_to_id
         md_files,
         prefix=os.path.join(os.path.dirname(doc_mkdocs_file), 'docs'),
         title=yml_data['site_name'],
@@ -906,7 +906,9 @@ def process_document(document_path):
         soup.body.insert(0, title_page)
 
         # Add copyright page
-        copyright_html = format_copyright(f"{doc_metadata.get('title')} {doc_metadata.get('subtitle', '')}", top_mkdocs_data["extra"].get("version_majmin", ""), f"{build_date} {git_info}")
+        copyright_html = format_copyright(f"{doc_metadata.get('title')} {doc_metadata.get('subtitle', '')}", 
+                                         top_mkdocs_data["extra"].get("version_majmin", ""), 
+                                         f"{build_date} {git_info}")
         copyright_soup = BeautifulSoup(copyright_html, 'html.parser')
 
         # Create a section for the copyright page
@@ -919,7 +921,7 @@ def process_document(document_path):
         title_page.insert_after(copyright_section)
 
     table_refs = caption_tables(soup)
-    normalise_links(soup, documents, table_refs, section_map, rewrite_links=args.link_rewrite)
+    normalise_links(soup, documents, table_refs, section_map, path_to_id, rewrite_links=args.link_rewrite)  # Pass path_to_id
     toc_friendly_headings(soup)
 
     # Insert link to title page CSS
