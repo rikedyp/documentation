@@ -96,7 +96,7 @@ nav:
           - Grade Up Dyadic: primitive-functions/grade-up-dyadic.md
           - Greater: primitive-functions/greater.md
           - Greater Or Equal: primitive-functions/greater-or-equal.md
-          - Index: primitive-functions/indexing.md
+          - Index: primitive-functions/squad.md
           - Index with Axes: primitive-functions/index-with-axes.md
           - Index Generator: primitive-functions/index-generator.md
           - Index Of: primitive-functions/index-of.md

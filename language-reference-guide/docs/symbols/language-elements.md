@@ -93,7 +93,7 @@
     <tr>
         <td class="Dyalog"><a href="../left-shoe">⊂</a>
         </td>
-        <td class="Dyalog"><a href="../left shoe underbar">⊆</a>
+        <td class="Dyalog"><a href="../left-shoe-underbar">⊆</a>
         </td>
         <td class="Dyalog"><a href="../right-shoe">⊃</a>
         </td>
@@ -120,7 +120,7 @@
         </td>
         <td class="Dyalog"><a href="../iota">⍳</a>
         </td>
-        <td class="Dyalog"><a href="../iota underbar">⍸</a>
+        <td class="Dyalog"><a href="../iota-underbar">⍸</a>
         </td>
         <td class="Dyalog"><a href="../index-symbol">⌷</a>
         </td>
@@ -225,7 +225,7 @@
 - [Object Oriented Programming](../../../programming-reference-guide/object-oriented-programming/introducing-classes/introducing-classes)
 - [Control Structures](../../../programming-reference-guide/defined-functions-and-operators/traditional-functions-and-operators/control-structures/control-structures-summary)
 - [Triggers](../../../programming-reference-guide/triggers/triggers)
-- [System Functions](../system-functions/summary-tables/introduction)
-- [System Commands](../system-commands/introduction)
+- [System Functions](../../system-functions/introduction)
+- [System Commands](../../system-commands/introduction)
 - [Error Messages](../../../programming-reference-guide/error-messages/apl-errors)
 
