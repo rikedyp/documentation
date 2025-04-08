@@ -1,3 +1,20 @@
+"""
+Convert the object-reference pages to inline the leading cross references.
+
+By Stefan Kruger <stefan@dyalog.com>
+
+python fix_objref.py --dir object-reference 
+
+The results will end up as
+
+    object-reference-transformed
+
+which in turn should be pointed to by the config.json file used by
+
+    mkdocs2pdf.py
+
+"""
+
 import re
 import os
 import argparse
@@ -38,7 +55,7 @@ def transform_markdown(file_path):
         # Extract the Purpose section
         purpose_match = re.search(purpose_pattern, original_content, re.DOTALL)
         purpose_content = purpose_match.group(1).strip() if purpose_match else ""
-        purpose_section = f"**Purpose** {purpose_content}"
+        purpose_section = f"**Purpose:** {purpose_content}"
         
         # Extract the initial links section (all links between h1 and Purpose)
         links_section_pattern = re.compile(

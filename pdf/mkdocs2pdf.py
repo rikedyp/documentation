@@ -748,11 +748,11 @@ def normalise_links(soup: BeautifulSoup, documents: Dict[str, str], table_refs: 
                     new_tag.string = ': '.join(text_parts)
                     a_tag.replace_with(new_tag)
                 else:
-                    # For unresolvable absolute links, replace with italicized text
+                    # For unresolvable absolute links, replace with italics
                     new_tag = soup.new_tag('i')
                     new_tag.string = a_text
                     a_tag.replace_with(new_tag)
-                    print(f'--> Warning: absolute link "{href}" replaced with italicized text')
+                    print(f'--> Warning: can't resolve absolute link "{href}"')
             else:
                 # Internal link: resolve using source file path
                 parent_article = a_tag.find_parent('article')
@@ -781,23 +781,23 @@ def normalise_links(soup: BeautifulSoup, documents: Dict[str, str], table_refs: 
                                         else:
                                             a_tag.string = f'Chapter {reference}'
                         else:
-                            # Replace unresolvable link with italicized text
+                            # Replace unresolvable link with italics
                             new_tag = soup.new_tag('i')
                             new_tag.string = a_text
                             a_tag.replace_with(new_tag)
-                            print(f'--> Warning: target path "{target_rel_path}" not found; replaced with italicized text')
+                            print(f'--> Warning: target path "{target_rel_path}" not found')
                     else:
-                        # Replace link with italicized text if source ID not found
+                        # Replace link with italics if source ID not found
                         new_tag = soup.new_tag('i')
                         new_tag.string = a_text
                         a_tag.replace_with(new_tag)
-                        print(f'--> Warning: source article ID "{source_id}" not found; replaced with italicized text')
+                        print(f'--> Warning: source article ID "{source_id}" not found')
                 else:
-                    # Replace link with italicized text if no parent article found
+                    # Replace link with italics if no parent article found
                     new_tag = soup.new_tag('i')
                     new_tag.string = a_text
                     a_tag.replace_with(new_tag)
-                    print(f'--> Warning: no parent article found for link "{href}"; replaced with italicized text')
+                    print(f'--> Warning: no parent article found for link "{href}"')
 
 def toc_friendly_headings(soup: BeautifulSoup) -> None:
     # Find all headings with class "heading"
