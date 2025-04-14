@@ -16,8 +16,8 @@ As of April 2025 it is not possible by default to enter the Behind character as 
 Dyalog expects that future Linux distributions will have an updated mapping file, but until that time, and for existing versions of Linux distributions the methods available are:
 
 - Update the mapping file. See below for more details
-- Define the *Compose* key and enter *Behind* by pressing *Compose Jot Underscore* 
-- In APL, use *APL i* to swap into overstrike mode, and enter *Jot \<Cursor left\> Underscore* and use *APL i* to swap back to insert mode. 
+- Define the <kbd>Compose</kbd> key and enter *Behind* by pressing <kbd>Compose</kbd> <kbd>Jot</kbd> <kbd>Underscore</kbd>
+- In APL, use <IN\> to swap into overstrike mode, and enter <kbd>Jot</kbd> &larr; <kbd>Underscore</kbd> and use <IN\> to swap back to insert mode. 
 
 To update the mapping file, edit */usr/share/X11/xkb/symbols/apl*:
 
