@@ -11,9 +11,9 @@ Linux Window managers are in generally in a state of flux, so it is best to look
 
 ## Entering the Behind Character
 
-As of April 2025 it is not possible by default to enter the Behind character as a single key-chord under windows managers under Linux; the updated keyboard mapping file is not yet included in Linux distributions.
+It is currently not possible by default to enter the Behind character as a single key-chord under windows managers under Linux; the updated keyboard mapping file is not yet included in Linux distributions.
 
-Dyalog expects that future Linux distributions will have an updated mapping file, but until that time, and for existing versions of Linux distributions the methods available are:
+Dyalog anticipates that future Linux distributions will have an updated mapping file, but until that time, and for existing versions of Linux distributions the methods available are:
 
 - Update the mapping file. See below for more details
 - Define the <kbd>Compose</kbd> key and enter *Behind* by pressing <kbd>Compose</kbd> <kbd>Jot</kbd> <kbd>Underscore</kbd>
@@ -22,11 +22,11 @@ Dyalog expects that future Linux distributions will have an updated mapping file
 To update the mapping file, edit */usr/share/X11/xkb/symbols/apl*:
 
 - Search for the text **xkb_symbols "dyalog_base"**
-- Look for the line
-- *key <AC04> { [ underscore		] };	// low line*
+- Look for the line<br>
+*key <AC04\> { [ underscore		] };	// low line*
 
-- and replace with
-- *key <AC04> { [ underscore,	U235b	] };	// low line, jot underbar*
+- and replace with<br>
+ *key <AC04\> { [ underscore,	U235b	] };	// low line, jot underbar*
 
 Be aware that there are multiple occurrences of AB01 and TLDE; please ensure that you are editing the Dyalog APL section !
 
