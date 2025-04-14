@@ -26,9 +26,9 @@ To update the mapping file, edit */usr/share/X11/xkb/symbols/apl*:
 *key <AC04\> { [ underscore		] };	// low line*
 
 - and replace with<br>
- *key <AC04\> { [ underscore,	U235b	] };	// low line, jot underbar*
+*key <AC04\> { [ underscore,	U235b	] };	// low line, jot underbar*
 
-Be aware that there are multiple occurrences of AB01 and TLDE; please ensure that you are editing the Dyalog APL section !
+Be aware that there are multiple occurrences of AC04; please ensure that you are editing the Dyalog APL section !
 
 Logout and log back in again.
 
