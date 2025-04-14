@@ -9,7 +9,7 @@ Linux Window managers are in generally in a state of flux, so it is best to look
 
 [https://www.dyalog.com/forum/viewtopic.php?f=20&t=210](https://www.dyalog.com/forum/viewtopic.php?f=20&t=210)
 
-<h2 class="heading">Entering the Behind Character</h2>
+## Entering the Behind Character
 
 As of April 2025 it is not possible by default to enter the Behind character as a single key-chord under windows managers under Linux; the updated keyboard mapping file is not yet included in Linux distributions.
 
@@ -17,7 +17,7 @@ Dyalog expects that future Linux distributions will have an updated mapping file
 
 - Update the mapping file. See below for more details
 - Define the *Compose* key and enter *Behind* by pressing *Compose Jot Underscore* 
-- In APL, use *APL i* to swap into overstrike mode, and enter *Jot <Cursor left> Underscore* and use *APL i* to swap back to insert mode. 
+- In APL, use *APL i* to swap into overstrike mode, and enter *Jot \<Cursor left\> Underscore* and use *APL i* to swap back to insert mode. 
 
 To update the mapping file, edit */usr/share/X11/xkb/symbols/apl*:
 
