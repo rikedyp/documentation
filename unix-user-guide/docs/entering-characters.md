@@ -17,7 +17,8 @@ Dyalog anticipates that future Linux distributions will have an updated mapping 
 
 - Update the mapping file. See below for more details
 - Define the Operating System's [<kbd>Compose</kbd>](https://en.wikipedia.org/wiki/Compose_key) key and enter *Behind* by pressing <kbd>Compose</kbd> <kbd>Jot</kbd> <kbd>Underscore</kbd>
-- In APL, use <IN\> to swap into overstrike mode, and enter <kbd>Jot</kbd> <kbd>&larr;</kbd>  <kbd>Underscore</kbd> and use <IN\> to swap back to insert mode.
+- In the Session, use the *Insert* command **<IN\>** to change to overstrike mode, enter <kbd>Jot</kbd> <kbd>&larr;</kbd>  <kbd>Underscore</kbd> and enter **<IN\>** again to return to insert mode.
+
 
 To update the mapping file, edit */usr/share/X11/xkb/symbols/apl*:
 
