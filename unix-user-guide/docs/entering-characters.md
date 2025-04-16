@@ -11,27 +11,30 @@ Linux Window managers are in generally in a state of flux, so it is best to look
 
 ## Recently-added Glyphs
 
-It is currently not possible by default to enter the Behind character as a single key-chord under windows managers under Linux; the updated keyboard mapping file is not yet included in Linux distributions.
+Newly-added glyphs are not always added to the Linux keymap (keyboard mapping file) before they start to be used within Dyalog. 
 
-Dyalog anticipates that future Linux distributions will have an updated mapping file, but until that time, and for existing versions of Linux distributions the methods available are:
+The following glyphs are not yet present in the Linux keymap:
 
-- Update the mapping file. See below for more details
-- Define the Operating System's [<kbd>Compose</kbd>](https://en.wikipedia.org/wiki/Compose_key) key and enter *Behind* by pressing <kbd>Compose</kbd> <kbd>Jot</kbd> <kbd>Underscore</kbd>
-- In the Session, use the *Insert* command **<IN\>** to change to overstrike mode, enter <kbd>Jot</kbd> <kbd>&larr;</kbd>  <kbd>Underscore</kbd> and enter **<IN\>** again to return to insert mode.
-- In Ride, from version 4.6, use the Prefix key and <kbd>F</kbd>
+- `⍛` (Jot Underbar, Unicode character "APL FUNCTIONAL SYMBOL Jot Underbar"). Used from Dyalog v20.0 for the _behind_ operator.
 
+In this situation, there are several methods in which such glyphs can be typed. For `⍛`, you can do any of the following:
 
-To update the mapping file, edit */usr/share/X11/xkb/symbols/apl*:
+- update the keyboard mapping file manually (see below).
+- define a [<kbd>Compose</kbd>](https://en.wikipedia.org/wiki/Compose_key) key and enter `⍛` by pressing <kbd>Compose</kbd> <kbd>Jot</kbd> <kbd>Underscore</kbd>
+- within the Session, use the _Insert_ command **<IN\>** to change to overstrike mode, enter <kbd>Jot</kbd> <kbd>&larr;</kbd> <kbd>Underscore</kbd>, and enter **<IN\>** again to return to insert mode.
+- In Ride, use the Prefix key and <kbd>F</kbd>.
 
-- Search for the text **xkb_symbols "dyalog_base"**
-- Look for the line<br>
-*key <AC04\> { [ underscore		] };	// low line*
+---
+**To update the keyboard mapping file**
 
-- and replace with<br>
-*key <AC04\> { [ underscore,	U235b	] };	// low line, jot underbar*
+1. open the keyboard mapping file. By default, this is located in */usr/share/X11/xkb/symbols/apl*
+2. Search for the text **xkb_symbols "dyalog_base"**
+3. Replace<br>*key <AC04\> { [ underscore		] };	// low line*<br/>with:<br/>*key <AC04\> { [ underscore,	U235b	] };	// low line, jot underbar*
+4. Log out and back in again.
+---
+Be aware that:
 
-Be aware that there are multiple occurrences of AC04; please ensure that you are editing the Dyalog APL section !
+- there are multiple occurrences of AC04 within the keyboard mapping file – you should only amend the one in the Dyalog APL section.
+- any changes made to the keyboard mapping file might be lost if you update the operating system.
 
-Logout and log back in again.
-
-Be aware that these changes may be lost if you update the operating system.
+ 
