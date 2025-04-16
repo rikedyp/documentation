@@ -22,7 +22,7 @@ In this situation, there are several methods in which such glyphs can be typed. 
 - update the keyboard mapping file manually (see below).
 - define a [<kbd>Compose</kbd>](https://en.wikipedia.org/wiki/Compose_key) key and enter `⍛` by pressing <kbd>Compose</kbd> <kbd>Jot</kbd> <kbd>Underscore</kbd>
 - within the Session, use the _Insert_ command **<IN\>** to change to overstrike mode, enter <kbd>Jot</kbd> <kbd>&larr;</kbd> <kbd>Underscore</kbd>, and enter **<IN\>** again to return to insert mode.
-- In Ride, use the Prefix key and <kbd>F</kbd>.
+- In Ride, use the Prefix key and <kbd>F</kbd>
 
 ---
 **To update the keyboard mapping file**
