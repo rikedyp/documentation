@@ -11,9 +11,9 @@ Linux Window managers are in generally in a state of flux, so it is best to look
 
 ## Recently-added Glyphs
 
-Newly-added glyphs are not always added to the Linux keymap (keyboard mapping file) before they start to be used within Dyalog. 
+Newly-added glyphs are not always added to the keymap (keyboard mapping file) included in Linux distributions before they start to be used within Dyalog.
 
-The following glyphs are not yet present in the Linux keymap:
+The following glyphs are not yet present in the distributed Linux keymap:
 
 - `⍛` (Jot Underbar, Unicode character "APL FUNCTIONAL SYMBOL JOT UNDERBAR"). Used from Dyalog v20.0 for the [_behind_](../../language-reference-guide/docs/primitive-operators/behind.md) operator.
 
