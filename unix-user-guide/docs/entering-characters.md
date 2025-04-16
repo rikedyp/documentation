@@ -19,15 +19,15 @@ The following glyphs are not yet present in the distributed Linux keymap:
 
 In this situation, there are several methods in which such glyphs can be typed. For `⍛`, you can do any of the following:
 
-- update the keyboard mapping file manually (see below).
-- define a [<kbd>Compose</kbd>](https://en.wikipedia.org/wiki/Compose_key) key and enter `⍛` by pressing <kbd>Compose</kbd> <kbd>Jot</kbd> <kbd>Underscore</kbd>
-- within the Session, use the _Insert_ command **<IN\>** to change to overstrike mode, enter <kbd>Jot</kbd> <kbd>&larr;</kbd> <kbd>Underscore</kbd>, and enter **<IN\>** again to return to insert mode.
+- Update the keyboard mapping file manually (see below).
+- Define a [<kbd>Compose</kbd>](https://en.wikipedia.org/wiki/Compose_key) key and enter `⍛` by pressing <kbd>Compose</kbd> <kbd>Jot</kbd> <kbd>Underscore</kbd>
+- Within the Session, use the _Insert_ command **<IN\>** to change to overstrike mode, enter <kbd>Jot</kbd> <kbd>&larr;</kbd> <kbd>Underscore</kbd>, and enter **<IN\>** again to return to insert mode.
 - In Ride, use the Prefix key and <kbd>F</kbd>
 
 ---
 **To update the keyboard mapping file**
 
-1. open the keyboard mapping file. By default, this is located in */usr/share/X11/xkb/symbols/apl*
+1. Open the keyboard mapping file. By default, this is located in */usr/share/X11/xkb/symbols/apl*
 2. Search for the text **xkb_symbols "dyalog_base"**
 3. Replace<br>*key <AC04\> { [ underscore		] };	// low line*<br/>with:<br/>*key <AC04\> { [ underscore,	U235b	] };	// low line, jot underbar*
 4. Log out and back in again.
