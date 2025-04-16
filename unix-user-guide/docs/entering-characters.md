@@ -9,7 +9,7 @@ Linux Window managers are in generally in a state of flux, so it is best to look
 
 [https://www.dyalog.com/forum/viewtopic.php?f=20&t=210](https://www.dyalog.com/forum/viewtopic.php?f=20&t=210)
 
-## Entering the Behind Character
+## Recently-added Glyphs
 
 It is currently not possible by default to enter the Behind character as a single key-chord under windows managers under Linux; the updated keyboard mapping file is not yet included in Linux distributions.
 
