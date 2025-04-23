@@ -71,7 +71,7 @@ nav:
   - Object Reference: "!include ./object-reference/mkdocs.yml"
   - Windows UI Guide: "!include ./windows-ui-guide/mkdocs.yml"
   - Interface Guide: "!include ./interface-guide/mkdocs.yml"
-  - .NET Interface: "!include ./dotnet-interface/mkdocs.yml"
+  - .NET Framework Interface: "!include ./dotnet-framework-interface/mkdocs.yml"
   - UNIX User Guide: "!include ./unix-user-guide/mkdocs.yml"
   - Licences for third-party components: licences-overview.md
   - Trademarks: trademarks.md
