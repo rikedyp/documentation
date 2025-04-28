@@ -25,5 +25,3 @@ The [ShowDropDown](../properties/showdropdown.md) property is Boolean (default 1
 When the user clicks a ColorButton with the left mouse button, the object generates a [DropDown](../methodorevents/dropdown.md) event just before it displays the colour selection drop-down. This event may be used to set the [DefaultColors](../properties/defaultcolors.md) and/or [CustomColors](../properties/customcolors.md) properties dynamically.
 
 When the user selects a new colour, the ColorButton generates a [ColorChange](../methodorevents/colorchange.md) event.
-
-Note that Pocket PC 2002 colour selection dialog box does not provide the facility to select *custom colours*, so this functionality is not available in PocketAPL.
