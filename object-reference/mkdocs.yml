@@ -918,7 +918,6 @@ nav:
       - EndEditLabel Event: methodorevents/endeditlabel.md
       - EndSplit Event: methodorevents/endsplit.md
       - EnterReadOnlyCells Property: properties/enterreadonlycells.md
-      - EvaluationDays Property: properties/evaluationdays.md
       - Event Property: properties/event.md
       - EventList Property: properties/eventlist.md
       - ExecuteJavaScript Method: methodorevents/executejavascript.md
