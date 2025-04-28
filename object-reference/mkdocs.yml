@@ -233,7 +233,6 @@ nav:
       - Encoding Property: properties/encoding.md
       - End Property: properties/end.md
       - EnterReadOnlyCells Property: properties/enterreadonlycells.md
-      - EvaluationDays Property: properties/evaluationdays.md
       - Event Property: properties/event.md
       - EventList Property: properties/eventlist.md
       - ExportedFns Property: properties/exportedfns.md
@@ -338,7 +337,6 @@ nav:
       - MultiSelect Property: properties/multiselect.md
       - NewLine Property: properties/newline.md
       - Note Property: properties/note.md
-      - OKButton Property: properties/okbutton.md
       - OLEControls Property: properties/olecontrols.md
       - OLEServers Property: properties/oleservers.md
       - OnTop Property: properties/ontop.md
@@ -399,8 +397,6 @@ nav:
       - RowTreeStyle Property: properties/rowtreestyle.md
       - Rows Property: properties/rows.md
       - RunMode Property: properties/runmode.md
-      - SIPMode Property: properties/sipmode.md
-      - SIPResize Property: properties/sipresize.md
       - ScrollOpposite Property: properties/scrollopposite.md
       - SelDate Property: properties/seldate.md
       - SelImageIndex Property: properties/selimageindex.md
@@ -719,7 +715,6 @@ nav:
       - ShowHelp Method: methodorevents/showhelp.md
       - ShowItem Method: methodorevents/showitem.md
       - ShowProperties Method: methodorevents/showproperties.md
-      - ShowSIP Method: methodorevents/showsip.md
       - TCPGetHostID Method: methodorevents/tcpgethostid.md
       - TCPSend Method: methodorevents/tcpsend.md
       - TCPSendPicture Method: methodorevents/tcpsendpicture.md
@@ -1283,11 +1278,8 @@ nav:
       - ShowItem Method: methodorevents/showitem.md
       - ShowProperties Method: methodorevents/showproperties.md
       - ShowSession Property: properties/showsession.md
-      - ShowSIP Method: methodorevents/showsip.md
       - ShowThumb Property: properties/showthumb.md
       - SingleClickExpand Property: properties/singleclickexpand.md
-      - SIPMode Property: properties/sipmode.md
-      - SIPResize Property: properties/sipresize.md
       - Size Property: properties/size.md
       - Sizeable Property: properties/sizeable.md
       - SM Object: objects/sm.md
