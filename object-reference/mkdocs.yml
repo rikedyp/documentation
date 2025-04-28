@@ -1135,7 +1135,6 @@ nav:
       - NewPage Method: methodorevents/newpage.md
       - Note Property: properties/note.md
       - OCXClass Object: objects/ocxclass.md
-      - OKButton Property: properties/okbutton.md
       - OLEAddEventSink Method: methodorevents/oleaddeventsink.md
       - OLEClient Object: objects/oleclient.md
       - OLEControls Property: properties/olecontrols.md
