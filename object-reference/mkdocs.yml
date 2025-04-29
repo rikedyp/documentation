@@ -918,7 +918,6 @@ nav:
       - EndEditLabel Event: methodorevents/endeditlabel.md
       - EndSplit Event: methodorevents/endsplit.md
       - EnterReadOnlyCells Property: properties/enterreadonlycells.md
-      - EvaluationDays Property: properties/evaluationdays.md
       - Event Property: properties/event.md
       - EventList Property: properties/eventlist.md
       - ExecuteJavaScript Method: methodorevents/executejavascript.md
@@ -1136,7 +1135,6 @@ nav:
       - NewPage Method: methodorevents/newpage.md
       - Note Property: properties/note.md
       - OCXClass Object: objects/ocxclass.md
-      - OKButton Property: properties/okbutton.md
       - OLEAddEventSink Method: methodorevents/oleaddeventsink.md
       - OLEClient Object: objects/oleclient.md
       - OLEControls Property: properties/olecontrols.md
