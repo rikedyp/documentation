@@ -1,11 +1,32 @@
 <h1 class="heading"><span class="name">Native Files</span></h1>
 
-## Overview
+## Introduction
 
-A **native file** is a data file without any specific structure. Dyalog provides a set of functions which can be used to process the raw data within a native file. 
+Dyalog includes a wide selection of functions that allow reading and writing of files that contain text or binary data, and manipulation of the host filesystem such as deleting files or creating directories.
 
-!!! note
-	This overview section is too short.
+The characteristics of host filesystems vary across different platforms and even across devices on the same platform. Different host operating systems provide access to their filesystems in largely incompatible ways. Nevertheless, the native file functions within Dyalog work in broadly the same way across all platforms, which makes it relatively straightforward to create applications which are portable across all Dyalog environments.
+
+## Text files
+
+Characters within a text file may be encoded in one of a number of different ways, and different host environments tend to have different preferences. Although UTF-8 is increasingly becoming the _de facto_ encoding standard, other encoding formats exist (particularly in legacy environments) and there are still multiple conventions for representing line endings.
+
+Dyalog includes two powerful functions – `⎕NGET` and `⎕NPUT` – which read and write text files to or from character arrays in the workspace. The encoding and line-ending types can be explicitly specified but by default `⎕NGET` will try to deduce the encoding automatically and `⎕NPUT` will use defaults appropriate for the host environment.
+
+The search and replace functions `⎕S` and `⎕R` can also be used to read and write text files, filtering and modifying the content as they do so.
+
+The simplest text files contain just plain text – variable length lines of text with no formatting such as italics etc. However, formatting or data encoding can be included within a text file using formats such markup (e.g. HTML and XML), character separated values (CSV) or JavaScript Object Notation (JSON). Dyalog includes the functions `⎕XML`, `⎕CSV` and `⎕JSON` to decode or encode such file content.
+
+## Binary data files
+
+Binary data files contain data in application-specific format, and are rarely read or written by anything other than the application which creates them and understands their format. Dyalog provides a number of functions which allow a Dyalog application to manage its own binary data files or binary data files from any source, by allowing them to be read or written as sequences of bytes or words. Regions of binary files can also be locked to coordinate shared access to the files.
+
+Files are tied (opened) using `⎕NTIE` or created using `⎕NCREATE`. Both of these functions return a numeric tie number by which the file is subsequently identified when read (`⎕NREAD`), written (`⎕NAPPEND`, `⎕NREPLACE`), renamed (`⎕NRENAME`) locked or unlocked (`⎕NLOCK`) or (re)sized  (`⎕NSIZE`, `⎕NRESIZE`). When a file tie is no longer needed it can be untied (closed) using `⎕NUNTIE` or closed and the file deleted using `⎕NERASE`. `⎕NNUMS` and `⎕NNAMES` report the numbers and names respectively of all currently tied files.
+
+## Filesystem manipulation
+
+In addition to reading and writing files, an application may typically want to manipulate the filesystem in various ways. A diverse set of functions exist to do this: `⎕MKDIR` creates directories, `⎕NDELETE` deletes files and/or directories and their contents, `⎕NMOVE` and `⎕NCOPY` move and copy files and/or directories and their contents. `⎕NINFO` queries and sets properties such as size or modification date on files and directories, and can also query the contents of directories. `⎕NEXISTS` will report whether or not a name exists within the file system.
+
+Additionally, `739⌶` can be used to obtain the name of the directory used by the host filesystem for temporary files (generally emptied at startup).
 
 ## Progress Callbacks
 
