@@ -1,6 +1,6 @@
 <h1 class="heading"><span class="name">Scan For Deprecated Files</span> <span class="command">R←{X}(3535⌶)Y</span></h1>
 
-Scans a directory (and, optionally, subdirectories) for deprecated component files and external variables. For an overview of deprecated features see [Deprecated features](../../../../programming-reference-guide/deprecated-features) within the Programming Reference Guide.
+Scans a directory (and, optionally, subdirectories) for deprecated saved workspaces, component files and external variables. For an overview of deprecated features see [Deprecated features](../../../../programming-reference-guide/deprecated-features) within the Programming Reference Guide.
 
 `Y` is the name of the directory to scan.
 
@@ -13,6 +13,7 @@ The files in `Y`, and optionally subdirectories of `Y`, are examined and only th
 | Label | Meaning |
 |-------|---------|
 | J0C0  | File is a component file with both the Journalling (J) and Checksumming (C) properties set to 0.
+| OLDWS | File is a workspace saved by Dyalog v12.0 or earlier.
 | S32   | File is a small span component file.
 | ⎕XT   | File is an external variable file.
 | ?     | File could not be read and its content is unknown.
@@ -24,6 +25,7 @@ The rows in `R` are not sorted.
 ```apl
       1(3535⌶)'.'
  ./J0C0.dcf             J0C0
+ ./ws2000.dws           OLDWS
  ./XT.dxv               ⎕XT
  ./subdir/S32J0C0.dcf   J0C0  S32
 ```
