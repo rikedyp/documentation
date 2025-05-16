@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕CLASS CLASS
+</div>
+
 
 
 

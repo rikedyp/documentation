@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕C
+</div>
+
 <h1 class="heading"><span class="name">Case Convert</span> <span class="command">R←{X}⎕C Y</span></h1>
 
 `Y` is any array. `R` is an identical array except that character arrays within it are either folded for case-less comparison, or mapped to upper or lower case.

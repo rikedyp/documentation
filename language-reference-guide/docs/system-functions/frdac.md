@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕FRDAC FRDAC
+</div>
+
 <h1 class="heading"><span class="name">File Read Access</span> <span class="command">R←⎕FRDAC Y</span></h1>
 
 ## Access code 4096

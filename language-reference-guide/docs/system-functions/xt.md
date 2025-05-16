@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕XT XT
+</div>
+
 ---
 search:
   exclude: true

@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕NPUT NPUT
+</div>
+
 <h1 class="heading"><span class="name">Write Text File</span> <span class="command">{R}←X ⎕NPUT Y</span></h1>
 
 This function writes character data to a text file. See also [Read Text File](nget.md).
