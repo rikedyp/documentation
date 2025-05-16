@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 <h1 class="heading"><span class="name">Numbered Properties</span></h1>
 
 A Numbered Property behaves like an array (conceptually a vector) which is only ever *partially* accessed and set (one
