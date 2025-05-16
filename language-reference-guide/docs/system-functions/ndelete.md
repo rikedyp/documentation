@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕NDELETE NDELETE
+</div>
+
 <h1 class="heading"><span class="name">Native File Delete</span> <span class="command">{R}←{X}⎕NDELETE Y</span></h1>
 
 This function deletes files and directories.

@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕SR SR
+</div>
+
 
 <h1 class="heading"><span class="name">Screen Read</span> <span class="command">R←{X}⎕SR Y</span></h1>
 

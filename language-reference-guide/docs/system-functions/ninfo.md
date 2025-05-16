@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕NINFO NINFO
+</div>
+
 <h1 class="heading"><span class="name">Native File Information</span> <span class="command">R←{X}⎕NINFO Y</span></h1>
 
 This function queries or sets information about one or more files or directories. `Y` may be:

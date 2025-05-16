@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕R
+</div>
+
 <h1 class="heading"><span class="name">Replace</span> <span class="command">R←{X}(A ⎕R B) Y</span></h1>
 
 `⎕R` (Replace) and `⎕S` (Search) are system operators which take search pattern(s) as their left arguments and transformation rule(s) as their right arguments; the derived function operates on text data to perform either a **search**, or a search and **replace** operation.

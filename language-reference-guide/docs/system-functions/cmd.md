@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕CMD CMD
+</div>
+
 ---
 search:
   exclude: true

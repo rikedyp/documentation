@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕NMOVE NMOVE
+</div>
+
 <h1 class="heading"><span class="name">Native File Move</span> <span class="command">{R}←X ⎕NMOVE Y</span></h1>
 
 This function moves native files and directories from one or more sources specified by `Y` to a destination specified by  `X`. `⎕NMOVE` is similar to `⎕NCOPY` (see [Native File Copy ](ncopy.md)).

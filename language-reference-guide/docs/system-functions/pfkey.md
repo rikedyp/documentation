@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕PFKEY PFKEY
+</div>
+
 
 
 
