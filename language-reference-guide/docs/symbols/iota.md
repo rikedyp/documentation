@@ -1,4 +1,7 @@
-
+---
+search:
+  exclude: true
+---
 
 
 
@@ -44,5 +47,3 @@
 
 
 [Language Elements](./language-elements.md)
-
-

@@ -54,4 +54,6 @@ Now add a reference to the new file in the `toc.json` file. This defines the ord
     },
 ```
 
-To generate the header file, run `python make-language-bar.py` in this folder. It should generate a file `elements.h`.
+## Deploy
+
+To generate the header file, run `python make-language-bar.py` in this folder. It should generate a file `elements.h`. This needs to be commited to the documentation svn repository, from where Jenkins will pick it up.
