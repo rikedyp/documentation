@@ -53,7 +53,6 @@ If `X` is not defined, it is assumed to be `0`.
 |`6`|Whether the file or directory is hidden (1) or not (0), as a numeric scalar. On Windows, file properties include a "hidden" attribute; on non-Windows platforms a file or directory is implicitly considered to be hidden if its name begins with a "."|`¯1`|Windows only|
 |`7`|Target of symbolic link (when Type is 4)|`''`|No|
 |`8`|Current position in the file. This identifies where `⎕NREAD` would next read from or `⎕NAPPEND` would next write to, and is only pertinent when the corresponding value in `Y` is a tie number. It is reported as `0` for named files and directories.|`0`|Yes|
-
 |`9`|Last access time  in `⎕TS` format, when available|`7⍴0`|No|
 |`10`|Creation time if available, otherwise the time of the last file status change in `⎕TS` format|`7⍴0`|No|
 |`11`|Whether the file or directory can (1) or cannot (0) be read ( `¯1` if unknown)|`¯1`|No|
