@@ -48,9 +48,10 @@ markdown_extensions:
       title: On this page
 nav:
   - About This Document: index.md
-  - System Requirements:
-    - System Requirements: system-requirements/index.md   
-    - Interoperability: interoperability.md
-  - Announcements: announcements.md
+  - System Requirements: system-requirements.md 
+  - Announcements:
+    - Announcements: announcements/index.md   
+    - Deprecated Functionality: deprecated-functionality.md
   - New and Enhanced Features: new-enhanced.md
   - Minor Updates and Bug Fixes: minor-updates.md
+  - Interoperability: interoperability.md

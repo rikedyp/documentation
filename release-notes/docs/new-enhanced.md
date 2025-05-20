@@ -7,6 +7,23 @@ This page describes the changes and new features in Dyalog v20.0 compared with D
 
 ## Language Changes
 
+### System Functions
+
+xxx
+
+#### New System Functions
+
+xxx
+
+#### Enhanced System Functions
+
+The following system functions have been enhanced:
+
+- [`⎕MKDIR`](xxxLINKxxx)  
+A new variant option, **Unique**, has been added. This specifies whether the base name in the right argument is modified so that the name is unique.
+- [`⎕NINFO`](xxxLINKxxx)  
+xxx00338
+
 ### I-beams
 
 !!! Warning "Warning"  
@@ -16,35 +33,28 @@ This page describes the changes and new features in Dyalog v20.0 compared with D
 
 The following I-beams have been added:
 
-- `13⌶` – Deprecated Features  
-Records information in the log file set by 109⌶ about the specified deprecated feature names or keywords  
-For more information, see xxxLINKxxx.
-- `43⌶` – Monadic Operator Generator  
-Generates a monadic operator with specified functionality. The functionality is currently limited to creating a .NET-specific operator that can create concrete versions of generic classes and execute generic methods.  
-For more information, see xxxLINKxxx.
-- `109⌶` – Log File for Deprecations  
-Manages the file used to log the use of deprecated features.  
-For more information, see xxxLINKxxx.
-- `120⌶` – Generate UUID  
-Generates a UUID (Universally Unique IDentifier) according to the RFC 9562 specification.  
-For more information, see xxxLINKxxx.
-- `3535⌶` – Scan For Deprecated Files  
-Scans the specified directory (and, optionally, sub-directories) for deprecated saved workspaces, component files, and external variables.  
-For more information, see xxxLINKxxx.
-- `5581⌶` – Unicode Normal Forms  
+- [`13⌶`](xxxLINKxxx) – Deprecated Features  
+Records information in the log file set by `109⌶` about the specified deprecated feature names or keywords
+- [`43⌶`](xxxLINKxxx) – Monadic Operator Generator  
+Generates a monadic operator with specified functionality. The functionality is currently limited to creating a .NET-specific operator that can create concrete versions of generic classes and execute generic methods.
+- [`109⌶`](xxxLINKxxx) – Log File for Deprecations  
+Manages the file used to log the use of deprecated features.
+- [`120⌶`](xxxLINKxxx) – Generate UUID  
+Generates a UUID (Universally Unique IDentifier) according to the RFC 9562 specification.
+- [`3535⌶`](xxxLINKxxx) – Scan For Deprecated Files  
+Scans the specified directory (and, optionally, sub-directories) for deprecated saved workspaces, component files, and external variables.
+- [`5581⌶`](xxxLINKxxx) – Unicode Normal Forms  
 Applies the specified Unicode normalisation form to given character data.
-This is a temporary I-beam – it is expected that it will be superseded by a system function in Dyalog v21.0.  
-For more information, see xxxLINKxxx.
-- `8373⌶` – Shell Process Control  
-Provides a way to determine the process IDs of processes started by `⎕SHELL`, as well as enabling the sending of signals to any of those processes.  
-For more information, see xxxLINKxxx.
+This is a temporary I-beam – it is expected that it will be superseded by a system function in Dyalog v21.0.
+- [`8373⌶`](xxxLINKxxx) – Shell Process Control  
+Provides a way to determine the process IDs of processes started by `⎕SHELL`, as well as enabling the sending of signals to any of those processes.
 
 #### Removed I-beams
 
 The following I-beams have been removed:
 
 - `819⌶` – Case Convert (introduced in Dyalog v15.0)  
-The functionality provided by this I-beam is available through the `⎕C` system function. For more information, see xxxLINKxxx.
+The functionality provided by this I-beam is available through the [`⎕C`](xxxLINKxxx) system function.
 - `8468⌶` – Hash Table Size (introduced in Dyalog v19.0)  
 Temporary functionality used for identification of potential side-effects of a change that has now been implemented. No longer relevant.
 - `8469⌶` – Lookup Table Size (introduced in Dyalog v19.0)  
