@@ -5,17 +5,13 @@
 
 xxx
 
-## Dyalog for macOS
+## Performance Issues with Namespaces
 
-Dyalog v19.0 was the last release to be compiled for Intel-based Macs; Dyalog v20.0 is only supported on ARM-based Macs.
+A namespace performance issue was identified in Dyalog v19.0 that was especially noticable with JSON imports. This has now been resovled, and the suggested workaround of assigning a name to the top-level namespace is no longer required.
 
 ## Hash and Lookup Tables
 
 The performance of the set functions has been improved by increasing the amount of workspace allocated to the internal tables used by these functions.
-
-## Syncfusion
-
-The Syncfusion library of WPF controls is no longer included with Dyalog. The Syncfusion licence provided with Dyalog v19.0 will continue to be valid for use with Dyalog v19.0, but from Dyalog v20.0 onwards anyone who is using Syncfusion will need to obtain a licence from [https://www.syncfusion.com/](https://www.syncfusion.com/).
 
 ## Legacy Workspaces
 
@@ -25,6 +21,14 @@ To resave your Dyalog v11.0 or Dyalog v12.0 workspaces in a later version, you c
 
 !!! Info "Information"  
     Performing an `)XLOAD` will refix all functions in the workspace. This could reveal invalid system names.
+
+## Dyalog for macOS
+
+Dyalog v19.0 was the last release to be compiled for Intel-based Macs; Dyalog v20.0 is only supported on ARM-based Macs.
+
+## Syncfusion
+
+The Syncfusion library of WPF controls is no longer included with Dyalog. The Syncfusion licence provided with Dyalog v19.0 will continue to be valid for use with Dyalog v19.0, but from Dyalog v20.0 onwards anyone who is using Syncfusion will need to obtain a licence from [https://www.syncfusion.com/](https://www.syncfusion.com/).
 
 ## Array Editor
 

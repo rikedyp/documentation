@@ -16,16 +16,16 @@ Dyalog v20.0 is supported on the following platforms/operating systems:
     * AIX 7.2 SP2 TL2 onwards with a POWER9 chip or higher
 * Linux:
     * x86_64: Built on Ubuntu 20.04
-    * ARM: Built on Debian GNU/Linux 12
+    * ARM64: Built on Debian GNU/Linux 12
 * macOS:
-    * Apple M1 (ARM-based): macOS 13.4.1 (Ventura) onwards
+    * Apple M1 or later (ARM-based only): macOS 13.4.1 (Ventura) onwards
 * Microsoft Windows:
     * Windows 10 onwards (Windows Server 2016 onwards)
 * Raspberry Pi (ARM-based): 
     * 32-bit: Raspberry Pi OS Buster or later  
     NOTE: Does not run on a 64-bit operating system
     * 64-bit: Raspberry Pi OS Bookworm or later  
-    NOTE: Installed using the Linux package
+    NOTE: Installed using the Linux ARM64 package
     * Not supported on Raspberry Pi Pico
 ## External .NET Requirements
 ### .NET Interface

@@ -9,20 +9,34 @@ This page describes the changes and new features in Dyalog v20.0 compared with D
 
 ### System Functions
 
-xxx
-
 #### New System Functions
 
-xxx
+The following system functions have been added:
+
+- [`⎕SHELL`](xxxLINKxxx)  
+This extends [`⎕SH`](xxxLINKxxx)/[`⎕CMD`](xxxLINKxxx). It executes an external program, either directly or using the operating system's shell.
 
 #### Enhanced System Functions
 
 The following system functions have been enhanced:
 
+- [`⎕DT`](xxxLINKxxx)  
+Additional conversion types have been added:
+    - 15 – Go UnixMicro
+	- 16 – Go UnixNano
+	- 17 – APL+Win and APL64 workspace timestamp
+	- 21 – Apollo NCS UUID
+	- 22 – OSF DCE UUID
+	- 70  – AmigaOS
+- [`⎕FSTIE`](xxxLINKxxx)  
+A new variant option, **Mode**, has been added. This specifies the intended purpose of the tie, and can affect when/how errors are generated.
+- [`⎕FTIE`](xxxLINKxxx)  
+A new variant option, **Mode**, has been added. This specifies the intended purpose of the tie, and can affect when/how errors are generated.
 - [`⎕MKDIR`](xxxLINKxxx)  
 A new variant option, **Unique**, has been added. This specifies whether the base name in the right argument is modified so that the name is unique.
 - [`⎕NINFO`](xxxLINKxxx)  
-xxx00338
+    - Several of the properties can now be set by extending the appropriate element in the left argument from a `propertyNumber` to a `(propertyNumber newValue)` pair.
+    - A new variant option, **ProgressCallBack**, has been added. This causes `⎕NINFO` to invoke an APL callback function as the file operation proceeds.
 
 ### I-beams
 
