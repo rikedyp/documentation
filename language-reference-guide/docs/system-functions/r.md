@@ -236,13 +236,13 @@ Note that `¯1` is only used as a "filler" when there are higher-numbered subpat
 
 The second match is the B in the second subpattern. Offsets is `1 ¯1 1` and Lengths is `1 ¯1 1`: the entire pattern matched from offset 1 length 1 and the second subpattern also matched from offset 1 length 1. The first subpattern did not feature in the match and this is indicated by the `¯1`s. There has to be something between the offset/length for the entire pattern and the second subpattern.
 
-## Options
+# Options
 
 Options are specified using the Variant operator. The Principal option is IC.
 
 Default values are highlighted thus.
 
-## IC Option
+### IC Option
 
 When set, case is ignored in searches.
 
@@ -258,7 +258,7 @@ XBCDX XbcdX
 XBCDX XbcdX
 ```
 
-## Mode Option
+### Mode Option
 
 Specifies whether the input document is interpreted in **line** mode, **document** mode or **mixed** mode.
 
@@ -279,7 +279,7 @@ Specifies whether the input document is interpreted in **line** mode, **document
  ABC[Endline]  DEF[Endline]
 ```
 
-## DotAll Option
+### DotAll Option
 
 Specifies whether the dot ('.') character in search patterns matches line ending characters
 
@@ -297,7 +297,7 @@ This option is invalid in line mode, because line endings are stripped from the 
  XXXXXXXX
 ```
 
-## EOL Option
+### EOL Option
 
 Sets the line ending character which is implicitly present between character vectors, when the input document is a vector of character vectors.
 
@@ -321,7 +321,7 @@ In the Classic Edition, setting a value which is not in `⎕AVU` may result in a
 
 Here, the implied line ending between 'ABC' and 'DEF' is '\n', not the default '\r\n'.
 
-## NEOL Option
+### NEOL Option
 
 Specifies whether explicit line ending sequences in the input document are normalised by replacing them with the character specified using the EOL option.
 
@@ -338,7 +338,7 @@ Specifies whether explicit line ending sequences in the input document are norma
 
 '\n' has matched both explicit line ending characters in the input, even though they are different.
 
-## ML Option
+### ML Option
 
 Sets a limit to the number of processed pattern matches per line (line mode) or document (document mode and mixed mode).
 
@@ -358,7 +358,7 @@ Sets a limit to the number of processed pattern matches per line (line mode) or 
 
 ```
 
-## Greedy Option
+### Greedy Option
 
 Controls whether patterns are "greedy" (and match the maximum input possible) or are not (and match the minimum). Within the pattern itself it is possible to specify greediness for individual elements of the pattern; this option sets the default.
 
@@ -374,7 +374,7 @@ X
 X23 X56
 ```
 
-## OM Option
+### OM Option
 
 Specifies whether matches may overlap.
 
@@ -393,7 +393,7 @@ This option may only be used with `⎕S`. With `⎕R` searching always continues
 
 ```
 
-## InEnc Option
+### InEnc Option
 
 This option specifies the encoding of the input stream when it cannot be determined automatically. It is either:
 
@@ -416,7 +416,7 @@ When the stream is read from its start, and the start of the stream contains a r
 
 For compatibility with the OutEnc option, the above UTF formats may be qualified with -BOM (for example, UTF-8-BOM) or -NOBOM. For input streams, the qualified and unqualified options are equivalent.
 
-## OutEnc Option
+### OutEnc Option
 
 When the output is written to a stream, this option specifies how the data is to be encoded.  It is either:
 
@@ -438,11 +438,11 @@ When the output is written to a stream, this option specifies how the data is to
 
 The above UTF formats may be qualified with -BOM (for example, UTF-8-BOM) to specify that a Byte Order Mark should be written at the start of the stream or, -NOBOM that it should not. For files, this is ignored if the file already contains any data.  If the -BOM or -NOBOM suffix is omitted, UTF-8 defaults to UTF-8-NOBOM, while the other UTF formats default to -BOM.
 
-## Enc Option
+### Enc Option
 
 This option sets both InEnc and OutEnc simultaneously, with the same given value. Any option value accepted by those options except Implied may be given.
 
-## ResultText Option
+### ResultText Option
 
 For `⎕R`, this option determines the format of the result.
 
@@ -461,7 +461,7 @@ This option may only be used with `⎕R`.
  120 66 13 10 67 68
 ```
 
-## UCP Option
+### UCP Option
 
 This affects the way PCRE that processes \B, \b, \D, \d, \S, \s,  \W,
 \w,  and  some  of  the POSIX character classes.
@@ -489,7 +489,7 @@ When UCP is set to 1, Unicode characters are matched as "word" characters (\w) t
  B  j  ø  r  n
 ```
 
-## Regex Option
+### Regex Option
 
 This option may be used to disable regular expression matching which is enabled by default. It is a singleton Boolean value that applies to both search and transformation patterns, or a 2-element vector of Boolean values that applies to them separately.
 
