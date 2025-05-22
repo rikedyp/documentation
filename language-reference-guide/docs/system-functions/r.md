@@ -560,7 +560,7 @@ Or to take arms against a sea of troubles
 ```
 
 
-## Replace all upper and lower-case vowels by `'X'`
+Replace all upper and lower-case vowels by `'X'`:
 ```apl
        ('[aeiou]' ⎕R 'X' ⍠ 'IC' 1) text
 TX bX Xr nXt tX bX- thXt Xs thX qXXstXXn:   
@@ -569,7 +569,7 @@ ThX slXngs Xnd XrrXws Xf XXtrXgXXXs fXrtXnX,
 Xr tX tXkX Xrms XgXXnst X sXX Xf trXXblXs   
 ```
 
-## Replace only the second vowel on each line by `'\VOWEL\'`
+Replace only the second vowel on each line by `'\VOWEL\'`:
 ```apl
        ('[aeiou]' ⎕R '\\VOWEL\\'⍠('IC' 1)('ML' ¯2)) text
 To b\VOWEL\ or not to be- that is the question:   
@@ -578,7 +578,7 @@ The sl\VOWEL\ngs and arrows of outrageous fortune,
 Or t\VOWEL\ take arms against a sea of troubles
 ```
 
-## Case fold each word
+Case fold each word:
 ```apl
       ('(?<first>\w)(?<remainder>\w*)' ⎕R '\u<first>\l<remainder>') text
 To Be Or Not To Be- That Is The Question:   
@@ -587,7 +587,7 @@ The Slings And Arrows Of Outrageous Fortune,
 Or To Take Arms Against A Sea Of Troubles   
 ```
 
-## Extract only the lines with characters 'or' (in upper or lower case) on them
+Extract only the lines with characters 'or' (in upper or lower case) on them::
 ```apl
       ↑('or' ⎕S '%' ⍠ ('IC' 1)('ML' 1)) text
 To be or not to be– that is the question:   
@@ -595,7 +595,7 @@ The slings and arrows of outrageous fortune,
 Or to take arms against a sea of troubles 
 ```
 
-## Identify which lines contain the word 'or' (in upper or lower case) on them
+Identify which lines contain the word 'or' (in upper or lower case) on them:
 ```apl
       ('\bor\b'⎕S 2⍠('IC' 1)('ML' 1))text
 0 3
@@ -604,13 +604,15 @@ Or to take arms against a sea of troubles
 
 Note the difference between the characters *'or'* (which appear in 'fortune') and the word *'or'*.
 
-## Place every non-space sequence of characters in brackets
+Place every non-space sequence of characters in brackets:
 ```apl
       ('[^\s]+' ⎕R '(&)' ) 'To be or not to be, that is the question'
 (To) (be) (or) (not) (to) (be,) (that) (is) (the) (question)
 ```
 
-## Replace all sequences of one or more spaces by newline. Note that the effect of this is dependent on the input format
+Replace all sequences of one or more spaces by newline:
+
+Note that the effect of this is dependent on the input format
 
 Character vector input results in a single character vector output with embedded newlines:
 
@@ -640,7 +642,7 @@ A vector of two character vectors as input results in a vector of 10 character v
 └∊─────────────────────────────────────────────────────────────┘
 ```
 
-## Change numerals to their expanded names, using a function
+Change numerals to their expanded names, using a function:
 ```apl
 
      ∇r←f a;n
@@ -653,13 +655,13 @@ A vector of two character vectors as input results in a vector of 10 character v
  one three one five four four
 ```
 
-## Swap 'red' and 'blue'
+Swap 'red' and 'blue':
 ```apl
       ('red' 'blue' ⎕R 'blue' 'red') 'red hat blue coat'
 blue hat red coat
 ```
 
-### Convert a comma separated values (CSV) file so that
+Convert a comma separated values (CSV) file so that:
 
 - dates in the first field are converted from European format to ISO, and
 - currency values are converted from Deutsche Marks (DEM) to Euros (DEM 1.95583 to €1).
@@ -720,7 +722,7 @@ then a function that uses this pattern:
 "****", I said
 ```
 
-### Replace the characters 'or' with '\u0' without having to escape the backslash
+Replace the characters 'or' with '\u0' without having to escape the backslash:
 
 
 Escaping transformation strings can be a daunting task. To avoid doing so, one can simply enclose the string in braces. This is not a special feature, but just a consequence of how transformation functions are used.
