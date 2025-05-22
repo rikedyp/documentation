@@ -1,6 +1,8 @@
 
-
-
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  1302⌶
+</div>
 
 
 <h1 class="heading"><span class="name">Set aplcore Parameters</span> <span class="command">R←1302⌶Y</span></h1>

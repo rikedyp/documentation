@@ -1,7 +1,8 @@
 <h1 class="heading"><span class="name">PCRE Regular Expression Syntax Summary</span></h1>
 
 The following is a summary of search pattern syntax.
-```other
+
+<pre class="manpage">
 PCRESYNTAX(3)              Library Functions Manual              PCRESYNTAX(3)
 
 NAME
@@ -377,4 +378,4 @@ REVISION
 
        Last updated: 08 January 2014
        Copyright (c) 1997-2014 University of Cambridge.
-```
+</pre>

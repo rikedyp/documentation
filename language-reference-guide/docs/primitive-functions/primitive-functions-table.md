@@ -27,7 +27,7 @@
 |`≥`|Greater Than Or Equal To Sign|&nbsp;|[Greater Or Equal](greater-or-equal.md)|
 |`⊢`|Right Tack|[Identity](identity.md)|[Right](right.md)|
 |`⍳`|Iota|[Index Generator](index-generator.md)|[Index Of](index-of.md)|
-|`⌷`|Squad Symbol|[Materialise](materialise.md)|[Index](index.md)|
+|`⌷`|Squad Symbol|[Materialise](materialise.md)|[Index](squad.md)|
 |`∩`|Up Shoe|&nbsp;|[Intersection](intersection.md)|
 |`⍸`|Iota Underbar|[Where](where.md)|[Interval Index](interval-index.md)|
 |`⊣`|Left Tack|[Same](same.md)|[Left](left.md)|

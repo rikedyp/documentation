@@ -48,8 +48,8 @@ With the exception of the following all these files may be distributed as part o
 |DyalogProvider DLL |`dyalogprovider.dll`                    |
 |DyalogNet DLL      |`dyalognet.dll`                         |
 |APLScript Compiler |`dyalogc_unicode.exe`                   |
-|For Conga and RIDE |`conga34ssl32.dll`                      |
-|For Conga and RIDE |`conga34_32.dll`                        |
+|For Conga and Ride |`conga34ssl32.dll`                      |
+|For Conga and Ride |`conga34_32.dll`                        |
 |&nbsp;             |`exestub.dll`                           |
 |&nbsp;             |`dllstub.dll`                           |
 |SQAPL INI          |`sqapl.ini`                             |
@@ -74,8 +74,8 @@ With the exception of the following all these files may be distributed as part o
 |DyalogProvider DLL |`dyalogprovider.dll`                    |
 |DyalogNet DLL      |`dyalognet.dll`                         |
 |APLScript Compiler |`dyalogc.exe`                           |
-|For Conga and RIDE |`conga34ssl32.dll`                      |
-|For Conga and RIDE |`conga34_32.dll`                        |
+|For Conga and Ride |`conga34ssl32.dll`                      |
+|For Conga and Ride |`conga34_32.dll`                        |
 |&nbsp;             |`exestub.dll`                           |
 |&nbsp;             |`dllstub.dll`                           |
 |SQAPL INI          |`sqapl.ini`                             |
@@ -100,8 +100,8 @@ With the exception of the following all these files may be distributed as part o
 |DyalogProvider DLL |`dyalogprovider.dll`                       |
 |DyalogNet DLL      |`dyalognet.dll`                            |
 |APLScript Compiler |`dyalogc64_unicode.exe`                    |
-|For Conga and RIDE |`conga34ssl64.dll`                         |
-|For Conga and RIDE |`conga34_64.dll`                           |
+|For Conga and Ride |`conga34ssl64.dll`                         |
+|For Conga and Ride |`conga34_64.dll`                           |
 |&nbsp;             |`exestub.dll`                              |
 |&nbsp;             |`dllstub.dll`                              |
 |SQAPL INI          |`sqapl.ini`                                |
@@ -126,8 +126,8 @@ With the exception of the following all these files may be distributed as part o
 |DyalogProvider DLL |`dyalogprovider.dll`                       |
 |DyalogNet DLL      |`dyalognet.dll`                            |
 |APLScript Compiler |`dyalogc64.exe`                            |
-|For Conga and RIDE |`conga34ssl64.dll`                         |
-|For Conga and RIDE |`conga34_64.dll`                           |
+|For Conga and Ride |`conga34ssl64.dll`                         |
+|For Conga and Ride |`conga34_64.dll`                           |
 |&nbsp;             |`exestub.dll`                              |
 |&nbsp;             |`dllstub.dll`                              |
 |SQAPL INI          |`sqapl.ini`                                |

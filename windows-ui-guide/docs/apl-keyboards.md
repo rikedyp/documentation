@@ -67,4 +67,4 @@ The Classic Edition includes support for Danish, Finnish, French, German, Italia
 
 ## Backtick Keyboard
 
-In addition to the standard APL keyboards, the RIDE keyboard  may be used natively. See [Backtick Keyboard](ime-configuration.md).
+In addition to the standard APL keyboards, the Ride keyboard may be used natively. See [Backtick Keyboard](ime-configuration.md).

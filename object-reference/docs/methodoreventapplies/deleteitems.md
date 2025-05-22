@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 <h1 class="heading"><span class="name">DeleteItems Method</span></h1>
 
 |----------------------------------|------|------|

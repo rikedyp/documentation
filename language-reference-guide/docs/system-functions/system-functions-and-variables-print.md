@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 <h1 class="heading"><span class="name">System Functions and Variables (A-Z)</span></h1>
 
 |-----------|----------|-----------|------------|----------|
@@ -26,12 +31,13 @@
 |`⎕PFKEY`   |`⎕PP`     |`⎕PROFILE` |`⎕PW`       |`⎕R`      |
 |`⎕REFS`    |`⎕RL`     |`⎕RSI`     |`⎕RTL`      |`⎕S`      |
 |`⎕SAVE`    |`⎕SD`     |`⎕SE`      |`⎕SH`       |`⎕SHADOW` |
-|`⎕SI`      |`⎕SIGNAL` |`⎕SIZE`    |`⎕SM`       |`⎕SR`     |
-|`⎕SRC`     |`⎕STACK`  |`⎕STATE`   |`⎕STOP`     |`⎕SVC`    |
-|`⎕SVO`     |`⎕SVQ`    |`⎕SVR`     |`⎕SVS`      |`⎕TALLOC` |
-|`⎕TC`      |`⎕TCNUMS` |`⎕TGET`    |`⎕THIS`     |`⎕TID`    |
-|`⎕TKILL`   |`⎕TNAME`  |`⎕TNUMS`   |`⎕TPOOL`    |`⎕TPUT`   |
-|`⎕TRACE`   |`⎕TRAP`   |`⎕TREQ`    |`⎕TS`       |`⎕TSYNC`  |
-|`⎕UCS`     |`⎕USING`  |`⎕VFI`     |`⎕VR`       |`⎕WA`     |
-|`⎕WC`      |`⎕WG`     |`⎕WN`      |`⎕WS`       |`⎕WSID`   |
-|`⎕WX`      |`⎕XML`    |`⎕XSI`     |`⎕XT`       |`⎕Á`      |
+|`⎕SHELL`   |`⎕SI`     |`⎕SIGNAL`  |`⎕SIZE`     |`⎕SM`     |
+|`⎕SR`      |`⎕SRC`    |`⎕STACK`   |`⎕STATE`    |`⎕STOP`   |
+|`⎕SVC`     |`⎕SVO`    |`⎕SVQ`     |`⎕SVR`      |`⎕SVS`    |
+|`⎕TALLOC`  |`⎕TC`     |`⎕TCNUMS`  |`⎕TGET`     |`⎕THIS`   |
+|`⎕TID`     |`⎕TKILL`  |`⎕TNAME`   |`⎕TNUMS`    |`⎕TPOOL`  |
+|`⎕TPUT`    |`⎕TRACE`  |`⎕TRAP`    |`⎕TREQ`     |`⎕TS`     |
+|`⎕TSYNC`   |`⎕UCS`    |`⎕USING`   |`⎕VFI`      |`⎕VGET`   |
+|`⎕VR`      |`⎕VSET`   |`⎕WA`      |`⎕WC`       |`⎕WG`     |
+|`⎕WN`      |`⎕WS`     |`⎕WSID`    |`⎕WX`       |`⎕XML`    |
+|`⎕XSI`     |`⎕XT`     |`⎕Á`       |            |          |

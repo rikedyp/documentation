@@ -1,3 +1,13 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕DR DR
+</div>
+
+---
+search:
+  exclude: true
+---
+
 
 
 

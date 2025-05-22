@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕ATX ATX
+</div>
+
 <h1 class="heading"><span class="name">Extended Attributes</span> <span class="command">R←X ⎕ATX Y</span></h1>
 
 This function provides information about a name in a workspace, including its usage, history, restrictions, role and origin.

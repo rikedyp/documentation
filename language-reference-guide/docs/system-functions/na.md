@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕NA NA
+</div>
+
 <h1 class="heading"><span class="name">Name Association</span> <span class="command">{R}←{X}⎕NA Y</span></h1>
 
 `⎕NA` provides access from APL to compiled functions within a library. A library is implemented according to the Operating System as follows:
@@ -24,10 +29,8 @@ In a compiled language such as C, the types of arguments and results of function
 ```
 
 which means that it expects two long (4-byte) integer arguments and returns a double (8-byte) floating point result. Notice the correspondence between the C declaration and the right argument of `⎕NA`:
-```apl
-    C:             double    divide       (int32_t,  int32_t);
 ```
-```apl
+    C:             double    divide       (int32_t,  int32_t);
     APL:  'div' ⎕NA 'F8    math|divide       I4        I4 '
 ```
 
@@ -44,10 +47,10 @@ div
 2.5
 ```
 
-It is imperative that care be taken when coding type declarations. A DLL *cannot* check types of data passed from APL. A wrong type declaration will lead to erroneous results or may even cause the workspace to become corrupted and crash. During development, you may wish to prevent this happening. See: [ErrorOnExternalException](../../../windows-installation-and-configuration-guide/configuration-parameters/configuration-parameters).
+It is imperative that care be taken when coding type declarations. A DLL *cannot* check types of data passed from APL. A wrong type declaration will lead to erroneous results or may even cause the workspace to become corrupted and crash. During development, you may wish to prevent this happening. See [ErrorOnExternalException](../../../windows-installation-and-configuration-guide/configuration-parameters/configuration-parameters).
 
 The full syntax for the right argument of `⎕NA` is:
-```apl
+```
     [result] library|function [arg1] [arg2] ...
 ```
 
@@ -75,7 +78,7 @@ Alternatively, a full or relative pathname may be supplied in the usual way:
 ### Errors
 
 If the specified DLL (or a dependent DLL) fails to load it will generate:
-```apl
+```
 FILE ERROR 2 No such file or directory
 ```
 
@@ -101,36 +104,38 @@ On non-Windows platforms many of the most useful system library functions appear
 
 The type coding scheme introduced above is of the form:
 
+```
 [direction] [special] type [width] [array][[count]]
+```
 
 The options are summarised in the following table and their functions detailed below.
 
-|Description|Symbol                                              |Meaning                                                                                                |
-|-----------|----------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-|Direction  |`<`                                                 |Pointer to array *input* to DLL function.                                                              |
-|`>`        |Pointer to array *output* from DLL function                                                                                                                ||
-|`=`        |Pointer to input/output array.                                                                                                                             ||
-|Special    |`0`                                                 |Null-terminated string.                                                                                |
-|`#`        |Byte-counted string                                                                                                                                        ||
-|Type       |`I`                                                 |int                                                                                                    |
-|`U`        |unsigned int                                                                                                                                               ||
-|`C`        |char                                                                                                                                                       ||
-|`T`        |char [^1]                                                                                                                                                  ||
-|`F`        |float                                                                                                                                                      ||
-|`D`        |decimal                                                                                                                                                    ||
-|`J`        |complex                                                                                                                                                    ||
-|`P`        |uintptr-t [^2]                                                                                                                                             ||
-|`A`        |APL array                                                                                                                                                  ||
-|`Z`        |APL array with header (as passed to a TCP/IP socket)                                                                                                       ||
-|Width      |`1`                                                 |1-byte                                                                                                 |
-|`2`        |2-byte                                                                                                                                                     ||
-|`4`        |4-byte                                                                                                                                                     ||
-|`8`        |8-byte                                                                                                                                                     ||
-|`16`       |16-byte (128-bit)                                                                                                                                          ||
-|Array      |`[n]`                                               |Array of length *n* elements                                                                           |
-|`[]`       |Array, length determined at call-time                                                                                                                      ||
-|Structure  |`{...}`                                             |Structure.                                                                                             |
-|Count      |`[int]`                                             |Rather than explicitly declaring multiple adjacent occurrences of the same the count option may be used|
+|Description|Symbol  |Meaning                                                                                                |
+|-----------|--------|-------------------------------------------------------------------------------------------------------|
+|Direction  |`<`     |Pointer to array *input* to DLL function.                                                              |
+|           |`>`     |Pointer to array *output* from DLL                                                                     |
+|_         _|`=`     |Pointer to input/output                                                                                |
+|Special    |`0`     |Null-terminated string.                                                                                |
+|_         _|`#`     |Byte-counted string                                                                                    |
+|Type       |`I`     |int                                                                                                    |
+|           |`U`     |unsigned int                                                                                           |
+|           |`C`     |char                                                                                                   |
+|           |`T`     |char [^1]                                                                                              |
+|           |`F`     |float                                                                                                  |
+|           |`D`     |decimal                                                                                                |
+|           |`J`     |complex                                                                                                |
+|           |`P`     |uintptr-t [^2]                                                                                         |
+|           |`A`     |APL array                                                                                              |
+|_         _|`Z`     |APL array with header (as passed to a TCP/IP socket)                                                   |
+|Width      |`1`     |1-byte                                                                                                 |
+|           |`2`     |2-byte                                                                                                 |
+|           |`4`     |4-byte                                                                                                 |
+|           |`8`     |8-byte                                                                                                 |
+|_         _|`16`    |16-byte (128-bit)                                                                                      |
+|Array      |`[n]`   |Array of length *n* elements                                                                           |
+|_         _|`[]`    |Array, length determined at call-time                                                                  |
+|Structure  |`{...}` |Structure.                                                                                             |
+|Count      |`[int]` |Rather than explicitly declaring multiple adjacent occurrences of the same the count option may be used|
 
 In the Classic Edition, `C` specifies untranslated character, whereas `T` specifies that the character data will be translated to/from `⎕AV`.
 
@@ -537,7 +542,7 @@ You should consult the documentation for the specific function that you intend t
 
 ## The Dyalog DLL
 
-The Dyalog DLL (see [Run-Time Applications and Components](../../../windows-installation-and-configuration-guide/runtime-applications-and-components)) contains three functions: MEMCPY, STRNCPY and STRLEN.
+The Dyalog DLL (see [Run-Time Applications and Components](../../../windows-installation-and-configuration-guide/runtime-applications-and-components)) contains three functions: `MEMCPY`, `STRNCPY` and `STRLEN`.
 
 ### MEMCPY
 
@@ -633,21 +638,21 @@ To copy data *from* the workspace *into* an already allocated (`new`) structure:
       put (new+4) 'Peep' 20
 ```
 
-Notice in this example that you must ensure that names no longer than 19 characters are passed to `put`. More than 19 characters would not leave STRNCPY enough space to include the trailing null, which would probably cause the application to fail.
+Notice in this example that you must ensure that names no longer than 19 characters are passed to `put`. More than 19 characters would not leave `STRNCPY` enough space to include the trailing null, which would probably cause the application to fail.
 
 ### STRNCPYA
 
-This is a synonym for STRNCPY. It is there so that STRNCPY* (on Windows) selects between STRNCPYA and STRNCPYW.
+This is a synonym for `STRNCPY`. It is there so that `STRNCPY*` (on Microsoft Windows) selects between `STRNCPYA` and `STRNCPYW`.
 
 ### STRNCPYW
 
-This is a cover for the C standard function `wcsncpy()`. It is named this way so that (on Windows) STRNCPY* will behave helpfully.
+This is a cover for the C standard function `wcsncpy()`. It is named this way so that (on Microsoft Windows) `STRNCPY*` will behave helpfully.
 
 ### STRLEN
 
 `STRLEN` calculates the length of a C string (a 0-terminated string of bytes in memory). Its C declaration is:
 ```c
-size_t STRLEN(         // calculate length of string
+size_t STRLEN(       // calculate length of string
     const char *s    // address of string
 );
 ```
@@ -693,7 +698,7 @@ The following statement would achieve the same thing, but using an APL function 
 
 ### SetCaretBlinkTime()
 
-The Windows function `SetCaretBlinkTime` sets the caret blink rate. It takes a single unsigned `int` argument, does not return a result and is declared as follows:
+The Microsoft Windows function `SetCaretBlinkTime` sets the caret blink rate. It takes a single unsigned `int` argument, does not return a result and is declared as follows:
 
 ```c
 void SetCaretBlinkTime(UINT);
@@ -707,7 +712,8 @@ The following statements would provide access to this routine through an APL fun
 
 ### MessageBox()
 
-The Windows function `MessageBox` displays a standard dialog box on the screen and awaits a response from the user.  It takes 4 arguments.  The first is the window handle for the window that owns the message box.  This is declared as an unsigned *int*.  The second and third arguments are both pointers to null-terminated strings containing the message to be displayed in the Message Box and the caption to be used in the window title bar.  The 4th argument is an unsigned *int* that specifies the Message Box type.  The result is an *int* which indicates which of the buttons in the message box the user has pressed.  The function is declared as follows:
+The Microsoft Windows function `MessageBox` displays a standard dialog box on the screen and awaits a response from the user.  It takes 4 arguments.  The first is the window handle for the window that owns the message box.  This is declared as an unsigned *int*.  The second and third arguments are both pointers to null-terminated strings containing the message to be displayed in the Message Box and the caption to be used in the window title bar.  The 4th argument is an unsigned *int* that specifies the Message Box type.  The result is an *int* which indicates which of the buttons in the message box the user has pressed.  The function is declared as follows:
+
 ```c
 int MessageBox(HWND, LPCSTR, LPCSTR, UINT);
 ```
@@ -722,7 +728,7 @@ The following statement displays a Message Box with a stop sign icon together wi
       MessageBox 0 'Message' 'Title' 19
 ```
 
-The function works equally well in the Unicode Edition because the <0T specification is portable.
+The function works equally well in the Unicode Edition because the `<0T` specification is portable.
 ```apl
       MessageBox 0 'Το Μήνυμα' 'Ο Τίτλος' 19
 ```
@@ -731,11 +737,14 @@ Note that a simpler, portable (and safer) method for displaying a Message Box is
 
 ### FindWindow()
 
-The Windows function `FindWindow` obtains the window handle of a window which has a given character string in its title bar.  The function takes two arguments.  The first is a pointer to a null-terminated character string that specifies the window's class name. However, if you are not interested in the class name, this argument should be a NULL pointer.  The second is a pointer to a character string that specifies the title that identifies the window in question.  This is an example of a case described above where two instances of the function must be defined to cater for the two different types of argument.  However, in practice this function is most often used without specifying the class name.  The function is declared as follows:
+The Microsoft Windows function `FindWindow` obtains the window handle of a window which has a given character string in its title bar.  The function takes two arguments.  The first is a pointer to a null-terminated character string that specifies the window's class name. However, if you are not interested in the class name, this argument should be a NULL pointer.  The second is a pointer to a character string that specifies the title that identifies the window in question.  This is an example of a case described above where two instances of the function must be defined to cater for the two different types of argument.  However, in practice this function is most often used without specifying the class name.  The function is declared as follows:
 
-`HWND FindWindow(LPCSTR, LPCSTR);`
+```c
+HWND FindWindow(LPCSTR, LPCSTR);
+```
 
 The following statement associates the APL function `FW` with the second variant of the FindWindow call, where the class name is specified as a NULL pointer.  To indicate that APL is to pass the *value* of the NULL pointer, rather than its address, we need to code this argument as `I4`.
+
 ```apl
       'FW' ⎕NA 'P user32|FindWindow* P <0T'
 ```
@@ -748,7 +757,7 @@ To obtain the handle of the window entitled "CLEAR WS - Dyalog APL/W":
 
 ### GetWindowText()
 
-The Windows function `GetWindowText` retrieves the caption displayed in a window's title bar.  It takes 3 arguments.  The first is an unsigned *int* containing the window handle.  The second is a pointer to a buffer to receive the caption as a null-terminated character string.  This is an example of an output array.  The third argument is an *int* which specifies the maximum number of characters to be copied into the output buffer.  The function returns an *int* containing the actual number of characters copied into the buffer and is declared as follows:
+The Microsoft Windows function `GetWindowText` retrieves the caption displayed in a window's title bar.  It takes 3 arguments.  The first is an unsigned *int* containing the window handle.  The second is a pointer to a buffer to receive the caption as a null-terminated character string.  This is an example of an output array.  The third argument is an *int* which specifies the maximum number of characters to be copied into the output buffer.  The function returns an *int* containing the actual number of characters copied into the buffer and is declared as follows:
 
 ```c
 int GetWindowText(HWND, LPSTR, int);
@@ -801,7 +810,9 @@ In this case, the second argument is coded as `=0T`, so when the function is cal
 
 The function `GetCharWidth` returns the width of each character in a given range. Its first argument is a device context (handle).  Its second and third arguments specify font positions (start and end).  The third argument is the resulting integer vector that contains the character widths (this is an example of an output array).  The function returns a Boolean value to indicate success or failure.  The function is defined as follows.  Note that this function is provided in the library: `gdi32.dll`.
 
-`BOOL GetCharWidth(HDC, UINT, UINT, LPINT);`
+```c
+BOOL GetCharWidth(HDC, UINT, UINT, LPINT);
+```
 
 The following statements provide access to this routine through an APL function of the same name:
 ```apl
@@ -834,6 +845,7 @@ In advanced DLL programming, it is often necessary to administer memory outside 
 7. Free the memory.
 
 Notice that steps 1 and 7 and steps 2 and 6 complement each other. That is, if you allocate global system memory, you must free it after you have finished using it. If you continue to use global memory without freeing it, your system will gradually run out of resources. Similarly, if you lock memory (which you must do before using it), then you should unlock it before freeing it. Although on some versions of Windows, freeing the memory will include unlocking it, in the interests of good style, maintaining the symmetry is probably a good thing.
+
 ```apl
     ∇ version←DllVersion file;Alloc;Free;Lock;Unlock;Size
                   ;Info;Value;Copy;size;hndl;addr;buff;ok

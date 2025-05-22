@@ -1,7 +1,7 @@
-
-
-
-
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕CMD CMD
+</div>
 
 <h1 class="heading"><span class="name">Execute Windows Command</span> <span class="command">{R}←⎕CMD Y</span></h1>
 
@@ -86,12 +86,9 @@ the argument to `⎕CMD` should be:
 
 ```
 
-
 ### Double-Quote Restriction
 
-
 The Windows Command Processor does not permit more than one set of double-quotes in a command string.
-
 
 The following statements are all valid:
 ```apl
@@ -100,12 +97,10 @@ The following statements are all valid:
 ⎕CMD '"c:\windows\system32\notepad.exe" c:\myfile.txt'
 ```
 
-
 Whereas the next statement, which contains two sets of double-quotes, will fail:
 ```apl
 ⎕CMD '"c:\windows\system32\notepad.exe" "c:\myfile.txt"'
 ```
-
 
 Such a statement can however be executed using the second form of `⎕CMD`(where the argument is a 2-element vector of character vectors) which does not use the Windows Command Processor and is not subject to this restriction. However, the call to `⎕CMD` will return immediately, and no output from the command will be returned.
 ```apl
@@ -114,16 +109,11 @@ Such a statement can however be executed using the second form of `⎕CMD`(where
 
 ### Implementation Notes
 
-
 The right argument of `⎕CMD` is simply passed to the appropriate command processor for execution and its output is received using an *unnamed pipe*.
-
 
 By default, `⎕CMD` will execute the string `('cmd.exe /c',Y)`; where `Y` is the argument given to `⎕CMD`.  However, the implementation permits the use of alternative command processors as follows:
 
-
 Before execution, the argument is prefixed and postfixed with strings defined by the APL parameters CMD_PREFIX and CMD_POSTFIX.  The former specifies the name of your command processor and any parameters that it requires.  The latter specifies a string which may be required.  If CMD_PREFIX is not defined, it defaults to the name defined by the environment variable COMSPEC followed by  "/c".  If COMSPEC is not defined, it defaults to `cmd.exe`.  If CMD_POSTFIX is not defined, it defaults to an empty vector.
-
-
 
 `⎕CMD` treats certain characters as having special meaning as follows:
 
@@ -134,7 +124,6 @@ Before execution, the argument is prefixed and postfixed with strings defined by
 |`>`|if found within the last sub-command, causes `⎕CMD` to use a visible window.|
 
 
-
 If you simply wish to open a Command Prompt window, you may execute the command as a Windows Program (see below).  For example:
 ```apl
       ⎕CMD 'cmd.exe' ''
@@ -142,10 +131,7 @@ If you simply wish to open a Command Prompt window, you may execute the command 
 
 ## Starting a Windows Program
 
-
 If `Y` is a 2-element vector of character vectors, `⎕CMD` starts the executable program named by `Y[1]` with the initial window parameter specified by `Y[2]`.  The shy result is an integer scalar containing the window handle allocated by the window manager. Note that in this case APL does not wait for the program specified by `Y` to finish, but returns immediately. The shy result `R` is the process identifier (PID).
-
-
 
 `Y[1]` must specify the name or complete pathname of an executable program.  If the name alone is specified, Windows will search the following directories:
 
@@ -156,13 +142,10 @@ If `Y` is a 2-element vector of character vectors, `⎕CMD` starts the executabl
 5. the list of directories mapped in a network.
 
 
-
 Note that `Y[1]` may contain the complete command line, including any suitable parameters for starting the program.  If Windows fails to find the executable program, `⎕CMD` will fail and report `FILE ERROR 2`.
 
 
-
 `Y[2]` specifies the window parameter and may be one of the following.  If not, a `DOMAIN ERROR` is reported.
-
 
 |------------------------|-----------------------------------------------------------------------------|
 |`'Normal'''`            |Application is started in a normal window, which is given the input focus    |
@@ -170,8 +153,6 @@ Note that `Y[1]` may contain the complete command line, including any suitable p
 |`'Hidden'`              |Application is run in an invisible window                                    |
 |`'Minimized''Minimised'`|Application is started as an icon which is NOT given the input focus         |
 |`'Maximized''Maximised'`|Application is started maximized (full screen) and is given the input focus  |
-
-
 
 There is no way to terminate an application started by `⎕CMD` from APL; it will run until it completes or is terminated by an external mechanism. Furthermore, if the window parameter is HIDDEN, the user is unaware of the application (unless it makes itself visible) and has no means to close it.
 
@@ -185,12 +166,10 @@ There is no way to terminate an application started by `⎕CMD` from APL; it wil
 
 ### Executing Programs
 
-
 Either form of `⎕CMD` may be used to execute a program. The difference is that when the program is executed via the Command Processor, APL waits for it to complete and returns any result that the program would have displayed in the Command Window had it been executed from a Command Window. In the second case, APL starts the program (in parallel).
 
 ### Note
 
-
-This function is disabled and instead generates a `DOMAIN ERROR` if the RIDE_SPAWNED parameter is non-zero. This is designed to prevent it being invoked from a RIDE session which does not support this type of user interface. For further details, see the *RIDE User Guide*.
+This function is disabled and instead generates a `DOMAIN ERROR` if the RIDE_SPAWNED parameter is non-zero. This is designed to prevent it being invoked from a Ride session which does not support this type of user interface. For further details, see the [Ride User Guide](https://dyalog.github.io/ride).
 
 

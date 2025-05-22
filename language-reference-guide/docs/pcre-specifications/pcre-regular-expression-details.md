@@ -1,6 +1,6 @@
 <h1 class="heading"><span class="name">PCRE Regular Expression Details</span></h1>
 
-```other
+<pre class="manpage">
 PCREPATTERN(3)             Library Functions Manual             PCREPATTERN(3)
 
 NAME
@@ -2897,4 +2897,4 @@ REVISION
 
        Last updated: 08 January 2014
        Copyright (c) 1997-2014 University of Cambridge.
-```
+</pre>

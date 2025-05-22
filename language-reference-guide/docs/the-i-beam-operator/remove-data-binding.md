@@ -1,3 +1,9 @@
+
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  2014⌶
+</div>
+
 <h1 class="heading"><span class="name">Remove Data Binding</span> <span class="command">R←2014⌶Y</span></h1>
 
 !!! note

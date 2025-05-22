@@ -1,10 +1,11 @@
 
-
-
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  1500⌶
+</div>
 
 
 <h1 class="heading"><span class="name">Hash Array</span> <span class="command">R←{X}1500⌶Y</span></h1>
-
 
 
 This function creates a hashed array, returns an unhashed copy of an array or reports the state of hashing of an array.

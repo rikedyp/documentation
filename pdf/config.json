@@ -1,0 +1,57 @@
+{
+    "documents": {
+        "language-reference-guide": {
+            "title": "Dyalog APL Language",
+            "subtitle": "Reference Guide",
+            "filename": "Dyalog_APL_Language_Reference_Guide.pdf"
+        },
+        "dotnet-framework-interface": {
+            "title": "Dyalog for Microsoft Windows",
+            "subtitle": ".NET Framework Interface Guide",
+            "filename": "Dyalog_for_Microsoft_Windows_dotNET_Framework_Interface_Guide.pdf"
+        },
+        "interface-guide": {
+            "title": "Dyalog for Microsoft Windows",
+            "subtitle": "Interfaces Guide",
+            "filename": "Dyalog_for_Microsoft_Windows_Interface_Guide.pdf"
+        },
+        "object-reference-transformed": {
+            "title": "Dyalog for Microsoft Windows",
+            "subtitle": "Object Reference Guide",
+            "filename": "Dyalog_for_Microsoft_Windows_Object_Reference_Guide.pdf"
+        },
+        "programming-reference-guide": {
+            "title": "Dyalog Programming",
+            "subtitle": "Reference Guide",
+            "filename": "Dyalog_Programming_Reference_Guide.pdf"
+        },
+        "unix-installation-and-configuration-guide": {
+            "title": "Dyalog for UNIX",
+            "subtitle": "Installation and Configuration Guide",
+            "filename": "Dyalog_for_UNIX_Installation_and_Configuration_Guide.pdf"
+        },
+        "unix-user-guide": {
+            "title": "Dyalog for UNIX",
+            "subtitle": "UI Guide",
+            "filename": "Dyalog_for_UNIX_UI_Guide.pdf"
+        },
+        "windows-installation-and-configuration-guide": {
+            "title": "Dyalog for Microsoft Windows",
+            "subtitle": "Installation and Configuration Guide",
+            "filename": "Dyalog_for_Microsoft_Windows_Installation_and_Configuration_Guide.pdf"
+        },
+        "windows-ui-guide": {
+            "title": "Dyalog for Microsoft Windows",
+            "subtitle": "UI Guide",
+            "filename": "Dyalog_for_Microsoft_Windows_UI_Guide.pdf"
+        }
+    },
+    "settings": {
+        "disable_toc": false,
+        "disable_link_rewriting": false,
+        "disable_syntax_highlighting": false,
+        "disable_section_numbers": false,
+        "screen": false,
+        "html_only": false
+    }
+}

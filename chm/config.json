@@ -1,0 +1,6 @@
+{
+    "exclude": [
+        "UNIX Installation",
+        "UNIX User Guide"
+    ]
+}

@@ -8,7 +8,7 @@ When APL or a bound .EXE terminates, it returns an exit code to the calling envi
 |2  |APL was terminated by SIGHUP or SIGTERM (UNIX) or in response to a QUIT WINDOWS request. APL has done a clean exit. |
 |3  |APL issued a syserror.                                                                        |
 |4  |Runtime violation. This occurs if a runtime application attempts to read input from the Session. Only a development version has a Session. |
-|5  |APL was unable to load the Conga libraries (14.1.25383 onwards). In 16.0 the RIDE libraries have been included in the Conga libraries. |
+|5  |APL was unable to load the Conga libraries (14.1.25383 onwards). In 16.0 the Ride libraries have been included in the Conga libraries. |
 |6  |RIDE_INIT or one of its components was ill-defined, or APL was unable to use the port, and/or unable to resolve the hostname (14.1.25383 onwards)|
 |7  |Reserved                                                                                       |
 |8  |Windows rejected APL's request to create a session window (in earlier versions this generated a syserror 126) |

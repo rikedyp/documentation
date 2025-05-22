@@ -1,8 +1,13 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕R
+</div>
+
 <h1 class="heading"><span class="name">Replace</span> <span class="command">R←{X}(A ⎕R B) Y</span></h1>
 
 `⎕R` (Replace) and `⎕S` (Search) are system operators which take search pattern(s) as their left arguments and transformation rule(s) as their right arguments; the derived function operates on text data to perform either a **search**, or a search and **replace** operation.
 
-The search patterns may include *Regular Expressions* so that complex searches may be performed. `⎕R` and `⎕S` utilise the open-source regular-expression search engine PCRE, which is built into Dyalog APL and distributed according to the [PCRE licence](../appendices/pcre-license.md) which is published separately.
+The search patterns may include *Regular Expressions* so that complex searches may be performed. `⎕R` and `⎕S` utilise the open-source regular-expression search engine PCRE, which is built into Dyalog APL and distributed according to the [PCRE licence](https://www.pcre.org/original/license.txt).
 
 The transformation rules are applied to the text which matches the search patterns; they may be given as a simple character vector, numeric codes, or  a function.
 
