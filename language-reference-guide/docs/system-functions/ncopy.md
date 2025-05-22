@@ -20,7 +20,7 @@ Source and destination path names may be full or relative (to the current workin
 
 
 
-If `X` specifies an existent directory then each source in `Y` is copied into that directory, otherwise `X` specifies the name of the copy. `X` must specify an existent directory if the source contains multiple names or if the Wildcard option is set.
+If `X` specifies an existent directory then each source in `Y` is copied into that directory, otherwise `X` specifies the name of the copy. `X` must specify an existent directory if the source contains multiple names or if the **Wildcard** option is set.
 
 
 The shy result `R` contains count(s) of top-level items copied. If `Y` is a single source name, `R` is a scalar otherwise it is a vector of the same length as `Y`.
@@ -28,7 +28,7 @@ The shy result `R` contains count(s) of top-level items copied. If `Y` is a sing
 ## Variant Options
 
 
-`⎕NCOPY` may be applied using the   Variant operator with the options Wildcard (the Principal option), IfExists, PreserveAttributes and ProgressCallback.
+`⎕NCOPY` may be applied using the _variant_ operator with the options **Wildcard** (the Principal option), **IfExists**, **PreserveAttributes** and **ProgressCallback**.
 
 ## Wildcard Option (Boolean)
 
@@ -38,13 +38,13 @@ The shy result `R` contains count(s) of top-level items copied. If `Y` is a sing
 |`1`|The name or names in `Y` that specify the *base name* and *extension* (see [NParts](./nparts.md) ), may also contain the wildcard characters "?" and "*". An asterisk is a substitute for any 0 or more characters in a file name or extension; a question-mark is a substitute for any single character.|
 
 
-Note that when Wildcard is 1, element(s) of `R` can  be 0, 1 or `>1`. If Wildcard is 0, elements of `R` are always 1.
+Note that when **Wildcard** is 1, element(s) of `R` can  be 0, 1 or `>1`. If **Wildcard** is 0, elements of `R` are always 1.
 
 
 ## IfExists Option
 
 
-The IfExists variant option determines what happens when a source file is to be copied to a target file that already exists. It does not apply to directories, only to the files within them.
+The **IfExists** variant option determines what happens when a source file is to be copied to a target file that already exists. It does not apply to directories, only to the files within them.
 
 
 |Value             |Description                                                                                        |
@@ -56,7 +56,7 @@ The IfExists variant option determines what happens when a source file is to be 
 
 
 
-The following cases cause an error to be signalled  regardless of the value of the IfExists variant.
+The following cases cause an error to be signalled regardless of the value of the **IfExists** variant.
 
 - If the source specifies a directory and the destination specifies an existing file.
 - If the source specifies a file and the same base name exists as a sub-directory in the destination.
@@ -64,7 +64,7 @@ The following cases cause an error to be signalled  regardless of the value of t
 ## PreserveAttributes Option (Boolean)
 
 
-The PreserveAttributes variant option determines whether or not file attributes are preserved. It does not apply to directories, only to files.
+The **PreserveAttributes** variant option determines whether or not file attributes are preserved. It does not apply to directories, only to files.
 
 
 |---|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -174,7 +174,7 @@ backups/UserCommand20.cache
 
 ## ProgressCallback Option
 
-The `ProgressCallback` option is described in the [programming reference guide](../../../programming-reference-guide/native-files#progress-callbacks). The details specific to `⎕NCOPY` are listed below.
+The **ProgressCallback** variant option is described in the [Dyalog Programming Reference Guide](../../../programming-reference-guide/native-files#progress-callbacks). following is specific to `⎕NCOPY`:
 
 * The first element of the right argument to the callback function is the character vector `'⎕NCOPY'`.
 
@@ -182,5 +182,5 @@ The `ProgressCallback` option is described in the [programming reference guide](
 
 - The special directories `.` and `..` can never be copied into an existing directory.
 - If any source name is a symbolic link it is dereferenced; that is, the source or directory it references is copied rather than the link itself.
-- In the result `R`, a directory together with all its contents is counted once. A directory may be partially copied if the IfExists option is set to `'Replace'` or `'ReplaceIfNewer'`).
+- In the result `R`, a directory together with all its contents is counted once. A directory may be partially copied if the **IfExists** option is set to `'Replace'` or `'ReplaceIfNewer'`).
 - If an error occurs during the copy process then processing will immediately stop and an error will be signalled. The operation is not atomic; some items may be copied before this happens. In the event of an error there will be no result and therefore no indication of how many names were copied before the error occurred.

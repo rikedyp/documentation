@@ -2,7 +2,7 @@
 
 This function moves native files and directories from one or more sources specified by `Y` to a destination specified by  `X`. `⎕NMOVE` is similar to `⎕NCOPY` (see [Native File Copy ](ncopy.md)).
 
-When possible `⎕NMOVE` *renames* files and directories, which effects a fast move when the source and destination are on the same file system. By default (see RenameOnly option below), if `⎕NMOVE` is unable to rename files or directories, it instead copies them and deletes the originals.
+When possible `⎕NMOVE` *renames* files and directories, which effects a fast move when the source and destination are on the same file system. By default (see **RenameOnly** option below), if `⎕NMOVE` is unable to rename files or directories, it instead copies them and deletes the originals.
 
 `X` is a character vector that specifies the name of the destination.
 
@@ -16,7 +16,7 @@ The shy result `R` contains count(s) of top-level items moved. If `Y` is a singl
 
 ## Variant Options
 
-`⎕NMOVE` may be applied using the  Variant operator with the options Wildcard (the Principal option), IfExists, RenameOnly and ProgressCallback.
+`⎕NMOVE` may be applied using the _variant_ operator with the options **Wildcard** (the Principal option), **IfExists**, **RenameOnly** and **ProgressCallback**.
 
 ## Wildcard Option (Boolean)
 
@@ -24,25 +24,25 @@ The shy result `R` contains count(s) of top-level items moved. If `Y` is a singl
 |0 { .shaded } |The name or names in `Y` identifies a specific file name.|
 |`1`|The name or names in `Y` that specify the *base name* and *extension* (see [NParts](./nparts.md) ), may also contain the wildcard characters "?" and "*". An asterisk is a substitute for any 0 or more characters in a file name or extension; a question-mark is a substitute for any single character.|
 
-Note that when Wildcard is 1, element(s) of `R` can  be 0 or `>1`. If Wildcard is 0, elements of `R` are always 1.
+Note that when **Wildcard** is 1, element(s) of `R` can  be 0 or `>1`. If **Wildcard** is 0, elements of `R` are always 1.
 
 ## IfExists Option
 
-The IfExists variant option determines what happens when a source file is to be copied to a target file that already exists. It does not apply to directories, only to the files within them.
+The **IfExists** variant option determines what happens when a source file is to be copied to a target file that already exists. It does not apply to directories, only to the files within them.
 
 |Value   |Description                                                                                           |
 |--------|------------------------------------------------------------------------------------------------------|
 |'Error' { .shaded } |Existing files will not be overwritten and an error will be signalled.                                |
 |`'Skip'`|Existing files will not be overwritten but the corresponding copy operation will be skipped (ignored).|
 
-The following cases cause an error to be signalled  regardless of the value of the IfExists variant.
+The following cases cause an error to be signalled  regardless of the value of the **IfExists** variant.
 
 - If the source specifies a directory and the destination specifies an existing file.
 - If the source specifies a file and the same base name exists as a sub-directory in the destination.
 
 ## RenameOnly Option (Boolean)
 
-The RenameOnly option  determines what happens when it is not possible to rename the source.
+The **RenameOnly** option  determines what happens when it is not possible to rename the source.
 
 |---|--------------------------------------------------|
 |0 { .shaded }  |The source will be copied and the original deleted|
@@ -138,7 +138,7 @@ backups/UserCommand20.cache
 
 ## ProgressCallback Option
 
-The `ProgressCallback` option is described in the [programming reference guide](../../../programming-reference-guide/native-files#progress-callbacks). The details specific to `⎕NMOVE` are as follows:
+The **ProgressCallback** variant option is described in the [Dyalog Programming Reference Guide](../../../programming-reference-guide/native-files#progress-callbacks). The following is specific to `⎕NMOVE`:
 
 * The first element of the right argument to the callback function is the character vector `'⎕NMOVE'`.
 
