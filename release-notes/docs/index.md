@@ -17,6 +17,6 @@ Some of the tools that are supplied with Dyalog have independent version numbers
 
 Additional tools can also be downloaded. These include:
 
-* Ride v4.6 – [https://github.com/Dyalog/ride](https://github.com/Dyalog/ride)
+* [Ride](https://github.com/Dyalog/ride) v4.6
 
 Changes to tools are not included within these Release Notes.

@@ -8,7 +8,7 @@ Over time, certain functionality (for example, language elements, development en
 
 In these circumstances, the feature is classified as _deprecated_. This means that it is unlikely to be developed or extended further, and its use in new development work is discouraged. Some deprecated features remain for backwards compatibility reasons, but some are later removed in a pre-announced Dyalog version.
 
-## Checking for Deprecated Functionality
+## Deprecated Functionality Scheduled for Removal
 
 If removing a deprecated feature is considered to be sufficiently significant, Dyalog Ltd will enable the ability to identify where this feature exists in a given codebase.
 
