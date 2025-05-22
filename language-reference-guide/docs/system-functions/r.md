@@ -697,8 +697,9 @@ Output file:
       out (dateptn valptn ⎕R f) in
       ⎕nuntie¨in out
 ```
+## Create a simple profanity filter:
 
-## Create a simple profanity filter. For the list of objectionable words
+For the list of objectionable words
 ```apl
        profanity←'bleeding' 'heck'
 ```
