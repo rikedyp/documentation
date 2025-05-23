@@ -826,7 +826,4 @@ nav:
           - List Global Defined Variables: system-commands/vars.md
           - Workspace Identification: system-commands/wsid.md
           - Load without Latent Expression: system-commands/xload.md
-  - PCRE Specifications:
-      - Introduction: pcre-specifications/pcre-overview.md
-      - PCRE Regular Expression Syntax Summary: pcre-specifications/pcre-regular-expression-syntax-summary.md
-      - PCRE Regular Expression Details: pcre-specifications/pcre-regular-expression-details.md
+  - PCRE Specifications: pcre-specifications.md
