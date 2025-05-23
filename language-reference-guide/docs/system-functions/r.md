@@ -236,7 +236,7 @@ Note that `¯1` is only used as a "filler" when there are higher-numbered subpat
 
 The second match is the B in the second subpattern. Offsets is `1 ¯1 1` and Lengths is `1 ¯1 1`: the entire pattern matched from offset 1 length 1 and the second subpattern also matched from offset 1 length 1. The first subpattern did not feature in the match and this is indicated by the `¯1`s. There has to be something between the offset/length for the entire pattern and the second subpattern.
 
-# Options
+## Variant Options
 
 Options are specified using the Variant operator. The Principal option is IC.
 
@@ -587,7 +587,7 @@ The Slings And Arrows Of Outrageous Fortune,
 Or To Take Arms Against A Sea Of Troubles   
 ```
 
-Extract only the lines with characters 'or' (in upper or lower case) on them::
+Extract only the lines with characters 'or' (in upper or lower case) on them:
 ```apl
       ↑('or' ⎕S '%' ⍠ ('IC' 1)('ML' 1)) text
 To be or not to be– that is the question:   
