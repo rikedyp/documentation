@@ -170,7 +170,7 @@ C:/Users/Pete/Documents/Dyalog APL-64 16.0 Unicode Files/
 └──────────────────────┘
 ```
 
-The next set of examples, illustrate the use of the **Recurse** variant option to limit the sub-directory depth.
+The next set of examples illustrates the use of the **Recurse** variant option to limit the sub-directory depth.
 ```apl
       Y←'d:\bouzouki\*.*'
       ⍴⊃0(⎕NINFO⍠('Wildcard' 1)('Recurse' 0))Y
