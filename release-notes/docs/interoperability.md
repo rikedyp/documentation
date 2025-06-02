@@ -1,3 +1,6 @@
+!!! Info "Information"  
+    THIS DOCUMENT IS STILL UNDER DEVELOPMENT
+
 # Interoperability
 
 Workspaces and component files are stored on disk in a binary format. This format differs between machine architectures and versions of Dyalog. For example, a component file written from Microsoft Windows will have an internal format that is different from one written from AIX. Similarly, a workspace saved from Dyalog v19.0 will differ internally from one saved from Dyalog v14.1.
@@ -8,13 +11,11 @@ It is convenient for versions of Dyalog running on different platforms to be abl
 
 With the exception of the Unicode restrictions described below, Dyalog provides interoperability for arrays that only contain (nested) character and numeric data. Such arrays can be stored in component files, or transmitted using Conga connections, and shared between all versions and across all platforms.  
 
-Full cross-platform interoperability of component files is only available for large-span component files.
-
 ## Code and Object Representations (`⎕OR`)
 Code that is saved in workspaces, or embedded within `⎕OR`s stored in component files, cannot be read by earlier versions of Dyalog than the version that saved them. An attempt to `⎕FREAD` a component file containing a `⎕OR` that was created by a later version of Dyalog will generate `DOMAIN ERROR: Array is from a later version of APL`. This also applies to APL objects passed using Conga, or objects that have been serialised using `220⌶`.
 
 !!! Tip "Hints and Recommendations"
-    Every time a `⎕OR` object is read by a version later than that which created it, time is spent converting the internal representation into the latest form. Dyalog Ltd recommends that `⎕OR` should not be used as a mechanism for sharing code or objects between different versions of APL.
+    Every time a `⎕OR` object is read by an interpreter that is a different, edition, or version later than that which created it, time is spent converting the internal representation into the latest form. Dyalog Ltd recommends that `⎕OR` should not be used as a mechanism for sharing code or objects between different versions of APL.
 
 In the case of workspaces, a load (or copy) into an older version would fail with the message: `this WS requires a later version of the interpreter`.
 
@@ -29,10 +30,10 @@ those connections when loaded or copied by an interpreter with different archite
 
 In particular, if a workspace containing one of the following:  
 
-* NET objects
+* .NET objects
 * objects created by `⎕WC`
-* instances of built-in objects (excluding instances of user-defined classes) created by `NEW`
-* variables containing the `OR` of, or refs to, such objects
+* instances of built-in objects (excluding instances of user-defined classes) created by `⎕NEW`
+* variables containing the `⎕OR` of, or refs to, such objects
 
 is loaded by an interpreter with differing architecture (32/64) from the version that saved it, Dyalog displays `GUI objects could not be recreated; the file is from an incompatible architecture`. The names of all incompatible objects are instantiated as plain namespaces, with any compatible contents (such as functions and variables) preserved.
 
@@ -53,7 +54,6 @@ Functionality that is only available in the Unicode edition includes:
 * The .NET interface
 * SharpPlot and SharpLeaf
 * External workspaces
-* `219⌶`
 * On the Microsoft Windows operating system: Edit and Preview, and Microsoft Outlook integration
 * Enhancements to the dfns workspace
 
@@ -62,12 +62,10 @@ Some behaviour is slightly different between Unicode and Classic editions. Speci
 * sorting using the _Grade Up_ and _Grade Down_ functions produces different results (and results of `⎕NL` are sorted differently)
 * internal representations and data types for character data differ (impacts `⎕DR` and `⎕MAP`)
 * the output from `⎕NA`
-* the input to/output from `⎕FPROPS`
 * in the Classic edition, default keyboard mappings differ from the documentation on a few keys: `⌶`, `⍷`, `⍪`, `⍫`, `!`, and `⍨`
 
 Functionality that is only available in the Classic edition includes:  
 
-* `⎕KL`
 * `⎕NXLATE` (this is only used in the Unicode edition to process files created in the Classic edition)
 * `⎕Uxxxx` equivalents for glyphs (see [Typing Glyphs](#typing-glyphs))
 * defining IDE colours in a Output Translate table (**win.dot**)
@@ -92,13 +90,13 @@ In both Unicode and Classic editions, `⎕OPT` can be used instead of the _varia
 
 Any further glyphs that are introduced to Dyalog and are not already part of `⎕AV` will also have `⎕Uxxxx` representations in the Classic edition.
 
-Any workspace can be opened in either edition; the appropriate representation for the edition will automatically be applied.
+Any translateable workspace can be opened in either edition; the appropriate representation for the edition will automatically be applied.
 
 Classic edition: `⎕FIX`, Link, SALT, and Editor automatically translate Unicode glyphs as required.
 
 ### Component Files
 
-Component files have a Unicode property. When this is enabled, all characters will be written as Unicode data to the file. By default, the Unicode property is switched on by Unicode editions and off for Classic editions. This can be changed using the [`⎕FPROPS`](xxxLINKxxx) system function.
+Component files have a Unicode property. When this is enabled, all characters can written as Unicode data to the file. By default, the Unicode property is switched on by Unicode editions and off for Classic editions. This can be changed using the [`⎕FPROPS`](xxxLINKxxx) system function.
 
 When a Unicode edition writes to a component file that cannot contain Unicode data, character data is mapped using `⎕AVU`; it can, therefore, be read without problems by Classic editions.
 
@@ -106,15 +104,23 @@ A `TRANSLATION ERROR` will be generated if:
 
 * a Unicode edition writes to a non-Unicode component file (that is, either a 32-bit file or a 64-bit file when the Unicode property is currently off) if the data being written contains characters that are not in `⎕AVU`.
 * a Classic edition attempts to read a component containing Unicode data that is not in `⎕AVU` from a component file.
-* a Classic edition attempts to `)LOAD` or `)COPY` a workspace containing Unicode data that cannot be mapped to `⎕AV` using the `⎕AVU` in the recipient workspace.
 
-The problematic Unicode data might be in the part of a workspace that holds the information needed to generate `⎕DM` and `⎕DMX`; in this situation, calling `)Reset` before `)Save` in the Unicode interpreter might eliminate the TRANSLATION ERRORs.
+### Workspaces
+
+A `TRANSLATION ERROR` will be generated if a Classic edition attempts to `)LOAD` or `)COPY` a workspace containing Unicode data that cannot be mapped to `⎕AV` using the `⎕AVU` in the recipient workspace. The problematic Unicode data might be in the part of a workspace that holds the information needed to generate `⎕DM` and `⎕DMX`; in this situation, calling `)Reset` before `)Save` in the Unicode interpreter might eliminate the TRANSLATION ERRORs.
 
 ## Very Large Array Components
-An attempt to read a component file greater than 2GB in 32-bit interpreters will result in a `WS FULL` being generated.
+An attempt to read a component file greater than 2GB in 32-bit interpreters will result in a `LIMIT ERROR` being generated.
 
 ## Session Files
 Session files (**.dse**) can only be used on the platform on which they were created and saved. Under Microsoft Windows, Session files can only be used by the architecture (32-bit/64-bit) of the version of Dyalog that saved them.
 
 ## Log Files
 Log files (**.dlf**) can only be used by the version and edition with which they were created and saved. 
+
+
+
+
+
+
+

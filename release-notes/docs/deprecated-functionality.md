@@ -1,10 +1,13 @@
+!!! Info "Information"  
+    THIS DOCUMENT IS STILL UNDER DEVELOPMENT
+
 # Deprecated Functionality
 
-Over time, certain functionality (for example, language elements, development environment features, or supplied samples or tools) can become obsolete or cease to be useful. There are many reasons why this might happen. For example:
+Over time, certain functionality (such as language elements, development environment features, or supplied samples or tools) can become obsolete or cease to be useful. There are many reasons why this might happen. For example:
 
-* A superior alternative has been introduced.<br />For example, `⎕UCS` has superseded `⎕TC` (which generates only the newline, backspace, and tabstop characters).
-* The feature was originally implemented as an I-beam but has since been superseded by a formal addition to Dyalog APL.<br />For example, `⎕JSON` replaced an earlier I-beam.
-* The feature is associated with hardware or technology this is itself becoming obsolete.<br />For example, 32-bit processes and address spaces limited to 4GB in size.
+* a superior alternative has been introduced.<br />For example, `⎕UCS` has superseded `⎕TC` (which generates only the newline, backspace, and tabstop characters).
+* the feature was originally implemented as an I-beam but has since been superseded by a formal addition to Dyalog APL.<br />For example, `⎕JSON` replaced `7159⌶`.
+* the feature is associated with hardware or technology that is itself becoming obsolete.<br />For example, 32-bit processes and address spaces limited to 4GB in size.
 
 In these circumstances, the feature is classified as _deprecated_. This means that it is unlikely to be developed or extended further, and its use in new development work is discouraged. Some deprecated features remain for backwards compatibility reasons, but some are later removed in a pre-announced Dyalog version.
 
@@ -12,7 +15,7 @@ In these circumstances, the feature is classified as _deprecated_. This means th
 
 If removing a deprecated feature is considered to be sufficiently significant, Dyalog Ltd will enable the ability to identify where this feature exists in a given codebase.
 
-Deprecated functionality can be identified either when it is encountered in code that is called or by scanning a directory for files that meet the deprecation reason conditions.
+Deprecated functionality can be identified either when it is encountered in code that is called or by scanning a directory for deprecated file types.
 
 ### Identifying Deprecated Functionality in Called Code
 
@@ -31,8 +34,8 @@ For Dyalog v20.0, the following names are valid:
 
 In addition, there are two reserved names than can be used:  
 
-* `'All'` – enables logging for all valid names
-* `'None'` – disable all logging
+* `All` – enables logging for all valid names
+* `None` – disable all logging
 
 Each time `13⌶` is called, the new list of features replaces the existing list. 
 
@@ -70,14 +73,14 @@ or:
 
 ### Identifying Files Pertaining to Deprecated Functionality
 
-A directory can be scanned for deprecated functionality using [`3535⌶`](../../../language-reference-guide/the-i-beam-operator/scan-for-deprecated-files) with a right argument of the directory to be scanned. If the left argument is set to `1`, sub-directories will also be scanned. The names of any files that pertain to deprecated functionality are returned with labels identifying the reason for selection.
+A directory can be scanned for deprecated functionality using [`3535⌶`](../../../language-reference-guide/the-i-beam-operator/scan-for-deprecated-files) with a right argument of the directory to be scanned. If the left argument is set to `1`, sub-directories will also be scanned. The names of any files that pertain to deprecated functionality are returned, with labels specifying the reason for identification.
 
 For Dyalog v20.0, the following labels can be returned: 
 
 | Label | Meaning |
 |-------|---------|
 | `J0C0`  | File is a component file with both the Journalling (J) and Checksum (C) properties set to 0
-| `OLDWS` | File is a workspace saved by Dyalog v11.0 or Dyalog v12.0
+| `OLDWS` | File is a workspace saved by Dyalog v12.0 or earlier
 | `S32`   | File is a small span component file
 | `⎕XT`   | File is an external variable file
 | `?`     | File could not be read and its content is unknown

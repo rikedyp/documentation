@@ -1,3 +1,6 @@
+!!! Info "Information"  
+    THIS DOCUMENT IS STILL UNDER DEVELOPMENT
+
 # System Requirements
 
 This page describes the hardware and software requirements for Dyalog v20.0. 
@@ -7,7 +10,7 @@ This page describes the hardware and software requirements for Dyalog v20.0.
 Current version: Dyalog v20.0  
 Previous supported versions: Dyalog v19.0 and v18.2  
 
-Dyalog version 18.0 (and earlier versions) are no longer supported.  
+Dyalog v18.0 and earlier versions are no longer supported.  
 
 ### Supported Platforms
 Dyalog v20.0 is supported on the following platforms/operating systems:  
@@ -27,18 +30,22 @@ Dyalog v20.0 is supported on the following platforms/operating systems:
     * 64-bit: Raspberry Pi OS Bookworm or later  
     NOTE: Installed using the Linux ARM64 package
     * Not supported on Raspberry Pi Pico
-## External .NET Requirements
+## External .NET Requirements  
+
 ### .NET Interface
-The .NET interface requires version 8.0 of Microsoft .NET or higher.
+The .NET interface requires version 8.0 of Microsoft .NET or higher.  
+
 ### Microsoft .NET Framework
 The .NET Framework interface requires version 4.0 or greater of Microsoft .NET Framework. It does not operate with earlier versions of the .NET Framework. In addition:  
 
 * Microsoft .NET Framework version 4.5 is needed for full data binding support.  
 Note: This includes support for the <code class="language-other">INotifyCollectionChanged</code> interface, which is used by Dyalog to notify a data consumer when the contents of a variable that is data bound as a list of items changes.  
 
-* IIS (and ASP.NET) need to be installed before installing Dyalog. If these are not present when Dyalog is installed, the **[DYALOG]\Samples\asp.net** directory will not be installed.
+* IIS (and ASP.NET) need to be installed before installing Dyalog. If these are not present when Dyalog is installed, the **[DYALOG]\Samples\asp.net** directory will not be installed.  
+
 ### Chromium Embedded Framework (CEF)
-Dyalog version 20.0 is supplied with CEF version 121 on all supported platforms.
+Dyalog v20.0 is supplied with CEF version 121 on all supported platforms.  
+
 ### HTMLRenderer
 The HTMLRenderer is supported on the following platforms:  
 
