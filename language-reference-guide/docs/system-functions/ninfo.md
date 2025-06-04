@@ -98,7 +98,7 @@ In the Unicode Edition, if the UTF-8 encoding is invalid, Dyalog replaces each o
 
 In the Classic Edition, offending bytes are replaced by the `?` symbol, which means that the names reported do not accurately identify the files.
 
-## <h2 class="example">Examples</h2>
+<h2 class="example">Examples</h2>
 ```apl
 
       (0 1 2) ⎕NINFO 'c:/Users/Pete/Documents'
