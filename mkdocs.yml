@@ -63,7 +63,7 @@ markdown_extensions:
       title: On this page
 
 nav:
-  - Release Notes V19.0: "!include ./release-notes-v19-0/mkdocs.yml"
+  - Release Notes Dyalog V20.0: coming-soon.md
   - Windows Installation: "!include ./windows-installation-and-configuration-guide/mkdocs.yml"
   - UNIX Installation: "!include ./unix-installation-and-configuration-guide/mkdocs.yml"
   - Programmer's Guide: "!include ./programming-reference-guide/mkdocs.yml"
@@ -73,10 +73,7 @@ nav:
   - Interface Guide: "!include ./interface-guide/mkdocs.yml"
   - .NET Framework Interface: "!include ./dotnet-framework-interface/mkdocs.yml"
   - UNIX User Guide: "!include ./unix-user-guide/mkdocs.yml"
+  - Earlier Release Notes: "!include ./earlier-release-notes/mkdocs.yml"
   - Licences for third-party components: licences-overview.md
   - Trademarks: trademarks.md
   
-
-
-
-

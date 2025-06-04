@@ -1,24 +1,13 @@
-
-
-
-
-
 <h1 class="heading"><span class="name">SetZoomLevel</span> <span class="command">Method</span></h1>
 
-
-
 |-----------|--------------------------------------------------------------|
-|Applies To:|[HTMLRenderer](../../../object-reference/objects/htmlrenderer)|
-
+|Applies To:|[HTMLRenderer](https://help.dyalog.com/latest/index.htm#GUI/Objects/HTMLRenderer.htm)|
 
 **Description**
 
-
 Sets the CEF ZoomLevel. The default (unzoomed) level is 0. Setting a positive value will increase the zoom, whereas setting a negative will decrease the zoom. The zoom scale is not linear; rather the effective scaling is approximately 1.2*level, so, setting the ZoomLevel to 1 will result in an approximate 20% size increase. ZoomLevel affects all instances of HTMLRenderer windows; it is not possible to have different ZoomLevels for individual windows.
 
-
 The argument to SetZoomLevel is a single numeric value:
-
 
 |-----|---------|-------|
 |`[1]`|ZoomLevel|Numeric|
@@ -40,26 +29,22 @@ The argument to SetZoomLevel is a single numeric value:
       hr Zoom 0
 ```
 
-
-![zoomlevel 0](../img/zoomlevel-0.png)
+![](../../img/zoomlevel-0.png)
 
 ```apl
       hr Zoom 1
 ```
 
-
-![zoomlevel 1](../img/zoomlevel-1.png)
+![](../../img/zoomlevel-1.png)
 
 ```apl
       hr Zoom 2
 ```
 
-
-![zoomlevel 2](../img/zoomlevel-2.png)
+![](../img/zoomlevel-2.png)
 
 ```apl
       hr Zoom ¯1
 ```
 
-![zoomlevel neg1](../img/zoomlevel-neg1.png)
-
+![](../../img/zoomlevel-neg1.png)
