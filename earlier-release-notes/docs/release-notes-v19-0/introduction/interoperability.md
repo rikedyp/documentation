@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Workspaces and component files are stored on disk in a binary format. This format differs between machine architectures and among versions of Dyalog. For example, a file component written from Windows will have an internal format that is different from one written from AIX. Similarly, a workspace saved from Dyalog Version {{ version_majmin }} will differ internally from one saved by a previous version of Dyalog APL.
+Workspaces and component files are stored on disk in a binary format. This format differs between machine architectures and among versions of Dyalog. For example, a file component written from Windows will have an internal format that is different from one written from AIX. Similarly, a workspace saved from Dyalog Version 19.0 will differ internally from one saved by a previous version of Dyalog APL.
 
 It is convenient for versions of Dyalog APL running on different platforms to be able to
 *interoperate* by sharing workspaces and component files. Component files and workspaces can generally be shared between Dyalog interpreters running on different platforms. However, this is not always possible and the following sections describe limitations in interoperability:
@@ -64,7 +64,7 @@ Two editions are available on some platforms. Unicode editions work with the ent
 Component files have a Unicode property. When this is enabled, all characters will be written as Unicode data to the file. The Unicode property is set *on* by Unicode Editions and *off* by Classic Editions,  by default. The Unicode property can subsequently be toggled on and off using
 `⎕FPROPS`.
 
-When a Unicode edition writes to a component file that cannot contain Unicode data, character data is mapped using       `⎕AVU`; it can therefore be read without problems by Classic editions.
+When a Unicode edition writes to a component file that cannot contain Unicode data, character data is mapped using `⎕AVU`; it can therefore be read without problems by Classic editions.
 
 A `TRANSLATION ERROR` will occur if a Unicode edition writes to a non-Unicode component  file (that is either a 32-bit file, or a 64-bit file when the Unicode property is currently off) if the data being written contains characters that are not in `⎕AVU`.
 
@@ -74,14 +74,7 @@ A `TRANSLATION ERROR` will also be issued when a Classic edition attempts to `)L
 
 `TCPSocket` objects have an `APL` property that corresponds to the Unicode property of a file, if this is set to `Classic` (the default) the data in the socket will be restricted to `⎕AV`, if Unicode it will contain Unicode character data. As a result, `TRANSLATION ERROR`s can occur on transmission or reception in the same way as when updating or reading a file component.
 
-The symbols `⊆`, `⍸`, `⍤`, `⍠`, `⌸`, `⌺` and `⍥`  used for the 
-		Nest/Partition and 
-		Where/Interval Index functions and the 
-		Rank/Atop, 
-		Variant, 
-		Key, 
-		Stencil and 
-		Over operators respectively are available only in the Unicode edition. In the Classic edition, these symbols are replaced by `⎕U2286`, `⎕U2378`, `⎕U2364`, `⎕U2360`, `⎕U2338`, `⎕U233a` and `⎕U2365` respectively. In both Unicode and Classic editions Variant may be represented by `⎕OPT`.
+The symbols `⊆`, `⍸`, `⍤`, `⍠`, `⌸`, `⌺` and `⍥`  used for the *nest/partition* and *where/interval index* functions and the *rank/atop*, *variant*, *key*, *stencil* and *over* operators respectively are available only in the Unicode edition. In the Classic edition, these symbols are replaced by `⎕U2286`, `⎕U2378`, `⎕U2364`, `⎕U2360`, `⎕U2338`, `⎕U233a` and `⎕U2365` respectively. In both Unicode and Classic editions, *variant* operator can be represented by `⎕OPT`.
 
 ## Very large array components
 

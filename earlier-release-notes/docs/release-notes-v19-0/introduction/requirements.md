@@ -4,17 +4,17 @@
 
 Dyalog version 19.0 is supported on versions of Microsoft Windows from Windows 10 or Windows Server 2016 upwards.
 
-The Dyalog version {{ version_majmin }} .NET Framework interface requires version 4.0 or greater of Microsoft .NET Framework. It does *not* operate with earlier versions of the .NET Framework. In addition:
+The Dyalog version 19.0 .NET Framework interface requires version 4.0 or greater of Microsoft .NET Framework. It does *not* operate with earlier versions of the .NET Framework. In addition:
 
 - .NET Framework version 4.5 is needed for full Data Binding support (including support for the INotifyCollectionChanged interface, which is used by Dyalog to notify a data consumer when the contents of a variable, that is data bound as a list of items, changes).
-- .NET Framework version 4.6 is needed to run the Syncfusion libraries supplied with Dyalog version {{ version_majmin }}.
+- .NET Framework version 4.6 is needed to run the Syncfusion libraries supplied with Dyalog version 19.0.
 - IIS needs to be installed before installing Dyalog APL in order to access the examples in the `Samples/asp.net` sub-directory – if IIS and ASP.NET are not present, the `asp.net` sub-directory will not be installed during the Dyalog installation.
 
 Note that .NET Framework is specific to Microsoft Windows; the cross-platform .NET is also supported (see below).
 
 ## AIX
 
-Dyalog version {{ version_majmin }} requires AIX 7.2 or higher, and a POWER9 chip or higher.
+Dyalog version 19.0 requires AIX 7.2 or higher, and a POWER9 chip or higher.
 
 ## Raspberry Pi
 
@@ -22,11 +22,11 @@ Dyalog 32-bit Unicode supports 32-bit Raspberry Pi OS Buster or later but is not
 
 ## Non-Pi Linux
 
-Dyalog version {{ version_majmin }} only exists as 64-bit interpreters – there are no 32-bit versions.  It is built on Ubuntu 20.04; it should run on all recent distributions. For further information, see [the Dyalog UNIX and Linux forum.](https://forums.dyalog.com/viewforum.php?f=20)
+Dyalog version 19.0 only exists as 64-bit interpreters – there are no 32-bit versions.  It is built on Ubuntu 20.04; it should run on all recent distributions. For further information, see [the Dyalog UNIX and Linux forum.](https://forums.dyalog.com/viewforum.php?f=20)
 
 ## macOS
 
-Dyalog version {{ version_majmin }} (64-bit version; there is no 32-bit version) is supported on both Intel and ARM processors. The macOS version required for Dyalog version {{ version_majmin }} on each is:
+Dyalog version 19.0 (64-bit version; there is no 32-bit version) is supported on both Intel and ARM processors. The macOS version required for Dyalog version 19.0 on each is:
 
 - on Intel: macOS 11.6.1 (Big Sur) onwards
 - on ARM: macOS 13.4.1 (Ventura) onwards
@@ -35,7 +35,7 @@ Dyalog for ARM is only supported on Macs with an ARM processor. Dyalog for Intel
 
 ## Cross-platform Microsoft .NET Interface
 
-The Dyalog version {{ version_majmin }} .NET interface requires version 8.0 of Microsoft .NET or higher.
+The Dyalog version 19.0 .NET interface requires version 8.0 of Microsoft .NET or higher.
 
 ## HTMLRenderer and Chromium Embedded Framework (CEF)
 
