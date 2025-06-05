@@ -68,6 +68,6 @@ W|File must be writable. If it is read-only for any reason the tie will fail.
 ### Notes
 
 * 'Mode' 'W' will not cause the tie to fail purely because the file's access matrix would prevent any or all subsequent writes.
-* Files may not be writable for reasons other than the host filesystem not permitting it. For example, small-span (32-bit) component files are not writable.
+* Files may not be writable for reasons other than the host filesystem not permitting it. For example, small-span component files are not writable.
 . If the file is not writable because the host filesystem does not permit it, ⎕FTIE (not ⎕FSTIE) will likely fail regardless of the Mode because it cannot be exclusively locked.
 * Successfully tying a file with Mode ‘W’ does not guarantee that subsequent writes will succeed. The file permissions on the host filesystem might be changed in the meantime, or the filesystem may be full, for example.
