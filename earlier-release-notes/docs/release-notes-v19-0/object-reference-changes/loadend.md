@@ -1,7 +1,7 @@
 <h1 class="heading"><span class="name">LoadEnd</span> <span class="command">Event 836</span></h1>
 
 |-----------|--------------------------------------------------------------|
-|Applies To:|[HTMLRenderer](https://help.dyalog.com/latest/index.htm#GUI/Objects/HTMLRenderer.htm)|
+|Applies To:|[HTMLRenderer](https://help.dyalog.com/19.0/index.htm#GUI/Objects/HTMLRenderer.htm)|
 
 **Description**
 
@@ -11,7 +11,7 @@ A common technique is to wait for the main frame to finish loading before furthe
 
 You may use the [IsLoading](./isloading.md) property to check if the HTMLRenderer is still loading.
 
-The event message reported as the result of [`⎕DQ`](https://help.dyalog.com/latest/index.htm#Language/System%20Functions/dq.htm), or supplied as the right argument to your callback function, is a 5-element vector as follows :
+The event message reported as the result of [`⎕DQ`](https://help.dyalog.com/19.0/index.htm#Language/System%20Functions/dq.htm), or supplied as the right argument to your callback function, is a 5-element vector as follows :
 
 |-----|------|------------------------------------------------------|
 |`[1]`|Object|ref or character vector                               |

@@ -1,4 +1,4 @@
-site_name: Release Notes V19.0
+site_name: Dyalog v19.0 Release Notes
 theme:
   favicon: img/favicon-32.png
   logo: img/dyalog-logo-2025_white.svg
@@ -47,7 +47,7 @@ markdown_extensions:
   - toc:
       title: On this page
 nav:
-  - Dyalog V19.0:
+  - Dyalog v19.0 Release Notes:
     - Introduction:
         - Key Features: release-notes-v19-0/introduction/key-features.md
         - Extension to Native File Functions: release-notes-v19-0/introduction/extension-to-native-file-functions.md

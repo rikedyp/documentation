@@ -2,7 +2,7 @@
 
 ## Historical Note
 
-Lexical scope in scripts has been part of Dyalog since the implementation of Object Oriented Programming in Version 11.0, and is only partially documented.  See [Namespace Scripts](https://help.dyalog.com/latest/index.htm#Language/Object%20Oriented%20Programming/Namespace%20Scripts/Namespace%20Scripts.htm#NamespaceScripts). This section provides additional explanation and extends the discussion to Classes.
+Lexical scope in scripts has been part of Dyalog since the implementation of Object Oriented Programming in Version 11.0, and is only partially documented.  See [Namespace Scripts](https://help.dyalog.com/19.0/index.htm#Language/Object%20Oriented%20Programming/Namespace%20Scripts/Namespace%20Scripts.htm#NamespaceScripts). This section provides additional explanation and extends the discussion to Classes.
 
 ## Introduction
 
@@ -92,6 +92,6 @@ Andy cannot see NameAsVariable
 
 ## Variant Options for `⎕FIX`
 
-Despite the essential benefits of lexical scope, there are circumstances in which it is undesirable and `⎕FIX`  provides fine control over the insertion of references. See [InjectReferences Option](https://help.dyalog.com/latest/index.htm#Language/System%20Functions/fix.htm#InjectReferences).
+Despite the essential benefits of lexical scope, there are circumstances in which it is undesirable and `⎕FIX`  provides fine control over the insertion of references. See [InjectReferences Option](https://help.dyalog.com/19.0/index.htm#Language/System%20Functions/fix.htm#InjectReferences).
 
 Note that the ability to control lexical scope in this way applies only to `⎕FIX`. When a nested script is fixed by the Editor, the default lexical scope (InClasses) is applied. If, after fixing a script from the Editor, you wish to apply a different option (All or None) it is necessary to re-fix the script using `⎕FIX 62 ATX 'name'`.

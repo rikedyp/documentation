@@ -12,13 +12,13 @@ Dyalog v19.0 is natively available for both Intel and ARM-based Macs. Dyalog v19
 
 We have identified a namespace performance issue which is especially noticeable with JSON Import. We have a fix planned for the next release of Dyalog. In the meantime, there is an easy workaround.
 
-For further information, see [Performance Warning](https://help.dyalog.com/latest/index.htm#Language/System%20Functions/json.htm#Performance_Issue_Warning)
+For further information, see [Performance Warning](https://help.dyalog.com/19.0/index.htm#Language/System%20Functions/json.htm)
 
 ## Hash and Lookup Tables
 
 In the next major version of Dyalog the performance of the set functions will be improved. The new code will involve increasing the amount of workspace allocated to the internal tables used by these functions. These tables are described using  the terms *hash table* and *lookup table*. The latter refers to internal tables that do not require hashing.
 
-For more information, see [Search Functions and Hash Tables](https://help.dyalog.com/latest/index.htm#Language/Defined%20Functions%20and%20Operators/Search%20Functions%20and%20Hash.htm#SearchFunctionsAndHashTables) and [Hash Array](https://help.dyalog.com/latest/index.htm#Language/I%20Beam%20Functions/Hash%20Array.htm#Hash_Array).
+For more information, see [Search Functions and Hash Tables](https://help.dyalog.com/19.0/index.htm#Language/Defined%20Functions%20and%20Operators/Search%20Functions%20and%20Hash.htm#SearchFunctionsAndHashTables) and [Hash Array](https://help.dyalog.com/19.0/index.htm#Language/I%20Beam%20Functions/Hash%20Array.htm#Hash_Array).
 
 The proposed size increase may potentially cause `WS FULL` errors or may change the frequency of workspace compactions.
 

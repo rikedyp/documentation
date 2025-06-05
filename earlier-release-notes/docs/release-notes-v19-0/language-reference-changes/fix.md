@@ -110,7 +110,7 @@ DOMAIN ERROR: There were errors processing the script
 ## FixWithErrors Option
 
 |---|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|`0`|If the script contains errors, `⎕FIX` fails with `DOMAIN ERROR` .                                                                                                      |
+|`0`|If the script contains errors, `⎕FIX` fails with `DOMAIN ERROR`.                                                                                                       |
 |`1`|`⎕FIX` fixes all the namespaces and classes in the script regardless of any errors they may contain.                                                                   |
 |`2`|If the script contains errors, `⎕FIX` displays a message box prompting the user to choose whether or not to fix all the offending namespaces and classes in the script.|
 

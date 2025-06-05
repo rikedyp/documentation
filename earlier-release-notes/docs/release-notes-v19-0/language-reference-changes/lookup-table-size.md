@@ -14,4 +14,4 @@ If `Y` is `⍬` the size is unaffected and the (non-shy) result is the current v
 
 It is recommended that users test their code using the maximum value.
 
-For more information, see [Search Functions and Hash Tables](https://help.dyalog.com/latest/index.htm#Language/Defined%20Functions%20and%20Operators/Search%20Functions%20and%20Hash.htm#SearchFunctionsAndHashTables) and [Hash Array](https://help.dyalog.com/latest/index.htm#Language/I%20Beam%20Functions/Hash%20Array.htm#Hash_Array).
+For more information, see [Search Functions and Hash Tables](https://help.dyalog.com/19.0/index.htm#Language/Defined%20Functions%20and%20Operators/Search%20Functions%20and%20Hash.htm#SearchFunctionsAndHashTables) and [Hash Array](https://help.dyalog.com/19.0/index.htm#Language/I%20Beam%20Functions/Hash%20Array.htm#Hash_Array).

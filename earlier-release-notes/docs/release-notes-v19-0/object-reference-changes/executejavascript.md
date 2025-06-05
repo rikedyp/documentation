@@ -1,11 +1,11 @@
 <h1 class="heading"><span class="name">ExecuteJavaScript</span> <span class="command">Method 839</span></h1>
 
 |-----------|--------------------------------------------------------------|
-|Applies To:|[HTMLRenderer](https://help.dyalog.com/latest/index.htm#GUI/Objects/HTMLRenderer.htm)|
+|Applies To:|[HTMLRenderer](https://help.dyalog.com/19.0/index.htm#GUI/Objects/HTMLRenderer.htm)|
 
 **Description**
 
-This method is used to execute JavaScript in an [HTMLRenderer](https://help.dyalog.com/latest/index.htm#GUI/Objects/HTMLRenderer.htm) object.
+This method is used to execute JavaScript in an [HTMLRenderer](https://help.dyalog.com/19.0/index.htm#GUI/Objects/HTMLRenderer.htm) object.
 
 The argument to ExecuteJavaScript is a single item as follows:
 
