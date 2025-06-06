@@ -16,7 +16,7 @@ The shy result `R` is the number of the component to which `X` is written, and i
 
 <h1 class="example">Examples</h1>
 ```apl
-      (1000?1000) ⎕FAPPEND 1
+      (1000?1000) ⎕FAPPEND 1«
  
       ⎕←(2 3⍴⍳6) 'Geoff' (⎕OR'FOO') ⎕FAPPEND 1
 12
@@ -30,5 +30,5 @@ Dump←{
 }
 ```
 
-
-
+!!! Info "Information"
+    Component files that have both journalling and checksum properties set to 0 have been deprecated; from Dyalog v21.0, component files with this combination of properties will be read-only. Dyalog Ltd recommends using `⎕FPROPS` to convert any such files to have different properties. For information on how to identify component files that have both journalling and checksum properties set to 0 in your existing codebase, see the [Release Notes](../release-notes/announcements/deprecated-functionality.md).

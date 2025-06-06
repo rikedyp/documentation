@@ -46,4 +46,5 @@ to:
       '../budget/COSTS' ⎕FSTIE 2
 ```
 
-
+!!! Info "Information"
+    Small-span (32-bit) component files are currently read-only; this support is scheduled for removal in a future release, after which it will not be possible to tie small-span component files. Dyalog Ltd recommends using `⎕FCOPY` to convert any such files to large-span (64-bit). For information on how to identify calls to small-span component files in your existing codebase, see the [Release Notes](../release-notes/announcements/deprecated-functionality.md).

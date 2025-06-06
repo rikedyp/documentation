@@ -30,4 +30,4 @@ The rows in `R` are not sorted.
  ./subdir/S32J0C0.dcf   J0C0  S32
 ```
 
-See also [Log use of deprecated features](deprecated-features.md).
+See also [`13⌶` Log use of deprecated features](deprecated-features.md).
