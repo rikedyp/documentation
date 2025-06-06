@@ -16,7 +16,7 @@ The shy result `R` is the number of the component to which `X` is written, and i
 
 <h1 class="example">Examples</h1>
 ```apl
-      (1000?1000) ⎕FAPPEND 1«
+      (1000?1000) ⎕FAPPEND 1
  
       ⎕←(2 3⍴⍳6) 'Geoff' (⎕OR'FOO') ⎕FAPPEND 1
 12
