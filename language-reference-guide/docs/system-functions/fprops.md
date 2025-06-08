@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕FPROPS FPROPS
+</div>
+
 <h1 class="heading"><span class="name">File Properties</span> <span class="command">R←X ⎕FPROPS Y</span></h1>
 
 ## Access Code 1 (to read) or 8192 (to change properties)

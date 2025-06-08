@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕FCHK FCHK
+</div>
+
 <h1 class="heading"><span class="name">File Check and Repair</span> <span class="command">R←{X} ⎕FCHK Y</span></h1>
 
 `⎕FCHK` validates and repairs component files, and validates files associated with external variables, following an abnormal termination of the APL process or operating system.

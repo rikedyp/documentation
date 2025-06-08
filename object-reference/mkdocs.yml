@@ -1,7 +1,7 @@
 site_name: Object Reference
 theme:
   favicon: img/favicon-32.png
-  logo: img/dyalog-white.svg
+  logo: img/dyalog-logo-2025_white.svg
   features:
     - navigation.instant
     - navigation.tracking
@@ -95,6 +95,7 @@ nav:
       - Metafile Object: objects/metafile.md
       - MsgBox Object: objects/msgbox.md
       - NetClient Object: objects/netclient.md
+      - NetControl Object: objects/netcontrol.md
       - NetType Object: objects/nettype.md
       - OCXClass Object: objects/ocxclass.md
       - OLEClient Object: objects/oleclient.md
@@ -232,7 +233,6 @@ nav:
       - Encoding Property: properties/encoding.md
       - End Property: properties/end.md
       - EnterReadOnlyCells Property: properties/enterreadonlycells.md
-      - EvaluationDays Property: properties/evaluationdays.md
       - Event Property: properties/event.md
       - EventList Property: properties/eventlist.md
       - ExportedFns Property: properties/exportedfns.md
@@ -337,7 +337,6 @@ nav:
       - MultiSelect Property: properties/multiselect.md
       - NewLine Property: properties/newline.md
       - Note Property: properties/note.md
-      - OKButton Property: properties/okbutton.md
       - OLEControls Property: properties/olecontrols.md
       - OLEServers Property: properties/oleservers.md
       - OnTop Property: properties/ontop.md
@@ -398,8 +397,6 @@ nav:
       - RowTreeStyle Property: properties/rowtreestyle.md
       - Rows Property: properties/rows.md
       - RunMode Property: properties/runmode.md
-      - SIPMode Property: properties/sipmode.md
-      - SIPResize Property: properties/sipresize.md
       - ScrollOpposite Property: properties/scrollopposite.md
       - SelDate Property: properties/seldate.md
       - SelImageIndex Property: properties/selimageindex.md
@@ -718,7 +715,6 @@ nav:
       - ShowHelp Method: methodorevents/showhelp.md
       - ShowItem Method: methodorevents/showitem.md
       - ShowProperties Method: methodorevents/showproperties.md
-      - ShowSIP Method: methodorevents/showsip.md
       - TCPGetHostID Method: methodorevents/tcpgethostid.md
       - TCPSend Method: methodorevents/tcpsend.md
       - TCPSendPicture Method: methodorevents/tcpsendpicture.md
@@ -922,7 +918,6 @@ nav:
       - EndEditLabel Event: methodorevents/endeditlabel.md
       - EndSplit Event: methodorevents/endsplit.md
       - EnterReadOnlyCells Property: properties/enterreadonlycells.md
-      - EvaluationDays Property: properties/evaluationdays.md
       - Event Property: properties/event.md
       - EventList Property: properties/eventlist.md
       - ExecuteJavaScript Method: methodorevents/executejavascript.md
@@ -1140,7 +1135,6 @@ nav:
       - NewPage Method: methodorevents/newpage.md
       - Note Property: properties/note.md
       - OCXClass Object: objects/ocxclass.md
-      - OKButton Property: properties/okbutton.md
       - OLEAddEventSink Method: methodorevents/oleaddeventsink.md
       - OLEClient Object: objects/oleclient.md
       - OLEControls Property: properties/olecontrols.md
@@ -1282,11 +1276,8 @@ nav:
       - ShowItem Method: methodorevents/showitem.md
       - ShowProperties Method: methodorevents/showproperties.md
       - ShowSession Property: properties/showsession.md
-      - ShowSIP Method: methodorevents/showsip.md
       - ShowThumb Property: properties/showthumb.md
       - SingleClickExpand Property: properties/singleclickexpand.md
-      - SIPMode Property: properties/sipmode.md
-      - SIPResize Property: properties/sipresize.md
       - Size Property: properties/size.md
       - Sizeable Property: properties/sizeable.md
       - SM Object: objects/sm.md
@@ -1395,3 +1386,45 @@ nav:
       - XRange Property: properties/xrange.md
       - Yield Property: properties/yield.md
       - YRange Property: properties/yrange.md
+  - Examples:
+      - examples/calendar-example-1.md
+      - examples/calendar-example-2.md
+      - examples/calendar-example-3.md
+      - examples/coolbar-example-1.md
+      - examples/coolbar-example-2.md
+      - examples/splitter-example-1.md
+      - examples/splitter-example-2.md
+      - examples/splitter-example-3.md
+      - examples/splitter-example-4.md
+      - examples/splitter-example-5.md
+      - examples/tabcontrol-example-1.md
+      - examples/tabcontrol-example-2.md
+      - examples/tabcontrol-example-3.md
+      - examples/tabcontrol-example-3a.md
+      - examples/tabcontrol-example-4.md
+      - examples/tabcontrol-example-5.md
+      - examples/tabcontrol-example-6.md
+      - examples/tabcontrol-example-7.md
+      - examples/tabcontrol-example-8.md
+      - examples/tabcontrol-example-9.md
+      - examples/tabcontrol-example-10.md
+      - examples/tabcontrol-example-11.md
+      - examples/tabcontrol-example-12.md
+      - examples/tabcontrol-example-13.md
+      - examples/toolbutton-example-1.md
+      - examples/toolcontrol-example-1.md
+      - examples/toolcontrol-example-2.md
+      - examples/toolcontrol-example-3.md
+      - examples/toolcontrol-example-4.md
+  - Miscellaneous:
+      - Class Identifier: miscellaneous/class-identifier-clsid.md
+      - COM Data Types: miscellaneous/com-data-types.md
+      - DISPID: miscellaneous/dispid.md
+      - GUID: miscellaneous/globally-unique-identifier-guid.md
+      - International Day Number: miscellaneous/international-day-number.md
+      - Native Look and Feel: miscellaneous/windows-xp-look-and-feel.md
+      - Port Number: miscellaneous/port-number.md
+      - Stream Sockets: miscellaneous/stream-sockets.md
+      - Twips: miscellaneous/twips.md
+      - UDP: miscellaneous/user-datagram-protocol-udp.md
+  

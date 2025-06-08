@@ -3,7 +3,7 @@
 I-Beam is a monadic operator that provides a range of system related services.
 
 !!! warning 
-    Although documentation is provided for I-Beam functions, any service provided using I-Beam should be considered as "experimental" and subject to change – without notice - from one release to the next. Any use of I-Beams in applications should therefore be carefully isolated in cover-functions that can be adjusted if necessary. See also: [RIDE and Experimental Features-related I-Beams](./supplementary-i-beam-functions.md).
+    Although documentation is provided for I-Beam functions, any service provided using I-Beam should be considered as "experimental" and subject to change – without notice - from one release to the next. Any use of I-Beams in applications should therefore be carefully isolated in cover-functions that can be adjusted if necessary. See also: [Ride and Experimental Features-related I-Beams](./supplementary-i-beam-functions.md).
 
 `A` is an integer that specifies the type of operation to be performed  as shown in the table below. `Y` is an array that supplies further information about what is to be done.
 
@@ -29,7 +29,9 @@ The column labelled *O/S* indicates if a function applies only on Windows (W), o
 |A      |Derived Function                                                                      |O/S   |
 |-------|--------------------------------------------------------------------------------------|------|
 |`8`    |[Inverted Table Index-of](./inverted-table-index-of.md)                               |&nbsp;|
+|`43`   |[Monadic Operator Generator](./monadic-operator-generator.md)                         |&nbsp;|
 |`85`   |[Execute Expression](./execute-expression.md)                                         |&nbsp;|
+|`120`  |[Generate UUID](./generate-uuid.md)                                                   |&nbsp;|
 |`127`  |[Overwrite Free Pockets](./overwrite-free-pockets.md)                                 |&nbsp;|
 |`180`  |[Canonical Representation](./canonical-representation.md)                             |&nbsp;|
 |`181`  |[Unsqueezed Type](./unsqueezed-type.md)                                               |&nbsp;|
@@ -40,7 +42,6 @@ The column labelled *O/S* indicates if a function applies only on Windows (W), o
 |`400`  |[Compiler Control](./compiler-control.md)                                             |&nbsp;|
 |`600`  |[Trap Control](./trap-control.md)                                                     |&nbsp;|
 |`739`  |[Temporary Directory](./temporary-directory.md)                                       |&nbsp;|
-|`819`  |[Case Convert](./case-convert.md)                                                     |&nbsp;|
 |`900`  |[Called Monadically](./called-monadically.md)                                         |&nbsp;|
 |`950`  |[Loaded Libraries](./loaded-libraries.md)                                             |&nbsp;|
 |`1010` |[Set Shell Script Debug Options](./set-shell-script-debug-options.md)                 |&nbsp;|
@@ -75,9 +76,9 @@ The column labelled *O/S* indicates if a function applies only on Windows (W), o
 |`2704` |[Continue Autosave](./continue-autosave.md)                                           |&nbsp;|
 |`3002` |[Disable Component Checksum Validation](./disable-component-checksum-validation.md)   |&nbsp;|
 |`3012` |[Enable Compression of Large Components](./enable-compression-of-large-components.md) |&nbsp;|
-|`3500` |[Send Text to RIDE-embedded Browser](./send-text-to-ride-embedded-browser.md)         |&nbsp;|
-|`3501` |[Connected to the RIDE](./connected-to-the-ride.md)                                   |&nbsp;|
-|`3502` |[Manage RIDE Connections](./manage-ride-connections.md)                               |&nbsp;|
+|`3500` |[Send Text to Ride-embedded Browser](./send-text-to-ride-embedded-browser.md)         |&nbsp;|
+|`3501` |[Connected to Ride](./connected-to-the-ride.md)                                       |&nbsp;|
+|`3502` |[Manage Ride Connections](./manage-ride-connections.md)                               |&nbsp;|
 |`4000` |[Fork New Task](./fork-new-task.md)                                                   |AIX   |
 |`4001` |[Change User](./change-user.md)                                                       |X     |
 |`4002` |[Reap Forked Tasks](./reap-forked-tasks.md)                                           |AIX   |
@@ -88,10 +89,10 @@ The column labelled *O/S* indicates if a function applies only on Windows (W), o
 |`5177` |[List Loaded File Objects](./list-loaded-file-objects.md)                             |&nbsp;|
 |`5178` |[Remove Loaded File Object Info](./remove-loaded-file-object-info.md)                 |&nbsp;|
 |`5179` |[Loaded File Object Info](./loaded-file-object-info.md)                               |&nbsp;|
+|`5581` |[Unicode Normalisation](./unicode-normalisation.md)                                   |&nbsp;|
 |`7162` |[JSON Translate Name](./json-translate-name.md)                                       |&nbsp;|
 |`8373` |[Shell Process Control](./shell-process-control.md)                                   |&nbsp;|
 |`8415` |[Singular Value Decomposition](./singular-value-decomposition.md)                     |&nbsp;|
-|`8674` |[Externalise Array](./externalise-array.md)                                           |&nbsp;|
 |`9468` |[Hash Table Size](./hash-table-size.md)                                               |&nbsp;|
 |`9469` |[Lookup Table Size](./lookup-table-size.md)                                           |&nbsp;|
 |`16808`|[Sample Probability Distribution](./sample-probability-distribution.md)               |&nbsp;|

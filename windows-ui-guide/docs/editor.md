@@ -390,7 +390,7 @@ Any of the following invokes it:
 
 - Click the ![](img/edit-array-icon.png) icon in the Session toolbar when the mouse pointer is over the name of a suitable variable.
 - Click the ![](img/edit-array-icon.png) icon in the Editor toolbar.
-- Hitting <ED> or <RD> from within the Editor
+- Hitting &lt;ED&gt; or &lt;RD&gt; from within the Editor
 - Call the system command `)ED` and prefix the variable name with a diamond; for example: `)ED ⋄q`
 - Call the system function `⎕ED` with a left argument `'⋄'`; for example, `'⋄'⎕ED'q'`.
 

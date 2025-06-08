@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 <h1 class="heading"><span class="name">I-Beam</span> <span class="command">R←{X}(A⌶)Y</span></h1>
 
 I-Beam is a monadic operator that provides a range of system related services.
@@ -72,9 +77,9 @@ The column labelled *O/S* indicates if a function applies only on Windows (W), o
 |`2704` |[Continue Autosave](../the-i-beam-operator/continue-autosave.md)                                           |&nbsp;|
 |`3002` |[Disable Component Checksum Validation](../the-i-beam-operator/disable-component-checksum-validation.md)   |&nbsp;|
 |`3012` |[Enable Compression of Large Components](../the-i-beam-operator/enable-compression-of-large-components.md) |&nbsp;|
-|`3500` |[Send Text to RIDE-embedded Browser](../the-i-beam-operator/send-text-to-ride-embedded-browser.md)         |&nbsp;|
-|`3501` |[Connected to the RIDE](../the-i-beam-operator/connected-to-the-ride.md)                                   |&nbsp;|
-|`3502` |[Manage RIDE Connections](../the-i-beam-operator/manage-ride-connections.md)                               |&nbsp;|
+|`3500` |[Send Text to Ride-embedded Browser](../the-i-beam-operator/send-text-to-ride-embedded-browser.md)         |&nbsp;|
+|`3501` |[Connected to Ride](../the-i-beam-operator/connected-to-the-ride.md)                                       |&nbsp;|
+|`3502` |[Manage Ride Connections](../the-i-beam-operator/manage-ride-connections.md)                               |&nbsp;|
 |`4000` |[Fork New Task](../the-i-beam-operator/fork-new-task.md)                                                   |AIX   |
 |`4001` |[Change User](../the-i-beam-operator/change-user.md)                                                       |X     |
 |`4002` |[Reap Forked Tasks](../the-i-beam-operator/reap-forked-tasks.md)                                           |AIX   |
@@ -86,9 +91,8 @@ The column labelled *O/S* indicates if a function applies only on Windows (W), o
 |`5178` |[Remove Loaded File Object Info](../the-i-beam-operator/remove-loaded-file-object-info.md)                 |&nbsp;|
 |`5179` |[Loaded File Object Info](../the-i-beam-operator/loaded-file-object-info.md)                               |&nbsp;|
 |`7162` |[JSON Translate Name](../the-i-beam-operator/json-translate-name.md)                                       |&nbsp;|
-|`8373` |[Shell Process Control](../the-i-beam-operator/shell-process-control.md)
+|`8373` |[Shell Process Control](../the-i-beam-operator/shell-process-control.md)                                   |&nbsp;|
 |`8415` |[Singular Value Decomposition](../the-i-beam-operator/singular-value-decomposition.md)                     |&nbsp;|
-|`8674` |[Externalise Array](../the-i-beam-operator/externalise-array.md)                                           |&nbsp;|
 |`9468` |[Hash Table Size](../the-i-beam-operator/hash-table-size.md)                                               |&nbsp;|
 |`9469` |[Lookup Table Size](../the-i-beam-operator/lookup-table-size.md)                                           |&nbsp;|
 |`16808`|[Sample Probability Distribution](../the-i-beam-operator/sample-probability-distribution.md)               |&nbsp;|

@@ -1,3 +1,9 @@
+
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  1159⌶
+</div>
+
 <h1 class="heading"><span class="name">Update Function Timestamp</span> <span class="command">{R}←X(1159⌶)Y</span></h1>
 
 

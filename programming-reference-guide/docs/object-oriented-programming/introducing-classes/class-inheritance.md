@@ -46,5 +46,3 @@ For example, to define a Class named `Duck` that derives from a `Poly` object, t
 ```
 
 The Base Constructor for such a Class is the `⎕WC` system function.
-
-For further details see [Dyalog GUI Classes](../oo-and-the-dyalog-gui/guiclasses.md).

@@ -1,5 +1,7 @@
-
-
+---
+search:
+  exclude: true
+---
 
 
 <h1 class="heading"><span class="name">Iota Underbar</span> <span class="command">⍸</span></h1>
@@ -48,5 +50,3 @@
 
 
 [Language Elements](./language-elements.md)
-
-

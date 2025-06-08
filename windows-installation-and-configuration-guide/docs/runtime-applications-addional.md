@@ -4,14 +4,6 @@
 
 If you wish to access your run-time application remotely using Ride, you must  put a copy of the appropriate Conga DLLs (see [Files](files-and-directories.md)) in the same directory as your .EXE or workspace.
 
-## Additional Files for Syncfusion
-
-Under a licensing agreement with Syncfusion, Dyalog includes the Syncfusion library of WPF controls. These may be used by Dyalog APL users to develop applications, and may be distributed with Dyalog APL run-time applications.
-
-The Syncfusion libraries comprise a set of .NET assemblies which are supplied in the *Syncfusion/4.6* sub-directory of the main Dyalog APL installation directory (for example: *c:\Program Files\Dyalog\Dyalog APL-64 19.0 Unicode\Syncfusion\4.6*.
-
-If you use any of the Syncfusion controls in your runtime application, you must include the Syncfusion library.
-
 ## Additional Files for SQAPL
 
 If your application uses the *SQAPL/EL ODBC* interface, you must distribute and install four additional components.

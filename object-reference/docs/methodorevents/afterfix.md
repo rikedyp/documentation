@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 <h1 class="heading"><span class="name">AfterFix</span> <span class="right">Event 822</span></h1>
 
 

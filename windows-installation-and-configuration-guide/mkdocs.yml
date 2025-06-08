@@ -1,7 +1,7 @@
 site_name: Windows Installation and Configuration Guide
 theme:
   favicon: img/favicon-32.png
-  logo: img/dyalog-white.svg
+  logo: img/dyalog-logo-2025_white.svg
   features:
     - navigation.instant
     - navigation.tracking

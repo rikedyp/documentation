@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 <h1 class="heading"><span class="name">Splitter</span> <span class="right">Example 5</span></h1>
 
 
