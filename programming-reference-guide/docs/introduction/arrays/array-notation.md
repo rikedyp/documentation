@@ -229,7 +229,7 @@ The array notation can be described in this form, where `expression` is any trad
     sep   ::= [⋄#x000A#x000D#x0085]+
 
 
-![Syntax diagram](/img/array-notation-syntax.png)
+![Syntax diagram](../../img/array-notation-syntax.png)
 <!-- Eventually replace with Mermaid diagram. -->
 
 
