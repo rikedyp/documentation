@@ -8,17 +8,7 @@ Scans a directory (and, optionally, subdirectories) for deprecated saved workspa
 
 `R` is a two-column matrix identifying the files which are deprecated, with one filename per row.
 
-The files in `Y`, and optionally subdirectories of `Y`, are examined and only the names of files which are deprecated or cannot be checked are included in `R`. The first column contains the names and the second contains a vector of one or more labels which indicate why the file is deprecated. These labels may be:
-
-| Label | Meaning |
-|-------|---------|
-| J0C0  | File is a component file with both the Journalling (J) and Checksumming (C) properties set to 0.
-| OLDWS | File is a workspace saved by Dyalog v12.0 or earlier.
-| S32   | File is a small span component file.
-| ⎕XT   | File is an external variable file.
-| ?     | File could not be read and its content is unknown.
-
-The rows in `R` are not sorted.
+The files in `Y` (and, optionally, subdirectories of `Y`) are examined, and only the names of files that are deprecated or cannot be checked are included in `R`. The first column contains the filenames and the second contains a vector of one or more labels indicating why the file is deprecated. The labels are release-dependent; for a list of valid labels see the [Release Notes](../release-notes/announcements/deprecated-functionality.md). The rows in `R` are not sorted.
 
 <h2 class="example">Example</h2>
 
@@ -30,4 +20,4 @@ The rows in `R` are not sorted.
  ./subdir/S32J0C0.dcf   J0C0  S32
 ```
 
-See also [`13⌶` Log use of deprecated features](deprecated-features.md).
+See also [`13⌶` – Log use of deprecated features](deprecated-features.md).

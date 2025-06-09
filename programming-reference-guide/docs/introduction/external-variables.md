@@ -22,4 +22,4 @@ Refer to the sections describing the system functions `⎕XT` and `⎕FHOLD` in 
 ```
 
 !!! Info "Information"
-    Support for external variables has been deprecated, and is scheduled for removal in a future release. For information on how to identify calls to external variables in your existing codebase, see the [Release Notes](../release-notes/announcements/deprecated-functionality.md).
+    Support for external variables has been deprecated, and is scheduled for removal in a future release. For information on how to identify calls to external variables in your existing codebase, see the [Release Notes](../../release-notes/announcements/deprecated-functionality.md).

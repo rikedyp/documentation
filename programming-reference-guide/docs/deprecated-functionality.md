@@ -68,6 +68,8 @@ or:
 
 A directory can be scanned for deprecated functionality using [`3535⌶`](../../../language-reference-guide/the-i-beam-operator/scan-for-deprecated-files.md) with a right argument of the directory to be scanned. If the left argument is set to `1`, sub-directories will also be scanned. The names of any files that pertain to deprecated functionality are returned, with labels specifying the reason for identification.
 
+The labels are release-dependent; for a list of valid labels see the [Release Notes](../release-notes/announcements/deprecated-functionality.md).
+
 **Example**
 
 ```apl
