@@ -68,7 +68,7 @@ If read mode (`R`) is specified the file will always be tied for read access and
 
 If write mode (`W`) is specified, a file that is not writable will fail to tie.
 
-Mode is independent of any file access controls managed using an access matrix.
+Mode is independent of any [file access controls managed using an access matrix](../programming-reference-guide/component-files/component-files/#file-access-control).
 
 <h3 class="example">Example</h3>
 
