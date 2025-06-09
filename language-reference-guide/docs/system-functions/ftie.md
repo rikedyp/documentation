@@ -66,7 +66,7 @@ The **Mode** variant option specifies whether the file that is being tied will o
 - `R` (**r**ead mode) – the file will be tied for read access only; any subsequent attempt to write to it will fail.
 - `W` (**w**rite mode) – if the file permissions do not allow the file to be written to, the attempt to tie it will fail.
 
-The **Mode** variant option is independent of any [file access controls managed using an access matrix](../programming-reference-guide/component-files/component-files/#file-access-control).
+The **Mode** variant option is independent of any [file access controls managed using an access matrix](../../../programming-reference-guide/component-files/component-files/#file-access-control).
 
 <h3 class="example">Example</h3>
 
