@@ -62,8 +62,8 @@ Writing to a component file is not always permitted. For example, restrictions o
 
 The **Mode** variant option specifies whether the file that is being tied will only be read or must be writeable. Possible values are:
 
-- `P` (tied as **p**ermitted) – the file will be tied for write access if possible, otherwise for read access only. If the file permissions do not allow the file to be written to, any attempt to write to it will fail. This is the default.
-- `R` (**r**ead mode) – the file will be tied for read access only; any attempt to write to it will fail.
+- `P` (tied as **p**ermitted) – the file will be tied for write access if possible, otherwise for read access only. If the file permissions do not allow the file to be written to, any subsequent attempt to write to it will fail. This is the default.
+- `R` (**r**ead mode) – the file will be tied for read access only; any subsequent attempt to write to it will fail.
 - `W` (**w**rite mode) – if the file permissions do not allow the file to be written to, the attempt to tie it will fail.
 
 The **Mode** variant option is independent of any [file access controls managed using an access matrix](../programming-reference-guide/component-files/component-files/#file-access-control).
