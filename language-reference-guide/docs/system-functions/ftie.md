@@ -58,20 +58,15 @@ The shy result of `⎕FTIE` is the tie number of the file.
 # Variant Options
 ## Mode
 
-The Mode variant option can be used to specify that the file being tied will only be read, or must be writable.
+Writing to a component file is not always permitted. For example, restrictions on writing to a component file might be imposed by operating system permissions, the host filesystem, or individual component file property settings.
 
-Writing to a component file is not always permitted - for example:
+The **Mode** variant option specifies whether the file that is being tied will only be read or must be writeable. Possible values are:
 
-* The operating system permissions may not allow it.
-* The file properties may not allow it.
+- `P` (tied as **p**ermitted) – the file will be tied for write access if possible, otherwise for read access only. If the file permissions do not allow the file to be written to, any attempt to write to it will fail. This is the default.
+- `R` (**r**ead mode) – the file will be tied for read access only; any attempt to write to it will fail.
+- `W` (**w**rite mode) – if the file permissions do not allow the file to be written to, the attempt to tie it will fail.
 
-By default, the mode specifies that the file should be tied as permitted (`P`) - for write access if possible, but a file that is only readable will be tied for read access only, and any subsequent attempt to write to it will fail.
-
-If read mode (`R`) is specified the file will always be tied for read access and any subsequent attempt to write to it will fail.
-
-If write mode (`W`) is specified, a file that is not writable will fail to tie.
-
-Mode is independent of any [file access controls managed using an access matrix](../programming-reference-guide/component-files/component-files/#file-access-control).
+The **Mode** variant option is independent of any [file access controls managed using an access matrix](../programming-reference-guide/component-files/component-files/#file-access-control).
 
 <h3 class="example">Example</h3>
 
