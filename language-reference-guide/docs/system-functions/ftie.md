@@ -56,18 +56,28 @@ The shy result of `⎕FTIE` is the tie number of the file.
 3
 ```
 # Variant Options
-## Mode Variant
+## Mode
 
-Variant option ‘Mode’ specifies the intended use of the tie and can affect how and when errors are signalled.
+The Mode variant option can be used to specify that the file being tied will only be read, or must be writable.
 
--|---
-R| File must only be be read. Any attempt to write to the file will fail.
-U| Use is unspecified (default). It will be tied even if the file read-only, but if it is read-only any *subsequent* attempt to write to the file will fail. 
-W|File must be writable. If it is read-only for any reason the tie will fail.
+Writing to a component file is not always permitted - for example:
 
-### Notes
+* The operating system permissions may not allow it.
+* The file properties may not allow it.
 
-* 'Mode' 'W' will not cause the tie to fail purely because the file's access matrix would prevent any or all subsequent writes.
-* Files may not be writable for reasons other than the host filesystem not permitting it. For example, small-span component files are not writable.
-. If the file is not writable because the host filesystem does not permit it, ⎕FTIE (not ⎕FSTIE) will likely fail regardless of the Mode because it cannot be exclusively locked.
-* Successfully tying a file with Mode ‘W’ does not guarantee that subsequent writes will succeed. The file permissions on the host filesystem might be changed in the meantime, or the filesystem may be full, for example.
+By default, the mode specifies that the file should be tied as permitted (`P`) - for write access if possible, but a file that is only readable will be tied for read access only, and any subsequent attempt to write to it will fail.
+
+If read mode (`R`) is specified the file will always be tied for read access and any subsequent attempt to write to it will fail.
+
+If write mode (`W`) is specified, a file that is not writable will fail to tie.
+
+Mode is independent of any file access controls managed using an access matrix.
+
+<h3 class="example">Example</h3>
+
+```apl
+      'cf' (⎕FSTIE⍠'Mode' 'W') 1
+FILE ACCESS ERROR: cf.dcf: File is not writable
+      'cf'(⎕FSTIE⍠'Mode' 'W')1
+                ∧
+```
