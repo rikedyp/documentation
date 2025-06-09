@@ -76,8 +76,8 @@ Mode is independent of any file access controls managed using an access matrix.
 <h3 class="example">Example</h3>
 
 ```apl
-      'cf' (⎕FSTIE⍠'Mode' 'W') 1
+      'cf' (⎕FTIE⍠'Mode' 'W') 1
 FILE ACCESS ERROR: cf.dcf: File is not writable
-      'cf'(⎕FSTIE⍠'Mode' 'W')1
+      'cf'(⎕FTIE⍠'Mode' 'W')1
                 ∧
 ```
