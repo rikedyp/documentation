@@ -25,5 +25,5 @@ EXT\ARRAY
 ```
 
 !!! Info "Information"
-    Support for external variables has been deprecated, and they are scheduled for removal in a future release. For information on how to identify uses of external variables in your existing codebase, see the [Release Notes](../../release-notes/announcements/deprecated-functionality.md).
+    Support for external variables has been deprecated, and they are scheduled for removal in a future release. For information on how to identify uses of external variables in your existing codebase, see the [Release Notes](../../release-notes/announcements/deprecated-functionality/).
 
