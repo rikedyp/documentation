@@ -9,7 +9,7 @@ This page describes the changes and new features in Dyalog v20.0 compared with D
 
 ### Primitive Functions/Operators
 
-A new primitive operator, [_behind_](../../language-reference-guide/primitive-operators/behind.md), has been added. This completes the set of [function composition](../../language-reference-guide/primitive-operators/operator-syntax/#function-composition) operators, which allow functions to be glued together to build up more complex functions:
+A new primitive operator, [_behind_](../../language-reference-guide/primitive-operators/behind/), has been added. This completes the set of [function composition](../../language-reference-guide/primitive-operators/operator-syntax/#function-composition) operators, which allow functions to be glued together to build up more complex functions:
 
 - Glyph: `⍛` (Classic: `⎕U235B`)
 - Derived function equivalence:
@@ -21,15 +21,15 @@ A new primitive operator, [_behind_](../../language-reference-guide/primitive-op
 The following system functions have been added:
 
 - [`⎕SHELL`](../../language-reference-guide/system-functions/shell/)  
-This enables execution of external programs with more control and options than [`⎕SH`](../../language-reference-guide/system-functions/start-unix-auxiliary-processor.md)/[`⎕CMD`](../../language-reference-guide/system-functions/start-windows-auxiliary-processor.md).
-- [`⎕VGET`](../../language-reference-guide/system-functions/vget.md)  
+This enables execution of external programs with more control and options than [`⎕SH`](../../language-reference-guide/system-functions/start-unix-auxiliary-processor/)/[`⎕CMD`](../../language-reference-guide/system-functions/start-windows-auxiliary-processor/).
+- [`⎕VGET`](../../language-reference-guide/system-functions/vget/)  
 This enables values to be read for names in a source namespace/namespaces.
-- [`⎕VSET`](../../language-reference-guide/system-functions/vset.md)  
+- [`⎕VSET`](../../language-reference-guide/system-functions/vset/)  
 This enables values to be set for names in a target namespace/namespaces.
 
 The following system functions have been enhanced:
 
-- [`⎕DT`](../../language-reference-guide/system-functions/dt.md)  
+- [`⎕DT`](../../language-reference-guide/system-functions/dt/)  
 Additional conversion types have been added:
     - 15 – Go UnixMicro
 	- 16 – Go UnixNano
@@ -37,22 +37,22 @@ Additional conversion types have been added:
 	- 21 – Apollo NCS UUID
 	- 22 – OSF DCE UUID
 	- 70  – AmigaOS
-- [`⎕FSTIE`](../../language-reference-guide/system-functions/fstie.md)  
+- [`⎕FSTIE`](../../language-reference-guide/system-functions/fstie/)  
 A new variant option, **Mode**, has been added. This specifies the intended purpose of the tie, and can affect when/how errors are generated.
-- [`⎕FTIE`](../../language-reference-guide/system-functions/ftie.md)  
+- [`⎕FTIE`](../../language-reference-guide/system-functions/ftie/)  
 A new variant option, **Mode**, has been added. This specifies the intended purpose of the tie, and can affect when/how errors are generated.
-- [`⎕MKDIR`](../../language-reference-guide/system-functions/mkdir.md)  
+- [`⎕MKDIR`](../../language-reference-guide/system-functions/mkdir/)  
 A new variant option, **Unique**, has been added. This specifies whether the base name in the right argument is modified so that the name is unique.
-- [`⎕NGET`](../../language-reference-guide/system-functions/nget.md)  
+- [`⎕NGET`](../../language-reference-guide/system-functions/nget/)  
 If `Y` is a 2-item vector, the second element (which specifies `flags` for the operation) can now be set to `2`. In this situation, the first element of the result `R` is a matrix, with each row corresponding to a line in the text file specified within `X`.
-- [`⎕NINFO`](../../language-reference-guide/system-functions/ninfo.md)  
+- [`⎕NINFO`](../../language-reference-guide/system-functions/ninfo/)  
     - Several of the properties can now be set by extending the appropriate element in the left argument from a `propertyNumber` to a `(propertyNumber newValue)` pair.
     - A new variant option, **ProgressCallBack**, has been added. This causes `⎕NINFO` to invoke an APL callback function as a file operation (for example, a query relating to a file's size, name, or modification date) proceeds.
-- [`⎕NPUT`](../../language-reference-guide/system-functions/nput.md)  
+- [`⎕NPUT`](../../language-reference-guide/system-functions/nput/)  
 The single/first element of `X` (which specifies `content`) can now be a matrix. In this situation, the resulting text file will include one line for each row of the matrix, with trailing spaces stripped.
-- [`⎕NS`](../../language-reference-guide/system-functions/ns.md)  
+- [`⎕NS`](../../language-reference-guide/system-functions/ns/)  
     - The left argument `X` has been extended to allow references to namespaces to be specified. It can also now be an array in which each element identifies a namespace. 
-	- The right argument `Y` has been extended to  allow references to namespaces to be specified. It can also now be an array produced by the [`⎕OR`](../../language-reference-guide/system-functions/or.md) of a namespace.
+	- The right argument `Y` has been extended to  allow references to namespaces to be specified. It can also now be an array produced by the [`⎕OR`](../../language-reference-guide/system-functions/or/) of a namespace.
 	- A new variant option, **Trigger**, has been added. This specifies whether any triggers should be run for the modified variables in the target namespace that have triggers attached.
 
 ### I-beams
@@ -62,25 +62,25 @@ The single/first element of `X` (which specifies `content`) can now be a matrix.
 
 The following I-beams have been added:
 
-- [`13⌶`](../../language-reference-guide/the-i-beam-operator/deprecated-features.md) – Deprecated Features  
+- [`13⌶`](../../language-reference-guide/the-i-beam-operator/deprecated-features/) – Deprecated Features  
 Records information in the log file set by `109⌶` about the specified deprecated feature names or keywords
-- [`43⌶`](../../language-reference-guide/the-i-beam-operator/monadic-operator-generator.md) – Monadic Operator Generator  
+- [`43⌶`](../../language-reference-guide/the-i-beam-operator/monadic-operator-generator/) – Monadic Operator Generator  
 Generates a monadic operator with specified functionality. The functionality is currently limited to creating a .NET-specific operator that can create concrete versions of generic classes and execute generic methods.
-- [`109⌶`](../../language-reference-guide/the-i-beam-operator/log-file-for-deprecations.md) – Log File for Deprecations  
+- [`109⌶`](../../language-reference-guide/the-i-beam-operator/log-file-for-deprecations/) – Log File for Deprecations  
 Manages the file used to log the use of deprecated features.
-- [`120⌶`](../../language-reference-guide/the-i-beam-operator/generate-uuid.md) – Generate UUID  
+- [`120⌶`](../../language-reference-guide/the-i-beam-operator/generate-uuid/) – Generate UUID  
 Generates a UUID (Universally Unique IDentifier) according to the RFC 9562 specification.
-- [`3535⌶`](../../language-reference-guide/the-i-beam-operator/scan-for-deprecated-files.md) – Scan For Deprecated Files  
+- [`3535⌶`](../../language-reference-guide/the-i-beam-operator/scan-for-deprecated-files/) – Scan For Deprecated Files  
 Scans the specified directory (and, optionally, sub-directories) for deprecated saved workspaces, component files, and external variables.
-- [`5581⌶`](../../language-reference-guide/the-i-beam-operator/unicode-normalisation.md) – Unicode Normalisation  
+- [`5581⌶`](../../language-reference-guide/the-i-beam-operator/unicode-normalisation/) – Unicode Normalisation  
 Applies the specified Unicode normalisation form to given character data.
-- [`8373⌶`](../../language-reference-guide/the-i-beam-operator/shell-process-control.md) – Shell Process Control  
+- [`8373⌶`](../../language-reference-guide/the-i-beam-operator/shell-process-control/) – Shell Process Control  
 Provides a way to determine the process IDs of processes started by `⎕SHELL`, as well as enabling the sending of signals to any of those processes.
 
 The following I-beams have been removed:
 
 - `819⌶` – Case Convert (introduced in Dyalog v15.0)  
-The functionality provided by this I-beam is available through the [`⎕C`](../../language-reference-guide/system-functions/c.md) system function.
+The functionality provided by this I-beam is available through the [`⎕C`](../../language-reference-guide/system-functions/c/) system function.
 - `8468⌶` – Hash Table Size (introduced in Dyalog v19.0)  
 Temporary functionality used for identification of potential side-effects of a change that has now been implemented. No longer relevant.
 - `8469⌶` – Lookup Table Size (introduced in Dyalog v19.0)  
@@ -90,7 +90,7 @@ Temporary functionality used for identification of potential side-effects of a c
 
 ### Array Notation
 
-[Array notation](../../programming-reference-guide/introduction/arrays/array-notation.md) is a literal syntax for most arrays (including nested and high-rank arrays) and namespaces. With array notation, arrays can be entered and displayed over multiple lines.
+[Array notation](../../programming-reference-guide/introduction/arrays/array-notation/) is a literal syntax for most arrays (including nested and high-rank arrays) and namespaces. With array notation, arrays can be entered and displayed over multiple lines.
 
 Array notation can be enabled in the following ways:
 
@@ -100,15 +100,15 @@ Array notation can be enabled in the following ways:
 
 In addition, in the Microsoft Windows IDE, array notation can be enabled in the following ways:
 
-- Click the ![](img/session_arraynotation.png){width=20 height=20} icon in the **Session** toolbar when the cursor is over the name of an array.
-- Click the ![](img/object_arraynotation.png){width=20 height=20} icon in the **Object** toolbar.
+- Click the ![](img/session_arraynotation.png){width=20 height=20 vertical-align:text-bottom} icon in the **Session** toolbar when the cursor is over the name of an array.
+- Click the ![](img/object_arraynotation.png){width=20 height=20 vertical-align:text-bottom} icon in the **Object** toolbar.
 - Select **Show as Array Notation** from the Editor's **Syntax** menu.
 
 ## User Interface Changes
 
 ### Inline Tracing
 
-[Inline Tracing](../../windows-ui-guide/tracer/inline-tracing.md) is an extension to tracing that allows you to step through the execution of individual primitives within expressions, examining intermediate results and arguments of sub-expressions. It enables an in-depth inspection of complex expressions typed directly into the session. Inline Tracing is tracing with the (approximate) granularity of primitives, although it does stop on non-primitives, such as user-defined functions.
+[Inline Tracing](../../windows-ui-guide/tracer/inline-tracing/) is an extension to tracing that allows you to step through the execution of individual primitives within expressions, examining intermediate results and arguments of sub-expressions. It enables an in-depth inspection of complex expressions typed directly into the session. Inline Tracing is tracing with the (approximate) granularity of primitives, although it does stop on non-primitives, such as user-defined functions.
 
 Inline tracing can be enabled in the following ways:
 
@@ -116,7 +116,7 @@ Inline tracing can be enabled in the following ways:
 
 In addition, in the Microsoft Windows IDE, inline tracing can be enabled in the following ways:
 
-- Click the ![](img/tracer_inlinetracing.png){width=20 height=20} icon in the **Tracer** toolbar
+- Click the ![](img/tracer_inlinetracing.png){width=20 height=20 vertical-align:text-bottom} icon in the **Tracer** toolbar
 - Select **Trace Inline...** from the Session's **Action** menu.
 - Select **Action** > **Trace Inline...** from the Session's context (right-click) menu.
 
@@ -153,7 +153,7 @@ Pressing <kbd>Home</kbd> or <kbd>End</kbd> multiple times progresses through the
 
 ### Session Gutter
 
-The left bracket that appears in the Session gutter when entering multi-line input now includes a close icon at the bottom (![](img/multilineinput_gutter_cross.png){width=20 height=20}). Clicking this cancels the multi-line input.
+The left bracket that appears in the Session gutter when entering multi-line input now includes a close icon at the bottom (![](img/multilineinput_gutter_cross.png){width=20 height=20 vertical-align:text-bottom}). Clicking this cancels the multi-line input.
 
 ### Microsoft Windows IDE
 
@@ -163,8 +163,8 @@ The following changes have been made to the Microsoft Windows IDE:
 - A new keyboard shortcut has been added to toggle inline tracing:
     - key code: **&lt;IT&gt;**
 	- keystroke: <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Enter</kbd>
-- A new icon (![](img/object_arraynotation.png){width=20 height=20}) has been added to the **Object** toolbar. This enables array notation to be used when editing an object, and replaces the previous Array Editor icon.
-- A new icon (![](img/session_arraynotation.png){width=20 height=20}) has been added to the **Session** toolbar to toggle the use of array notation.
+- A new icon (![](img/object_arraynotation.png){width=20 height=20 vertical-align:text-bottom}) has been added to the **Object** toolbar. This enables array notation to be used when editing an object, and replaces the previous Array Editor icon.
+- A new icon (![](img/session_arraynotation.png){width=20 height=20 vertical-align:text-bottom}) has been added to the **Session** toolbar to toggle the use of array notation.
 - The Session caption can now include the current thread by adding the `{TID}` field to the `⎕SE.Caption` property.
 - In the **Configuration** dialog box's **Keyboard Shortcuts** tab, the **Available shortcuts** now include function keys (code F1-F48). These can be used in conjunction with `⎕PFKEY` to define keyboard shortcuts for function key actions.
 	

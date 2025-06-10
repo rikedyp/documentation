@@ -57,7 +57,7 @@ The Syncfusion library of WPF controls is no longer included with Dyalog. The Sy
 
 ## Array Editor
 
-David Liebtag's Array Editor is no longer part of Dyalog. Arrays can now be created and edited using [array notation](../../../programming-reference-guide/introduction/arrays/array-notation.md).
+David Liebtag's Array Editor is no longer part of Dyalog. Arrays can now be created and edited using [array notation](../../programming-reference-guide/introduction/arrays/array-notation/).
 
 ## Documentation
 
@@ -82,7 +82,7 @@ A new glyph has been introduced:
 * Keyboard key location: <kbd>&lt;APL key&gt;</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd>
 * Unicode code: U+235B
 
-This glyph is needed for the new [_behind_](../../../language-reference-guide/primitive-operators/behind.md) operator that is introduced with Dyalog v20.0.
+This glyph is needed for the new [_behind_](../../language-reference-guide/primitive-operators/behind/) operator that is introduced with Dyalog v20.0.
 
 ## New APL Font
 
