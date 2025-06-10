@@ -96,7 +96,7 @@ Classic edition: `⎕FIX`, Link, SALT, and Editor automatically translate Unicod
 
 ### Component Files
 
-Component files have a Unicode property. When this is enabled, all characters can written as Unicode data to the file. By default, the Unicode property is switched on by Unicode editions and off for Classic editions. This can be changed using the [`⎕FPROPS`](xxxLINKxxx) system function.
+Component files have a Unicode property. When this is enabled, all characters can written as Unicode data to the file. By default, the Unicode property is switched on by Unicode editions and off for Classic editions. This can be changed using the [`⎕FPROPS`](../../language-reference-guide/system-functions/fprops.md) system function.
 
 When a Unicode edition writes to a component file that cannot contain Unicode data, character data is mapped using `⎕AVU`; it can, therefore, be read without problems by Classic editions.
 

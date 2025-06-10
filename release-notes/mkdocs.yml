@@ -1,4 +1,4 @@
-site_name: Dyalog v20.0 Release Notes
+site_name: Release Notes
 theme:
   favicon: img/favicon-32.png
   logo: img/dyalog-white.svg
@@ -49,11 +49,11 @@ markdown_extensions:
   - toc:
       title: On this page
 nav:
-  - About This Document: index.md
+  - About This Document: about.md
   - System Requirements: system-requirements.md 
   - Announcements:
     - Announcements: announcements/index.md   
-    - Deprecated Functionality: deprecated-functionality.md
+    - Deprecated Functionality: announcements/deprecated-functionality.md
   - New and Enhanced Features: new-enhanced.md
   - Minor Updates and Bug Fixes: minor-updates.md
   - Interoperability: interoperability.md

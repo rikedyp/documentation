@@ -32,8 +32,8 @@ Some of the tools that are supplied with Dyalog have independent version numbers
 * SQAPL v6.5
 * User Commands v2.6
 
-Additional tools can also be downloaded. For Dyalog v20.0, these include:
+Additional tools can also be downloaded, some of which also have independent version numbers. For Dyalog v20.0, these include:
 
-* [Ride](https://dyalog.github.io/ride/4.6/) v4.6
+* Ride v4.6 (see [https://dyalog.github.io/ride/4.6/](https://dyalog.github.io/ride/4.6/))
 
 Changes to tools are not included within these Release Notes.
