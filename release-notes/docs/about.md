@@ -18,7 +18,7 @@ Key enhancements introduced in Dyalog v20.0 include the following:
 - `⎕SHELL` enables execution of external programs with more control and options than those provided by `⎕SH`/`⎕CMD`.
 - Expressions can now be evaluated primitive-by-primitive using inline tracing, while accessing arguments and results of each function along the way.
 
-For more information on these and other changes introduced in Dyalog v20.0, see [New and Enhanced Features](new-enhanced/).
+For more information on these and other changes introduced in Dyalog v20.0, see [New and Enhanced Features](../new-enhanced.md).
 	
 ## Tools
 	

@@ -49,7 +49,7 @@ Images of docker containers that host Dyalog running on ARM64 Linux are availabl
 	
 ## Dyalog for Raspberry Pi
 
-Dyalog v20.0 is the last release that will be supported on the 32-bit Raspberry Pi.
+Dyalog v20.0 is the last release that will be supported on 32-bit Raspberry Pi OS.
 
 ## Syncfusion
 
@@ -57,7 +57,7 @@ The Syncfusion library of WPF controls is no longer included with Dyalog. The Sy
 
 ## Array Editor
 
-David Liebtag's Array Editor is no longer part of Dyalog. Arrays can now be created and edited using [array notation](../../../programming-reference-guide/introduction/arrays/array-notation.md).
+David Liebtag's Array Editor is no longer part of Dyalog. Arrays can now be created and edited using [array notation](../../programming-reference-guide/introduction/arrays/array-notation/).
 
 ## Documentation
 
@@ -69,7 +69,7 @@ The process of moving all the documentation into an [open source GitHub project]
 To report an error or request a change in the documentation you can now:
 
 - send an email to [docs@dyalog.com](mailto:docs@dyalog.com) – this can be done for any Dyalog document.
-- [raise an issue](https://github.com/Dyalog/documentation/issues) directly in the GitHub project – this should only be done if the issue relates to a document that is in the Github project.
+- [raise an issue](https://github.com/Dyalog/documentation/issues) directly in the GitHub project – this should only be done if the issue relates to a document that is in the GitHub project.
 
 The GitHub project's [readme file](https://github.com/Dyalog/documentation/blob/main/README.md) includes information on how to contribute by drafting amendments/enhancements.
 
@@ -82,7 +82,7 @@ A new glyph has been introduced:
 * Keyboard key location: <kbd>&lt;APL key&gt;</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd>
 * Unicode code: U+235B
 
-This glyph is needed for the new [_behind_](../../../language-reference-guide/primitive-operators/behind.md) operator that is introduced with Dyalog v20.0.
+This glyph is needed for the new [_behind_](../../language-reference-guide/primitive-operators/behind/) operator that is introduced with Dyalog v20.0.
 
 ## New APL Font
 
