@@ -29,10 +29,10 @@ Unicode normalisation is used to transform all equivalent text to a single repre
 
 | Form | Use For
 |------|---
-| D    | Searching, linguistic analysis
-| C    | Display, storage, user input
-| KD   | Text comparison, data indexing, accessibility
-| KC   | Search, login names, spoofing defence
+| `D`  | Searching, linguistic analysis
+| `C`  | Display, storage, user input
+| `KD` | Text comparison, data indexing, accessibility
+| `KC` | Search, login names, spoofing defence
 
 For a full explanation of the different normalisation forms, see [Unicode Standard Annex #15](https://unicode.org/reports/tr15/).
 
