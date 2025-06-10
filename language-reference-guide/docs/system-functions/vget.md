@@ -47,7 +47,7 @@ The result `R` is a vector of the values from the corresponding names or fallbac
 
 <h3 class="example">Examples</h3>
 
-Names without fallback:
+Multiple names without fallback:
 
 ```apl
       (name1 name2 name3 longer_name)←(1 2 3) () 'APL' 42
@@ -61,7 +61,7 @@ longer_name
  1 2 3  #.[Namespace]  APL  42
 ```
 
-Names with different fallback for each name:
+Multiple names with different fallback for each name:
 
 ```apl
       name2←100
@@ -75,7 +75,7 @@ name3
 1 100 3
 ```
 
-Names with the same fallback for all of them:
+Multiple names with the same fallback for all of them:
 
 ```apl
       persons←(
@@ -161,6 +161,8 @@ Multiple names with different fallback for each of them:
       ⎕VGET ('name1' 1) ('name2' 2) ('name3' 3)
 1 100 3
 ```
+
+See [Case 1: Name Matrix](#case-1-name-matrix) for an example of multiple names with the same fallback value for all of them.
 
 ## Case 3: Nameclasses
 
