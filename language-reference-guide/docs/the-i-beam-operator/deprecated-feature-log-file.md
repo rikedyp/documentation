@@ -27,4 +27,4 @@ old_logfile.txt
 └─┴┘
 ```
 
-See also [`13⌶` – Log use of deprecated features](deprecated-features.md).
+See also [`13⌶` – Log use of deprecated features](log-use-of-deprecated-features.md).

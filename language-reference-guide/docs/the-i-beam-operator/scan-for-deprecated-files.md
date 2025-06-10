@@ -23,4 +23,4 @@ The files in `Y` (and, optionally, sub-directories of `Y`) are examined, and onl
  ./subdir/S32J0C0.dcf   J0C0  S32
 ```
 
-See also [`13⌶` – Log use of deprecated features](deprecated-features.md).
+See also [`13⌶` – Log use of deprecated features](log-use-of-deprecated-features.md).
