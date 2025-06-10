@@ -96,7 +96,7 @@ Array notation can be enabled in the following ways:
 
 - Enter the _Edit_ command (**&lt;ED>**) from within the Editor.
 - Call the system command `)ED` and prefix the variable name with a diamond character, for example, `)ED ⋄foo`
-- Call the system function `⎕ED` with a left argument '⋄', for example, `'⋄' ⎕ED 'foo'`.
+- Call the system function `⎕ED` with a left argument `'⋄'`, for example, `'⋄' ⎕ED 'foo'`.
 
 In addition, in the Microsoft Windows IDE, array notation can be enabled in the following ways:
 
