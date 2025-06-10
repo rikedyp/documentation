@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕SAVE SAVE
+</div>
+
 <h1 class="heading"><span class="name">Save Workspace</span> <span class="command">{R}←{X}⎕SAVE Y</span></h1>
 
 `Y` must be a simple character scalar or vector that identifies a  full or relative path name to the file in which the workspace will be written.

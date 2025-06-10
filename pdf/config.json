@@ -5,17 +5,17 @@
             "subtitle": "Reference Guide",
             "filename": "Dyalog_APL_Language_Reference_Guide.pdf"
         },
-        "dotnet-interface": {
+        "dotnet-framework-interface": {
             "title": "Dyalog for Microsoft Windows",
             "subtitle": ".NET Framework Interface Guide",
-            "filename": "Dyalog_for_Microsoft_Windows_.NET_Framework_Interface_Guide.pdf"
+            "filename": "Dyalog_for_Microsoft_Windows_dotNET_Framework_Interface_Guide.pdf"
         },
         "interface-guide": {
             "title": "Dyalog for Microsoft Windows",
             "subtitle": "Interfaces Guide",
             "filename": "Dyalog_for_Microsoft_Windows_Interface_Guide.pdf"
         },
-        "object-reference": {
+        "object-reference-transformed": {
             "title": "Dyalog for Microsoft Windows",
             "subtitle": "Object Reference Guide",
             "filename": "Dyalog_for_Microsoft_Windows_Object_Reference_Guide.pdf"

@@ -1,7 +1,7 @@
 site_name: Interface Guide
 theme:
   favicon: img/favicon-32.png
-  logo: img/dyalog-white.svg
+  logo: img/dyalog-logo-2025_white.svg
   features:
     - navigation.instant
     - navigation.tracking
@@ -106,6 +106,7 @@ nav:
       - Using Tips: hints-and-tips/using-tips.md
       - Hints and Tips Combined: hints-and-tips/hints-and-tips-combined.md
   - Grid Object:
+      - Using the Grid Object: grid-object/using-the-grid-object.md
       - Defining Overall Appearance: grid-object/defining-overall-appearance.md
       - Row and Column Titles: grid-object/row-and-column-titles.md
       - Displaying and Editing Values in Grid Cells: grid-object/displaying-and-editing-values-in-grid.md

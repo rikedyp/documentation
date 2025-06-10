@@ -1,3 +1,9 @@
+
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  3502⌶
+</div>
+
 <h1 class="heading"><span class="name">Manage Ride Connections</span> <span class="command">R←3502⌶Y</span></h1>
 
 `3502⌶` gives control over Ride connections to the interpreter. More details about Ride can be found in the [Ride User Guide](https://dyalog.github.io/ride).
@@ -16,7 +22,7 @@ The initialisation string has the same syntax as the value of the **RIDE_INIT** 
 
 The configuration parameter **RIDE_INIT** can still be used to establish the initial value of the Ride initialisation string.
 
-The runtime interpreter has RIDE disabled by default, whether or not **RIDE_INIT** is set; the only method of enabling Ride in a runtime interpreter is to  call `3502⌶1`.
+The runtime interpreter has Ride disabled by default, whether or not **RIDE_INIT** is set; the only method of enabling Ride in a runtime interpreter is to  call `3502⌶1`.
 
 If **RIDE_INIT** is set when a development interpreter is called, Ride will be enabled provided that the Ride DLL/shared library is available and the **RIDE_INIT** variable is properly formed. If the connection is of type SERVE the port must not be in use.  If any of these conditions are not met, then the interpreter fails with a non-zero exit code.  If **RIDE_INIT** is not set then the development interpreter will start, but with Ride disabled.
 
@@ -29,12 +35,12 @@ It is therefore possible to override the **RIDE_INIT** variable in the developme
                           
 ```
 
-And similarly for altering the Ride settings in an active APL session.
+and similarly for altering the Ride settings in an active APL session.
 
 !!! note
     In 14.1 and earlier `3502⌶⍬` was used to enable Ride; this value is still valid, albeit deprecated: code should call `3502⌶1` instead.
 
-Enabling the Ride to access applications that use the run-time interpreter means that the APL code of those applications can be accessed. The I-beam mechanism described above means that the APL code itself must grant the right for a Ride client to connect to the run‑time interpreter. Although Dyalog Ltd might change the details of this mechanism, the APL code will **always** need to grant connection rights. In particular, no mechanism that is only dependent on configuration parameters will be implemented.
+Enabling Ride to access applications that use the run-time interpreter means that the APL code of those applications can be accessed. The I-beam mechanism described above means that the APL code itself must grant the right for a Ride client to connect to the run‑time interpreter. Although Dyalog Ltd might change the details of this mechanism, the APL code will **always** need to grant connection rights. In particular, no mechanism that is only dependent on configuration parameters will be implemented.
 
 
 

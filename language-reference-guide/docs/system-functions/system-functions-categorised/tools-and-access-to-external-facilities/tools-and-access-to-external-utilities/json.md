@@ -1,1 +1,0 @@
-![accordion](../../../../img/accordion.png)

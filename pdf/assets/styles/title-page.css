@@ -96,7 +96,7 @@
 
 /* Version number color */
 .title-page .version-number {
-    color: #FF6B1C;
+    color: #FF6A13;
 }
 
 /* Background image */
@@ -106,7 +106,7 @@
     right: -25mm;
     top: 72mm;
     height: 108mm;
-    background-image: url("../img/v20_high.jpg");
+    background-image: url("../img/dyalog-20_keyImage_4536x2576_compressed.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -148,12 +148,11 @@
     /* Explicitly bind to title page */
 }
 
-/* Bottom DocDyalog image */
+/* Bottom Dyalog logo */
 .title-page .doc-dyalog {
-    transform: scale(0.82);
-    transform-origin: center bottom;
+    width: 50mm;
     display: block;
-    margin-bottom: 2mm;
+    margin-bottom: 0;
 }
 
 /* Tagline text */

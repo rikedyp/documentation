@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕FREPLACE FREPLACE
+</div>
+
 <h1 class="heading"><span class="name">File Replace Component</span> <span class="command">{R}←X ⎕FREPLACE Y</span></h1>
 
 ## Access code 16

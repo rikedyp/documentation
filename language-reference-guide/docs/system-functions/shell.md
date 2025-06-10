@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕SHELL SHELL
+</div>
+
 <h1 class="heading"><span class="name">Execute External Program</span> <span class="command">R←⎕SHELL Y</span></h1>
 
 `⎕SHELL` executes an external program, either directly or using the operating system's shell.
@@ -5,7 +10,8 @@
 `Y` describes the command to execute. `Y` is specified as either a character vector or a vector of character vectors.
 `R` contains information about the termination reason, along with output collected.
 
-The system function is cross-platform, but the command specification is inherently operating-system specific.
+Although `⎕SHELL` itself is cross-platform, the command specification depends on the platform's shell, the program being invoked, and the expected format of the command line arguments – `⎕SHELL` calls are only as cross-platform as the programs they execute.
+In practice, many command line tools that are useful when building cross-platform applications, such as `git` and `aws-cli`, *are* cross-platform tools, which makes this less likely to be an issue.
 
 ### Using the System's Shell
 When `Y` is a character vector, the contents are executed using the system's shell.
@@ -33,6 +39,14 @@ d-----        26-11-2024     12:56                ullu
 ### Direct Execution
 
 When `Y` is a vector of character vectors or an enclosed character vector, the first element of the array is treated as a program name, and the rest as individual arguments. The program is executed directly, without invoking the system's shell first. The program name can be an absolute path, a relative path, or the name of an executable in the current search path (operating-system specific). When the program is specified as a relative path, the name is resolved relative to the working directory, which can be set with the [`WorkingDir`](#workingdir) variant.
+
+If the command does not depend on any shell features, then direct execution should be used as it has lower overhead.
+
+!!! Info "Information"
+    This difference in performance can be very significant, especially under Microsoft Windows where PowerShell is the default.
+    Direct calls can be 5-10x faster.
+    
+    See [the example below](#example-using-cmdexe-microsoft-windows) for information about how to use `cmd.exe` instead of PowerShell.
 
 ## Return Value
 
@@ -219,6 +233,12 @@ The value must be a character vector or a vector of character vectors with a len
 
 !!! info
     Shells typically takes some argument which specify that the next argument is a command to run, such as `/bin/bash -c` on Linux, but since the argument differs from shell to shell, it must be specified manually.
+
+#### Example using cmd.exe (Microsoft Windows) { .example }
+```apl
+      ⎕SHELL⍠'Shell' ('cmd.exe' '/C')⊢'someCmd'
+...
+```
 
 #### Example using bash (Linux) { .example }
 ```apl

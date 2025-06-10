@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕DT DT
+</div>
+
 <h1 class="heading"><span class="name">Date-time</span> <span class="command">R←X ⎕DT Y</span></h1>
 
 This function validates date-times or converts date-times between one format and another.
@@ -63,7 +68,6 @@ If a value in `X` is positive it indicates that a time number type is expected i
 |Decimal encoded[^9]     |60|Floating-point decimal encoded format Digits take the form yyyymmdd.hhmmss|Encoded broken-down time 1s resolution|N/A|No|
 |_                      _|61|Integer decimal encoded format Digits take the form yyyymmddhhmmss(J digit time)|Encoded broken-down time 1s resolution|N/A|No|
 |Misc. Operating Systems |70|AmigaOS|Tick count 1ms ticks[^2]|1978-01-01 00:00|No|
-{: .bigtable }
 
 ## Time Stamps
 

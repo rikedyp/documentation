@@ -1,26 +1,14 @@
-
-
-
-
-
 <h1 class="heading"><span class="name">Indexing</span> <span class="command">R←X[Y]</span></h1>
-
-
 
 `X` may be  any array. `Y` must be a valid index specification. `R` is an array composed of elements indexed from `X` and the shape of `X` is determined by the index specification.
 
-
-This form of Indexing, using brackets, does not follow the normal syntax of a dyadic function. For an alternative method of indexing, see ["Index"](index.md).
-
+This form of Indexing, using brackets, does not follow the normal syntax of a dyadic function. For an alternative method of indexing, see [Index](squad.md).
 
 `⎕IO` is an implicit argument of Indexing.
 
-
 Three forms of indexing are permitted. The form used is determined by context.
 
-
 ## Simple Indexing
-
 
 For vector `X`, `Y` is a simple integer array composed of items from the set `⍳⍴X`.
 
@@ -146,7 +134,6 @@ Simple and Choose indexing are indistinguishable for vector `X`:
 
 ## Reach Indexing
 
-
 The index specification `Y` is a non-simple integer array, each of whose items reach down to a nested element of `X`. The items of an item of `Y` are simple vectors (or scalars) forming sets of indices that index arrays at successive levels of `X` starting at the top-most level. A set of indices has one element per axis at the respective level of nesting of `X` in row-major order.
 
 <h2 class="example">Examples</h2>
@@ -183,7 +170,6 @@ The index specification `Y` is a non-simple integer array, each of whose items r
 
 ## Indexing  Classes
 
-
 If `Y` is a ref to an instance of a Class with a Default property, indexing is applied to the Default property. Similarly, indexing applied to a .NET collection returns the appropriate item(s) of the collection.
 
 <h2 class="example">Example</h2>
@@ -199,10 +185,8 @@ If `Y` is a ref to an instance of a Class with a Default property, indexing is a
 :EndClass                
       c[2;3;]
 UVWX
-
 ```
 
-
-See also: [Indexing  Classes](index.md).
+See also: [Indexing Classes](squad.md#indexing-classes).
 
 

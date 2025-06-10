@@ -1,9 +1,11 @@
 site_name: Documentation
 repo_url: https://github.com/dyalog/documentation
+copyright: Made with <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener"><strong>Material for MkDocs</strong></a><br/>Copyright &copy; 1982-$CURRENT_YEAR <strong><a href="https://dyalog.com" target="_blank" rel="noopener">Dyalog Limited</a></strong> ($BUILD_DATE $GIT_INFO).<br/>Except where otherwise noted, content on this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener"><strong>Creative Commons Attribution 4.0 International</strong></a> licence. 
+
 
 theme:
   favicon: 'img/favicon-32.png'
-  logo: 'img/dyalog-white.svg'
+  logo: img/dyalog-logo-2025_white.svg
   features:
     - navigation.instant
     - navigation.tracking
@@ -40,6 +42,7 @@ extra:
   version_majmin: 20.0
   version:
     provider: mike
+  generator: false
 
 markdown_extensions:
   - admonition
@@ -60,7 +63,7 @@ markdown_extensions:
       title: On this page
 
 nav:
-  - Release Notes V19.0: "!include ./release-notes-v19-0/mkdocs.yml"
+  - Release Notes: "!include ./release-notes/mkdocs.yml"
   - Windows Installation: "!include ./windows-installation-and-configuration-guide/mkdocs.yml"
   - UNIX Installation: "!include ./unix-installation-and-configuration-guide/mkdocs.yml"
   - Programmer's Guide: "!include ./programming-reference-guide/mkdocs.yml"
@@ -68,10 +71,9 @@ nav:
   - Object Reference: "!include ./object-reference/mkdocs.yml"
   - Windows UI Guide: "!include ./windows-ui-guide/mkdocs.yml"
   - Interface Guide: "!include ./interface-guide/mkdocs.yml"
-  - .NET Interface: "!include ./dotnet-interface/mkdocs.yml"
+  - .NET Framework Interface: "!include ./dotnet-framework-interface/mkdocs.yml"
   - UNIX User Guide: "!include ./unix-user-guide/mkdocs.yml"
+  - Earlier Release Notes: "!include ./earlier-release-notes/mkdocs.yml"
+  - Licences for third-party components: licences-overview.md
+  - Trademarks: trademarks.md
   
-
-
-
-

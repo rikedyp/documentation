@@ -1,3 +1,13 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕SH SH
+</div>
+
+---
+search:
+  exclude: true
+---
+
 
 
 

@@ -6,7 +6,7 @@
 
 
 
-This command clears the active workspace and gives the report "`clear ws"`.  The active workspace is lost.  The name of a clear workspace is `CLEAR WS`.  System variables are initialised with their default values as described in [System Variables](../system-functions/summary-tables/system-variables.md).
+This command clears the active workspace and gives the report "`clear ws"`.  The active workspace is lost.  The name of a clear workspace is `CLEAR WS`.  System variables are initialised with their default values as described in [System Variables](../system-functions/system-variables.md).
 
 
 In GUI implementations of Dyalog, `)CLEAR` expunges all GUI objects, discards any unprocessed events in the event queue and resets the properties of the `Root` object  `'.'`  to their default values.

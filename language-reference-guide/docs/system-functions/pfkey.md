@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕PFKEY PFKEY
+</div>
+
 
 
 
@@ -10,7 +15,7 @@
 `⎕PFKEY` is a system function that sets or queries the programmable function keys.  `⎕PFKEY` associates a sequence of keystrokes with a function key.  When the user subsequently presses the key, it is as if he had typed the associated keystrokes one by one.
 
 
-Note that RIDE does not currently support the use of `⎕PFKEY`; it is possible however to associate simple strings to function keys - see the *RIDE User Guide* for more information.
+Note that Ride does not currently support the use of `⎕PFKEY`; it is possible however to associate simple strings to function keys - see the [Ride User Guide](https://dyalog.github.io/ride) for more information.
 
 
 

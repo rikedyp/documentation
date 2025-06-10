@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 <h1 class="heading"><span class="name">TabControl</span> <span class="right">Example 8</span></h1>
 
 

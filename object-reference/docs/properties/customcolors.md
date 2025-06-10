@@ -19,7 +19,5 @@ By default, each element of CustomColors is (0 0 0). If the user selects a new c
 Note that CustomColors is maintained separately for each separate [ColorButton](../objects/colorbutton.md), and CustomColors defaults to `(1 16⍴⊂0 0 0)` for each new [ColorButton](../objects/colorbutton.md) that you create. If you want to maintain a global custom colour table for your application, you must do this yourself.
 
 
-Note that the Pocket PC 2002 colour selection dialog box does not provide the facility to select custom colours, so this functionality is not available in PocketAPL.
-
 
 

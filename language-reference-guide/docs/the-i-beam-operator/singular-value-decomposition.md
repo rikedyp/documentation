@@ -1,3 +1,9 @@
+
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  8415⌶
+</div>
+
 <h1 class="heading"><span class="name">Singular Value Decomposition</span> <span class="command">R←(8415⌶)Y</span></h1>
 
 `Y` is a simple numeric matrix. `⎕FR` must be 645.

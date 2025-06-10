@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  ⎕SM SM
+</div>
+
 
 
 
@@ -66,7 +71,7 @@ Elements in column 8 (Video Attributes) may be:
 Dyalog APL for UNIX systems on tty devices (async terminals or on terminal emulators) manages two screens; the SESSION screen and the USER screen.  If the SESSION screen is current, an assignment to `⎕SM` causes the display to switch to the USER screen and show the form defined by `⎕SM`.
 
 
-Note that the RIDE does not directly support `⎕SM`, although it is possible to display `⎕SM` in the tty session to which a RIDE client is connected.
+Note that Ride does not directly support `⎕SM`, although it is possible to display `⎕SM` in the tty session to which a Ride client is connected.
 
 
 If the USER screen is current, any change in the value of `⎕SM` is immediately reflected by a corresponding change in the appearance of the display.  However, an assignment to `⎕SM` that leaves its value unchanged has no effect.

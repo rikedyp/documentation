@@ -1,3 +1,8 @@
+<!-- Hidden search keywords -->
+<div style="display: none;">
+  1200⌶
+</div>
+
 <h1 class="heading"><span class="name">Format Date-time</span><span class="command">R←X(1200⌶)Y</span></h1>
 
 `Y` is a numeric array of any shape, where every element contains a Dyalog Date Number that represents a date between 1
@@ -20,7 +25,7 @@ more times to indicate format. As noted below, some sequences allow the first ch
 <table>
     <thead>
         <tr>
-            <th class="text-left">letter</th>
+            <th class="text-left">Format letter</th>
             <th class="text-left">Length</th>
             <th class="text-left">Meaning</th>
             <th class="text-left">Variations</th>
@@ -54,18 +59,18 @@ more times to indicate format. As noted below, some sequences allow the first ch
             <td class="Dyalog">MM</td>
             <td>2 character numeric</td>
             <td class="Dyalog">MM<br />_M</td>
-            <td class="Dyalog">03<br />3</td>
+            <td class="Dyalog">03<br />&nbsp;3</td>
         </tr>
         <tr>
             <td class="Dyalog">MMM</td>
             <td>Abbreviated name</td>
-            <td class="Dyalog">MMM<br />Mmm<br />mmm<br />_mm</td>
+            <td class="Dyalog">MMM<br />Mmm<br />mmm<br />_mm<sup>1</sup></td>
             <td class="Dyalog">MAR<br />Mar<br />mar<br />Mar</td>
         </tr>
         <tr>
             <td class="Dyalog">MMMM </td>
             <td>Full name </td>
-            <td class="Dyalog">MMMM<br />Mmmm<br />mmmm<br />_mmm</td>
+            <td class="Dyalog">MMMM<br />Mmmm<br />mmmm<br />_mmm<sup>1</sup></td>
             <td class="Dyalog">MARCH<br />March<br />march<br />March</td>
         </tr>
         <tr>
@@ -80,7 +85,7 @@ more times to indicate format. As noted below, some sequences allow the first ch
             <td class="Dyalog">DD</td>
             <td>2 character numeric</td>
             <td class="Dyalog">DD<br />_D</td>
-            <td class="Dyalog">04<br />4</td>
+            <td class="Dyalog">04<br />&nbsp;4</td>
         </tr>
         <tr>
             <td rowspan="2" style="vertical-align: middle;">
@@ -94,7 +99,7 @@ more times to indicate format. As noted below, some sequences allow the first ch
             <td class="Dyalog">hh</td>
             <td>2 character numeric</td>
             <td class="Dyalog">hh<br />_h</td>
-            <td class="Dyalog">08<br />8</td>
+            <td class="Dyalog">08<br />&nbsp;8</td>
         </tr>
         <tr>
             <td rowspan="2" style="vertical-align: middle;">
@@ -108,7 +113,7 @@ more times to indicate format. As noted below, some sequences allow the first ch
             <td class="Dyalog">mm</td>
             <td>2 character numeric</td>
             <td class="Dyalog">mm<br />_m</td>
-            <td class="Dyalog">05<br />5</td>
+            <td class="Dyalog">05<br />&nbsp;5</td>
         </tr>
         <tr>
             <td rowspan="2" style="vertical-align: middle;">
@@ -122,7 +127,7 @@ more times to indicate format. As noted below, some sequences allow the first ch
             <td class="Dyalog">ss </td>
             <td>2 character numeric </td>
             <td class="Dyalog">ss<br />_s</td>
-            <td class="Dyalog">00<br />0</td>
+            <td class="Dyalog">00<br />&nbsp;0</td>
         </tr>
         <tr>
             <td rowspan="6" style="vertical-align: middle;">
@@ -173,13 +178,13 @@ more times to indicate format. As noted below, some sequences allow the first ch
         <tr>
             <td class="Dyalog">ddd</td>
             <td>Abbreviated name</td>
-            <td class="Dyalog">DDD<br />Ddd<br />ddd<br />_dd</td>
+            <td class="Dyalog">DDD<br />Ddd<br />ddd<br />_dd<sup>1</sup></td>
             <td class="Dyalog">MON<br />Mon<br />mon<br />Mon</td>
         </tr>
         <tr>
             <td class="Dyalog">dddd</td>
             <td>Full name</td>
-            <td class="Dyalog">DDDD<br />Dddd<br />dddd<br />_ddd</td>
+            <td class="Dyalog">DDDD<br />Dddd<br />dddd<br />_ddd<sup>1</sup></td>
             <td class="Dyalog">MONDAY<br />Monday<br />monday<br />Monday</td>
         </tr>
         <tr>
@@ -196,7 +201,7 @@ more times to indicate format. As noted below, some sequences allow the first ch
             <td class="Dyalog">10<br />10</td>
         </tr>
         <tr>
-            <td rowspan="2" style="vertical-align: middle;">year of ISO<br /><ins>W</ins>eek<br />number</td>
+            <td rowspan="2" style="vertical-align: middle;">year of ISO<br /><ins>W</ins>eek<br />number<sup>2</sup></td>
             <td class="Dyalog">WW</td>
             <td>Without century</td>
             <td class="Dyalog">WW</td>
@@ -219,11 +224,11 @@ more times to indicate format. As noted below, some sequences allow the first ch
             <td class="Dyalog">yy</td>
             <td>3 character numeric</td>
             <td class="Dyalog">yy<br />_y</td>
-            <td class="Dyalog">063<br />63</td>
+            <td class="Dyalog">063<br />&nbsp;63</td>
         </tr>
         <tr>
             <td rowspan="2" style="vertical-align: middle;">
-                <ins>O</ins>rdinal indicator<br />for day of month</td>
+                <ins>O</ins>rdinal indicator<sup>3</sup><br />for day of month</td>
             <td class="Dyalog">O</td>
             <td>Short</td>
             <td class="Dyalog">O<br />o</td>
@@ -246,7 +251,7 @@ more times to indicate format. As noted below, some sequences allow the first ch
             <td class="Dyalog">tt</td>
             <td>2 character numeric</td>
             <td class="Dyalog">tt<br />_t</td>
-            <td class="Dyalog">08<br /></td>
+            <td class="Dyalog">08<br />&nbsp;8</td>
         </tr>
         <tr>
             <td rowspan="2">AM/<ins>P</ins>M Indicator</td>
@@ -263,6 +268,18 @@ more times to indicate format. As noted below, some sequences allow the first ch
         </tr>
     </tbody>
 </table>
+
+**Footnotes**
+
+1. Natural sentence case, which may be specified for M(month name) and d(day
+name) only, causes the text to be substituted in the case which is natural for
+the language; some languages (for example, English) always capitalise the
+first letter of day and month names whereas others (for example, French) do
+not.
+2. Dates at the start of the year may be in the final week of the previous year,
+and dates at the end of the year may be in the first week of the following year.
+3. An ordinal indicator is a character or group of characters following a numeral,
+such as (in English) the suffixes -st, -nd, -rd, -th as in 1st, 2nd, 3rd, 4th.
 
 The upper and lower case letters, underscore `_`, dollar `$` and percent `%` are all reserved for introducing format
 sequences, even though not all currently have meaning. The remaining, non-reserved, characters are copied to the result
@@ -361,55 +378,47 @@ The following creates a dictionary defined by the namespace `dict` using JSON te
 for uses of this dictionary.
 
 ```apl
-      dict_json
-{
-  "Patterns": {
-    "Global": {
-      "ISOweek": "YYYY-'W'ww",
-      "DateCompact": "D-MMM-YYYY",
-      "DateVerbose": "'the date is' DD _mm YYYY"
-    },
-    "fr": {
-      "DateVerbose": "'la date est le' DD mmm YYYY"
-    },
-    "en_US": {
-      "DateVerbose": "'the date is' Mmm DD, YYYY"
-    }
-  },
-  "en_US": {
-    "ShortMonthNames": [
-      "Jan.", "Feb.", "Mar.", "Apr.", "May", "June",
-      "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."
-    ]
-  },
-  "cy": {
-    "MonthNames": [
-      "Ionawr", "Chwefror", "Mawrth", "Ebrill", "Mai", "Mehefin",
-      "Gorffennaf", "Awst", "Medi", "Hydref", "Tachwedd", "Rhagfyr"
-    ],
-    "ShortMonthNames": [
-      "Ion", "Chw", "Maw", "Ebr", "Mai", "Meh",
-      "Gor", "Awst", "Medi", "Hyd", "Tach", "Rhag"
-    ],
-    "WeekdayNames": [
-      "Dydd Sul", "Dydd Llun", "Dydd Mawrth", "Dydd Mercher",
-      "Dydd Iau", "Dydd Gwener", "Dydd Sadwrn"
-    ],
-    "ShortWeekdayNames": [
-      "Sul", "Llun", "Maw", "Mer", "Iau", "Gwen", "Sad"
-    ],
-    "MorningAfternoon": [
-      "yb", "yh"
-    ],
-    "Ordinals": [
-      "af", "il", "ydd", "ydd", "ed", "ed", "fed", "fed", "fed",
-      "fed", "eg", "fed", "eg", "eg", "fed", "eg", "eg", "fed",
-      "eg", "fed", "ain", "ain", "ain", "ain", "ain", "ain",
-      "ain", "ain", "ain", "ain", "ain"
-    ]
-  }
-}
-      dict←⎕JSON dict_json
+dict←(
+  Patterns: (
+    Global: (
+      ISOweek: 'YYYY-"W"ww'
+      DateCompact: 'D-MMM-YYYY'
+      DateVerbose: '"the date is" DD _mm YYYY'
+    )
+    fr: ( DateVerbose: '"la date est le" DD mmm YYYY' )
+    en_US: ( DateVerbose: '"the date is" Mmm DD, YYYY' )
+  )
+  en_US: (
+    ShortMonthNames: (
+      'Jan.' ⋄ 'Feb.' ⋄ 'Mar.' ⋄ 'Apr.' ⋄ 'May' ⋄ 'June'
+      'July' ⋄ 'Aug.' ⋄ 'Sept.' ⋄ 'Oct.' ⋄ 'Nov.' ⋄ 'Dec.'
+    )
+  )
+  cy: (
+    MonthNames: (
+      'Ionawr' ⋄ 'Chwefror' ⋄ 'Mawrth' ⋄ 'Ebrill' ⋄ 'Mai' ⋄ 'Mehefin'
+      'Gorffennaf' ⋄ 'Awst' ⋄ 'Medi' ⋄ 'Hydref' ⋄ 'Tachwedd' ⋄ 'Rhagfyr'
+    )
+    ShortMonthNames: (
+      'Ion' ⋄ 'Chw' ⋄ 'Maw' ⋄ 'Ebr' ⋄ 'Mai' ⋄ 'Meh'
+      'Gor' ⋄ 'Awst' ⋄ 'Medi' ⋄ 'Hyd' ⋄ 'Tach' ⋄ 'Rhag'
+    )
+    WeekdayNames: (
+      'Dydd Sul' ⋄ 'Dydd Llun' ⋄ 'Dydd Mawrth' ⋄ 'Dydd Mercher'
+      'Dydd Iau' ⋄ 'Dydd Gwener' ⋄ 'Dydd Sadwrn'
+    )
+    ShortWeekdayNames: (
+      'Sul' ⋄ 'Llun' ⋄ 'Maw' ⋄ 'Mer' ⋄ 'Iau' ⋄ 'Gwen' ⋄ 'Sad'
+    )
+    MorningAfternoon: ( 'yb' ⋄ 'yh' )
+    Ordinals: (
+      'af' ⋄ 'il' ⋄ 'ydd' ⋄ 'ydd' ⋄ 'ed' ⋄ 'ed' ⋄ 'fed' ⋄ 'fed' ⋄ 'fed'
+      'fed' ⋄ 'eg' ⋄ 'fed' ⋄ 'eg' ⋄ 'eg' ⋄ 'fed' ⋄ 'eg' ⋄ 'eg' ⋄ 'fed'
+      'eg' ⋄ 'fed' ⋄ 'ain' ⋄ 'ain' ⋄ 'ain' ⋄ 'ain' ⋄ 'ain' ⋄ 'ain'
+      'ain' ⋄ 'ain' ⋄ 'ain' ⋄ 'ain' ⋄ 'ain'
+    )
+  )
+)
 ```
 
 ## Note the following

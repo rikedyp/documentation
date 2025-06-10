@@ -60,7 +60,10 @@ jobs:
           pygments \
           pymdown-extensions \
           markdown-tables-extended \
-          git+https://github.com/flywire/caption
+          git+https://github.com/flywire/caption \
+          htmlmin \
+          csscompressor \
+          cssutils
 
     - name: Prepare directories
       run: |
@@ -88,8 +91,22 @@ jobs:
         [ -f "mkdocs.yml" ] || { echo "mkdocs.yml not found in repository root"; exit 1; }
         [ -d "pdf/assets" ] || { echo "pdf/assets directory not found"; exit 1; }
         [ -f "pdf/config.json" ] || { echo "Error: pdf/config.json not found"; exit 1; }
+        [ -d "object-reference" ] || { echo "Error: object-reference directory not found"; exit 1; }
+        [ -f "pdf/fix_objref.py" ] || { echo "Error: pdf/fix_objref.py not found"; exit 1; }
+        
+        # Make scripts executable
         chmod +x pdf/mkdocs2pdf.py
-
+        chmod +x pdf/fix_objref.py
+        
+        # Run the fix_objref.py script to transform markdown files
+        python pdf/fix_objref.py --dir "object-reference"
+        
+        # Check the exit status of the previous command
+        if [ $? -ne 0 ]; then
+          echo "Error: fix_objref.py failed"
+          exit 1
+        fi
+        
         # Run the conversion script
         python pdf/mkdocs2pdf.py \
           --mkdocs-yml mkdocs.yml \
@@ -99,6 +116,9 @@ jobs:
 
     - name: Convert MkDocs to CHM
       if: ${{ inputs.generate_chm }}
+      env:
+        GIT_INFO: ${{ steps.git-info.outputs.GIT_INFO }}
+        BUILD_DATE: ${{ steps.git-info.outputs.DATE }}
       working-directory: ${{ github.workspace }}
       run: |
         # Verify required files and directories exist
@@ -113,7 +133,10 @@ jobs:
           --mkdocs-yml mkdocs.yml \
           --project-dir chm/output \
           --assets-dir chm/assets \
-          --config chm/config.json
+          --config chm/config.json \
+          --welcome chm/welcome.md \
+          --git-info "$GIT_INFO" \
+          --build-date "$BUILD_DATE"
 
     - name: Install yq
       run: |

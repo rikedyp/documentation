@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 <h1 class="heading"><span class="name">SessionTrace</span> <span class="right">Event 527</span></h1>
 
 

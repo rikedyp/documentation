@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 <h1 class="heading"><span class="name">Fix</span> <span class="right">Event 820</span></h1>
 
 

@@ -313,3 +313,19 @@ hr {
     height: 1px;
     background-color: #dcdcdc;
 }
+
+img {
+    display: block;
+    /* Makes images behave as block elements */
+    margin: 1em auto;
+    /* Centers images with auto margins */
+    max-width: 95%;
+    /* Prevents images from overflowing their containers */
+    height: auto;
+    /* Maintains aspect ratio */
+}
+
+figure {
+    text-align: center;
+    margin: 1em auto;
+}

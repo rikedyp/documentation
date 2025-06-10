@@ -1,7 +1,7 @@
 site_name: UNIX User Guide
 theme:
   favicon: img/favicon-32.png
-  logo: img/dyalog-white.svg
+  logo: img/dyalog-logo-2025_white.svg
   features:
     - navigation.instant
     - navigation.tracking
@@ -49,7 +49,6 @@ markdown_extensions:
 nav:
   - Overview: overview.md
   - Entering Characters: entering-characters.md
-  - Entering Nest and Stencil Characters: entering-the-stencil-character.md
   - Entering Commands: entering-commands.md
   - Input Windows: the-different-input-windows.md
   - Driving the tty version: driving-tty-dyalog-apl.md
