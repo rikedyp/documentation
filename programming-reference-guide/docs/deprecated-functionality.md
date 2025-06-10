@@ -2,7 +2,7 @@
 
 Over time, certain functionality (such as language elements, development environment features, or supplied samples or tools) can become obsolete or cease to be useful. There are many reasons why this might happen. For example:
 
-* A superior alternative has been introduced.<br />For example, `⎕UCS` has superseded `⎕TC` (which generates only the newline, backspace, and tabstop characters).
+* A superior alternative has been introduced.<br />For example, `⎕UCS` has superseded `⎕TC` (which generates only the newline, backspace, and linefeed characters).
 * The feature was originally implemented as an I-beam but has since been superseded by a formal addition to Dyalog APL.<br />For example, `⎕JSON` replaced `7159⌶`.
 * The feature is associated with hardware or technology that is itself becoming obsolete.<br />For example, 32-bit processes and address spaces limited to 4GB in size.
 
