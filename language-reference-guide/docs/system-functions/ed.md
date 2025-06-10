@@ -23,6 +23,7 @@
 |`⍟`|Namespace script           |
 |`○`|Class script               |
 |`∘`|Interface                  |
+|`⋄`|Array Notation             |
 
 
 

@@ -452,6 +452,11 @@ def convert_to_html(
         with open(file, "r", encoding="utf-8") as f:
             md = f.read()
 
+        # Remove YAML frontmatter if present (may have leading whitespace)
+        # Pattern matches optional whitespace, ---, content, ---, and following newlines
+        frontmatter_pattern = r'^\s*---\n.*?\n---\n+'
+        md = re.sub(frontmatter_pattern, '', md, count=1, flags=re.DOTALL)
+
         # Macros are defined in the "extra:" section in the mkdocs.yml file. In the Markdown
         # source, they are templates of the type
         #

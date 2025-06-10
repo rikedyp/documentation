@@ -322,7 +322,6 @@ nav:
       - Serialise/Deserialise Arrays: the-i-beam-operator/serialise-array.md
       - Compiler Control: the-i-beam-operator/compiler-control.md
       - Trap Control: the-i-beam-operator/trap-control.md
-      - Case Convert: the-i-beam-operator/case-convert.md
       - Called Monadically: the-i-beam-operator/called-monadically.md
       - Temporary Directory: the-i-beam-operator/temporary-directory.md
       - Loaded Libraries: the-i-beam-operator/loaded-libraries.md
@@ -826,7 +825,4 @@ nav:
           - List Global Defined Variables: system-commands/vars.md
           - Workspace Identification: system-commands/wsid.md
           - Load without Latent Expression: system-commands/xload.md
-  - PCRE Specifications:
-      - Introduction: pcre-specifications/pcre-overview.md
-      - PCRE Regular Expression Syntax Summary: pcre-specifications/pcre-regular-expression-syntax-summary.md
-      - PCRE Regular Expression Details: pcre-specifications/pcre-regular-expression-details.md
+  - PCRE Specifications: pcre-specifications.md

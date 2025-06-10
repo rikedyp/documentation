@@ -236,13 +236,13 @@ Note that `¯1` is only used as a "filler" when there are higher-numbered subpat
 
 The second match is the B in the second subpattern. Offsets is `1 ¯1 1` and Lengths is `1 ¯1 1`: the entire pattern matched from offset 1 length 1 and the second subpattern also matched from offset 1 length 1. The first subpattern did not feature in the match and this is indicated by the `¯1`s. There has to be something between the offset/length for the entire pattern and the second subpattern.
 
-## Options
+## Variant Options
 
 Options are specified using the Variant operator. The Principal option is IC.
 
 Default values are highlighted thus.
 
-## IC Option
+### IC Option
 
 When set, case is ignored in searches.
 
@@ -258,7 +258,7 @@ XBCDX XbcdX
 XBCDX XbcdX
 ```
 
-## Mode Option
+### Mode Option
 
 Specifies whether the input document is interpreted in **line** mode, **document** mode or **mixed** mode.
 
@@ -279,7 +279,7 @@ Specifies whether the input document is interpreted in **line** mode, **document
  ABC[Endline]  DEF[Endline]
 ```
 
-## DotAll Option
+### DotAll Option
 
 Specifies whether the dot ('.') character in search patterns matches line ending characters
 
@@ -297,7 +297,7 @@ This option is invalid in line mode, because line endings are stripped from the 
  XXXXXXXX
 ```
 
-## EOL Option
+### EOL Option
 
 Sets the line ending character which is implicitly present between character vectors, when the input document is a vector of character vectors.
 
@@ -321,7 +321,7 @@ In the Classic Edition, setting a value which is not in `⎕AVU` may result in a
 
 Here, the implied line ending between 'ABC' and 'DEF' is '\n', not the default '\r\n'.
 
-## NEOL Option
+### NEOL Option
 
 Specifies whether explicit line ending sequences in the input document are normalised by replacing them with the character specified using the EOL option.
 
@@ -338,7 +338,7 @@ Specifies whether explicit line ending sequences in the input document are norma
 
 '\n' has matched both explicit line ending characters in the input, even though they are different.
 
-## ML Option
+### ML Option
 
 Sets a limit to the number of processed pattern matches per line (line mode) or document (document mode and mixed mode).
 
@@ -358,7 +358,7 @@ Sets a limit to the number of processed pattern matches per line (line mode) or 
 
 ```
 
-## Greedy Option
+### Greedy Option
 
 Controls whether patterns are "greedy" (and match the maximum input possible) or are not (and match the minimum). Within the pattern itself it is possible to specify greediness for individual elements of the pattern; this option sets the default.
 
@@ -374,7 +374,7 @@ X
 X23 X56
 ```
 
-## OM Option
+### OM Option
 
 Specifies whether matches may overlap.
 
@@ -393,7 +393,7 @@ This option may only be used with `⎕S`. With `⎕R` searching always continues
 
 ```
 
-## InEnc Option
+### InEnc Option
 
 This option specifies the encoding of the input stream when it cannot be determined automatically. It is either:
 
@@ -416,7 +416,7 @@ When the stream is read from its start, and the start of the stream contains a r
 
 For compatibility with the OutEnc option, the above UTF formats may be qualified with -BOM (for example, UTF-8-BOM) or -NOBOM. For input streams, the qualified and unqualified options are equivalent.
 
-## OutEnc Option
+### OutEnc Option
 
 When the output is written to a stream, this option specifies how the data is to be encoded.  It is either:
 
@@ -438,11 +438,11 @@ When the output is written to a stream, this option specifies how the data is to
 
 The above UTF formats may be qualified with -BOM (for example, UTF-8-BOM) to specify that a Byte Order Mark should be written at the start of the stream or, -NOBOM that it should not. For files, this is ignored if the file already contains any data.  If the -BOM or -NOBOM suffix is omitted, UTF-8 defaults to UTF-8-NOBOM, while the other UTF formats default to -BOM.
 
-## Enc Option
+### Enc Option
 
 This option sets both InEnc and OutEnc simultaneously, with the same given value. Any option value accepted by those options except Implied may be given.
 
-## ResultText Option
+### ResultText Option
 
 For `⎕R`, this option determines the format of the result.
 
@@ -461,7 +461,7 @@ This option may only be used with `⎕R`.
  120 66 13 10 67 68
 ```
 
-## UCP Option
+### UCP Option
 
 This affects the way PCRE that processes \B, \b, \D, \d, \S, \s,  \W,
 \w,  and  some  of  the POSIX character classes.
@@ -489,7 +489,7 @@ When UCP is set to 1, Unicode characters are matched as "word" characters (\w) t
  B  j  ø  r  n
 ```
 
-## Regex Option
+### Regex Option
 
 This option may be used to disable regular expression matching which is enabled by default. It is a singleton Boolean value that applies to both search and transformation patterns, or a 2-element vector of Boolean values that applies to them separately.
 
@@ -560,7 +560,7 @@ Or to take arms against a sea of troubles
 ```
 
 
-## Replace all upper and lower-case vowels by `'X'`
+Replace all upper and lower-case vowels by `'X'`:
 ```apl
        ('[aeiou]' ⎕R 'X' ⍠ 'IC' 1) text
 TX bX Xr nXt tX bX- thXt Xs thX qXXstXXn:   
@@ -569,7 +569,7 @@ ThX slXngs Xnd XrrXws Xf XXtrXgXXXs fXrtXnX,
 Xr tX tXkX Xrms XgXXnst X sXX Xf trXXblXs   
 ```
 
-## Replace only the second vowel on each line by `'\VOWEL\'`
+Replace only the second vowel on each line by `'\VOWEL\'`:
 ```apl
        ('[aeiou]' ⎕R '\\VOWEL\\'⍠('IC' 1)('ML' ¯2)) text
 To b\VOWEL\ or not to be- that is the question:   
@@ -578,7 +578,7 @@ The sl\VOWEL\ngs and arrows of outrageous fortune,
 Or t\VOWEL\ take arms against a sea of troubles
 ```
 
-## Case fold each word
+Case fold each word:
 ```apl
       ('(?<first>\w)(?<remainder>\w*)' ⎕R '\u<first>\l<remainder>') text
 To Be Or Not To Be- That Is The Question:   
@@ -587,7 +587,7 @@ The Slings And Arrows Of Outrageous Fortune,
 Or To Take Arms Against A Sea Of Troubles   
 ```
 
-## Extract only the lines with characters 'or' (in upper or lower case) on them
+Extract only the lines with characters 'or' (in upper or lower case) on them:
 ```apl
       ↑('or' ⎕S '%' ⍠ ('IC' 1)('ML' 1)) text
 To be or not to be– that is the question:   
@@ -595,7 +595,7 @@ The slings and arrows of outrageous fortune,
 Or to take arms against a sea of troubles 
 ```
 
-## Identify which lines contain the word 'or' (in upper or lower case) on them
+Identify which lines contain the word 'or' (in upper or lower case) on them:
 ```apl
       ('\bor\b'⎕S 2⍠('IC' 1)('ML' 1))text
 0 3
@@ -604,13 +604,15 @@ Or to take arms against a sea of troubles
 
 Note the difference between the characters *'or'* (which appear in 'fortune') and the word *'or'*.
 
-## Place every non-space sequence of characters in brackets
+Place every non-space sequence of characters in brackets:
 ```apl
       ('[^\s]+' ⎕R '(&)' ) 'To be or not to be, that is the question'
 (To) (be) (or) (not) (to) (be,) (that) (is) (the) (question)
 ```
 
-## Replace all sequences of one or more spaces by newline. Note that the effect of this is dependent on the input format
+Replace all sequences of one or more spaces by newline:
+
+Note that the effect of this is dependent on the input format
 
 Character vector input results in a single character vector output with embedded newlines:
 
@@ -640,7 +642,7 @@ A vector of two character vectors as input results in a vector of 10 character v
 └∊─────────────────────────────────────────────────────────────┘
 ```
 
-## Change numerals to their expanded names, using a function
+Change numerals to their expanded names, using a function:
 ```apl
 
      ∇r←f a;n
@@ -653,13 +655,13 @@ A vector of two character vectors as input results in a vector of 10 character v
  one three one five four four
 ```
 
-## Swap 'red' and 'blue'
+Swap 'red' and 'blue':
 ```apl
       ('red' 'blue' ⎕R 'blue' 'red') 'red hat blue coat'
 blue hat red coat
 ```
 
-### Convert a comma separated values (CSV) file so that
+Convert a comma separated values (CSV) file so that:
 
 - dates in the first field are converted from European format to ISO, and
 - currency values are converted from Deutsche Marks (DEM) to Euros (DEM 1.95583 to €1).
@@ -675,6 +677,7 @@ Output file:
 
 |----------------------------------------------------------------------------------------------------------------------------------|
 |`1980-03-01,Widgets,€ 5.21` `1980-04-02,Bolts,€ 31.57` `1980-06-17,Nuts; special rate DEM 17.00,€ 8.69` `1980-07-18,Hammer,€ 0.63`|
+
 ```apl
      ∇ ret←f a;d;m;y;v
 [1]    ⎕IO←0
@@ -697,8 +700,9 @@ Output file:
       out (dateptn valptn ⎕R f) in
       ⎕nuntie¨in out
 ```
+## Create a simple profanity filter:
 
-## Create a simple profanity filter. For the list of objectionable words
+For the list of objectionable words
 ```apl
        profanity←'bleeding' 'heck'
 ```
@@ -720,7 +724,7 @@ then a function that uses this pattern:
 "****", I said
 ```
 
-### Replace the characters 'or' with '\u0' without having to escape the backslash
+Replace the characters 'or' with '\u0' without having to escape the backslash:
 
 
 Escaping transformation strings can be a daunting task. To avoid doing so, one can simply enclose the string in braces. This is not a special feature, but just a consequence of how transformation functions are used.
