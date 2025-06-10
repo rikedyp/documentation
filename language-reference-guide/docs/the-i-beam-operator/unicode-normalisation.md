@@ -19,7 +19,7 @@ All characters in `Y` must be valid Unicode code points - that is, in the ranges
 |`'KD'`|Compatibility Decomposition
 |`'KC'`|Compatibility Decomposition followed by Canonical Composition
 
-The result `R` is the same as `Y` except that the character arrays are normalised as required. Character scalars within `Y` are converted to vectors; normalised vectors may contain a different number of characters.
+The result `R` is the same as `Y` except that the character arrays are normalised as required. If `Y` is a character scalar or a vector of character scalars and vectors, then scalars in `Y` are converted to vectors. Normalised vectors may contain a different number of characters.
 
 ## Normalisation
 
