@@ -35,6 +35,7 @@ Keycodes, their common keystrokes, and the keystrokes specific to the PuTTY term
 |HK     |Hot Key ( `⎕SM` )  |Cmd u                |&nbsp;              |
 |HO     |Home Cursor        |Cmd h                |&nbsp;              |
 |IN     |Insert Mode        |Cmd i                |&nbsp;              |
+|IT     | Inline Tracing    |Cmd k                |Alt+Ctrl+Enter      |
 |JP     |Jump               |Cmd j                |Shift+Ctrl+Home     |
 |LC     |Left Cursor        |Cursor Left          |&nbsp;              |
 |LL     |Left Limit         |Ctrl+Left            |&nbsp;              |
