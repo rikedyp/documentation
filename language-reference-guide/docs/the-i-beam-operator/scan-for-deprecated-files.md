@@ -11,7 +11,7 @@ Scans a directory (and, optionally, sub-directories) for deprecated filetypes. F
 
 `R` is a two-column matrix identifying the files which are deprecated, with one filename per row.
 
-The files in `Y` (and, optionally, sub-directories of `Y`) are examined, and only the names of files that are deprecated or cannot be checked are included in `R`. The first column contains the filenames, and the second contains a vector of one or more labels indicating why the file is deprecated. The labels are release-dependent; for a list of valid labels see the [Release Notes](../../release-notes/announcements/deprecated-functionality.md). The rows in `R` are not sorted.
+The files in `Y` (and, optionally, sub-directories of `Y`) are examined, and only the names of files that are deprecated or cannot be checked are included in `R`. The first column contains the filenames, and the second contains a vector of one or more labels indicating why the file is deprecated. The labels are release-dependent; for a list of valid labels see the [Release Notes](../../release-notes/announcements/deprecated-functionality/). The rows in `R` are not sorted.
 
 <h2 class="example">Example</h2>
 
