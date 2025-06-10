@@ -49,7 +49,7 @@ Images of docker containers that host Dyalog running on ARM64 Linux are availabl
 	
 ## Dyalog for Raspberry Pi
 
-Dyalog v20.0 is the last release that will be supported on the 32-bit Raspberry Pi.
+Dyalog v20.0 is the last release that will be supported on 32-bit Raspberry Pi OS.
 
 ## Syncfusion
 
@@ -69,7 +69,7 @@ The process of moving all the documentation into an [open source GitHub project]
 To report an error or request a change in the documentation you can now:
 
 - send an email to [docs@dyalog.com](mailto:docs@dyalog.com) – this can be done for any Dyalog document.
-- [raise an issue](https://github.com/Dyalog/documentation/issues) directly in the GitHub project – this should only be done if the issue relates to a document that is in the Github project.
+- [raise an issue](https://github.com/Dyalog/documentation/issues) directly in the GitHub project – this should only be done if the issue relates to a document that is in the GitHub project.
 
 The GitHub project's [readme file](https://github.com/Dyalog/documentation/blob/main/README.md) includes information on how to contribute by drafting amendments/enhancements.
 

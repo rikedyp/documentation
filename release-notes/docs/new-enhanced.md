@@ -131,8 +131,8 @@ This improves the performance of `⎕SHELL` on AIX. When set to `1` (the default
 
 The following command shortcuts have been extended:
 
-- The _Redraw Function_ command (**&lt;RD>**) will now reformat and indent an array when array notation is switched on (previously this functionlaity was restricted to functions).
-- The _Undo All_ command (**&lt;UA>**) will now exit multi-line input (previously this only "unmarked" input liens within multi-line input).
+- The _Redraw Function_ command (**&lt;RD>**) will now reformat and indent an array when array notation is switched on (previously this functionality was restricted to functions).
+- The _Undo All_ command (**&lt;UA>**) will now exit multi-line input (previously this only "unmarked" input lines within multi-line input).
 
 ### Home and End Keys
 

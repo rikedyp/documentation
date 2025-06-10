@@ -11,4 +11,4 @@ Coming soon...
 The rules around whether a syntactically-invalid function can be fixed have been tightened to prevent functions with unmatched parentheses from being fixed.
 
 [`)SAVE`](../../language-reference-guide/system-commands/save/)  
-On platforms other than Microsoft Windows, you can no longer overwrite a workspace that was saved with an earlier version of Dyalog without using the `-force` option.
+On platforms other than Microsoft Windows, you can no longer overwrite a workspace that was saved with an earlier version of Dyalog without using the `-force` option. This was already required on Microsoft Windows.
