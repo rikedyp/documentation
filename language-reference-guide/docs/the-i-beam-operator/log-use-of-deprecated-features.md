@@ -1,8 +1,8 @@
 <h1 class="heading"><span class="name">Log use of deprecated features</span> <span class="command">{R}←(13⌶)Y</span></h1>
 
-Controls which deprecated features are logged when logging is enabled. For an overview of deprecated features and this I-beam's role in identifying them within your code, see [Deprecated features](../../../programming-reference-guide/log-use-of-deprecated-features/).
+Controls which deprecated features are logged when logging is enabled. For an overview of deprecated features and this I-beam's role in identifying them within your code, see [Deprecated functionality](../../../programming-reference-guide/deprecated-functionality).
 
-`Y` is a character vector, or a vector of character vectors, each containing the name of a deprecated feature, or one of the names defined in the table below. The names are release-dependent; for a list of valid names see the [Release Notes](../../release-notes/announcements/deprecated-functionality/).
+`Y` is a character vector, or a vector of character vectors, each containing the name of a deprecated feature, or one of the names defined in the table below. The names are release-dependent; for a list of valid names see the [Release Notes](../../../release-notes/announcements/deprecated-functionality).
 
 Subsequent uses of the selected deprecated features will be logged, provided that [109⌶](deprecated-feature-log-file.md) has been called to set the name of the log file.
 
