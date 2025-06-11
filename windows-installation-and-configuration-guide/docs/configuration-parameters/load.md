@@ -11,7 +11,7 @@ The **Load** parameter will normally be specified on the command line or in a Co
 
 Having loaded the workspace, or fixed the code from the named file or directory, Dyalog executes the expression specified by the `LX` parameter if it is set. See [LX](lx.md).
 
-If `LX` is not set, Dyalog checks whether or not the **-x** command line option was specified. If so, no further action is taken. See [-x](../APL Command Line.htm#x_option).
+If `LX` is not set, Dyalog checks whether or not the **-x** command line option was specified. If so, no further action is taken. See [-x](../apl-command-line#x_option).
 
 Otherwise, Dyalog executes an expression which is derived as follows.
 

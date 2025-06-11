@@ -18,7 +18,7 @@ All but the first of these are made using the *Export* dialog box accessed from 
 
 ## Configuration Parameters
 
-Configuration parameters for these run-time applications, both for the Dyalog engine and for your own application settings, may be specified in a number of ways. See [Configuration Parameters](configuration-parameters.md).
+Configuration parameters for these run-time applications, both for the Dyalog engine and for your own application settings, may be specified in a number of ways. See [Configuration Parameters](configuration-parameters/configuration-parameters.md).
 
 Nevertheless, it is strongly recommended that you use Configuration files. In this section we will discuss only Application Configuration files, although User Configuration files may be used as well.
 
