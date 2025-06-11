@@ -62,11 +62,11 @@ The single/first element of `X` (which specifies `content`) can now be a matrix.
 
 The following I-beams have been added:
 
-- [`13⌶`](../../language-reference-guide/the-i-beam-operator/deprecated-features/) – Deprecated Features  
+- [`13⌶`](../../language-reference-guide/the-i-beam-operator/log-use-of-deprecated-features/) – Deprecated Features  
 Records information in the log file set by `109⌶` about the specified deprecated feature names or keywords
 - [`43⌶`](../../language-reference-guide/the-i-beam-operator/monadic-operator-generator/) – Monadic Operator Generator  
 Generates a monadic operator with specified functionality. The functionality is currently limited to creating a .NET-specific operator that can create concrete versions of generic classes and execute generic methods.
-- [`109⌶`](../../language-reference-guide/the-i-beam-operator/log-file-for-deprecations/) – Log File for Deprecations  
+- [`109⌶`](../../language-reference-guide/the-i-beam-operator/deprecated-feature-log-file/) – Log File for Deprecations  
 Manages the file used to log the use of deprecated features.
 - [`120⌶`](../../language-reference-guide/the-i-beam-operator/generate-uuid/) – Generate UUID  
 Generates a UUID (Universally Unique IDentifier) according to the RFC 9562 specification.
@@ -90,19 +90,21 @@ Temporary functionality used for identification of potential side-effects of a c
 
 ### Array Notation
 
-[Array notation](../../programming-reference-guide/introduction/arrays/array-notation/) is a literal syntax for most arrays (including nested and high-rank arrays) and namespaces. With array notation, arrays can be entered and displayed over multiple lines.
+[Array notation](../../programming-reference-guide/introduction/arrays/array-notation/) is a literal syntax for most arrays (including nested and high-rank arrays) and namespaces. Array notation is an extension of APL syntax, and, as such, can be used inside and around all other APL expressions, and wherever an APL expression can appear (for example in the Session, in functions, and in namespace scripts).
 
-Array notation can be enabled in the following ways:
+You can edit variables using array notation in the following ways:
 
 - Enter the _Edit_ command (**&lt;ED>**) from within the Editor.
 - Call the system command `)ED` and prefix the variable name with a diamond character, for example, `)ED ⋄foo`
 - Call the system function `⎕ED` with a left argument `'⋄'`, for example, `'⋄' ⎕ED 'foo'`.
+- Set the `APLAN_FOR_OUTPUT` configuration parameter to `1` (this sets use of array notation to be permanently on)
 
-In addition, in the Microsoft Windows IDE, array notation can be enabled in the following ways:
+In addition, in the Microsoft Windows IDE, array notation can be accessed in the following ways:
 
-- Click the ![](img/session_arraynotation.png){width=20 height=20 vertical-align:text-bottom} icon in the **Session** toolbar when the cursor is over the name of an array.
-- Click the ![](img/object_arraynotation.png){width=20 height=20 vertical-align:text-bottom} icon in the **Object** toolbar.
-- Select **Show as Array Notation** from the Editor's **Syntax** menu.
+- Click the ![](img/session_arraynotation.png){width=20 height=20 vertical-align:text-bottom} icon in the **Session** toolbar – this button toggles use of array notation syntax on/off.
+- Click the ![](img/object_arraynotation.png){width=20 height=20 vertical-align:text-bottom} icon in the **Object** toolbar when the cursor is over the name of an array – this opens the array in the Editor in the same way as `)ED ⋄foo`.
+- Click the ![](img/object_arraynotation.png){width=20 height=20 vertical-align:text-bottom} icon in the Editor's toolbar – this button toggles use of array notation syntax on/off.
+- Select **Show as Array Notation** from the Editor's **Syntax** menu – this displays the contents of the Editor using array notation.
 
 ## User Interface Changes
 
@@ -124,8 +126,10 @@ In addition, in the Microsoft Windows IDE, inline tracing can be enabled in the 
 
 The following configuration parameters have been added:
 
+- `APLAN_FOR_OUTPUT`  
+This displays session output using array notation when possible. The default is `0` (array notation is not in use).
 - `DYALOG_SHELL_SUBPROCESS`  
-This improves the performance of `⎕SHELL` on AIX. When set to `1` (the default on AIX), `⎕SHELL` uses another mechanism for running/executing its command, which can improve performance on some operating systems.
+This improves the performance of `⎕SHELL` on AIX. When set to `1` (the default on AIX), the interpreter starts a (small) child process that handles calls to `⎕SHELL`, mitigating some of the performance issues seen on AIX when <code class="language-nonAPL">fork()</code>ing large processes.
 
 ### Command Shortcuts
 
