@@ -62,11 +62,11 @@ The single/first element of `X` (which specifies `content`) can now be a matrix.
 
 The following I-beams have been added:
 
-- [`13⌶`](../../language-reference-guide/the-i-beam-operator/deprecated-features/) – Deprecated Features  
+- [`13⌶`](../../language-reference-guide/the-i-beam-operator/log-use-of-deprecated-features/) – Deprecated Features  
 Records information in the log file set by `109⌶` about the specified deprecated feature names or keywords
 - [`43⌶`](../../language-reference-guide/the-i-beam-operator/monadic-operator-generator/) – Monadic Operator Generator  
 Generates a monadic operator with specified functionality. The functionality is currently limited to creating a .NET-specific operator that can create concrete versions of generic classes and execute generic methods.
-- [`109⌶`](../../language-reference-guide/the-i-beam-operator/log-file-for-deprecations/) – Log File for Deprecations  
+- [`109⌶`](../../language-reference-guide/the-i-beam-operator/deprecated-feature-log-file/) – Log File for Deprecations  
 Manages the file used to log the use of deprecated features.
 - [`120⌶`](../../language-reference-guide/the-i-beam-operator/generate-uuid/) – Generate UUID  
 Generates a UUID (Universally Unique IDentifier) according to the RFC 9562 specification.
