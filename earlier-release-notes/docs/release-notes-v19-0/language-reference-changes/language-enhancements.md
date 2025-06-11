@@ -13,7 +13,7 @@ The following table summarises the main changes to language features in Version 
 |`5172⌶`          |[Discard Source Code](./discard-source-code.md)                                                       |New I-beam function                                                  |
 |`9468⌶`          |[Hash Table Size](./hash-table-size.md)                                                               |New I-beam function                                                  |
 |`9469⌶`          |[Lookup Table Size](./lookup-table-size.md)                                                           |New I-beam function                                                  |
-|`⎕NCOPY`         |Native File Copy                                                                                      |New [ProgressCallback](extension-to-native-file-functions.md) variant|
-|`⎕NMOVE`         |Native File Move                                                                                      |New [ProgressCallback](extension-to-native-file-functions.md) variant|
+|`⎕NCOPY`         |Native File Copy                                                                                      |New [ProgressCallback](../introduction/extension-to-native-file-functions.md) variant|
+|`⎕NMOVE`         |Native File Move                                                                                      |New [ProgressCallback](../introduction/extension-to-native-file-functions.md) variant|
 |`⎕FHOLD`         |File Hold                                                                                             |New left argument to specify a time-out                              |
 |`⎕SIGNAL`        |Signal event                                                                                          |Now accepts 1006 ( `TIMEOUT` error)                                  |

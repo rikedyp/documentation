@@ -29,7 +29,7 @@ If `X` is omitted, the result `R` is an array with the same structure as `Y`, bu
 
 Note: While all other operations are relatively fast, the operation to count the number of garbage pockets (4) may take a noticeable amount of time, depending upon the size and state of the workspace.
 
-See also [Specify Workspace Available](specify-workspace-available.md).
+See also [Specify Workspace Available](https://help.dyalog.com/latest/index.htm#Language/I%20Beam%20Functions/Specify%20Workspace%20Available.htm).
 
 <h2 class="example">Examples</h2>
 ```apl
