@@ -42,6 +42,7 @@ Keycodes, their common keystrokes, and the keystrokes specific to terminal emula
 |IG     |Ignore next             |&nbsp;               |&nbsp;             |
 |IL     |Insert Line             |&nbsp;               |&nbsp;             |
 |IN     |Insert Mode             |Cmd i                |&nbsp;             |
+|IT     | Inline Tracing         | Cmd k               |&nbsp;             |
 |JP     |Jump                    |Cmd j                |&nbsp;             |
 |LC     |Left Cursor             |Cursor Left          |&nbsp;             |
 |LL     |Left Limit              |Ctrl+Left            |Shift+APL+Home     |
