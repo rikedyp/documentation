@@ -1,6 +1,6 @@
 <h1 class="heading"><span class="name">Scan For Deprecated Files</span> <span class="command">R←{X}(3535⌶)Y</span></h1>
 
-Scans a directory (and, optionally, sub-directories) for deprecated filetypes. For an overview of deprecated features, see [Deprecated features](../../../../programming-reference-guide/deprecated-features) in the _Dyalog Programming Reference Guide_.
+Scans a directory (and, optionally, sub-directories) for deprecated filetypes. For an overview of deprecated features, see [Deprecated features](../../programming-reference-guide/deprecated-features) in the _Dyalog Programming Reference Guide_.
 
 `Y` is the name of the directory to scan.
 
@@ -11,7 +11,7 @@ Scans a directory (and, optionally, sub-directories) for deprecated filetypes. F
 
 `R` is a two-column matrix identifying the files which are deprecated, with one filename per row.
 
-The files in `Y` (and, optionally, sub-directories of `Y`) are examined, and only the names of files that are deprecated or cannot be checked are included in `R`. The first column contains the filenames, and the second contains a vector of one or more labels indicating why the file is deprecated. The labels are release-dependent; for a list of valid labels see the [Release Notes](../release-notes/announcements/deprecated-functionality.md). The rows in `R` are not sorted.
+The files in `Y` (and, optionally, sub-directories of `Y`) are examined, and only the names of files that are deprecated or cannot be checked are included in `R`. The first column contains the filenames, and the second contains a vector of one or more labels indicating why the file is deprecated. The labels are release-dependent; for a list of valid labels see the [Release Notes](../../release-notes/announcements/deprecated-functionality/). The rows in `R` are not sorted.
 
 <h2 class="example">Example</h2>
 
@@ -23,4 +23,4 @@ The files in `Y` (and, optionally, sub-directories of `Y`) are examined, and onl
  ./subdir/S32J0C0.dcf   J0C0  S32
 ```
 
-See also [`13⌶` – Log use of deprecated features](deprecated-features.md).
+See also [`13⌶` – Log use of deprecated features](log-use-of-deprecated-features.md).

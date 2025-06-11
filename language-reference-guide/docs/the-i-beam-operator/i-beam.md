@@ -29,11 +29,10 @@ The column labelled *O/S* indicates if a function applies only on Windows (W), o
 |A      |Derived Function                                                                      |O/S   |
 |-------|--------------------------------------------------------------------------------------|------|
 |`8`    |[Inverted Table Index-of](./inverted-table-index-of.md)                               |&nbsp;|
-|`13`   |[Deprecated Features](./deprecated-features.md)                                       |&nbsp;|
-|`85`   |[Execute Expression](./execute-expression.md)                                         |&nbsp;|
+|`13`   |[Log Use of Deprecated Features](./log-use-of-deprecated-features.md)                 |&nbsp;|
 |`43`   |[Monadic Operator Generator](./monadic-operator-generator.md)                         |&nbsp;|
 |`85`   |[Execute Expression](./execute-expression.md)                                         |&nbsp;|
-|`109`  |[Log File for Deprecations](./logfile-for-deprecations.md)                            |&nbsp;|
+|`109`  |[Deprecated feature log file](./deprecated-feature-log-file.md)                       |&nbsp;|
 |`120`  |[Generate UUID](./generate-uuid.md)                                                   |&nbsp;|
 |`127`  |[Overwrite Free Pockets](./overwrite-free-pockets.md)                                 |&nbsp;|
 |`180`  |[Canonical Representation](./canonical-representation.md)                             |&nbsp;|
@@ -79,9 +78,6 @@ The column labelled *O/S* indicates if a function applies only on Windows (W), o
 |`2704` |[Continue Autosave](./continue-autosave.md)                                           |&nbsp;|
 |`3002` |[Disable Component Checksum Validation](./disable-component-checksum-validation.md)   |&nbsp;|
 |`3012` |[Enable Compression of Large Components](./enable-compression-of-large-components.md) |&nbsp;|
-|`3500` |[Send Text to RIDE-embedded Browser](./send-text-to-ride-embedded-browser.md)         |&nbsp;|
-|`3501` |[Connected to the RIDE](./connected-to-the-ride.md)                                   |&nbsp;|
-|`3502` |[Manage RIDE Connections](./manage-ride-connections.md)                               |&nbsp;|
 |`3500` |[Send Text to Ride-embedded Browser](./send-text-to-ride-embedded-browser.md)         |&nbsp;|
 |`3501` |[Connected to Ride](./connected-to-the-ride.md)                                       |&nbsp;|
 |`3502` |[Manage Ride Connections](./manage-ride-connections.md)                               |&nbsp;|
