@@ -20,16 +20,16 @@ A new primitive operator, [_behind_](../../language-reference-guide/primitive-op
 
 The following system functions have been added:
 
-- [`⎕SHELL`](../../language-reference-guide/system-functions/shell/)  
+- [`⎕SHELL`](../../language-reference-guide/system-functions/shell/) – Execute External Program  
 This enables execution of external programs with more control and options than [`⎕SH`](../../language-reference-guide/system-functions/start-unix-auxiliary-processor/)/[`⎕CMD`](../../language-reference-guide/system-functions/start-windows-auxiliary-processor/).
-- [`⎕VGET`](../../language-reference-guide/system-functions/vget/)  
+- [`⎕VGET`](../../language-reference-guide/system-functions/vget/) – Value Get  
 This enables values to be read for names in a source namespace/namespaces.
-- [`⎕VSET`](../../language-reference-guide/system-functions/vset/)  
+- [`⎕VSET`](../../language-reference-guide/system-functions/vset/) – Value Set  
 This enables values to be set for names in a target namespace/namespaces.
 
 The following system functions have been enhanced:
 
-- [`⎕DT`](../../language-reference-guide/system-functions/dt/)  
+- [`⎕DT`](../../language-reference-guide/system-functions/dt/) – Date-Time  
 Additional conversion types have been added:
     - 15 – Go UnixMicro
 	- 16 – Go UnixNano
@@ -37,23 +37,23 @@ Additional conversion types have been added:
 	- 21 – Apollo NCS UUID
 	- 22 – OSF DCE UUID
 	- 70  – AmigaOS
-- [`⎕FSTIE`](../../language-reference-guide/system-functions/fstie/)  
+- [`⎕FSTIE`](../../language-reference-guide/system-functions/fstie/) – File Share Tie  
 A new variant option, **Mode**, has been added. This specifies the intended purpose of the tie, and can affect when/how errors are generated.
-- [`⎕FTIE`](../../language-reference-guide/system-functions/ftie/)  
+- [`⎕FTIE`](../../language-reference-guide/system-functions/ftie/) – Exclusive File Tie  
 A new variant option, **Mode**, has been added. This specifies the intended purpose of the tie, and can affect when/how errors are generated.
-- [`⎕MKDIR`](../../language-reference-guide/system-functions/mkdir/)  
+- [`⎕MKDIR`](../../language-reference-guide/system-functions/mkdir/) – Make Directory  
 A new variant option, **Unique**, has been added. This specifies whether the base name in the right argument is modified so that the name is unique.
-- [`⎕NGET`](../../language-reference-guide/system-functions/nget/)  
+- [`⎕NGET`](../../language-reference-guide/system-functions/nget/) – Read Text File  
 If `Y` is a 2-item vector, the second element (which specifies `flags` for the operation) can now be set to `2`. In this situation, the first element of the result `R` is a matrix, with each row corresponding to a line in the text file specified within `X`.
-- [`⎕NINFO`](../../language-reference-guide/system-functions/ninfo/)  
+- [`⎕NINFO`](../../language-reference-guide/system-functions/ninfo/) – Native File Information  
     - Several of the properties can now be set by extending the appropriate element in the left argument from a `propertyNumber` to a `(propertyNumber newValue)` pair.
-    - A new variant option, **ProgressCallBack**, has been added. This causes `⎕NINFO` to invoke an APL callback function as a file operation (for example, a query relating to a file's size, name, or modification date) proceeds.
-- [`⎕NPUT`](../../language-reference-guide/system-functions/nput/)  
+    - A new variant option, **ProgressCallBack**, has been added. This causes `⎕NINFO` to invoke an APL callback function as the file operations (for example, a query relating to a file's size, name, or modification date) proceed.
+- [`⎕NPUT`](../../language-reference-guide/system-functions/nput/) – Write Text File  
 The single/first element of `X` (which specifies `content`) can now be a matrix. In this situation, the resulting text file will include one line for each row of the matrix, with trailing spaces stripped.
-- [`⎕NS`](../../language-reference-guide/system-functions/ns/)  
+- [`⎕NS`](../../language-reference-guide/system-functions/ns/) – Namespace  
     - The left argument `X` has been extended to allow references to namespaces to be specified. It can also now be an array in which each element identifies a namespace. 
-	- The right argument `Y` has been extended to  allow references to namespaces to be specified. It can also now be an array produced by the [`⎕OR`](../../language-reference-guide/system-functions/or/) of a namespace.
-	- A new variant option, **Trigger**, has been added. This specifies whether any triggers should be run for the modified variables in the target namespace that have triggers attached.
+	- The right argument `Y` has been extended to allow multiple references to namespaces to be specified.
+	- A new variant option, **Trigger**, has been added. This specifies whether any triggers should run when `⎕NS` modifies names in the target namespace.
 
 ### I-beams
 
@@ -62,10 +62,10 @@ The single/first element of `X` (which specifies `content`) can now be a matrix.
 
 The following I-beams have been added:
 
-- [`13⌶`](../../language-reference-guide/the-i-beam-operator/log-use-of-deprecated-features/) – Deprecated Features  
+- [`13⌶`](../../language-reference-guide/the-i-beam-operator/log-use-of-deprecated-features/) – Log Use of Deprecated Features  
 Records information in the log file set by `109⌶` about the specified deprecated feature names or keywords
 - [`43⌶`](../../language-reference-guide/the-i-beam-operator/monadic-operator-generator/) – Monadic Operator Generator  
-Generates a monadic operator with specified functionality. The functionality is currently limited to creating a .NET-specific operator that can create concrete versions of generic classes and execute generic methods.
+Generates a monadic operator with specified functionality. The functionality allows the creation of a .NET-specific operator that can create concrete versions of generic classes and execute generic methods; additional options will be available in a future release.
 - [`109⌶`](../../language-reference-guide/the-i-beam-operator/deprecated-feature-log-file/) – Log File for Deprecations  
 Manages the file used to log the use of deprecated features.
 - [`120⌶`](../../language-reference-guide/the-i-beam-operator/generate-uuid/) – Generate UUID  
@@ -94,33 +94,34 @@ Temporary functionality used for identification of potential side-effects of a c
 
 You can edit variables using array notation in the following ways:
 
-- Enter the _Edit_ command (**&lt;ED>**) from within the Editor.
+- Invoke the _Edit_ command (**&lt;ED>**) from within the Editor.
 - Call the system command `)ED` and prefix the variable name with a diamond character, for example, `)ED ⋄foo`
 - Call the system function `⎕ED` with a left argument `'⋄'`, for example, `'⋄' ⎕ED 'foo'`.
-- Set the `APLAN_FOR_OUTPUT` configuration parameter to `1` (this sets use of array notation to be permanently on)
 
 In addition, in the Microsoft Windows IDE, array notation can be accessed in the following ways:
 
-- Click the ![](img/session_arraynotation.png){width=20 height=20 vertical-align:text-bottom} icon in the **Session** toolbar – this button toggles use of array notation syntax on/off.
+- Click the ![](img/session_arraynotation.png){width=20 height=20 vertical-align:text-bottom} icon in the **Session** toolbar – this button toggles on/off the use of array notation for output (when possible).
 - Click the ![](img/object_arraynotation.png){width=20 height=20 vertical-align:text-bottom} icon in the **Object** toolbar when the cursor is over the name of an array – this opens the array in the Editor in the same way as `)ED ⋄foo`.
-- Click the ![](img/object_arraynotation.png){width=20 height=20 vertical-align:text-bottom} icon in the Editor's toolbar – this button toggles use of array notation syntax on/off.
+- Click the ![](img/object_arraynotation.png){width=20 height=20 vertical-align:text-bottom} icon in the Editor's toolbar – this displays the contents of the Editor using array notation.
 - Select **Show as Array Notation** from the Editor's **Syntax** menu – this displays the contents of the Editor using array notation.
+
+Setting the `APLAN_FOR_OUTPUT` configuration parameter to `1` sets use of array notation to be permanently on.
 
 ## User Interface Changes
 
 ### Inline Tracing
 
-[Inline Tracing](../../windows-ui-guide/tracer/inline-tracing/) is an extension to tracing that allows you to step through the execution of individual primitives within expressions, examining intermediate results and arguments of sub-expressions. It enables an in-depth inspection of complex expressions typed directly into the session. Inline Tracing is tracing with the (approximate) granularity of primitives, although it does stop on non-primitives, such as user-defined functions.
+[Inline Tracing](../../windows-ui-guide/tracer/inline-tracing/) is an extension to tracing that allows you to step through the execution of individual primitives within expressions, examining intermediate results and arguments of sub-expressions. It enables an in-depth inspection of complex expressions.
 
-Inline tracing can be enabled in the following ways:
+Inline tracing can be initiated in the following ways:
 
-- Enter the _Inline Tracing_ command (**&lt;IT>**) from within the Session when the cursor is within the expression of interest.
+- Invoke the _Inline Tracing_ command (**&lt;IT>**) from within the Session when the cursor is within the expression of interest.
 
-In addition, in the Microsoft Windows IDE, inline tracing can be enabled in the following ways:
+In addition, in the Microsoft Windows IDE, inline tracing can be initiated in the following ways:
 
 - Click the ![](img/tracer_inlinetracing.png){width=20 height=20 vertical-align:text-bottom} icon in the **Tracer** toolbar
 - Select **Trace Inline...** from the Session's **Action** menu.
-- Select **Action** > **Trace Inline...** from the Session's context (right-click) menu.
+- Select **Action** > **Trace Inline...** from the Session's context ("right-click") menu.
 
 ### Configuration Parameters
 
@@ -135,7 +136,8 @@ This improves the performance of `⎕SHELL` on AIX. When set to `1` (the default
 
 The following command shortcuts have been extended:
 
-- The _Redraw Function_ command (**&lt;RD>**) will now reformat and indent an array when array notation is switched on (previously this functionality was restricted to functions).
+- The _Redraw Function_ command (**&lt;RD>**) will now reformat and indent an array when array notation is switched on (previously this functionality was restricted to functions). It can also now be used to reformat JSON5 text, although any comments in the JSON5 are discarded.
+
 - The _Undo All_ command (**&lt;UA>**) will now exit multi-line input (previously this only "unmarked" input lines within multi-line input).
 
 ### Home and End Keys
@@ -155,10 +157,6 @@ When the cursor is placed in a line in the Session:
 
 Pressing <kbd>Home</kbd> or <kbd>End</kbd> multiple times progresses through the list in the order shown.
 
-### Session Gutter
-
-The left bracket that appears in the Session gutter when entering multi-line input now includes a close icon at the bottom (![](img/multilineinput_gutter_cross.png){width=20 height=20 vertical-align:text-bottom}). Clicking this cancels the multi-line input.
-
 ### Microsoft Windows IDE
 
 The following changes have been made to the Microsoft Windows IDE:
@@ -171,6 +169,7 @@ The following changes have been made to the Microsoft Windows IDE:
 - A new icon (![](img/session_arraynotation.png){width=20 height=20 vertical-align:text-bottom}) has been added to the **Session** toolbar to toggle the use of array notation.
 - The Session caption can now include the current thread by adding the `{TID}` field to the `⎕SE.Caption` property.
 - In the **Configuration** dialog box's **Keyboard Shortcuts** tab, the **Available shortcuts** now include function keys (code F1-F48). These can be used in conjunction with `⎕PFKEY` to define keyboard shortcuts for function key actions.
+- The left bracket that appears in the Session gutter when entering multi-line input now includes a close icon at the bottom (![](img/multilineinput_gutter_cross.png){width=20 height=20 vertical-align:text-bottom}). Clicking this cancels the multi-line input.
 	
 ### TTY Interface
 
@@ -192,8 +191,8 @@ The Perl Compatible Regular Expressions (PCRE) library used by the interpreter h
 	
 ### .NET Interface
 
-In .NET, a generic class is a class that has type parameters, which must be given values to create a concrete version of the class. Similarly, a generic method has type parameters which must be specified before the method can be called. 
+In .NET, a _generic_ class is a class that has type parameters which must be given values to create a concrete version of the class. Similarly, a generic method has type parameters which must be specified before the method can be called. 
 
 The .NET interface now supports creating concrete versions of generic classes, instantiating them, and calling generic methods. For more information, see the [_.NET Interface Guide_](https://docs.dyalog.com/20.0/dotNET_Interface_Guide.pdf).
 
-The .NET Framework interface does not support generics.
+The .NET Framework interface does not support generic classes.

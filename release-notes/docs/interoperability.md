@@ -3,16 +3,16 @@
 
 # Interoperability
 
-Workspaces and component files are stored on disk in a binary format. This format differs between machine architectures and versions of Dyalog. For example, a component file written from Microsoft Windows will have an internal format that is different from one written from AIX. Similarly, a workspace saved from Dyalog v19.0 will differ internally from one saved from Dyalog v14.1.
+Workspaces and component files are stored on disk in a binary format. This format differs between machine architectures and versions of Dyalog. For example, a component file written from Microsoft Windows will have an internal format that is different from one written from AIX. Similarly, a workspace saved in Dyalog v19.0 will differ internally from one saved in Dyalog v14.1.
 
-It is convenient for versions of Dyalog running on different platforms to be able to interoperate by sharing workspaces and component files. Component files and workspaces can generally be shared between Dyalog interpreters running on different platforms. However, this is not always possible – this section describes the limitations in interoperability.
+It is convenient for versions of Dyalog running on different platforms to be able to interoperate by sharing workspaces and component files. Component files and workspaces can generally be shared between Dyalog interpreters running on different platforms. However, this is not always possible – this section describes the limitations of interoperability.
 
 ## "Ordinary" Arrays
 
-With the exception of the Unicode restrictions described below, Dyalog provides interoperability for arrays that only contain (nested) character and numeric data. Such arrays can be stored in component files, or transmitted using Conga connections, and shared between all versions and across all platforms.  
+With the exception of the Unicode restrictions described below, Dyalog provides interoperability for arrays that only contain character and numeric data. Such arrays can be stored in component files, or transmitted using Conga connections, and shared between all versions and across all platforms.  
 
 ## Code and Object Representations (`⎕OR`)
-Code that is saved in workspaces, or embedded within `⎕OR`s stored in component files, cannot be read by earlier versions of Dyalog than the version that saved them. An attempt to `⎕FREAD` a component file containing a `⎕OR` that was created by a later version of Dyalog will generate `DOMAIN ERROR: Array is from a later version of APL`. This also applies to APL objects passed using Conga, or objects that have been serialised using `220⌶`.
+Code that is saved in workspaces, or embedded within `⎕OR`s stored in component files, cannot be read by earlier versions of Dyalog than the version that saved them. An attempt to read a component containing a `⎕OR` that was created by a later version of Dyalog will generate `DOMAIN ERROR: Array is from a later version of APL`. This also applies to APL arrays passed using Conga, or arrays that have been serialised using `220⌶`.
 
 !!! Tip "Hints and Recommendations"
     Every time a `⎕OR` object is read by an interpreter that is a different, edition, or version later than that which created it, time is spent converting the internal representation into the latest form. Dyalog Ltd recommends that `⎕OR` should not be used as a mechanism for sharing code or objects between different versions of APL.
@@ -96,7 +96,7 @@ Classic edition: `⎕FIX`, Link, SALT, and Editor automatically translate Unicod
 
 ### Component Files
 
-Component files have a Unicode property. When this is enabled, all characters can written as Unicode data to the file. By default, the Unicode property is switched on by Unicode editions and off for Classic editions. This can be changed using the [`⎕FPROPS`](../../language-reference-guide/system-functions/fprops.md) system function.
+Component files have a Unicode property. When this is enabled, all characters can written as Unicode data to the file. By default, the Unicode property is switched on for Unicode editions and off for Classic editions. This property can be changed using the [`⎕FPROPS`](../../language-reference-guide/system-functions/fprops/) system function.
 
 When a Unicode edition writes to a component file that cannot contain Unicode data, character data is mapped using `⎕AVU`; it can, therefore, be read without problems by Classic editions.
 
@@ -109,11 +109,8 @@ A `TRANSLATION ERROR` will be generated if:
 
 A `TRANSLATION ERROR` will be generated if a Classic edition attempts to `)LOAD` or `)COPY` a workspace containing Unicode data that cannot be mapped to `⎕AV` using the `⎕AVU` in the recipient workspace. The problematic Unicode data might be in the part of a workspace that holds the information needed to generate `⎕DM` and `⎕DMX`; in this situation, calling `)Reset` before `)Save` in the Unicode interpreter might eliminate the TRANSLATION ERRORs.
 
-## Very Large Array Components
-An attempt to read a component file greater than 2GB in 32-bit interpreters will result in a `LIMIT ERROR` being generated.
-
 ## Session Files
-Session files (**.dse**) can only be used on the platform on which they were created and saved. Under Microsoft Windows, Session files can only be used by the architecture (32-bit/64-bit) of the version of Dyalog that saved them.
+Session files (**.dse**) can only be used on the platform on which they were created and saved. Under Microsoft Windows, Session files can only be used by the architecture (32-bit/64-bit) of the version of Dyalog with which they were saved.
 
 ## Log Files
 Log files (**.dlf**) can only be used by the version and edition with which they were created and saved. 
