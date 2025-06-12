@@ -36,7 +36,7 @@ Dyalog v20.0 is the last major version that will support creating and updating c
 
 ## Dyalog for macOS
 
-Dyalog v19.0 was the last release to be compiled for Intel-based Mac computers; Dyalog v20.0 is only supported on ARM-based Mac computers.
+Dyalog v19.0 was the last release to be built for Intel-based Mac computers; Dyalog v20.0 is only supported on ARM-based Mac computers.
 
 ## Dyalog for Linux
 
@@ -77,7 +77,7 @@ The GitHub project's [readme file](https://github.com/Dyalog/documentation/blob/
 
 A new glyph has been introduced:
   
-* Glyph: `⍛`  
+* Glyph: `⍛` (Classic: `⎕U235B`)  
 * Glyph name: Jot Underbar
 * Keyboard key location: <kbd>&lt;APL key&gt;</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd>
 * Unicode code: U+235B
@@ -88,7 +88,9 @@ This glyph is needed for the new [_behind_](../../language-reference-guide/primi
 
 The Dyalog v20.0 installation images include a preview of a new font, currently called APL387. The default font for APL within Dyalog remains APL385, but if this new font is well received it might become the default for future versions of Dyalog.
 
-The design of APL387 has not yet been finalised, and feedback is welcome. Please email your feedback to [support@dyalog.com](mailto:support@dyalog.com) or raise issues in the [APL387 GitHub project](https://github.com/Dyalog/APL387).
+The font can be explored within the Microsoft Windows IDE (it can be selected from the drop-down font selection list) or at [https://dyalog.github.io/APL387/](https://dyalog.github.io/APL387/).
+
+The design of APL387 has not yet been finalised, and feedback is welcome. Please email your feedback to [support@dyalog.com](mailto:support@dyalog.com) or raise issues in the APL387 GitHub project ([https://github.com/Dyalog/APL387](https://github.com/Dyalog/APL387)).
 
 !!! Info "Information"  
     Although Dyalog Ltd has commissioned the font, we hope that it will become widely used by the APL community. It is intended to be vendor-agnostic, and we believe that it includes all the APL characters used by all APL dialects. It intentionally has, and will continue to have, an extremely permissive licence.
