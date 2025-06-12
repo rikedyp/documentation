@@ -254,7 +254,7 @@ nav:
           - Send Text to RIDE-embedded Browser: the-i-beam-operator/send-text-to-ride-embedded-browser.md
           - Connected to the RIDE: the-i-beam-operator/connected-to-the-ride.md
           - Manage RIDE: the-i-beam-operator/manage-ride-connections.md
-	  - Scan For Deprecated Files: the-i-beam-operator/scan-for-deprecated-files.md
+          - Scan For Deprecated Files: the-i-beam-operator/scan-for-deprecated-files.md
           - Fork New Task: the-i-beam-operator/fork-new-task.md
           - Change User: the-i-beam-operator/change-user.md
           - Reap Forked Tasks: the-i-beam-operator/reap-forked-tasks.md
