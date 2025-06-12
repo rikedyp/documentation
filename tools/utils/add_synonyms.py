@@ -13,10 +13,11 @@ import os
 import sys
 import argparse
 import re
+from typing import Optional, Tuple, Set
 from bs4 import BeautifulSoup
 
 
-def extract_apl_symbol(html_content):
+def extract_apl_symbol(html_content: str) -> Optional[str]:
     """
     Extract APL symbol from the first h1 tag with a command span.
     
@@ -38,7 +39,7 @@ def extract_apl_symbol(html_content):
     command_text = command_span.get_text()
     
     # Characters to ignore
-    ignore_chars = set('{}()[]\'"\' ')
+    ignore_chars: Set[str] = set('{}()[]\'"\' ')
     
     # Extract non-alphanumeric symbols (excluding the ignore list)
     symbols = []
@@ -53,7 +54,29 @@ def extract_apl_symbol(html_content):
     return None
 
 
-def process_file(filepath, dry_run=False):
+def check_existing_hidden_div(content: str) -> Tuple[bool, Optional[str]]:
+    """
+    Check if content already has a hidden div with APL symbol.
+    
+    Returns:
+        (has_div, symbol_in_div) - True if has div, and the symbol if found
+    """
+    # Pattern to match hidden div at the beginning with APL symbol
+    # Allow for variations in formatting (quotes, semicolon, whitespace)
+    pattern = r'^<div\s+style\s*=\s*["\']display:\s*none;?["\']>\s*\n\s*(.+?)\s*\n\s*</div>'
+    match = re.match(pattern, content, re.IGNORECASE | re.MULTILINE)
+    
+    if match:
+        symbol_content = match.group(1).strip()
+        # Check if it's a single non-alphanumeric character (APL symbol)
+        if len(symbol_content) == 1 and not symbol_content.isalnum():
+            return True, symbol_content
+        return True, None
+    
+    return False, None
+
+
+def process_file(filepath: str, dry_run: bool = False) -> bool:
     """
     Process a single markdown file.
     
@@ -62,17 +85,24 @@ def process_file(filepath, dry_run=False):
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # Check if the file already has the hidden div
-    if content.startswith('<div style="display: none;">'):
-        print(f"  Skipping {os.path.basename(filepath)} - already has hidden div")
+    filename = os.path.basename(filepath)
+    
+    # Check if the file already has a hidden div
+    has_div, existing_symbol = check_existing_hidden_div(content)
+    
+    if has_div:
+        if existing_symbol:
+            print(f"  Skipped: {filename} - already has hidden div with symbol '{existing_symbol}'")
+        else:
+            print(f"  Skipped: {filename} - already has hidden div")
         return False
     
-    # Extract the APL symbol
+    # Extract the APL symbol from h1
     symbol = extract_apl_symbol(content)
     
     if symbol:
         if dry_run:
-            print(f"  Would add symbol '{symbol}' to {os.path.basename(filepath)}")
+            print(f"  Would add: {filename} - symbol '{symbol}'")
         else:
             # Create the hidden div
             hidden_div = f'<div style="display: none;">\n  {symbol}\n</div>\n\n'
@@ -84,14 +114,14 @@ def process_file(filepath, dry_run=False):
             with open(filepath, 'w', encoding='utf-8') as f:
                 f.write(new_content)
             
-            print(f"  Added symbol '{symbol}' to {os.path.basename(filepath)}")
+            print(f"  Modified: {filename} - added symbol '{symbol}'")
         return True
     else:
-        print(f"  No APL symbol found in {os.path.basename(filepath)}")
+        print(f"  Skipped: {filename} - no APL symbol found in <h1><span class='command'>")
         return False
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser(
         description='Add APL symbol synonyms to markdown files'
     )
@@ -123,20 +153,36 @@ def main():
         print(f"No .md files found in {args.directory}")
         return
     
+    # Sort files for consistent output
+    md_files.sort()
+    
     if args.dry_run:
         print(f"DRY RUN: Checking {len(md_files)} markdown files in {args.directory}...")
     else:
         print(f"Processing {len(md_files)} markdown files in {args.directory}...")
     
+    print()  # Empty line for better readability
+    
     modified_count = 0
+    skipped_count = 0
+    
     for filepath in md_files:
         if process_file(filepath, dry_run=args.dry_run):
             modified_count += 1
+        else:
+            skipped_count += 1
     
+    # Summary
+    print(f"\n{'=' * 60}")
     if args.dry_run:
-        print(f"\nDRY RUN Complete! Would modify {modified_count} files.")
+        print(f"DRY RUN Summary:")
+        print(f"  Would modify: {modified_count} files")
+        print(f"  Would skip: {skipped_count} files")
     else:
-        print(f"\nComplete! Modified {modified_count} files.")
+        print(f"Summary:")
+        print(f"  Modified: {modified_count} files")
+        print(f"  Skipped: {skipped_count} files")
+    print(f"  Total processed: {len(md_files)} files")
 
 
 if __name__ == '__main__':
