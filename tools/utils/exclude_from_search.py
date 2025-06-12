@@ -1,7 +1,9 @@
 import os
 import re
+import argparse
+from typing import Optional
 
-def add_front_matter(file_path):
+def add_front_matter(file_path: str) -> None:
     """
     Adds MkDocs 'exclude from search' front matter to markdown file
     """
@@ -45,7 +47,7 @@ search:
     
     print(f"Added front matter to {file_path}")
 
-def process_file_list(list_file):
+def process_file_list(list_file: str) -> None:
     """
     Reads a text file containing paths and adds front matter to each markdown file
     """
@@ -59,9 +61,19 @@ def process_file_list(list_file):
             if file_path:  # Skip empty lines
                 add_front_matter(file_path)
 
-def main():
-    list_file = 'ghost.txt'  # Path to the list file
-    process_file_list(list_file)
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Add 'exclude from search' front matter to markdown files listed in a file"
+    )
+    parser.add_argument(
+        '--exclude-file',
+        default='ghost.txt',
+        help='Path to the file containing list of markdown files to exclude (default: ghost.txt)'
+    )
+    args = parser.parse_args()
+    
+    print(f"Processing files from: {args.exclude_file}")
+    process_file_list(args.exclude_file)
     print("Processing complete.")
 
 if __name__ == "__main__":
