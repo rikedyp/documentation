@@ -1,6 +1,6 @@
 <h1 class="heading"><span class="name">Memory Manager Statistics</span> <span class="command">R←{X}(2000⌶)Y</span></h1>
 
-This function returns information about the state of the workspace and provides a means to reset certain statistics and to control workspace allocation. This I-Beam is provided for performance tuning and is VERY LIKELY to change in the next release. See also [Workspace Management](https://help.dyalog.com/latest/index.htm#UserGuide/Installation%20and%20Configuration/Workspace%20Management.htm).
+This function returns information about the state of the workspace and provides a means to reset certain statistics and to control workspace allocation. This I-Beam is provided for performance tuning and is VERY LIKELY to change in the next release. See also [Workspace Management](https://help.dyalog.com/19.0/index.htm#UserGuide/Installation%20and%20Configuration/Workspace%20Management.htm).
 
 `Y` is a simple integer scalar or vector containing values listed in the table below.
 
@@ -29,7 +29,7 @@ If `X` is omitted, the result `R` is an array with the same structure as `Y`, bu
 
 Note: While all other operations are relatively fast, the operation to count the number of garbage pockets (4) may take a noticeable amount of time, depending upon the size and state of the workspace.
 
-See also [Specify Workspace Available](https://help.dyalog.com/latest/index.htm#Language/I%20Beam%20Functions/Specify%20Workspace%20Available.htm).
+See also [Specify Workspace Available](https://help.dyalog.com/19.0/index.htm#Language/I%20Beam%20Functions/Specify%20Workspace%20Available.htm).
 
 <h2 class="example">Examples</h2>
 ```apl

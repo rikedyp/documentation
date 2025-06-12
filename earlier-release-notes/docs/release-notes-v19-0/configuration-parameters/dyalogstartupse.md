@@ -33,4 +33,4 @@ If unset or extended (that is, starts with a : separator):
 - the StartupSession directory in the version-agnostic directory is available as `⎕SE.Dyalog.StartupSession.VerAgno`.
 - the StartupSession directory in the version-specific directory is available as `⎕SE.Dyalog.StartupSession.VerSpec`.
 
-See also [Implementation](https://help.dyalog.com/latest/index.htm#UserGuide/The%20APL%20Environment/Session%20Initialisation.htm).
+See also [Implementation](https://help.dyalog.com/19.0/index.htm#UserGuide/The%20APL%20Environment/Session%20Initialisation.htm).

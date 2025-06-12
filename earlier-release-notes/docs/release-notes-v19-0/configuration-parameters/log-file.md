@@ -8,4 +8,4 @@ The default is `Users\<username>\Documents\Dyalog APL-<bits> <DyalogMajor>.<Dyal
 
 Note that the LogFile property of `⎕SE` reports the name of the log file that is being used.
 
-See also [Use log file](../../../windows-installation-and-configuration-guide/configuring-the-ide/configuration-dialog/configuration-dialog-session-tab).
+See also [Use log file](https://help.dyalog.com/19.0/index.htm#UserGuide/The%20APL%20Environment/Configuration%20Dialog%20Session%20Tab.htm).

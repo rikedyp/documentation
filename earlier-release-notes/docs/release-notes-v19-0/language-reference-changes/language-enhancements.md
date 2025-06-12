@@ -7,7 +7,7 @@ The following table summarises the main changes to language features in Version 
 |`⎕TALLOC`        |[Allocate Token Range](./talloc.md)                                                                   |New system function                                                  |
 |`2000⌶`          |[Memory Management Statistics](./memory-manager-statistics.md)                                        |Extended I-beam function                                             |
 |`219⌶`           |Compress Vector of Short Integers                                                                     |Extended I-beam function                                             |
-|`1302⌶`          |[Set aplcore Parameters](https://help.dyalog.com/latest/index.htm#Language/I%20Beam%20Functions/Set%20aplcore%20Parameters.htm)|New I-beam function                                                  |
+|`1302⌶`          |[Set aplcore Parameters](https://help.dyalog.com/19.0/index.htm#Language/I%20Beam%20Functions/Set%20aplcore%20Parameters.htm)|New I-beam function                                                  |
 |`3012⌶`          |[Enable Compression of Large Components](./enable-compression-of-large-components.md)                 |New I-beam function                                                  |
 |`5171⌶`          |[Discard Source Information](./discard-source-information.md)                                         |New I-beam function                                                  |
 |`5172⌶`          |[Discard Source Code](./discard-source-code.md)                                                       |New I-beam function                                                  |
