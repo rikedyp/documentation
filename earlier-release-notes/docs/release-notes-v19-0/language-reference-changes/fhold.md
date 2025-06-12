@@ -4,7 +4,7 @@
 
 This function holds component file(s) and/or external variable(s). It is used  to synchronise access to resources shared between multiple cooperating Dyalog processes. It is not intended to synchronise access between Dyalog threads; for this purpose you should use  `:Hold`.
 
-For a  multi-threaded and multi-process application, a single `⎕FHOLD` is used to synchronise inter-process access, while `:Hold` is used in multiple threads to synchronise access between  threads in the same process. See also [Hold Statement](../../../programming-reference-guide/defined-functions-and-operators/traditional-functions-and-operators/control-structures/hold).
+For a  multi-threaded and multi-process application, a single `⎕FHOLD` is used to synchronise inter-process access, while `:Hold` is used in multiple threads to synchronise access between  threads in the same process. See also [Hold Statement](https://help.dyalog.com/19.0/index.htm#Language/Control%20Structures/hold.htm).
 
 If applied to component files, then `Y` is an integer scalar, vector, or one-row matrix of file tie numbers, or a two-row matrix whose first row contains file tie numbers and whose second row contains passnumbers.
 
