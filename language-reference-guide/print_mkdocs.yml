@@ -202,8 +202,8 @@ nav:
       - I-Beam: primitive-operators/i-beam.md
       - The I-Beam Operator:
           - Inverted Table Index Of: the-i-beam-operator/inverted-table-index-of.md
-          - Deprecated Features: the-i-beam-operator/deprecated-features.md
-          - Log File for Deprecations: the-i-beam-operator/log-file-for-deprecations.md
+          - Log Use of Deprecated Features: the-i-beam-operator/log-use-of-deprecated-features.md
+          - Deprecated Feature Log File: the-i-beam-operator/deprecated-feature-log-file.md
           - Monadic Operator Generator: the-i-beam-operator/monadic-operator-generator.md
           - Execute Expression: the-i-beam-operator/execute-expression.md
           - Generate UUID: the-i-beam-operator/generate-uuid.md
