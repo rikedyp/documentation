@@ -77,7 +77,7 @@ The `LoadXAML` function used in this example is subtly different from previous 
 [2]    ⎕USING,←⊂'System.Windows.Markup'
 [3]    ⎕USING,←⊂'System.Xml,system.xml.dll'
 [4]    ⎕USING,←⊂'System.Windows.Controls,WPF/PresentationFramework.dll'
-[5]    ⎕USING,←⊂'Syncfusion.Windows.Gauge,Syncfusion/4.5/Syncfusion.Gauge.WPF.dll'
+[5]    ⎕USING,←⊂'Syncfusion.Windows.Gauge,Syncfusion/4.6/Syncfusion.Gauge.WPF.dll'
 [6]    str←⎕NEW StringReader(⊂xaml)
 [7]    xml←⎕NEW XmlTextReader str
 [8]    win←XamlReader.Load xml
@@ -89,7 +89,7 @@ In particular, it contains the all-important statement:
 ```apl
 
 [5]    ⎕USING,←⊂'Syncfusion.Windows.Gauge,
-                 Syncfusion/4.5/Syncfusion.Gauge.WPF.dll'
+                 Syncfusion/4.6/Syncfusion.Gauge.WPF.dll'
 ```
 
-This statement tells APL to search the .NET namespace named *Syncfusion.Windows.Gauge*, which is located in the assembly file whose path (relative to the Dyalog installation directory) is  `Syncfusion/4.5/Syncfusion.Gauge.WPF.dll`.
+This statement tells APL to search the .NET namespace named *Syncfusion.Windows.Gauge*, which is located in the assembly file whose path (relative to the Dyalog installation directory) is  `Syncfusion/4.6/Syncfusion.Gauge.WPF.dll`.
