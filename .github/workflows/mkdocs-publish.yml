@@ -86,11 +86,12 @@ jobs:
         git checkout gh-pages
         
         # Copy Jenkins files from the source branch
-        git checkout ${{ github.sha }} -- tools/jenkins/Jenkinsfile tools/jenkins/service.yml
+        git checkout ${{ github.sha }} -- tools/jenkins/Jenkinsfile tools/jenkins/service.yml tools/jenkins/.rsync-exclude
         
         # Move them to root of gh-pages
         mv tools/jenkins/Jenkinsfile .
         mv tools/jenkins/service.yml .
+        mv tools/jenkins/.rsync-exclude .
         rm -rf tools
         
         # Commit if there are changes
