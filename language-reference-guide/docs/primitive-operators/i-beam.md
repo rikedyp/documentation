@@ -1,7 +1,3 @@
-<div style="display: none;">
-  ⌶
-</div>
-
 ---
 search:
   exclude: true
