@@ -88,11 +88,14 @@ jobs:
         # Copy Jenkins files from the source branch
         git checkout ${{ github.sha }} -- tools/jenkins/Jenkinsfile tools/jenkins/service.yml tools/jenkins/.rsync-exclude
         
-        # Move them to root of gh-pages
+        # Move them to root of gh-pages and update staging
         mv tools/jenkins/Jenkinsfile .
         mv tools/jenkins/service.yml .
         mv tools/jenkins/.rsync-exclude .
-        rm -rf tools
+        
+        # Remove from staging in old location and add to staging in new location
+        git rm -r tools
+        git add Jenkinsfile service.yml .rsync-exclude
         
         # Commit if there are changes
         if git diff --staged --quiet; then
