@@ -269,8 +269,6 @@ nav:
           - JSON Translate Name: the-i-beam-operator/json-translate-name.md
           - Shell Process Control: the-i-beam-operator/shell-process-control.md
           - Singular Value Decomposition: the-i-beam-operator/singular-value-decomposition.md
-          - Hash Table Size: the-i-beam-operator/hash-table-size.md
-          - Lookup Table Size: the-i-beam-operator/lookup-table-size.md
           - Sample Probability Distribution: the-i-beam-operator/sample-probability-distribution.md
           - Line Count: the-i-beam-operator/line-count.md
           - RIDE and Experimental Features-related I-Beams: the-i-beam-operator/supplementary-i-beam-functions.md

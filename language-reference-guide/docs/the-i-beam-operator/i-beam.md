@@ -96,8 +96,6 @@ The column labelled *O/S* indicates if a function applies only on Windows (W), o
 |`7162` |[JSON Translate Name](./json-translate-name.md)                                       |&nbsp;|
 |`8373` |[Shell Process Control](./shell-process-control.md)                                   |&nbsp;|
 |`8415` |[Singular Value Decomposition](./singular-value-decomposition.md)                     |&nbsp;|
-|`9468` |[Hash Table Size](./hash-table-size.md)                                               |&nbsp;|
-|`9469` |[Lookup Table Size](./lookup-table-size.md)                                           |&nbsp;|
 |`16808`|[Sample Probability Distribution](./sample-probability-distribution.md)               |&nbsp;|
 |`50100`|[Line Count](./line-count.md)                                                         |&nbsp;|
 
