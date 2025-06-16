@@ -82,6 +82,9 @@ jobs:
     
     - name: Copy Jenkins files to gh-pages
       run: |
+        # Discard local changes to mkdocs.yml before switching branches
+        git checkout -- mkdocs.yml
+        
         # Checkout gh-pages branch
         git checkout gh-pages
         
