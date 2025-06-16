@@ -3,7 +3,7 @@
 
 # Introduction
 
-This document describes the changes and new features in Dyalog v20.0 compared with Dyalog v19.0.
+This document describes the requirements for installing Dyalog v20.0 and the functionality changes in Dyalog v20.0 compared with Dyalog v19.0.
 
 !!! Info "Information"  
     If you are upgrading from Dyalog v18.2 or earlier to Dyalog v20.0, you are advised to read the Release Notes for any intermediate versions in conjunction with this document.
@@ -22,18 +22,24 @@ For more information on these and other changes introduced in Dyalog v20.0, see 
 	
 ## Tools
 	
-Some of the tools that are supplied with Dyalog have independent version numbers. For Dyalog v20.0, these include:
+Some of the tools that are supplied with Dyalog or can be downloaded separately have independent version numbers.  For Dyalog v20.0, these include:
 
-* Conga v3.6
-* HTTPCommand v5.9
-* Link v4.1
-* SALT v2.9
-* SAWS v1.4
-* SQAPL v6.5
-* User Commands v2.6
+- Conga v3.6
+- HTTPCommand v5.9
+    - GitHub repository – [https://github.com/Dyalog/HttpCommand](https://github.com/Dyalog/HttpCommand/)
+	- Documentation – [https://dyalog.github.io/HttpCommand/5.9](https://dyalog.github.io/HttpCommand/5.9/)
+- Link v4.1
+    - GitHub repository – [https://github.com/Dyalog/link](https://github.com/Dyalog/link/)
+	- Documentation – [https://dyalog.github.io/link/4.1](https://dyalog.github.io/link/4.1/)
+- Ride v4.6
+    - GitHub repository – [https://github.com/Dyalog/ride](https://github.com/Dyalog/ride/)
+	- Documentation – [https://dyalog.github.io/ride/4.6](https://dyalog.github.io/ride/4.6/)
+- SALT v2.9
+- SAWS v1.4
+- SQAPL v6.5
+- User Commands v2.6
 
-Additional tools can also be downloaded, some of which also have independent version numbers. For Dyalog v20.0, these include:
-
-* Ride v4.6 (see [https://dyalog.github.io/ride/4.6/](https://dyalog.github.io/ride/4.6/))
+!!! Info "Information"
+    Dyalog Ltd releases new versions of some of these tools in parallel with new versions of the interpreter. It is not necessary to keep tool versions synchronised with the interpreter version, but doing so will provide the optimal experience.
 
 Changes to tools are not included within these Release Notes.

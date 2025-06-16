@@ -43,7 +43,7 @@ Note: This includes support for the <code class="language-other">INotifyCollecti
 
 * IIS (and ASP.NET) need to be installed before installing Dyalog. If these are not present when Dyalog is installed, the **[DYALOG]\Samples\asp.net** directory will not be installed.  
 
-### Chromium Embedded Framework (CEF)
+## Chromium Embedded Framework (CEF)
 Dyalog v20.0 is supplied with CEF version 127 on Microsoft Windows and CEF version 121 on all other supported platforms.  
 
 ### HTMLRenderer
