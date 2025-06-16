@@ -76,6 +76,33 @@ def check_existing_hidden_div(content: str) -> Tuple[bool, Optional[str]]:
     return False, None
 
 
+def parse_front_matter(content: str) -> Tuple[Optional[str], str, int]:
+    """
+    Parse front matter from the beginning of content.
+    
+    Returns:
+        (front_matter, remaining_content, end_position) - front matter if found, remaining content, and end position
+    """
+    # Pattern to match front matter at the very beginning
+    pattern = r'^---\s*\n(.*?)\n---\s*\n'
+    match = re.match(pattern, content, re.DOTALL)
+    
+    if match:
+        return match.group(0), content[match.end():], match.end()
+    
+    return None, content, 0
+
+
+def is_search_excluded(front_matter_content: str) -> bool:
+    """
+    Check if front matter contains search exclusion.
+    
+    Returns:
+        True if search is excluded, False otherwise
+    """
+    return bool(re.search(r'search:\s*\n\s*exclude:\s*true', front_matter_content))
+
+
 def process_file(filepath: str, dry_run: bool = False) -> bool:
     """
     Process a single markdown file.
@@ -86,6 +113,14 @@ def process_file(filepath: str, dry_run: bool = False) -> bool:
         content = f.read()
     
     filename = os.path.basename(filepath)
+    
+    # Parse front matter
+    front_matter, remaining_content, _ = parse_front_matter(content)
+    
+    # Check if file is excluded from search
+    if front_matter and is_search_excluded(front_matter):
+        print(f"  Skipped: {filename} - excluded from search (synonyms not allowed)")
+        return False
     
     # Check if the file already has a hidden div
     has_div, existing_symbol = check_existing_hidden_div(content)
@@ -103,18 +138,25 @@ def process_file(filepath: str, dry_run: bool = False) -> bool:
     if symbol:
         if dry_run:
             print(f"  Would add: {filename} - symbol '{symbol}'")
+            if front_matter:
+                print(f"           (after front matter)")
         else:
             # Create the hidden div
             hidden_div = f'<div style="display: none;">\n  {symbol}\n</div>\n\n'
             
-            # Add the div to the beginning of the file
-            new_content = hidden_div + content
+            # Add the div after front matter if present, otherwise at beginning
+            if front_matter:
+                new_content = front_matter + hidden_div + remaining_content
+            else:
+                new_content = hidden_div + content
             
             # Write the modified content back
             with open(filepath, 'w', encoding='utf-8') as f:
                 f.write(new_content)
             
             print(f"  Modified: {filename} - added symbol '{symbol}'")
+            if front_matter:
+                print(f"           (added after front matter)")
         return True
     else:
         print(f"  Skipped: {filename} - no APL symbol found in <h1><span class='command'>")
