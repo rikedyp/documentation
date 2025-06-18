@@ -69,7 +69,7 @@ The tables below show the keystrokes that can be used in the different windows.
     </tr>
     <tr>
         <td>HO</td>
-        <td>Home Cursor .. to top left hand corner of object</td>
+        <td>Home Cursor ..  to the 6-space prompt in the session, otherwise to the top left hand corner of object.</td>
     </tr>
     <tr>
         <td>Toggle line numbers</td>
