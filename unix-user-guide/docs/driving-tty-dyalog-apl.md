@@ -63,7 +63,9 @@ The tables below show the keystrokes that can be used in the different windows.
     </tr>
     <tr>
         <td>LL<br />RL<br />UL<br />DL</td>
-        <td>Left/Right/Up/Down to limit in that direction</td>
+        <td>Left/Right/Up/Down to limit in that direction. <br />
+        Note Left and Right limits initially jump to the limits of the current line's content, repeating the keystroke moves to the limit in that direction.
+        </td>
     </tr>
     <tr>
         <td>HO</td>

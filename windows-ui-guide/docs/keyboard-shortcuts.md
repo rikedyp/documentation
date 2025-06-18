@@ -30,8 +30,8 @@ Table: Cursor Movement Commands
 |UC        |Up Arrow        |Moves the cursor to the current character position on the line above the current line|
 |UL        |Ctrl+Home       |Move the cursor to the top-left position in the window                               |
 |DL        |Ctrl+End        |Moves the cursor to the bottom-right position in the window                          |
-|RL        |End             |Moves the cursor to the end of the current line                                      |
-|LL        |Home            |Moves the cursor to the beginning of the current line                                |
+|RL        |End             |Moves the cursor to the end of the content on the current line                       |
+|LL        |Home            |Moves the cursor to the beginning of the content on the current line                 |
 |LW        |Ctrl+Left Arrow |Moves the cursor to the beginning of the word to the left of the cursor              |
 |RW        |Ctrl+Right Arrow|Moves the cursor to the end of the word to the right of the cursor                   |
 |TB        |Ctrl+Tab        |Switches to the next session/edit/trace window                                       |
