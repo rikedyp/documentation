@@ -389,7 +389,7 @@ The Editor allows you to edit arbitrary arrays using [array notation](../../prog
 Any of the following invokes it:
 
 - Click the ![](img/edit-array-icon.png) icon in the Session toolbar when the mouse pointer is over the name of a suitable variable.
-- Click the ![](img/edit-array-icon.png) icon in the Editor toolbar.
+- Click the ![](img/edit-array-icon.png) icon in the Editor toolbar. (This enables array notation. Clicking it a second time does not disable it.)
 - Hitting &lt;ED&gt; from within the Editor
 - Call the system command `)ED` and prefix the variable name with a diamond; for example: `)ED ⋄q`
 - Call the system function `⎕ED` with a left argument `'⋄'`; for example, `'⋄'⎕ED'q'`.
