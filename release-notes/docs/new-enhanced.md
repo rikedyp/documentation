@@ -105,7 +105,9 @@ In addition, in the Microsoft Windows IDE, array notation can be accessed in the
 - Click the ![](img/object_arraynotation.png){width=20 height=20 vertical-align:text-bottom} icon in the Editor's toolbar – this displays the contents of the Editor using array notation.
 - Select **Show as Array Notation** from the Editor's **Syntax** menu – this displays the contents of the Editor using array notation.
 
-Setting the `APLAN_FOR_OUTPUT` configuration parameter to `1` sets use of array notation to be permanently on.
+When using array notation in the Editor, the _Reformat_ command (**&lt;RD>**) evaluates the Editor's content and regenerates it using array notation.
+
+Setting the `APLAN_FOR_OUTPUT` configuration parameter to `1` sets use of array notation for output to be on; in the Microsoft Windows IDE, this can be overridden by toggling it off using the toolbar icons/menu items.
 
 ## User Interface Changes
 
@@ -128,7 +130,7 @@ In addition, in the Microsoft Windows IDE, inline tracing can be initiated in th
 The following configuration parameters have been added:
 
 - `APLAN_FOR_OUTPUT`  
-This displays session output using array notation when possible. The default is `0` (array notation is not in use).
+This displays session output using array notation when possible (unless it is overridden within the session). The default is `0` (array notation is not in use).
 - `DYALOG_SHELL_SUBPROCESS`  
 This improves the performance of `⎕SHELL` on AIX. When set to `1` (the default on AIX), the interpreter starts a (small) child process that handles calls to `⎕SHELL`, mitigating some of the performance issues seen on AIX when <code class="language-nonAPL">fork()</code>ing large processes.
 
@@ -136,8 +138,7 @@ This improves the performance of `⎕SHELL` on AIX. When set to `1` (the default
 
 The following command shortcuts have been extended:
 
-- The _Redraw Function_ command (**&lt;RD>**) will now reformat and indent an array when array notation is switched on (previously this functionality was restricted to functions). It can also now be used to reformat JSON5 text, although any comments in the JSON5 are discarded.
-
+- The _Reformat_ command (**&lt;RD>**) will now reformat and indent an array when array notation is switched on (previously this functionality was restricted to functions); it will also execute any expressions within the array notation and replace the text with a representation of their results. In addition, it can now be used to reformat JSON5 text, although any comments in the JSON5 are discarded.
 - The _Undo All_ command (**&lt;UA>**) will now exit multi-line input (previously this only "unmarked" input lines within multi-line input).
 
 ### Home and End Keys
@@ -170,6 +171,7 @@ The following changes have been made to the Microsoft Windows IDE:
 - The Session caption can now include the current thread by adding the `{TID}` field to the `⎕SE.Caption` property.
 - In the **Configuration** dialog box's **Keyboard Shortcuts** tab, the **Available shortcuts** now include function keys (code F1-F48). These can be used in conjunction with `⎕PFKEY` to define keyboard shortcuts for function key actions.
 - The left bracket that appears in the Session gutter when entering multi-line input now includes a close icon at the bottom (![](img/multilineinput_gutter_cross.png){width=20 height=20 vertical-align:text-bottom}). Clicking this cancels the multi-line input.
++ The appearance/layout of several of the dialog boxes has been adjusted, but their options and functionality have not been changed.
 	
 ### TTY Interface
 
@@ -179,6 +181,7 @@ The following changes have been made to the TTY interface:
     - key code: **&lt;IT&gt;**
 	- keystroke – terminal emulator under Linux GUIs: _&lt;undefined&gt;_
 	- keystroke – PuTTY terminal emulator: <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Enter</kbd>
+- The _Left Limit_ command (**&lt;LL>**) and _Right Limit_ command (**&lt;RL>**) have been enhanced to match the extended behaviour of the <kbd>Home</kbd> and <kbd>End</kbd> keys respectively (see [Home and End Keys](#home-and-end-keys)).
 
 ## Interfaces and Libraries
 
