@@ -18,11 +18,11 @@ Key enhancements in Dyalog v20.0 include the following:
 - `⎕SHELL` enables execution of external programs with more control and options than those provided by `⎕SH`/`⎕CMD`.
 - Expressions can now be evaluated primitive-by-primitive using inline tracing, while accessing arguments and results of each function along the way.
 
-For more information on these and other changes introduced in Dyalog v20.0, see [New and Enhanced Features](../new-enhanced/).
+For more information on these and other changes introduced in Dyalog v20.0, see [New and Enhanced Features](new-enhanced.md).
 	
 ## Tools
 	
-Some of the tools that are supplied with Dyalog or can be downloaded separately have independent version numbers.  For Dyalog v20.0, these include:
+Some of the tools that are supplied with Dyalog or can be downloaded separately have independent version numbers; new versions of some of these tools are released in parallel with new versions of the interpreter. For Dyalog v20.0, these include:
 
 - Conga v3.6
 - HTTPCommand v5.9
@@ -35,11 +35,10 @@ Some of the tools that are supplied with Dyalog or can be downloaded separately 
     - GitHub repository – [https://github.com/Dyalog/ride](https://github.com/Dyalog/ride/)
 	- Documentation – [https://dyalog.github.io/ride/4.6](https://dyalog.github.io/ride/4.6/)
 - SALT v2.9
-- SAWS v1.4
 - SQAPL v6.5
 - User Commands v2.6
 
-!!! Info "Information"
-    Dyalog Ltd releases new versions of some of these tools in parallel with new versions of the interpreter. It is not necessary to keep tool versions synchronised with the interpreter version, but doing so will provide the optimal experience.
-
 Changes to tools are not included within these Release Notes.
+
+!!! Info "Information"
+     It is not necessary to keep tool versions synchronised with the interpreter version, but doing so will provide the optimal experience.
