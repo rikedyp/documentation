@@ -1,6 +1,6 @@
 <h1 class="heading"><span class="name">Syncfusion Circular Gauge Example</span></h1>
 
-Dyalog no longer includes the [Syncfusion](https://www.syncfusion.com/) library of WPF controls. If you have your own licence for the Syncfusion WPF controls, these can be used by Dyalog APL users to develop applications. 
+Dyalog no longer includes the [Syncfusion](https://www.syncfusion.com/) library of WPF controls. If you have your own license for the Syncfusion WPF controls, these can be used by Dyalog APL users to develop applications. 
 
 !!! note "Note"
     You may not use the Syncfusion library distributed with previous versions of Dyalog APL with version 20.0 or later.
