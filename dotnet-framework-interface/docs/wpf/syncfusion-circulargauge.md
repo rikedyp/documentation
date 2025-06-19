@@ -1,7 +1,9 @@
 <h1 class="heading"><span class="name">Syncfusion Circular Gauge Example</span></h1>
 
+Dyalog no longer includes the [Syncfusion](https://www.syncfusion.com/) library of WPF controls. If you have your own licence for the Syncfusion WPF controls, these can be used by Dyalog APL users to develop applications. 
+
 !!! note "Note"
-     From version 20.0, Syncfusion is no longer included in Dyalog APL. If you have your own license for Syncfusion, you may use that with Dyalog APL. You can not use the Syncfusion controls shipped with earlier versions of Dyalog APL with version 20.0 or later.
+    You may not use the Syncfusion library distributed with previous versions of Dyalog APL with version 20.0 or later.
 
 ![syncfusion gauge 1](../img/syncfusion-gauge-1.png)
 
@@ -80,7 +82,7 @@ The `LoadXAML` function used in this example is subtly different from previous 
 [2]    ⎕USING,←⊂'System.Windows.Markup'
 [3]    ⎕USING,←⊂'System.Xml,system.xml.dll'
 [4]    ⎕USING,←⊂'System.Windows.Controls,WPF/PresentationFramework.dll'
-[5]    ⎕USING,←⊂'Syncfusion.Windows.Gauge,Syncfusion/4.6/Syncfusion.Gauge.WPF.dll'
+[5]    ⎕USING,←⊂'Syncfusion.Windows.Gauge,YOUR_INSTALL_DIR/Syncfusion.Gauge.WPF.dll'
 [6]    str←⎕NEW StringReader(⊂xaml)
 [7]    xml←⎕NEW XmlTextReader str
 [8]    win←XamlReader.Load xml
@@ -92,7 +94,7 @@ In particular, it contains the all-important statement:
 ```apl
 
 [5]    ⎕USING,←⊂'Syncfusion.Windows.Gauge,
-                 Syncfusion/4.6/Syncfusion.Gauge.WPF.dll'
+                 YOUR_INSTALL_DIR/Syncfusion.Gauge.WPF.dll'
 ```
 
-This statement tells APL to search the .NET namespace named *Syncfusion.Windows.Gauge*, which is located in the assembly file whose path (relative to the Dyalog installation directory) is  `Syncfusion/4.6/Syncfusion.Gauge.WPF.dll`.
+This statement tells APL to search the .NET namespace named *Syncfusion.Windows.Gauge*, which is located in the assembly file whose path depends on your exact Syncfusion installation.
