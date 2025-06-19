@@ -1,5 +1,8 @@
 <h1 class="heading"><span class="name">Syncfusion Circular Gauge Example</span></h1>
 
+!!! note "Note"
+     From version 20.0, Syncfusion is no longer included in Dyalog APL. If you have your own license for Syncfusion, you may use that with Dyalog APL. You can not use the Syncfusion controls shipped with earlier versions of Dyalog APL with version 20.0 or later.
+
 ![syncfusion gauge 1](../img/syncfusion-gauge-1.png)
 
 ## The XAML

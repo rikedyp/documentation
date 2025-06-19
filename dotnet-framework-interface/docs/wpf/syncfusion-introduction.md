@@ -3,7 +3,7 @@
 Dyalog no longer includes the [Syncfusion](https://www.syncfusion.com/) library of WPF controls. If you have your own licence for the Syncfusion WPF controls, these can be used by Dyalog APL users to develop applications. 
 
 !!! note "Note"
-    You may not use the Syncfusion library distributed with previous versions of Dyalog APL with Dyalog v{{ version_majmin }}.
+    You may not use the Syncfusion library distributed with previous versions of Dyalog APL with version 20.0 or later.
 
 
 ## Requirements
@@ -29,7 +29,7 @@ The above statement defines the prefix `syncfusion` to mean the specified Syncfu
 
 In common with all .NET types, when a Syncfusion control is loaded using XAML or using `⎕NEW` it is essential that the current value of `⎕USING` identifies the .NET namespace and assembly in which the control will be found. For example:
 ```apl
-       ⎕USING,←⊂'Syncfusion.Windows.Gauge,Syncfusion/4.6/Syncfusion.Gauge.WPF.dll'
+       ⎕USING,←⊂'Syncfusion.Windows.Gauge,YOUR_INSTALL_PATH/Syncfusion.Gauge.WPF.dll'
 ```
 
-This statement tells APL to search the .NET namespace named *Syncfusion.Windows.Gauge*, which is located in the assembly file whose path (relative to the Dyalog installation directory) is  `Syncfusion/4.6/Syncfusion.Gauge.WPF.dll`.
+This statement tells APL to search the .NET namespace named *Syncfusion.Windows.Gauge*, which is located in the assembly file whose path depends on your specific Syncfusion installation.
