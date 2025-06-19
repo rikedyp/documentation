@@ -63,8 +63,19 @@ The tables below show the keystrokes that can be used in the different windows.
     </tr>
     <tr>
         <td>LL<br />RL<br />UL<br />DL</td>
-        <td>Left/Right/Up/Down to limit in that direction. <br />
-        Note Left and Right limits initially jump to the limits of the current line's content, repeating the keystroke moves to the limit in that direction.
+        <td>Up/Down to limit in that direction. <br />
+        LL moves the cursor left to the first of:
+        <ul>
+<li>the start of the content of the line</li>
+<li>the six space prompt (except when in the <b>Editor</b>, in which case this is skipped)</li>
+<li>the left edge of the session</li>
+        </ul>
+        RL moves the cursor left to the first of:
+        <ul>
+<li>the end of the content of the line excluding space characters</li>
+<li>the end of the content of the line including space characters</li>
+<li>the six space prompt (only when the cursor is on a blank line)</li>
+        </ul>
         </td>
     </tr>
     <tr>
