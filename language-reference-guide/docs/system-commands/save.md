@@ -37,7 +37,7 @@ A workspace may not be saved if any threads (other than the root thread 0) are r
 |`Can't save - file could not be created.`|The workspace name supplied did not represent a valid file name for the current Operating System.|
 |`cannot create`|The user does not have access to create the file OR the workspace name conflicts with an existing non-workspace file.|
 |`cannot save with windows open`|A workspace may not be saved if trace or edit windows are open.|
-|`Cannot overwrite old workspace`|n attempt was made to save the workspace with a newer version of the interpreter than that with which it was originally saved. This error can be avoided by specifying the `-force` argument.|
+|`Cannot overwrite old workspace`|An attempt was made to save the workspace with a newer version of the interpreter than that with which it was originally saved. This error can be avoided by specifying the `-force` argument.|
 
 
 After a successful save, the system reports the workspace name, followed by the word  "`saved`" and the current time and date; and if `ws` specified a new name, `⎕WSID` is assigned that name.
