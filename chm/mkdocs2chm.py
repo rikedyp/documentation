@@ -115,6 +115,7 @@ def _process_nav_item(item: dict | str, parent: Node, project="project") -> None
     """
     if isinstance(item, dict):
         ((key, value),) = item.items()
+        # Navigation titles are already cleaned in parse_mkdocs_yml
     else:  # No name in the yml -- name should be picked up from the H1 in the file
         key = ""
         value = item  # item is the filename -- swap to .htm to parse
@@ -138,6 +139,7 @@ def _process_nav_item(item: dict | str, parent: Node, project="project") -> None
 
 
 def _traverse(node: Node, toc: IO[str]) -> None:
+    # Just clean up quotes and backticks (HTML tags and quad already removed during parsing)
     title = node.name.replace("`", "").replace('"', "")
     toc.write(DIR_ENTRY.format(name=title))
     if node.children:  # Only write <ul> if there are children
@@ -146,9 +148,11 @@ def _traverse(node: Node, toc: IO[str]) -> None:
             if child.isdir():
                 _traverse(child, toc)
             else:
+                # Just clean up quotes and backticks
+                child_name = child.name.replace("`", "").replace('"', "")
                 toc.write(
                     FILE_ENTRY.format(
-                        name=child.name.replace("`", "").replace('"', ""),
+                        name=child_name,
                         file=child.html_name,
                     )
                 )
@@ -171,6 +175,29 @@ def modify_paths(navdata, base_path: str):
     elif isinstance(navdata, str):
         navdata = os.path.join(base_path, navdata)
     return navdata
+
+
+def clean_nav_titles(navdata):
+    """
+    Clean navigation titles by removing HTML tags and the quad symbol.
+    This ensures CHM compatibility by removing UTF-8 characters that don't display properly.
+    """
+    if isinstance(navdata, dict):
+        cleaned = {}
+        for key, value in navdata.items():
+            # Clean the key if it's a navigation title
+            if isinstance(value, (str, list, dict)) and not key.startswith('!'):
+                # Remove HTML tags and quad symbol from navigation titles
+                cleaned_key = re.sub(r'<[^>]+>', '', key).replace('⎕', '')
+            else:
+                cleaned_key = key
+            # Recursively clean the value
+            cleaned[cleaned_key] = clean_nav_titles(value)
+        return cleaned
+    elif isinstance(navdata, list):
+        return [clean_nav_titles(item) for item in navdata]
+    else:
+        return navdata
 
 
 def parse_mkdocs_yml(yml_file: str, remove: List[str]) -> dict:
@@ -205,7 +232,13 @@ def parse_mkdocs_yml(yml_file: str, remove: List[str]) -> dict:
         return data
 
     base_path = os.path.dirname(yml_file)
-    return resolve_includes(data, base_path)
+    data = resolve_includes(data, base_path)
+    
+    # Clean navigation titles after parsing
+    if "nav" in data:
+        data["nav"] = clean_nav_titles(data["nav"])
+    
+    return data
 
 
 def generate_toc(yml_data: dict, project="project"):
@@ -231,9 +264,11 @@ def generate_toc(yml_data: dict, project="project"):
         if child.isdir():
             _traverse(child, toc)
         else:
+            # Just clean up quotes and backticks (HTML tags and quad already removed during parsing)
+            child_name = child.name.replace("`", "").replace('"', "")
             toc.write(
                 FILE_ENTRY.format(
-                    name=child.name.replace("`", "").replace('"', ""),
+                    name=child_name,
                     file=child.html_name,
                 )
             )
