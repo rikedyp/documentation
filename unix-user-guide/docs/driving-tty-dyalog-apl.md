@@ -63,7 +63,7 @@ The tables below show the keystrokes that can be used in the different windows.
     </tr>
     <tr>
         <td>LL<br />RL<br />UL<br />DL</td>
-        <td>Up/Down to limit in that direction. <br />
+        <td>UL/DL move the cursor up/down (respectively) to the limit in that direction.<br />
         LL moves the cursor left to the first of:
         <ul>
 <li>the start of the content of the line</li>
@@ -80,7 +80,7 @@ The tables below show the keystrokes that can be used in the different windows.
     </tr>
     <tr>
         <td>HO</td>
-        <td>Home Cursor ..  to the 6-space prompt in the session, otherwise to the top left hand corner of object.</td>
+        <td>Home Cursor either to the six space prompt in the Session or to the top left corner of the object.</td>
     </tr>
     <tr>
         <td>Toggle line numbers</td>
