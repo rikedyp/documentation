@@ -76,6 +76,7 @@ The tables below show the keystrokes that can be used in the different windows.
 <li>the end of the content of the line including space characters</li>
 <li>the six space prompt (only when the cursor is on a blank line)</li>
         </ul>
+        Pressing LL or RL multiple times progresses through the list in the order shown above.
         </td>
     </tr>
     <tr>
