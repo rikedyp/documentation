@@ -1,9 +1,9 @@
 <h1 class="heading"><span class="name">Syncfusion Libraries</span></h1>
 
-Dyalog no longer includes the [Syncfusion](https://www.syncfusion.com/) library of WPF controls. If you have your own license for the Syncfusion WPF controls, these can be used by Dyalog APL users to develop applications. 
+Dyalog does not include the [Syncfusion](https://www.syncfusion.com/) library of WPF controls. A separate licence is required from Syncfusion to use these in application development and to distribute them with run-time applications.
 
 !!! note "Note"
-    You may not use the Syncfusion library distributed with previous versions of Dyalog APL with version 20.0 or later.
+    From Dyalog v20.0 onwards, you must not use the Syncfusion libraries that were distributed with previous versions of Dyalog.
 
 
 ## Requirements
