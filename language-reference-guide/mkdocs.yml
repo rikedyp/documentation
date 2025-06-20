@@ -794,36 +794,36 @@ nav:
   - System Commands:
       - Introduction: system-commands/introduction.md
       - System Commands (A-Z):
-          - List Classes: system-commands/classes.md
-          - Clear Workspace: system-commands/clear.md
-          - Windows Command Processor: system-commands/cmd.md
-          - Save Continuation: system-commands/continue.md
-          - Copy Workspace: system-commands/copy.md
-          - Change Space: system-commands/cs.md
-          - Drop Workspace: system-commands/drop.md
-          - Edit Object: system-commands/ed.md
-          - Erase Object: system-commands/erase.md
-          - List Events: system-commands/events.md
-          - List Global Defined Functions: system-commands/fns.md
-          - Display Held Tokens: system-commands/holds.md
-          - List Workspace Library: system-commands/lib.md
-          - Load Workspace: system-commands/load.md
-          - List Methods: system-commands/methods.md
-          - Create Namespace: system-commands/ns.md
-          - List Global Namespaces: system-commands/objects.md
-          - List Global Namespaces Short: system-commands/obs.md
-          - Sign Off APL: system-commands/off.md
-          - List Global Defined Operators: system-commands/ops.md
-          - Protected Copy: system-commands/pcopy.md
-          - List Properties: system-commands/props.md
-          - Reset State Indicator: system-commands/reset.md
-          - Save Workspace: system-commands/save.md
-          - Execute UNIX Command: system-commands/sh.md
-          - State Indicator: system-commands/si.md
-          - Clear State Indicator: system-commands/sic.md
-          - State Indicator Name List: system-commands/sinl.md
-          - Thread Identity: system-commands/tid.md
-          - List Global Defined Variables: system-commands/vars.md
-          - Workspace Identification: system-commands/wsid.md
-          - Load without Latent Expression: system-commands/xload.md
+          - 'CLASSES: List Classes': system-commands/classes.md
+          - 'CLEAR: Clear Workspace': system-commands/clear.md
+          - 'CMD: Windows Command Processor': system-commands/cmd.md
+          - 'CONTINUE: Save Continuation': system-commands/continue.md
+          - 'COPY: Copy Workspace': system-commands/copy.md
+          - 'CS: Change Space': system-commands/cs.md
+          - 'DROP: Drop Workspace': system-commands/drop.md
+          - 'ED: Edit Object': system-commands/ed.md
+          - 'ERASE: Erase Object': system-commands/erase.md
+          - 'EVENTS: List Events': system-commands/events.md
+          - 'FNS: List Global Defined Functions': system-commands/fns.md
+          - 'HOLDS: Display Held Tokens': system-commands/holds.md
+          - 'LIB: List Workspace Library': system-commands/lib.md
+          - 'LOAD: Load Workspace': system-commands/load.md
+          - 'METHODS: List Methods': system-commands/methods.md
+          - 'NS: Create Namespace': system-commands/ns.md
+          - 'OBJECTS: List Global Namespaces': system-commands/objects.md
+          - 'OBS: List Global Namespaces Short': system-commands/obs.md
+          - 'OFF: Sign Off APL': system-commands/off.md
+          - 'OPS: List Global Defined Operators': system-commands/ops.md
+          - 'PCOPY: Protected Copy': system-commands/pcopy.md
+          - 'PROPS: List Properties': system-commands/props.md
+          - 'RESET: Reset State Indicator': system-commands/reset.md
+          - 'SAVE: Save Workspace': system-commands/save.md
+          - 'SH: Execute UNIX Command': system-commands/sh.md
+          - 'SI: State Indicator': system-commands/si.md
+          - 'SIC: Clear State Indicator': system-commands/sic.md
+          - 'SINL: State Indicator Name List': system-commands/sinl.md
+          - 'TID: Thread Identity': system-commands/tid.md
+          - 'VARS: List Global Defined Variables': system-commands/vars.md
+          - 'WSID: Workspace Identification': system-commands/wsid.md
+          - 'XLOAD: Load without Latent Expression': system-commands/xload.md
   - PCRE Specifications: pcre-specifications.md
