@@ -70,7 +70,7 @@ The tables below show the keystrokes that can be used in the different windows.
 <li>the six space prompt (except when in the <b>Editor</b>, in which case this is skipped)</li>
 <li>the left edge of the session</li>
         </ul>
-        RL moves the cursor left to the first of:
+        RL moves the cursor right to the first of:
         <ul>
 <li>the end of the content of the line excluding space characters</li>
 <li>the end of the content of the line including space characters</li>
