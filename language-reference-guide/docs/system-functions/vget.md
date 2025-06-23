@@ -13,13 +13,15 @@
 * a vector of names – see [Case 2: Vector of Names](#case-2-vector-of-names).
 * a vector of nameclasses – see [Case 3: Nameclasses](#case-3-nameclasses).
 
-All specified names must have a nameclass of 0, 2, 8, or 9 in the source namespace(s). For more information on nameclasses, see [`⎕NC`](nc.md). If `Y` specifies a matrix or a vector of names, fallback values to use in cases where a name has a nameclass of 0 can also be specified to prevent a `VALUE ERROR` from being generated.
+All specified names must have a nameclass of 0, 2, 8, or 9 in the source namespace(s). For more information on nameclasses, see [`⎕NC`](nc.md). If `Y` specifies a matrix or a vector of names, fallback values to use in cases where a name has no value can also be specified to prevent a `VALUE ERROR` from being generated.
 
 If specified, `X` must be an array that identifies one or more source namespaces. This means that `X` must be one of:
 
 * a simple character scalar or vector identifying the name of a namespace.
 * a reference to a namespace.
 * an array in which each item is one of the above. If `X` refers to multiple namespaces, then `⎕VGET` processes each item of `X` in ravel order, using the entire right argument `Y`; this is equivalent to  `X ⎕VGET¨⊂Y`.
+
+When `X` is an empty array, the prototype of the empty result `R` depends on the specified fallback values, if specified. If the prototype of `X` is a namespace which can be instantiated, such as an instance of a class with a niladic or no constructors, the namespace is instantiated, and the prototype of the result depends on the values found there.
 
 The namespace(s) referenced must already exist, or a `VALUE ERROR` is generated.  
 
@@ -105,7 +107,7 @@ Names are specified as character vectors or scalars. `Y` must be one of the foll
 
 * a single name: `R` is the value of that name in the source namespace.
 * a single enclosed name: `R` is also the value of the name, but enclosed.
-* a single enclosed name-value pair, which is a two-element vector consisting of a character vector name and a fallback value for that name: `R` is the value of the name, or the fallback value in case the name has nameclass 0.
+* a single enclosed name-value pair, which is a two-element vector consisting of a character vector name and a fallback value for that name: `R` is the value of the name, or the fallback value in case the name has no value.
 * a nested vector where each item is either a name, or a name value pair: `R` is a vector with the same length as `Y`, with the values from the corresponding names, or fallback values.
 
 <h3 class="example">Examples</h3>
@@ -169,6 +171,8 @@ See [Case 1: Name Matrix](#case-1-name-matrix) for an example of multiple names 
 `Y` must be a numeric scalar or vector, where each item is a nameclass (see [Name Classification](nc.md)).
 
 If any of the numbers in `Y` are negative, the result `R` is a vector of name-value pairs, one for each existing name in the source namespace with a nameclass from `Y`. Otherwise, `R` is a 2-element nested vector, where the first element is a character matrix of names and the second element is a vector of values. In both cases, `R` is suitable as an argument for [`⎕VGET`](vget.md) and [`⎕VSET`](vset.md).
+
+In some cases, such as fields and variables with triggers attached, the nameclass of the symbol does not match the nameclass of the value. Therefore, [`⎕VGET`](vget.md) with a numeric right argument works on the nameclass of the values and not the names, except when the user explicitly requests nameclasses 2.1 or 2.2.
 
 <h3 class="example">Examples</h3>
 Name value pairs:
