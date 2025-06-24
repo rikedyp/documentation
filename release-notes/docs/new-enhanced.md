@@ -5,6 +5,29 @@
 
 This page describes the changes and new features in Dyalog v20.0 compared with Dyalog v19.0.
 
+## Syntax Changes
+
+### Array Notation
+
+[Array notation](../../programming-reference-guide/introduction/arrays/array-notation/) is a literal syntax for most arrays (including nested and high-rank arrays) and namespaces. Array notation is an extension of APL syntax, and, as such, can be used inside and around all other APL expressions, and wherever an APL expression can appear (for example in the Session, in functions, and in namespace scripts).
+
+You can edit variables using array notation in the following ways:
+
+- Invoke the _Edit_ command (**&lt;ED>**) from within the Editor.
+- Call the system command `)ED` and prefix the variable name with a diamond character, for example, `)ED ⋄foo`
+- Call the system function `⎕ED` with a left argument `'⋄'`, for example, `'⋄' ⎕ED 'foo'`.
+
+In addition, in the Microsoft Windows IDE, array notation can be accessed in the following ways:
+
+- Click the ![](img/session_arraynotation.png){width=20 height=20 vertical-align:text-bottom} icon in the **Session** toolbar – this button toggles on/off the use of array notation for output (when possible).
+- Click the ![](img/object_arraynotation.png){width=20 height=20 vertical-align:text-bottom} icon in the **Object** toolbar when the cursor is over the name of an array – this opens the array in the Editor in the same way as `)ED ⋄foo`.
+- Click the ![](img/object_arraynotation.png){width=20 height=20 vertical-align:text-bottom} icon in the Editor's toolbar – this displays the contents of the Editor using array notation.
+- Select **Show as Array Notation** from the Editor's **Syntax** menu – this displays the contents of the Editor using array notation.
+
+When using array notation in the Editor, the _Reformat_ command (**&lt;RD>**) evaluates the Editor's content and regenerates it using array notation.
+
+Setting the `APLAN_FOR_OUTPUT` configuration parameter to `1` sets use of array notation for output to be on; in the Microsoft Windows IDE, this can be overridden by toggling it off using the toolbar icons/menu items.
+
 ## Language Changes
 
 ### Primitive Functions/Operators
@@ -65,7 +88,8 @@ The following I-beams have been added:
 - [`13⌶`](../../language-reference-guide/the-i-beam-operator/log-use-of-deprecated-features/) – Log Use of Deprecated Features  
 Records information in the log file set by `109⌶` about the specified deprecated feature names or keywords
 - [`43⌶`](../../language-reference-guide/the-i-beam-operator/monadic-operator-generator/) – Monadic Operator Generator  
-Generates a monadic operator with specified functionality. The functionality allows the creation of a .NET-specific operator that can create concrete versions of generic classes and execute generic methods; additional options will be available in a future release.
+Generates a monadic operator with specified functionality. The exact functionaity of the generated operator depend on the right argument. Current options are:  
+    - `43⌶632` – Generics Operator<br />Generates a .NET-specific operator that can create concrete versions of generic classes and execute generic methods<br />This is likely to be superseded by a new language construct in Dyalog v21.0.
 - [`109⌶`](../../language-reference-guide/the-i-beam-operator/deprecated-feature-log-file/) – Deprecated Feature Log File  
 Manages the file used to log the use of deprecated features.
 - [`120⌶`](../../language-reference-guide/the-i-beam-operator/generate-uuid/) – Generate UUID  
@@ -86,30 +110,7 @@ Temporary functionality used for identification of potential side-effects of a c
 - `8469⌶` – Lookup Table Size (introduced in Dyalog v19.0)  
 Temporary functionality used for identification of potential side-effects of a change that has now been implemented. No longer relevant.
 
-## Syntax Changes
-
-### Array Notation
-
-[Array notation](../../programming-reference-guide/introduction/arrays/array-notation/) is a literal syntax for most arrays (including nested and high-rank arrays) and namespaces. Array notation is an extension of APL syntax, and, as such, can be used inside and around all other APL expressions, and wherever an APL expression can appear (for example in the Session, in functions, and in namespace scripts).
-
-You can edit variables using array notation in the following ways:
-
-- Invoke the _Edit_ command (**&lt;ED>**) from within the Editor.
-- Call the system command `)ED` and prefix the variable name with a diamond character, for example, `)ED ⋄foo`
-- Call the system function `⎕ED` with a left argument `'⋄'`, for example, `'⋄' ⎕ED 'foo'`.
-
-In addition, in the Microsoft Windows IDE, array notation can be accessed in the following ways:
-
-- Click the ![](img/session_arraynotation.png){width=20 height=20 vertical-align:text-bottom} icon in the **Session** toolbar – this button toggles on/off the use of array notation for output (when possible).
-- Click the ![](img/object_arraynotation.png){width=20 height=20 vertical-align:text-bottom} icon in the **Object** toolbar when the cursor is over the name of an array – this opens the array in the Editor in the same way as `)ED ⋄foo`.
-- Click the ![](img/object_arraynotation.png){width=20 height=20 vertical-align:text-bottom} icon in the Editor's toolbar – this displays the contents of the Editor using array notation.
-- Select **Show as Array Notation** from the Editor's **Syntax** menu – this displays the contents of the Editor using array notation.
-
-When using array notation in the Editor, the _Reformat_ command (**&lt;RD>**) evaluates the Editor's content and regenerates it using array notation.
-
-Setting the `APLAN_FOR_OUTPUT` configuration parameter to `1` sets use of array notation for output to be on; in the Microsoft Windows IDE, this can be overridden by toggling it off using the toolbar icons/menu items.
-
-## User Interface Changes
+## Development Environment Changes
 
 ### Inline Tracing
 
@@ -138,7 +139,7 @@ This improves the performance of `⎕SHELL` on AIX. When set to `1` (the default
 
 The following command shortcuts have been extended:
 
-- The _Reformat_ command (**&lt;RD>**) will now reformat and indent an array when array notation is switched on (previously this functionality was restricted to functions); it will also execute any expressions within the array notation and replace the text with a representation of their results. In addition, it can now be used to reformat JSON5 text, although any comments in the JSON5 are discarded.
+- The _Reformat_ command (**&lt;RD>**) will now reformat and indent an array when array notation is switched on (previously this functionality was restricted to functions); it will also execute any expressions within the array notation and replace the text with a representation of their results.
 - The _Undo All_ command (**&lt;UA>**) will now exit multi-line input (previously this only "unmarked" input lines within multi-line input).
 
 ### Home and End Keys
@@ -196,6 +197,6 @@ The Perl Compatible Regular Expressions (PCRE) library used by the interpreter h
 
 In .NET, a _generic_ class is a class that has type parameters which must be given values to create a concrete version of the class. Similarly, a generic method has type parameters which must be specified before the method can be called. 
 
-The .NET interface now supports creating concrete versions of generic classes, instantiating them, and calling generic methods. For more information, see the [_.NET Interface Guide_](https://docs.dyalog.com/20.0/dotNET_Interface_Guide.pdf).
+The introduction of [`43⌶632`](../../language-reference-guide/the-i-beam-operator/monadic-operator-generator/) means that the .NET interface now supports creating concrete versions of generic classes, instantiating them, and calling generic methods. For more information, see the [_.NET Interface Guide_](https://docs.dyalog.com/20.0/dotNET_Interface_Guide.pdf).
 
 The .NET Framework interface does not support generic classes.
