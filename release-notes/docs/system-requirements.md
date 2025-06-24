@@ -20,8 +20,8 @@ Dyalog v20.0 is supported on the following platforms/operating systems:
 * Linux:
     * x86_64: Built on Ubuntu 20.04
     * ARM64: Built on Debian GNU/Linux 12
-* macOS:
-    * Apple M1 or later (ARM-based only): macOS 13.4.1 (Ventura) onwards
+* macOS (ARM-based, Apple M1 or later):
+    *  macOS 13.4.1 (Ventura) onwards
 * Microsoft Windows:
     * Windows 10 onwards (Windows Server 2016 onwards)
 * Raspberry Pi (ARM-based): 

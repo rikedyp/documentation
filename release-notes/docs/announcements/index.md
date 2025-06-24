@@ -62,7 +62,7 @@ Dyalog v20.0 is the last release that will be supported on 32-bit Raspberry Pi O
 
 Dyalog v20.0 is the last major version that will support workspaces saved using Dyalog v11.0 or Dyalog v12.0 (workspaces saved using earlier versions are already unsupported). From Dyalog v21.0, the minimum version of a workspace that can be loaded will be v12.1.
 
-To resave your Dyalog v11.0 or Dyalog v12.0 workspaces in a later version, you can use `)XLOAD` and `)SAVE`.   
+To update workspaces that were saved using Dyalog v11.0 or v12.0 so that they can be loaded using a future version of Dyalog, you can use `)XLOAD` and `)SAVE` in any version of Dyalog from v12.1 to v20.0 inclusive. 
 
 !!! Tip "Hints and Recommendations"  
     Dyalog Ltd recommends that workspaces are saved without any suspended functions on the stack before loading them into a newer interpreter. To achieve this, run `)RESET` before `)SAVE`.
@@ -104,3 +104,24 @@ To report an error or request a change in the documentation you can now:
 - [raise an issue](https://github.com/Dyalog/documentation/issues) directly in the GitHub project – this should only be done if the issue relates to a document that is in the GitHub project.
 
 The GitHub project's [readme file](https://github.com/Dyalog/documentation/blob/main/README.md) includes information on how to contribute by drafting amendments/enhancements.
+
+## Next Dyalog Version
+
+### Expected Supported Platforms
+The next version of Dyalog is expected to be supported on the following platforms/operating systems:  
+
+- IBM AIX:
+    - AIX 7.2 SP2 TL5 onwards with a POWER9 chip or higher
+- Linux:
+    - x86_64: Built on Ubuntu 22.04
+    - ARM64: Built on Debian GNU/Linux 12
+- macOS (ARM-based, Apple M1 or later):
+    - macOS 26 (Tahoe) onwards
+- Microsoft Windows:
+    - Windows 11 onwards (Windows Server 2016 onwards)
+- Raspberry Pi (ARM-based, 64-bit Raspberry Pi OS only):  
+    NOTE: Installed using the Linux ARM64 package
+    - Not supported on Raspberry Pi Pico
+	- Not supported on Raspberry Pi 2 or earlier
+
+This list is not definitive and is subject to change.
