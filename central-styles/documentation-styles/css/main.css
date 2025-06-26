@@ -39,8 +39,8 @@ code, .command, .Dyalog {
     font-family: APL;
 }
 .md-typeset code { 
-    font-size: 1em;
-    line-height: 1.2em;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
     background: none!important;
  }
 
