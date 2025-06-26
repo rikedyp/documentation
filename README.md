@@ -27,7 +27,7 @@ Dyalog documentation uses the [Dyalog/documentation-styles](https://github.com/D
 
 Using the [development tools](#tools) ensures that the styles are correctly included while developing, and the [GitHub Action to publish](./.github/workflows/mkdocs-publish.yml) handles them for publication.
 
-Publication of the documentation updates the styles submodule to the latest commit. This repository will have a dependabot job that checks daily for updates and opens a pull request to update the submodule for this repository. Developers can update the submodule in their local checkout with `git submodule update`.
+Publication of the documentation updates the styles submodule to the latest commit. This repository will have a dependabot job that checks daily for updates and opens a pull request to update the submodule for this repository. Developers can update the submodule in their local checkout with `git submodule update --remote`.
 
 ## Tools
 
