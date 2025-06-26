@@ -1,7 +1,7 @@
 site_name: Language Reference Guide
 theme:
   favicon: documentation-styles/images/favicon-32.png
-  logo: documentation-styles/images/dyalog-logo-2025_white.svg
+  logo: documentation-styles/images/dyalog-logo_white.svg
   features:
     - navigation.instant
     - navigation.tracking

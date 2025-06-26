@@ -14,7 +14,7 @@ extra_css:
   - documentation-styles/css/main.css
   - documentation-styles/css/extra.css
   - documentation-styles/css/admonition-ucmdhelp.css
-  - style/windows-ui-guide.css
+  - documentation-styles/css/windows-ui-guide.css
 extra_javascript:
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
