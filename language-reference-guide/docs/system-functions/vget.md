@@ -9,11 +9,11 @@
 
 `Y` specifies the names. It must be one of the following:
 
-* a matrix – see [Case 1: Name Matrix](#case-1-name-matrix).
-* a vector of names – see [Case 2: Vector of Names](#case-2-vector-of-names).
+* a matrix of names or a matrix of names and a value vector – see [Case 1: Name Matrix](#case-1-name-matrix).
+* a vector of names or name-value pairs – see [Case 2: Vector of Names](#case-2-vector-of-names).
 * a vector of nameclasses – see [Case 3: Nameclasses](#case-3-nameclasses).
 
-All specified names must have a nameclass of 0, 2, 8, or 9 in the source namespace(s). For more information on nameclasses, see [`⎕NC`](nc.md). If `Y` specifies a matrix or a vector of names, fallback values to use in cases where a name has no value can also be specified to prevent a `VALUE ERROR` from being generated.
+All specified names must be either undefined, or have an array value in the source namespace(s). If `Y` specifies a matrix or a vector of names, fallback values to use in cases where a name has no value can also be specified to prevent a `VALUE ERROR` from being generated.
 
 If specified, `X` must be an array that identifies one or more source namespaces. This means that `X` must be one of:
 
@@ -172,7 +172,7 @@ See [Case 1: Name Matrix](#case-1-name-matrix) for an example of multiple names 
 
 If any of the numbers in `Y` are negative, the result `R` is a vector of name-value pairs, one for each existing name in the source namespace with a nameclass from `Y`. Otherwise, `R` is a 2-element nested vector, where the first element is a character matrix of names and the second element is a vector of values. In both cases, `R` is suitable as an argument for [`⎕VGET`](vget.md) and [`⎕VSET`](vset.md).
 
-In some cases, such as fields and variables with triggers attached, the nameclass of the symbol does not match the nameclass of the value. Therefore, [`⎕VGET`](vget.md) with a numeric right argument works on the nameclass of the values and not the names, except when the user explicitly requests nameclasses 2.1 or 2.2.
+[`⎕NC`](nc.md) always reports the names of fields in a class as having nameclass 2 (2.2 to be exact), even when the name has no value and you might expect 0, or the field is a namespace reference and you would expect 9. [`⎕VGET`](vget.md) with a right argument of 2 will only include fields that have values that are not references, while a right argument of 9 will include fields which are references. With a right argument of 2.2, [`⎕VGET`](vget.md) will return all fields which are not undefined.
 
 <h3 class="example">Examples</h3>
 Name value pairs:
