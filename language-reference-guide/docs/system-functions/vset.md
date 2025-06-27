@@ -83,7 +83,7 @@ Multiple names, with a single value:
 ## Variant Option: Trigger
 
 The `Trigger` variant option specifies whether any [triggers](../../../programming-reference-guide/triggers/triggers) should be run for the modified variables in the target namespace that have triggers attached.
-The value must be a Boolean scalar. The default is 1, meaning that triggers are run.
+The value must be a Boolean scalar. The default is `1`, meaning that triggers are run.
 
 <h4 class="example">Example</h4>
 ```apl
@@ -106,7 +106,7 @@ Running trigger for: name1
 Running trigger for: name1
 Running trigger for: name3
 
-      ⍝ Without the trigger option, triggers are run as well
+      ⍝ Without the trigger option, triggers are run (the default)
       ⎕VSET ('name1' 1) ('name2' 2) ('name3' 3)
 Running trigger for: name1
 Running trigger for: name3

@@ -21,7 +21,7 @@ If specified, `X` must be an array that identifies one or more source namespaces
 * a reference to a namespace.
 * an array in which each item is one of the above. If `X` refers to multiple namespaces, then `⎕VGET` processes each item of `X` in ravel order, using the entire right argument `Y`; this is equivalent to  `X ⎕VGET¨⊂Y`.
 
-When `X` is an empty array, the prototype of the empty result `R` depends on the specified fallback values, if specified. If the prototype of `X` is a namespace which can be instantiated, such as an instance of a class with a niladic or no constructors, the namespace is instantiated, and the prototype of the result depends on the values found there.
+When `X` is an empty array, the prototype of the empty result `R` depends on the fallback values, if specified. If the prototype of `X` is an instance of a class that can be instantiated, such as an instance of a class with a niladic or no constructors, then a new instance of the class is made and the prototype of the result is determined by the values found within the new instance.
 
 The namespace(s) referenced must already exist, or a `VALUE ERROR` is generated.  
 
@@ -172,7 +172,7 @@ See [Case 1: Name Matrix](#case-1-name-matrix) for an example of multiple names 
 
 If any of the numbers in `Y` are negative, the result `R` is a vector of name-value pairs, one for each existing name in the source namespace with a nameclass from `Y`. Otherwise, `R` is a 2-element nested vector, where the first element is a character matrix of names and the second element is a vector of values. In both cases, `R` is suitable as an argument for [`⎕VGET`](vget.md) and [`⎕VSET`](vset.md).
 
-[`⎕NC`](nc.md) always reports the names of fields in a class as having nameclass 2 (2.2 to be exact), even when the name has no value and you might expect 0, or the field is a namespace reference and you would expect 9. [`⎕VGET`](vget.md) with a right argument of 2 will only include fields that have values that are not references, while a right argument of 9 will include fields which are references. With a right argument of 2.2, [`⎕VGET`](vget.md) will return all fields which are not undefined.
+[`⎕NC`](nc.md) always reports the names of fields in a class as having nameclass `2` (`2.2` with the sub-class), even when the name has no value (might expect `0`) or the field is a namespace reference (might expect `9`). [`⎕VGET`](vget.md) with a right argument of `2` will only include fields that have values that are not references, while a right argument of `9` will include fields that are references. With a right argument of `2.2`, [`⎕VGET`](vget.md) will return all fields that are not undefined.
 
 <h3 class="example">Examples</h3>
 Name value pairs:
