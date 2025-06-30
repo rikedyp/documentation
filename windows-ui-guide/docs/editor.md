@@ -187,6 +187,8 @@ Once displayed, each of the two dialog boxes remains on the screen until it is e
 
 The *Syntax* menu provides options to specify  how the data displayed in the Editor window is to be syntax coloured. For workspace objects, the default is *APL* for functions and operators, and *Nothing* for variables.
 
+A last item toggles how arrays are displayed in the Editor.
+
 |Item                    |
 |------------------------|
 |Nothing                 |
