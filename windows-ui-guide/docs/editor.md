@@ -392,7 +392,7 @@ Any of the following invokes it:
 -   In the **session**, call the system command `)ED` and prefix the variable name with a diamond character, for example, `)ED ⋄foo`.
 -   In the **session**, call the system function `⎕ED` with a left argument `'⋄'`, for example, `'⋄' ⎕ED 'foo'`.
 -   In the **Object** toolbar click the ![Edit Array Icon](img/edit-array-icon.png) button when the cursor is over the name of an array. It opens the array in the Editor in the same way as `)ED ⋄foo`.
--   In the **Editor’s toolbar** click the ![Edit Array Icon](img/edit-array-icon.png) button. It displays the contents of the Editor using array notation.
+-   In the **Editor’s toolbar** click the ![Edit Array Icon](img/edit-array-icon.png) button. It toggles the display of the Editor contents to and from array notation.
 -   From the **Editor’s _Syntax_ menu** select _Show as Array Notation_.
 
 The Editor presents the array for you to edit in array notation.
