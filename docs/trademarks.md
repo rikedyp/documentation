@@ -2,11 +2,11 @@
 
 "Dyalog APL" is a UK registered trademark of Dyalog Limited (number 1192130).
 
-SQAPL is copyright of Insight Systems ApS.
-
 Raspberry Pi is a trademark of the Raspberry Pi Foundation.
 
-Oracle®, Javascript™ and Java™ are registered trademarks of Oracle and/or its affiliates.
+Oracle®, Javascript™, and Java™ are registered trademarks of Oracle and/or its affiliates.
+
+Unicode is a registered trademarks of Unicode, Inc. in the United States and other countries.
 
 UNIX® is a registered trademark in the United States and other countries, licensed exclusively through X/Open Company Limited.
 
@@ -18,6 +18,4 @@ macOS® and OS X® (operating system software) are trademarks of Apple Inc., reg
 
  
 
-All other trademarks are the property of their respective owners.
-
- 
+All other trademarks and copyrights are acknowledged.
