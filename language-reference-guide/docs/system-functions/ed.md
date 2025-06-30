@@ -22,8 +22,10 @@
 
 
 
-If an object named in `Y` already exists, the type specification in `X` is ignored for that name.
+If an object named in `Y` already exists
 
+-   if `X` is `'⋄'` and `Y` is an array then the Editor opens in array-notation mode;
+-   otherwise the type specification in `X` is ignored.
 
 If `⎕ED` is called from the Session, it opens Edit windows for the object(s) named in `Y` and returns a null result.  The cursor is positioned in the first of the Edit windows opened by `⎕ED`, but may be moved to the Session or to any other window which is currently open.  The effect is almost identical to using `)ED`.
 
