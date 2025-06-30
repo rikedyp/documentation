@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Equal Underbar Slash</span> <span class="command">≢</span></h1>
 
 
-## Monadic Not Equal Underbar means
+Monadic Not Equal Underbar means
 
 
 [Tally](../primitive-functions/tally.md)
@@ -33,7 +33,7 @@ search:
 2 3
 ```
 
-## Dyadic Not Equal Underbar means
+Dyadic Not Equal Underbar means
 
 
 [Not Match](../primitive-functions/not-match.md)

@@ -13,7 +13,7 @@ search:
 
 Monadic Up Tack is not defined
 
-## Dyadic Up Tack means
+Dyadic Up Tack means
 
 
 [Decode](../primitive-functions/decode.md)

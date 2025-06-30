@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Log;Circle Star</span> <span class="command">⍟</span></h1>
 
 
-## Monadic Log means
+Monadic Log means
 
 
 [Natural Logarithm](../primitive-functions/natural-logarithm.md)
@@ -20,7 +20,7 @@ search:
 0 0.693147 1.09861 1
 ```
 
-## Dyadic Log means
+Dyadic Log means
 
 
 [Logarithm](../primitive-functions/logarithm.md)

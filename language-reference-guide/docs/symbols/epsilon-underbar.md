@@ -13,7 +13,7 @@ search:
 
 Monadic Epsilon Underbar is not defined
 
-## Dyadic Epsilon Underbar means
+Dyadic Epsilon Underbar means
 
 
 [Find](../primitive-functions/find.md)

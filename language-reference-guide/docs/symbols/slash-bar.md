@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Slash Bar</span> <span class="command">⌿</span></h1>
 
 
-## Used as a Function
+Used as a Function
 
 
 Monadic Slash Bar is not defined
@@ -32,7 +32,7 @@ Monadic Slash Bar is not defined
 9 10 11 12
 ```
 
-## Used as an Operator
+Used as an Operator
 
 
 Slash Bar is a Monadic operator with a Dyadic operand

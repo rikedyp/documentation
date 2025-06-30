@@ -5,9 +5,9 @@ search:
 
 <h1 class="heading"><span class="name">Ampersand</span> <span class="command">&</span></h1>
 
-## Ampersand is a Monadic operator with an ambivalent operand
+Ampersand is a Monadic operator with an ambivalent operand
 
-## Operator Ampersand means
+Operator Ampersand means
 
 [Spawn](../primitive-operators/spawn.md)
 ```apl

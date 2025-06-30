@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Question Mark;Query</span> <span class="command">?</span></h1>
 
 
-## Monadic Question Mark means
+Monadic Question Mark means
 
 
 [Roll](../primitive-functions/roll.md)
@@ -23,7 +23,7 @@ search:
 0.260561 0.929928
 ```
 
-## Dyadic Question Mark means
+Dyadic Question Mark means
 
 
 [Deal](../primitive-functions/deal.md)

@@ -13,7 +13,7 @@ search:
 
 Monadic Less Than Or Equal To Sign is not defined
 
-## Dyadic Less Than or Equal To Sign means
+Dyadic Less Than or Equal To Sign means
 
 
 [Is Less Or Equal To](../primitive-functions/less-or-equal.md)

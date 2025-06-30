@@ -13,7 +13,7 @@ search:
 
 Monadic Logical Or is not defined.
 
-## Dyadic Logical Or means
+Dyadic Logical Or means
 
 
 [Greatest Common Divisor (Or)](../primitive-functions/or-greatest-common-divisor.md)

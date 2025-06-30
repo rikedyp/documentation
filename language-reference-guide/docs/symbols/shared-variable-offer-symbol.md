@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Shared Variable Offer</span> <span class="command">⎕SVO</span></h1>
 
 
-## Dyadic ⎕SVO means
+Dyadic ⎕SVO means
 
 
 [Shared
@@ -20,7 +20,7 @@ search:
 DATA←⍳9 'DDE:' ⎕SVO 'DATA' 1
 ```
 
-## Monadic ⎕SVO means
+Monadic ⎕SVO means
 
 
 [Query

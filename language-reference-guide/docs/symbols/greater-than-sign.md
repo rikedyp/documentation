@@ -13,7 +13,7 @@ search:
 
 Monadic Greater Than Sign is not defined
 
-## Dyadic Greater Than Sign means
+Dyadic Greater Than Sign means
 
 
 [Greater Than](../primitive-functions/greater.md)

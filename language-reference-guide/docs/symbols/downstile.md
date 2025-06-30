@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Downstile</span> <span class="command">⌊</span></h1>
 
 
-## Monadic Downstile means
+Monadic Downstile means
 
 
 [Floor
@@ -21,7 +21,7 @@ search:
 3 ¯4 3 0
 ```
 
-## Dyadic Downstile means
+Dyadic Downstile means
 
 
 [Minimum](../primitive-functions/minimum.md)

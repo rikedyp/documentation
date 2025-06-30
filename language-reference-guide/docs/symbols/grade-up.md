@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Grade Up</span> <span class="command">⍋</span></h1>
 
 
-## Monadic Grade Up means
+Monadic Grade Up means
 
 
 [Grade Up](../primitive-functions/grade-up-monadic.md)
@@ -33,7 +33,7 @@ search:
 
 ```
 
-## Dyadic Grade Up means
+Dyadic Grade Up means
 
 
 [Dyadic Grade Up](../primitive-functions/grade-up-dyadic.md)

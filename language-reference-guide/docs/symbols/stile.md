@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Stile;Vertical Bar</span> <span class="command">|</span></h1>
 
 
-## Monadic Stile means
+Monadic Stile means
 
 
 [Magnitude](../primitive-functions/magnitude.md)
@@ -22,7 +22,7 @@ search:
 
 ```
 
-## Dyadic Stile means
+Dyadic Stile means
 
 
 [Residue;Modulus](../primitive-functions/residue.md)

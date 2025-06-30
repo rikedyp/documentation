@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Down Arrow</span> <span class="command">↓</span></h1>
 
 
-## Monadic Down Arrow means
+Monadic Down Arrow means
 
 
 [Split](../primitive-functions/split.md)
@@ -33,7 +33,7 @@ search:
 
 ```
 
-## Dyadic Down Arrow means
+Dyadic Down Arrow means
 
 
 [Drop](../primitive-functions/drop.md)

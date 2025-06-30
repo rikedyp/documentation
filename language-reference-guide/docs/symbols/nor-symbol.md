@@ -13,7 +13,7 @@ search:
 
 Monadic Logical NOR is not defined
 
-## Dyadic Logical NOR means
+Dyadic Logical NOR means
 
 
 [NOR](../primitive-functions/nor.md)

@@ -10,9 +10,9 @@ search:
 <h1 class="heading"><span class="name">Quad Diamond</span> <span class="command">⌺</span></h1>
 
 
-## Quad Diamond is a Dyadic operator
+Quad Diamond is a Dyadic operator
 
-## Operator Quad Diamond means
+Operator Quad Diamond means
 
 
 [Stencil](../primitive-operators/stencil.md)

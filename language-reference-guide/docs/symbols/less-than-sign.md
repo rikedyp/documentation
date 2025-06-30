@@ -13,7 +13,7 @@ search:
 
 Monadic Less Than Sign is not defined
 
-## Dyadic Less Than Sign means
+Dyadic Less Than Sign means
 
 
 [Less Than](../primitive-functions/less.md)

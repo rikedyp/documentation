@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Left Arrow</span> <span class="command">←</span></h1>
 
 
-## Dyadic Left Arrow means
+Dyadic Left Arrow means
 
 
 [Naming      ](../primitive-functions/assignment.md)
@@ -23,7 +23,7 @@ search:
     inverse ← ⍣¯1
 ```
 
-## Operator Left Arrow means
+Operator Left Arrow means
 
 
 [Modified Assignment](../primitive-functions/assignment.md)

@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Plus Sign</span> <span class="command">+</span></h1>
 
 
-## Monadic Plus Sign means
+Monadic Plus Sign means
 
 
 [Conjugate
@@ -22,7 +22,7 @@ search:
 
 ```
 
-## Dyadic Plus Sign means
+Dyadic Plus Sign means
 
 
 [Plus](../primitive-functions/add.md)

@@ -13,7 +13,7 @@ search:
 
 Monadic Logical AND is not defined.
 
-## Dyadic Logical AND means
+Dyadic Logical AND means
 
 
 [Lowest Common Multiple (AND)](../primitive-functions/and-lowest-common-multiple.md)

@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Exclamation Mark;Quote Dot</span> <span class="command">!</span></h1>
 
 
-## Monadic Exclamation Mark means
+Monadic Exclamation Mark means
 
 
 [Factorial](../primitive-functions/factorial.md)
@@ -20,7 +20,7 @@ search:
 6 362880 1.07683
 ```
 
-## Dyadic Exclamation Mark means
+Dyadic Exclamation Mark means
 
 
 [Binomial

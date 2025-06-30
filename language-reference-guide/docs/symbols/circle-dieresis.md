@@ -10,10 +10,10 @@ search:
 <h1 class="heading"><span class="name">Circle Dieresis</span> <span class="command">⍥</span></h1>
 
 
-## Circle Diaeresis is a Dyadic operator with an ambivalent
+Circle Diaeresis is a Dyadic operator with an ambivalent
       left operand
 
-## Operator Circle Diaeresis means
+Operator Circle Diaeresis means
 
 
 [Over](../primitive-operators/over.md)

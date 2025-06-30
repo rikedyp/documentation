@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Times Sign</span> <span class="command">×</span></h1>
 
 
-## Monadic Times Sign means
+Monadic Times Sign means
 
 
 [Direction](../primitive-functions/direction.md)
@@ -22,7 +22,7 @@ search:
 
 ```
 
-## Dyadic Times Sign means
+Dyadic Times Sign means
 
 
 [Times](../primitive-functions/multiply.md)

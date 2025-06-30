@@ -13,7 +13,7 @@ search:
 
 Monadic Set Intersection is not defined
 
-## Dyadic Set Intersection means
+Dyadic Set Intersection means
 
 
 [Intersection](../primitive-functions/intersection.md)

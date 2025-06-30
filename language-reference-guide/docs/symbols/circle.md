@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Circle</span> <span class="command">○</span></h1>
 
 
-## Monadic Circle means
+Monadic Circle means
 
 
 [Pi Times](../primitive-functions/pi-times.md)
@@ -19,7 +19,7 @@ search:
 0 3.14159 6.28319
 ```
 
-## Dyadic Circle means
+Dyadic Circle means
 
 
 [Circular Function (Trig)](../primitive-functions/circular.md)

@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Divide Sign</span> <span class="command">÷</span></h1>
 
 
-## Monadic Divide Sign means
+Monadic Divide Sign means
 
 
 [Reciprocal](../primitive-functions/reciprocal.md)
@@ -21,7 +21,7 @@ search:
 
 ```
 
-## Dyadic Divide Sign means
+Dyadic Divide Sign means
 
 
 [Divided By](../primitive-functions/divide.md)

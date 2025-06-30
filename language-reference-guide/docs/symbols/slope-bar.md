@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Back Slash Bar</span> <span class="command">⍀</span></h1>
 
 
-## Used as a Function
+Used as a Function
 
 
 Monadic Back Slash Bar is not defined
@@ -34,7 +34,7 @@ Monadic Back Slash Bar is not defined
 9 10 11 12
 ```
 
-## Used as an Operator
+Used as an Operator
 
 
 Back Slash Bar is a Monadic operator with a Dyadic operand

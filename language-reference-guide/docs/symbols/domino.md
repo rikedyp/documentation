@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Domino;Quad Divide</span> <span class="command">⌹</span></h1>
 
 
-## Monadic Domino means
+Monadic Domino means
 
 
 [Matrix Inverse Of](../primitive-functions/matrix-inverse.md)
@@ -24,7 +24,7 @@ search:
  1.5 ¯0.5
 ```
 
-## Dyadic Domino means
+Dyadic Domino means
 
 
 [Matrix Division By](../primitive-functions/matrix-divide.md)

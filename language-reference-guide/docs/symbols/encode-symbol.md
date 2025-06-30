@@ -13,7 +13,7 @@ search:
 
 Monadic Down Tack is not defined
 
-## Dyadic Down Tack means
+Dyadic Down Tack means
 
 
 [Encode](../primitive-functions/encode.md)

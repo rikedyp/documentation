@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Back Slash</span> <span class="command">\</span></h1>
 
 
-## Used as a Function
+Used as a Function
 
 
 Monadic Back Slash is not defined
@@ -28,7 +28,7 @@ Monadic Back Slash is not defined
 H a t
 ```
 
-## Used as an Operator
+Used as an Operator
 
 
 Back Slash is a Monadic operator with a Dyadic operand

@@ -1,6 +1,6 @@
 <h1 class="heading"><span class="name">Language Elements</span></h1>
 
-## Primitive Functions
+Primitive Functions
 
 <table class="Normal">
     <tr>
@@ -158,7 +158,7 @@
     </tr>
 </table>
 
-## Primitive Operators
+Primitive Operators
 
 <table class="Normal">
     <tr>
@@ -213,7 +213,7 @@
     </tr>
 </table>
 
-## Other Language Elements
+Other Language Elements
 
 - [Brackets](../brackets)
 - [Special Syntax](../special-symbols)

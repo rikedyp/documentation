@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Variant</span> <span class="command">⍠</span></h1>
 
 
-## The Variant operator  specifies the value of an option to be used by its left operand function.
+The Variant operator  specifies the value of an option to be used by its left operand function.
 
 <h2 class="example">Examples</h2>
 ```apl

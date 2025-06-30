@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Not Equal</span> <span class="command">≠</span></h1>
 
 
-## Monadic Not Equal means
+Monadic Not Equal means
 
 
 [Unique Mask](../primitive-functions/unique-mask.md)
@@ -23,7 +23,7 @@ search:
 1 1 1 0 0 0 0 0 1 0 0
 ```
 
-## Dyadic Not Equal means
+Dyadic Not Equal means
 
 
 [Not Equal To

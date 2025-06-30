@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Left Shoe</span> <span class="command">⊂</span></h1>
 
 
-## Monadic Left Shoe means
+Monadic Left Shoe means
 
 
 [Enclose
@@ -37,7 +37,7 @@ search:
 └─────────┘
 ```
 
-## Dyadic Left Shoe means
+Dyadic Left Shoe means
 
 
 If `⎕ML<3`[ Partitioned Enclose](../primitive-functions/partitioned-enclose.md)

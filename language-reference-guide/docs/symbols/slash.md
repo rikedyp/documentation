@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Slash</span> <span class="command">/</span></h1>
 
 
-## Used as a Function
+Used as a Function
 
 
 Monadic Slash is not defined
@@ -28,7 +28,7 @@ Monadic Slash is not defined
 Hat
 ```
 
-## Used as an Operator
+Used as an Operator
 
 
 Slash is a Monadic operator with a Dyadic operand

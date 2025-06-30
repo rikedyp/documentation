@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Right Arrow</span> <span class="command">→</span></h1>
 
 
-## Monadic Right Arrow means
+Monadic Right Arrow means
 
 
 [Branch](../primitive-functions/branch.md)

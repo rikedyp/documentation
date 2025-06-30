@@ -13,7 +13,7 @@ search:
 
 Monadic Logical NAND is not defined
 
-## Dyadic Logical NAND means
+Dyadic Logical NAND means
 
 
 [NAND

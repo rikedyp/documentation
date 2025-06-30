@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Right Shoe</span> <span class="command">⊃</span></h1>
 
 
-## Monadic Right Shoe means
+Monadic Right Shoe means
 
 
 If `⎕ML<2`[Disclose;First](../primitive-functions/disclose.md)
@@ -31,7 +31,7 @@ If `⎕ML≥2`[Mix](../primitive-functions/mix.md)
 
 ```
 
-## Dyadic Right Shoe means
+Dyadic Right Shoe means
 
 
 [Pick

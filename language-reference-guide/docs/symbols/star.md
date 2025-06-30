@@ -10,7 +10,7 @@ search:
 <h1 class="heading"><span class="name">Star</span> <span class="command">*</span></h1>
 
 
-## Monadic Star means
+Monadic Star means
 
 
 [Exponential](../primitive-functions/exponential.md)
@@ -20,7 +20,7 @@ search:
 1 2.71828 7.38906
 ```
 
-## Dyadic Star means
+Dyadic Star means
 
 
 [Power
