@@ -10,8 +10,7 @@ search:
 <h1 class="heading"><span class="name">Jot Diaeresis</span> <span class="command">⍤</span></h1>
 
 
-Jot Diaeresis is a Dyadic operator with an ambivalent
-      left operand
+Jot Diaeresis is a Dyadic operator with an ambivalent left operand
 
 Operator Jot Diaeresis means
 

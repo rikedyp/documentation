@@ -13,8 +13,7 @@ search:
 Monadic Rho means
 
 
-[Shape Of
-      ](../primitive-functions/shape.md)
+[Shape Of](../primitive-functions/shape.md)
 ```apl
 
       mat
@@ -37,8 +36,7 @@ Monadic Rho means
 Dyadic Rho means
 
 
-[Reshape
-      ](../primitive-functions/reshape.md)
+[Reshape](../primitive-functions/reshape.md)
 ```apl
       2 3 4 ⍴ 1 2 3 4 5 6 7
 1 2 3 4

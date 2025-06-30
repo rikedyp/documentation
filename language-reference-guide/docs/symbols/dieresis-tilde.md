@@ -10,8 +10,7 @@ search:
 <h1 class="heading"><span class="name">Tilde Diaeresis</span> <span class="command">⍨</span></h1>
 
 
-Tilde Diaeresis is a Monadic operator with a Dyadic
-      operand
+Tilde Diaeresis is a Monadic operator with a Dyadic operand
 
 Operator Tilde Diaeresis means
 

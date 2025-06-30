@@ -39,8 +39,7 @@ N.B. depends on `⎕PP`
 Dyadic Format means
 
 
-[Format By Specification
-      ](../primitive-functions/format-dyadic.md)
+[Format By Specification](../primitive-functions/format-dyadic.md)
 ```apl
 
 Field-width and number of decimal places:

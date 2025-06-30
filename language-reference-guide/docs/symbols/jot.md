@@ -37,8 +37,7 @@ Beside or Bind
 ```
 
 
-[
-Bind](../primitive-operators/bind.md) (left and right argument currying)
+[Bind](../primitive-operators/bind.md) (left and right argument currying)
 ```apl
 
       next ← 1∘+
@@ -51,8 +50,7 @@ Bind](../primitive-operators/bind.md) (left and right argument currying)
 
 
 N.B. Jot is also used in conjunction with Dot to mean
-      [Outer
-        Product](../primitive-operators/outer-product.md).
+      [Outer Product](../primitive-operators/outer-product.md).
 
 
 [Language Elements](./language-elements.md)

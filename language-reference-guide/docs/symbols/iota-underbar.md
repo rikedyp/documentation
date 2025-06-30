@@ -27,8 +27,7 @@ Monadic Iota Underbar means
 Dyadic Iota Underbar means
 
 
-[Interval Index
-      ](../primitive-functions/interval-index.md)
+[Interval Index](../primitive-functions/interval-index.md)
 ```apl
 
       'AEIOU' ⍸ 'DYALOG'

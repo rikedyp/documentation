@@ -23,8 +23,7 @@ Monadic Upstile means
 Dyadic Upstile means
 
 
-[Maximum
-      ](../primitive-functions/maximum.md)
+[Maximum](../primitive-functions/maximum.md)
 ```apl
 
       1.1 ¯2 ⌈ 8.1 ¯3.4

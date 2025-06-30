@@ -13,8 +13,7 @@ search:
 Monadic Minus Sign means
 
 
-[Negate
-      ](../primitive-functions/negative.md)
+[Negate](../primitive-functions/negative.md)
 ```apl
 
 

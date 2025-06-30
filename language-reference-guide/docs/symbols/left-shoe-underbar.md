@@ -13,8 +13,7 @@ search:
 Monadic Left Shoe Underbar means
 
 
-[Nest
-      ](../primitive-functions/nest.md)
+[Nest](../primitive-functions/nest.md)
 ```apl
 
       ⊆ 'this'

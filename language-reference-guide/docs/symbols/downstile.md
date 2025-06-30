@@ -13,8 +13,7 @@ search:
 Monadic Downstile means
 
 
-[Floor
-      ](../primitive-functions/floor.md)
+[Floor](../primitive-functions/floor.md)
 ```apl
 
       ⌊ 3.4 ¯3.4 3 0

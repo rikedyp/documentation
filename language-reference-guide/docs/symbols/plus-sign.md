@@ -13,8 +13,7 @@ search:
 Monadic Plus Sign means
 
 
-[Conjugate
-      ](../primitive-functions/conjugate.md)
+[Conjugate](../primitive-functions/conjugate.md)
 ```apl
 
       + 1.2 0j4 ¯5j¯6

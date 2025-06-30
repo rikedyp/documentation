@@ -34,8 +34,7 @@ If `⎕ML≥2`[Mix](../primitive-functions/mix.md)
 Dyadic Right Shoe means
 
 
-[Pick
-      ](../primitive-functions/pick.md)
+[Pick](../primitive-functions/pick.md)
 ```apl
 
       3 ⊃ 'Word'

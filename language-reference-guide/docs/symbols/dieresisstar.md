@@ -15,7 +15,7 @@ Star Diaeresis is a Dyadic operator with an ambivalent left operand and an integ
 Operator Star Diaeresis means
 
 
-[Power Operator  ](../primitive-operators/power-operator.md)
+[Power Operator](../primitive-operators/power-operator.md)
 ```apl
 
       cube    ⍝ 3D array

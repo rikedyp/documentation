@@ -13,8 +13,7 @@ search:
 Monadic Circle Stile means
 
 
-[Reverse
-      ](../primitive-functions/reverse.md)
+[Reverse](../primitive-functions/reverse.md)
 ```apl
 
       ⌽ 'trams'
@@ -39,8 +38,7 @@ smart
 Dyadic Circle Stile means
 
 
-[Rotate
-      ](../primitive-functions/rotate.md)
+[Rotate](../primitive-functions/rotate.md)
 ```apl
 
       3 ⌽ 'HatStand'

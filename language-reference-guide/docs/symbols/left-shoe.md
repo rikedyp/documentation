@@ -13,8 +13,7 @@ search:
 Monadic Left Shoe means
 
 
-[Enclose
-      ](../primitive-functions/enclose.md)
+[Enclose](../primitive-functions/enclose.md)
 ```apl
 
       1(2 3)

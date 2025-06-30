@@ -10,8 +10,7 @@ search:
 <h1 class="heading"><span class="name">Diaeresis</span> <span class="command">¨</span></h1>
 
 
-Diaeresis is a Monadic operator with an ambivalent
-      operand
+Diaeresis is a Monadic operator with an ambivalent operand
 
 Operator Diaeresis means
 

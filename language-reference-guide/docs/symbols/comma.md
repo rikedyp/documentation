@@ -13,8 +13,7 @@ search:
 Monadic Comma means
 
 
-[Ravel
-      ](../primitive-functions/ravel.md)
+[Ravel](../primitive-functions/ravel.md)
 ```apl
 
       cube    ⍝ 3D array
@@ -32,8 +31,7 @@ Monadic Comma means
 ```
 
 
-[Ravel with Axes
-			](../primitive-functions/ravel-with-axes.md)
+[Ravel with Axes](../primitive-functions/ravel-with-axes.md)
 ```apl
 
       ,[1.5]'ABC'
@@ -45,8 +43,7 @@ C
 Dyadic Comma means
 
 
-[Catenate/Laminate
-(Join)      ](../primitive-functions/catenate-laminate.md)
+[Catenate/Laminate (Join)](../primitive-functions/catenate-laminate.md)
 ```apl
       1 2 3 , 4 5 6
 1 2 3 4 5 6

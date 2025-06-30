@@ -13,8 +13,7 @@ search:
 Monadic Tilde means
 
 
-[Not
-      ](../primitive-functions/not.md)
+[Not](../primitive-functions/not.md)
 ```apl
 
       ~ 0 1 0 1

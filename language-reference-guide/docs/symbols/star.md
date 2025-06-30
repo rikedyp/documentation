@@ -23,8 +23,7 @@ Monadic Star means
 Dyadic Star means
 
 
-[Power
-      ](../primitive-functions/power.md)
+[Power](../primitive-functions/power.md)
 ```apl
 
       49 5 ¯4 * 0.5 2 0.5

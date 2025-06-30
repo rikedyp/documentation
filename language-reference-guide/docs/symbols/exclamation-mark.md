@@ -23,8 +23,7 @@ Monadic Exclamation Mark means
 Dyadic Exclamation Mark means
 
 
-[Binomial
-      ](../primitive-functions/binomial.md)
+[Binomial](../primitive-functions/binomial.md)
 ```apl
 
       2 1 3 ! 3 10 ¯0.11
