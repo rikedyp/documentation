@@ -449,8 +449,6 @@ and fixes as
 └─────┘
 ```
 
-Outside the Editor, the **Session** toolbar `[⋄]` button toggles the use of array notation for output in the session (when possible).
-
 
 ### Editing Classes
 
