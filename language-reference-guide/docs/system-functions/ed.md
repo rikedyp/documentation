@@ -26,7 +26,7 @@ The optional left argument `X` is  a character scalar or character vector (where
 If `Y` names an existing object, the type specification for that name in `X` is ignored, unless `X` is `⋄`.
 
 Where `X` is  `⋄`, `Y` must be undefined or an array.
-The Editor opens in array-notation mode; the resulting array may be of any type or structure.
+The Editor opens in array-notation mode; the resulting array can be of any type or structure.
 
 If `⎕ED` is called from the Session, it opens Edit windows for the object(s) named in `Y` and returns a null result.  The cursor is positioned in the first of the Edit windows opened by `⎕ED`, but may be moved to the Session or to any other window which is currently open.  The effect is almost identical to using `)ED`.
 

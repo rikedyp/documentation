@@ -28,7 +28,7 @@ You can specify the type of a new object by prefixing its name with a single sym
 Where the command names an existing object, any type specification is ignored for that name, unless the type is `⋄`.
 
 Where the type is  `⋄` and the name is either undefined or of an array, the Editor opens in array-notation mode.
-The resulting array may be numeric or character and have any structure.
+The resulting array can be numeric or character and have any structure.
 
 
 The first object named becomes the top window on the stack.
