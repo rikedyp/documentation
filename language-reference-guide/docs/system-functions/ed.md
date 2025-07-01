@@ -7,7 +7,9 @@
 
 
 
-`⎕ED` invokes the Editor.  `Y` is a simple character vector, a simple character matrix, or a vector of character vectors, containing the name(s) of objects to be edited.  The optional left argument `X` is  a character scalar or character vector which specifies the type(s) of the corresponding (new) object(s) named in `Y`, where:
+`⎕ED` invokes the Editor.  `Y` is a simple character vector, a simple character matrix, or a vector of character vectors, containing the name(s) of objects to be edited.
+
+The optional left argument `X` is  a character scalar or character vector (where `=/≢X Y`) which specifies the type(s) of the corresponding (new) object(s) named in `Y` as:
 
 
 |---|---------------------------|
@@ -21,11 +23,10 @@
 |`⋄`|array: use array notation  |
 
 
+If `Y` names an existing object, the type specification for that name in `X` is ignored, unless `X` is `⋄`.
 
-If an object named in `Y` already exists
-
--   if `X` is `'⋄'` and `Y` is an array then the Editor opens in array-notation mode;
--   otherwise the type specification in `X` is ignored.
+Where `X` is  `⋄`, `Y` must be undefined or an array.
+The Editor opens in array-notation mode; the resulting array may be of any type or structure.
 
 If `⎕ED` is called from the Session, it opens Edit windows for the object(s) named in `Y` and returns a null result.  The cursor is positioned in the first of the Edit windows opened by `⎕ED`, but may be moved to the Session or to any other window which is currently open.  The effect is almost identical to using `)ED`.
 

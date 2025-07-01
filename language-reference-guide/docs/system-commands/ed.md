@@ -16,27 +16,33 @@ If a name includes the slash character  ("\" or "/") it is taken to be the name 
 If a name is followed by a line number specified in square brackets, the Editor positions the cursor in the corresponding line. There must not be a space between the last character of the name and the "[".
 
 
-If a name specifies a new symbol it is taken to be a function or operator.  However, if a name is localised in a suspended function or operator but is otherwise undefined, it is assumed to be a vector of character vectors.
+If a name is not already defined it is taken to be a function or operator unless `type` is also specified. 
+However, if a name is localised in a suspended function or operator but is otherwise undefined, it is assumed to be a vector of character vectors.
 
 
 
 
-The type of a new object may be specified explicitly by preceding its name with an appropriate symbol as follows:
+You can specify the type of a new object by prefixing its name with a single symbol:
 
 
 |---|---------------------------|
 |`∇`|function or operator       |
-|`→`|simple character vector    |
-|`∊`|vector of character vectors|
-|`-`|character matrix           |
 |`⍟`|Namespace script           |
 |`○`|Class script               |
 |`∘`|Interface                  |
+|`→`|simple character vector    |
+|`∊`|vector of character vectors|
+|`-`|character matrix           |
 |`⋄`|array: use array notation  |
 
+Where the command names an existing object, any type specification is ignored for that name, unless the type is `⋄`.
+
+Where the type is  `⋄` and the name is either undefined or of an array, the Editor opens in array-notation mode.
+The resulting array may be numeric or character and have any structure.
 
 
-The first object named becomes the top window on the stack.  See the *Dyalog for Microsoft Windows UI Guide* or the *Dyalog for UNIX UI Guide* for details.
+The first object named becomes the top window on the stack.
+See the *Dyalog for Microsoft Windows UI Guide* or the *Dyalog for UNIX UI Guide* for details.
 
 
 <h2 class="example">Examples</h2>
