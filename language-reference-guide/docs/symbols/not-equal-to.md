@@ -2,20 +2,11 @@
 search:
   exclude: true
 ---
-
-
-
-
-
 <h1 class="heading"><span class="name">Not Equal</span> <span class="command">≠</span></h1>
 
-
 Monadic Not Equal means
-
-
 [Unique Mask](../primitive-functions/unique-mask.md)
 ```apl
-
       ≠ 'Banana'
 1 1 1 0 0 0
 
@@ -24,11 +15,8 @@ Monadic Not Equal means
 ```
 
 Dyadic Not Equal means
-
-
 [Not Equal To](../primitive-functions/not-equal.md)
 ```apl
-
       1 2 3 ≠ 4 2 ¯1
 1 0 1
 
@@ -40,10 +28,7 @@ Dyadic Not Equal means
 
       7 ≠ '7'
 1
-
 ```
-
-
 [Language Elements](./language-elements.md)
 
 

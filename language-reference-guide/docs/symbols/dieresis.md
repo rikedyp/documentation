@@ -2,22 +2,13 @@
 search:
   exclude: true
 ---
-
-
-
-
-
 <h1 class="heading"><span class="name">Diaeresis</span> <span class="command">¨</span></h1>
-
 
 Diaeresis is a Monadic operator with an ambivalent operand
 
 Operator Diaeresis means
-
-
 [Each (with monadic operand)](../primitive-operators/each-with-monadic-operand.md) or [Each (with dyadic operand)](../primitive-operators/each-with-dyadic-operand.md)
 ```apl
-
       ⊃¨ 1 2 3 'ABC' (9 8 7)
 1 2 3 A 9
 
@@ -33,10 +24,7 @@ Operator Diaeresis means
 ┌────┬────┬────┐
 │1 99│2 99│3 99│
 └────┴────┴────┘
-
 ```
-
-
 [Language Elements](./language-elements.md)
 
 

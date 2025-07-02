@@ -2,20 +2,11 @@
 search:
   exclude: true
 ---
-
-
-
-
-
 <h1 class="heading"><span class="name">Domino;Quad Divide</span> <span class="command">⌹</span></h1>
 
-
 Monadic Domino means
-
-
 [Matrix Inverse Of](../primitive-functions/matrix-inverse.md)
 ```apl
-
       mat
 1 2
 3 4
@@ -25,17 +16,11 @@ Monadic Domino means
 ```
 
 Dyadic Domino means
-
-
 [Matrix Division By](../primitive-functions/matrix-divide.md)
 ```apl
-
       5 6 ⌹ mat
 ¯4 4.5
-
 ```
-
-
 [Language Elements](./language-elements.md)
 
 

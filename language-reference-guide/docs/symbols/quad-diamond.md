@@ -2,19 +2,12 @@
 search:
   exclude: true
 ---
-
-
-
-
-
 <h1 class="heading"><span class="name">Quad Diamond</span> <span class="command">⌺</span></h1>
 
 
 Quad Diamond is a Dyadic operator
 
 Operator Quad Diamond means
-
-
 [Stencil](../primitive-operators/stencil.md)
 ```apl
 Dyadic operator:  Stencil
@@ -49,10 +42,7 @@ Dyadic operator:  Stencil
 33 54 63 45
 57 90 99 69
 46 72 78 54
-
 ```
-
-
 [Language Elements](./language-elements.md)
 
 

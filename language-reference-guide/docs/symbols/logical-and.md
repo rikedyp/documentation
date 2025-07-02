@@ -2,20 +2,11 @@
 search:
   exclude: true
 ---
-
-
-
-
-
 <h1 class="heading"><span class="name">Logical AND</span> <span class="command">∧</span></h1>
-
-
 
 Monadic Logical AND is not defined.
 
 Dyadic Logical AND means
-
-
 [Lowest Common Multiple (AND)](../primitive-functions/and-lowest-common-multiple.md)
 ```apl
       0 1 0 1 ∧ 0 0 1 1
@@ -25,8 +16,6 @@ Dyadic Logical AND means
 105 1 4 0
 
 ```
-
-
 [Language Elements](./language-elements.md)
 
 

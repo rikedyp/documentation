@@ -2,20 +2,11 @@
 search:
   exclude: true
 ---
-
-
-
-
-
 <h1 class="heading"><span class="name">Circle Stile</span> <span class="command">⌽</span></h1>
 
-
 Monadic Circle Stile means
-
-
 [Reverse](../primitive-functions/reverse.md)
 ```apl
-
       ⌽ 'trams'
 smart
 
@@ -36,11 +27,8 @@ smart
 ```
 
 Dyadic Circle Stile means
-
-
 [Rotate](../primitive-functions/rotate.md)
 ```apl
-
       3 ⌽ 'HatStand'
 StandHat
 
@@ -61,10 +49,7 @@ StandHat
 1  6 11 12
 5 10  3  4
 9  2  7  8
-
 ```
-
-
 [Language Elements](./language-elements.md)
 
 

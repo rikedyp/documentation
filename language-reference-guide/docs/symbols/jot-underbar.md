@@ -2,13 +2,11 @@
 search:
   exclude: true
 ---
-
 <h1 class="heading"><span class="name">Jot Underbar</span> <span class="command">⍛</span></h1>
 
 Jot Underbar is a Dyadic Operator
 
 Operator Jot Underbar Means
-
 [Behind](../primitive-operators/behind.md)
 ```apl
       ⍝ Is it a palindrome?
@@ -21,5 +19,4 @@ Operator Jot Underbar Means
       4-⍛↓'Dyalog APL'
 Dyalog
 ```
-
 [Language Elements](./language-elements.md)
