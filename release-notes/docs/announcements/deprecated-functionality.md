@@ -1,6 +1,3 @@
-!!! Info "Information"  
-    THIS DOCUMENT IS STILL UNDER DEVELOPMENT
-
 # Deprecated Functionality
 
 Over time, certain functionality (such as language elements, development environment features, or supplied samples or tools) can become obsolete or cease to be useful. There are many reasons why this might happen. For example:

@@ -1,6 +1,3 @@
-!!! Info "Information"  
-    THIS DOCUMENT IS STILL UNDER DEVELOPMENT
-
 # Interoperability
 
 Workspaces and component files are stored on disk in a binary format. This format differs between machine architectures and versions of Dyalog. For example, a component file written from Microsoft Windows will have an internal format that is different from one written from AIX. Similarly, a workspace saved in Dyalog v19.0 will differ internally from one saved in Dyalog v14.1.
@@ -14,7 +11,7 @@ With the exception of the Unicode restrictions described below, Dyalog provides 
 ## Code and Object Representations (`⎕OR`)
 Code that is saved in workspaces, or embedded within `⎕OR`s stored in component files, cannot be read by earlier versions of Dyalog than the version that saved them. An attempt to read a component containing a `⎕OR` that was created by a later version of Dyalog will generate `DOMAIN ERROR: Array is from a later version of APL`. This also applies to APL arrays passed using Conga, or arrays that have been serialised using `220⌶`.
 
-!!! Tip "Hints and Recommendations"
+!!! Hint "Hints and Recommendations"
     Every time a `⎕OR` object is read by an interpreter that is either a different edition or a version later than that which created it, time is spent converting the internal representation into the latest form. Dyalog Ltd recommends that `⎕OR` should not be used as a mechanism for sharing code or objects between different versions of APL.
 
 In the case of workspaces, a load (or copy) into an older version would fail with the message `this WS requires a later version of the interpreter`.
@@ -110,7 +107,7 @@ A `TRANSLATION ERROR` will be generated if:
 A `TRANSLATION ERROR` will be generated if a Classic edition attempts to `)LOAD` or `)COPY` a workspace containing Unicode data that cannot be mapped to `⎕AV` using the `⎕AVU` in the recipient workspace. The problematic Unicode data might be in the part of a workspace that holds the information needed to generate `⎕DM` and `⎕DMX`; in this situation, calling `)Reset` before `)Save` in the Unicode interpreter might eliminate the `TRANSLATION ERROR`s.
 
 ## Session Files
-Session files (**.dse**) can only be used on the platform on which they were created and saved. Under Microsoft Windows, Session files can only be used by the architecture (32&#8209;bit/64&#8209;bit) of the version of Dyalog with which they were saved.
+Session files (**.dse**) can only be used on the platform on which they were created and saved. Under Microsoft Windows, Session files can only be used by an interpreter with the same architecture (32&#8209;bit/64&#8209;bit) as the interpreter that saved them.
 
 ## Log Files
 Log files (**.dlf**) can only be used by the version and edition of Dyalog with which they were created and saved. 

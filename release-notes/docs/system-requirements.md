@@ -1,6 +1,3 @@
-!!! Info "Information"  
-    THIS DOCUMENT IS STILL UNDER DEVELOPMENT
-
 # System Requirements
 
 This page describes the hardware and software requirements for Dyalog v20.0. 
@@ -40,7 +37,6 @@ The .NET Framework interface requires version 4.0 or greater of Microsoft .NET F
 
 * Microsoft .NET Framework version 4.5 is needed for full data binding support.  
 Note: This includes support for the <code class="language-other">INotifyCollectionChanged</code> interface, which is used by Dyalog to notify a data consumer when the contents of a variable that is data bound as a list of items changes.  
-
 * IIS (and ASP.NET) need to be installed before installing Dyalog. If these are not present when Dyalog is installed, the **[DYALOG]\Samples\asp.net** directory will not be installed.  
 
 ## Chromium Embedded Framework (CEF)
