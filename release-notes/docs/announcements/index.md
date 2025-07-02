@@ -1,6 +1,3 @@
-!!! Info "Information"  
-    THIS DOCUMENT IS UNDER DEVELOPMENT – THE CONTENTS HAVE NOT YET BEEN FINALISED
-
 # Announcements
 
 Notice of new and planned additions, removals, and deprecations in Dyalog v20.0 compared with Dyalog v19.0.
@@ -31,7 +28,7 @@ The design of APL387 has not yet been finalised, and feedback is welcome. Please
 
 ### New Linux Platform
 
-In addition to x86_64, Dyalog is now supported on Linux-based ARM64 platforms and, therefore, on software built on these, such as Raspberry Pi O/S 64-bit and AWS containers. This applies to the Unicode edition only.
+In addition to x86_64, Dyalog is now supported on Linux-based ARM64 platforms and, therefore, on software built on these, such as Raspberry Pi OS 64-bit and AWS containers. This applies to the Unicode edition only.
 
 Images of docker containers that host Dyalog running on ARM64 Linux are available to download at [https://hub.docker.com/u/dyalog](https://hub.docker.com/u/dyalog).
  
@@ -64,7 +61,7 @@ Dyalog v20.0 is the last major version that will support workspaces saved using 
 
 To update workspaces that were saved using Dyalog v11.0 or v12.0 so that they can be loaded using a future version of Dyalog, you can use `)XLOAD` and `)SAVE` in any version of Dyalog from v12.1 to v20.0 inclusive. 
 
-!!! Tip "Hints and Recommendations"  
+!!! Hint "Hints and Recommendations"  
     Dyalog Ltd recommends that workspaces are saved without any suspended functions on the stack before loading them into a newer interpreter. To achieve this, run `)RESET` before `)SAVE`.
 
 ### Small-span Component Files
