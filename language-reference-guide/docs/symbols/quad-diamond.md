@@ -10,7 +10,6 @@ Quad Diamond is a Dyadic operator
 Operator Quad Diamond means
 [Stencil](../primitive-operators/stencil.md)
 ```apl
-Dyadic operator:  Stencil
 
       mat
  1  2  3  4
