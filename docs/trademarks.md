@@ -4,7 +4,7 @@
 
 Raspberry Pi is a trademark of the Raspberry Pi Foundation.
 
-Oracle®, Javascript™, and Java™ are registered trademarks of Oracle and/or its affiliates.
+Oracle®, MySQL, and Java™ are registered trademarks of Oracle and/or its affiliates. JavaScript™ is a trademark of Oracle Corporation.
 
 Unicode is a registered trademarks of Unicode, Inc. in the United States and other countries.
 
@@ -12,7 +12,7 @@ UNIX® is a registered trademark in the United States and other countries, licen
 
 Linux® is the registered trademark of Linus Torvalds in the U.S. and other countries.
 
-Windows® is a registered trademark of Microsoft Corporation in the United States and other countries.
+Windows® is a registered trademark of Microsoft Corporation in the U.S. and other countries.
 
 macOS® and OS X® (operating system software) are trademarks of Apple Inc., registered in the U.S. and other countries.
 
