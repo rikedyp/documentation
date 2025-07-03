@@ -1,6 +1,3 @@
-!!! Info "Information"  
-    THIS DOCUMENT IS STILL UNDER DEVELOPMENT
-
 # Introduction
 
 This document describes the requirements for installing Dyalog v20.0 and the functionality changes in Dyalog v20.0 compared with Dyalog v19.0.
