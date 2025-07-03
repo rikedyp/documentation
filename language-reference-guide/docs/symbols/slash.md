@@ -20,7 +20,7 @@ Hat
 
 # Used as an Operator
 
-Slash is a Monadic operator with a Dyadic operand
+Slash is a monadic operator with a dyadic operand
 
 Operator Slash means
 [Reduce](../primitive-operators/reduce.md), [N-Wise Reduce](../primitive-operators/reduce-n-wise.md)

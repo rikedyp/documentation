@@ -4,7 +4,7 @@ search:
 ---
 <h1 class="heading"><span class="name">Jot</span> <span class="command">∘</span></h1>
 
-Jot is a Dyadic operator
+Jot is a dyadic operator
 
 Operator Jot means Beside or Bind
 

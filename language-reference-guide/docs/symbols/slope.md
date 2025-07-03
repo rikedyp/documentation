@@ -20,7 +20,7 @@ H a t
 
 # Used as an Operator
 
-Back Slash is a Monadic operator with a Dyadic operand
+Back Slash is a monadic operator with a dyadic operand
 
 Operator Back Slash means
 [Scan](../primitive-operators/scan.md)

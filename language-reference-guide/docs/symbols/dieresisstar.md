@@ -4,7 +4,7 @@ search:
 ---
 <h1 class="heading"><span class="name">Star Diaeresis</span> <span class="command">⍣</span></h1>
 
-Star Diaeresis is a Dyadic operator with an ambivalent left operand and an integer or dyadic right operand
+Star Diaeresis is a dyadic operator with an ambivalent left operand and an integer or dyadic right operand
 
 Operator Star Diaeresis means
 [Power Operator](../primitive-operators/power-operator.md)

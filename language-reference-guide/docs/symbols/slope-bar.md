@@ -28,7 +28,7 @@ Dyadic Back Slash Bar means
 
 # Used as an Operator
 
-Back Slash Bar is a Monadic operator with a Dyadic operand
+Back Slash Bar is a monadic operator with a dyadic operand
 
 Operator Slope Bar means
 [Scan First](../primitive-operators/scan-first.md)
