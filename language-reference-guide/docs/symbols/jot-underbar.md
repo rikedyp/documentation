@@ -6,7 +6,7 @@ search:
 
 Jot Underbar is a dyadic Operator
 
-Operator Jot Underbar Means
+Operator Jot Underbar means
 [Behind](../primitive-operators/behind.md)
 ```apl
       ⍝ Is it a palindrome?
