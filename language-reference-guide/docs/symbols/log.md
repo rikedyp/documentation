@@ -2,7 +2,7 @@
 search:
   exclude: true
 ---
-<h1 class="heading"><span class="name">Log;Circle Star</span> <span class="command">⍟</span></h1>
+<h1 class="heading"><span class="name">Log</span> <span class="command">⍟</span></h1>
 
 Monadic Log means
 [Natural Logarithm](../primitive-functions/natural-logarithm.md)

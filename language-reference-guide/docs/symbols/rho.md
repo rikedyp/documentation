@@ -5,7 +5,7 @@ search:
 <h1 class="heading"><span class="name">Rho</span> <span class="command">⍴</span></h1>
 
 Monadic Rho means
-[Shape Of](../primitive-functions/shape.md)
+[Shape](../primitive-functions/shape.md)
 ```apl
       mat
 1  2  3  4

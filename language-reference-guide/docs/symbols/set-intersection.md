@@ -4,9 +4,9 @@ search:
 ---
 <h1 class="heading"><span class="name">Up Shoe</span> <span class="command">∩</span></h1>
 
-Monadic Set Intersection is not defined
+Monadic Up Shoe is not defined
 
-Dyadic Set Intersection means
+Dyadic Up Shoe means
 [Intersection](../primitive-functions/intersection.md)
 ```apl
       22 'ab' 'fg' ∩ 'a' 'ab' 22

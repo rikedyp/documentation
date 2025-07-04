@@ -2,9 +2,9 @@
 search:
   exclude: true
 ---
-<h1 class="heading"><span class="name">Domino;Quad Divide</span> <span class="command">⌹</span></h1>
+<h1 class="heading"><span class="name">Quad Divide</span> <span class="command">⌹</span></h1>
 
-Monadic Domino means
+Monadic Quad Divide means
 [Matrix Inverse Of](../primitive-functions/matrix-inverse.md)
 ```apl
       mat
@@ -15,7 +15,7 @@ Monadic Domino means
  1.5 ¯0.5
 ```
 
-Dyadic Domino means
+Dyadic Quad Divide means
 [Matrix Division By](../primitive-functions/matrix-divide.md)
 ```apl
       5 6 ⌹ mat

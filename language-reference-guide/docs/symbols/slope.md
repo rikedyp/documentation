@@ -2,13 +2,13 @@
 search:
   exclude: true
 ---
-<h1 class="heading"><span class="name">Back Slash</span> <span class="command">\</span></h1>
+<h1 class="heading"><span class="name">Backslash</span> <span class="command">\</span></h1>
 
 # Used as a Function
 
-Monadic Back Slash is not defined
+Monadic Backslash is not defined
 
-Dyadic Back Slash means
+Dyadic Backslash means
 [Expand](../primitive-functions/expand.md)
 ```apl
       3 ¯2 4 \ 7 8
@@ -20,9 +20,9 @@ H a t
 
 # Used as an Operator
 
-Back Slash is a monadic operator with a dyadic operand
+Backslash is a monadic operator with a dyadic operand
 
-Operator Back Slash means
+Operator Backslash means
 [Scan](../primitive-operators/scan.md)
 ```apl
       +\ 1 2 3 4 5
