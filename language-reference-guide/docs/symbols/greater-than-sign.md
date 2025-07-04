@@ -2,11 +2,11 @@
 search:
   exclude: true
 ---
-<h1 class="heading"><span class="name">Greater Than Sign</span> <span class="command">></span></h1>
+<h1 class="heading"><span class="name">Greater Than</span> <span class="command">></span></h1>
 
-Monadic Greater Than Sign is not defined
+Monadic Greater Than is not defined
 
-Dyadic Greater Than Sign means
+Dyadic Greater Than means
 [Greater Than](../primitive-functions/greater.md)
 ```apl
 

@@ -2,16 +2,16 @@
 search:
   exclude: true
 ---
-<h1 class="heading"><span class="name">Minus Sign;Bar</span> <span class="command">-</span></h1>
+<h1 class="heading"><span class="name">Minus</span> <span class="command">-</span></h1>
 
-Monadic Minus Sign means
+Monadic Minus means
 [Negate](../primitive-functions/negative.md)
 ```apl
       - 3.2 ¯7 0
 ¯3.2 7 0
 ```
 
-Dyadic Minus Sign means
+Dyadic Minus means
 [Minus;Subtract](../primitive-functions/subtract.md)
 ```apl
       3 7 9 - 5

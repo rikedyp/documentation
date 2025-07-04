@@ -2,11 +2,11 @@
 search:
   exclude: true
 ---
-<h1 class="heading"><span class="name">Equal Sign</span> <span class="command">=</span></h1>
+<h1 class="heading"><span class="name">Equal</span> <span class="command">=</span></h1>
 
-Monadic Equal Sign is not defined
+Monadic Equal is not defined
 
-Dyadic Equal Sign means
+Dyadic Equal means
 [Equal To](../primitive-functions/equal.md)
 ```apl
       1 2 3 = 4 2 ¯1

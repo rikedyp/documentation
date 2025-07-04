@@ -2,11 +2,11 @@
 search:
   exclude: true
 ---
-<h1 class="heading"><span class="name">Less Than Sign</span> <span class="command"><</span></h1>
+<h1 class="heading"><span class="name">Less Than</span> <span class="command"><</span></h1>
 
-Monadic Less Than Sign is not defined
+Monadic Less Than is not defined
 
-Dyadic Less Than Sign means
+Dyadic Less Than means
 [Less Than](../primitive-functions/less.md)
 ```apl
       1 2 3 < 4 2 ¯1
