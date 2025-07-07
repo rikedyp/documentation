@@ -4,14 +4,14 @@ This parameter is a character string that specifies the name of a workspace, or 
 
 If Load specifies a text file, `2 ⎕FIX` is used to import the file contents and associate that file with each of the objects that have been fixed in the workspace.
 
-If  Load specifies a directory, Link is used to associate the directory with the active workspace and to import the code.
- For more information about Link, see [https://dyalog.github.io/link/3.0](https://dyalog.github.io/link/3.0)/.
+If Load specifies a directory, Link is used to associate the directory with the active workspace and to import the code.
+ For more information about Link, see [https://dyalog.github.io/link](https://dyalog.github.io/link).
 
 The **Load** parameter will normally be specified on the command line or in a Configuration file.
 
 Having loaded the workspace, or fixed the code from the named file or directory, Dyalog executes the expression specified by the `LX` parameter if it is set. See [LX](lx.md).
 
-If `LX` is not set, Dyalog checks whether or not the **-x** command line option was specified. If so, no further action is taken. See [-x](../apl-command-line#x_option).
+If `LX` is not set, Dyalog checks whether or not the **-x** command line option was specified. If so, no further action is taken. See [-x](../apl-command-line.md#command-line).
 
 Otherwise, Dyalog executes an expression which is derived as follows.
 
