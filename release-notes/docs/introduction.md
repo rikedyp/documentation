@@ -33,7 +33,7 @@ Some of the tools that are supplied with Dyalog or can be downloaded separately 
 	- Documentation – [https://dyalog.github.io/ride/4.6](https://dyalog.github.io/ride/4.6/)
 - SALT v2.9
 - SQAPL v6.5
-- User Commands v2.6
+- User Commands v2.7
 
 Changes to tools are not included within these Release Notes.
 

@@ -18,3 +18,6 @@ Microsoft Windows IDE
 
 .NET Framework v4.x  
 Dyalog no longer crashes if you call `⎕CLEAR` after creating a link and using `-watch=both`.
+
+[PrintToPDF](../../object-reference/methodorevents/printtopdf/) (Method 845, specific to the HTMLRenderer)  
+Additional arguments can now be supplied to tailor the generated PDF output.
