@@ -36,7 +36,7 @@ In addition, there are two reserved names than can be used:
 
 Each time `13⌶` is called, the new list of features replaces the existing list. 
 
-**Example** 
+<p class="example">Example</p>
 
 ```apl
 ⍝ Specify the name of the log file
@@ -82,7 +82,7 @@ For Dyalog v20.0, the following labels can be returned:
 | `⎕XT`   | File is an external variable file
 | `?`     | File could not be read and its content is unknown
 
-**Example**
+<p class="example">Example</p>
 
 ```apl
       1(3535⌶)'.'
