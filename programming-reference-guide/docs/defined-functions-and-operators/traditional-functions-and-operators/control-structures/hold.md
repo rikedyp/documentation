@@ -67,28 +67,32 @@ In the following example, a thread updates a critical structure in a child names
 However, with the nesting of holds comes the possibility of a "deadlock". For example, consider the two threads:
 
 <table>
-<tr>
-<td>Thread 1</td>
-<td>Thread 2</td>
-</tr>
-<tr>
-<td><pre><code>
-:Hold 'red'
-    ...
-    :Hold 'green'
-        ...
-    :EndHold
-:EndHold
-</code></pre></td>
-<td><pre><code>
-:Hold 'green'
-    ...
-    :Hold 'red'
-        ...
-    :EndHold
-:EndHold
-</code></pre></td>
-	</tr>
+    <tr>
+        <td>Thread 1</td>
+        <td>Thread 2</td>
+    </tr>
+    <tr>
+        <td>
+            <pre><code>
+            :Hold 'red'
+                ...
+                :Hold 'green'
+                    ...
+                :EndHold
+            :EndHold
+            </code></pre>
+        </td>
+        <td>
+            <pre><code>
+            :Hold 'green'
+                ...
+                :Hold 'red'
+                    ...
+                :EndHold
+            :EndHold
+            </code></pre>
+        </td>
+    </tr>
 </table>
 
 
@@ -111,28 +115,31 @@ You can avoid deadlock by ensuring that threads always attempt to acquire tokens
 Note that token acquisition for any particular `:Hold` is atomic, that is, either *all* of the tokens or *none* of them are acquired. The following example *cannot* deadlock:
 
 <table>
-<tr>
-<td>Thread 1</td>
-<td>Thread 2</td>
-</tr>
-<tr>
-<td>
-<pre><code>
-:Hold 'red'
-    ...
-    :Hold 'green'
-        ...
-    :EndHold
-:EndHold
-</code></pre></td>
-<td><pre><code>
-
-:Hold 'green' 'red'
-        ...
-:EndHold
-
-</code></pre></td>
-	</tr>
+    <tr>
+        <td>Thread 1</td>
+        <td>Thread 2</td>
+    </tr>
+    <tr>
+        <td>
+            <pre><code>
+            :Hold 'red'
+                ...
+                :Hold 'green'
+                    ...
+                :EndHold
+            :EndHold
+            </code></pre>
+        </td>
+        <td>
+            <pre><code>
+            
+            :Hold 'green' 'red'
+                    ...
+            :EndHold
+            
+            </code></pre>
+        </td>
+    </tr>
 </table>
 
 
