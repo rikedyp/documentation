@@ -72,22 +72,22 @@ However, with the nesting of holds comes the possibility of a "deadlock". For ex
 <td>Thread 2</td>
 </tr>
 <tr>
-<td><pre>
+<td><pre><code>
 :Hold 'red'
     ...
     :Hold 'green'
         ...
     :EndHold
 :EndHold
-</pre></td>
-<td><pre>
+</code></pre></td>
+<td><pre><code>
 :Hold 'green'
     ...
     :Hold 'red'
         ...
     :EndHold
 :EndHold
-</pre></td>
+</code></pre></td>
 	</tr>
 </table>
 
@@ -116,21 +116,22 @@ Note that token acquisition for any particular `:Hold` is atomic, that is, eithe
 <td>Thread 2</td>
 </tr>
 <tr>
-<td><pre>
+<td>
+<pre><code>
 :Hold 'red'
     ...
     :Hold 'green'
         ...
     :EndHold
 :EndHold
-</pre></td>
-<td><pre>
+</code></pre></td>
+<td><pre><code>
 
 :Hold 'green' 'red'
         ...
 :EndHold
 
-</pre></td>
+</code></pre></td>
 	</tr>
 </table>
 
