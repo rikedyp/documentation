@@ -66,7 +66,6 @@ In the following example, a thread updates a critical structure in a child names
 
 However, with the nesting of holds comes the possibility of a "deadlock". For example, consider the two threads:
 
-
 <table>
 <tr>
 <td>Thread 1</td>
@@ -76,9 +75,9 @@ However, with the nesting of holds comes the possibility of a "deadlock". For ex
 <td><pre>
 :Hold 'red'
     ...
-   :Hold 'green'
+    :Hold 'green'
         ...
-   :EndHold
+    :EndHold
 :EndHold
 </pre></td>
 <td><pre>
@@ -111,10 +110,30 @@ You can avoid deadlock by ensuring that threads always attempt to acquire tokens
 
 Note that token acquisition for any particular `:Hold` is atomic, that is, either *all* of the tokens or *none* of them are acquired. The following example *cannot* deadlock:
 
+<table>
+<tr>
+<td>Thread 1</td>
+<td>Thread 2</td>
+</tr>
+<tr>
+<td><pre>
+:Hold 'red'
+    ...
+    :Hold 'green'
+        ...
+    :EndHold
+:EndHold
+</pre></td>
+<td><pre>
 
-|Thread 1                                                                           |Thread 2                                              |
-|-----------------------------------------------------------------------------------|------------------------------------------------------|
-|```apl :Hold 'red'     ...     :Hold 'green'         ...     :EndHold :EndHold  ```|```apl  :Hold 'green' 'red'     ...     :EndHold   ```|
+:Hold 'green' 'red'
+        ...
+:EndHold
+
+</pre></td>
+	</tr>
+</table>
+
 
 <h2 class="example">Examples</h2>
 
