@@ -67,9 +67,34 @@ In the following example, a thread updates a critical structure in a child names
 However, with the nesting of holds comes the possibility of a "deadlock". For example, consider the two threads:
 
 
-|Thread 1                                                                           |Thread 2                                                                           |
-|-----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-|```apl :Hold 'red'     ...     :Hold 'green'         ...     :EndHold :EndHold  ```|```apl :Hold 'green'     ...     :Hold 'red'          ...     :EndHold :EndHold ```|
+<table>
+<tr>
+<td>Thread 1</td>
+<td>Thread 2</td>
+</tr>
+<tr>
+<td><pre>
+:Hold 'red'
+    ...
+   :Hold 'green'
+        ...
+   :EndHold
+:EndHold
+</pre></td>
+<td><pre>
+:Hold 'green'
+    ...
+    :Hold 'red'
+        ...
+    :EndHold
+:EndHold
+</pre></td>
+	</tr>
+</table>
+
+
+
+
 
 
 In this case if both threads succeed in acquiring their first hold, they will both block waiting for the other to release its token.
