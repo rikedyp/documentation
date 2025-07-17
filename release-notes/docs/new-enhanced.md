@@ -193,8 +193,7 @@ The following changes have been made to the TTY interface:
 
 The Perl Compatible Regular Expressions (PCRE) library used by the interpreter has been upgraded from PCRE v8.45 to PCRE2 v10.45.
 
-!!! Warning "Warning"
-    Some semantic changes introduced with this upgrade could result in unexpected results when using `⎕R`, `⎕S`, or the search functionality within the Microsoft Windows IDE (and all tools that build on these) compared to results in Dyalog v19.0.
+The new version of PCRE is not 100% compatible with the previous version. Although it is unlikely that typical uses will be affected, advanced users of `⎕S` or `⎕R` might want to consult the PCRE documentation and run tests.
 	
 ### .NET Interface
 
