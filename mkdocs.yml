@@ -65,6 +65,7 @@ markdown_extensions:
       title: On this page
 
 nav:
+  - Conventions: conventions.md
   - Release Notes: "!include ./release-notes/mkdocs.yml"
   - Windows Installation: "!include ./windows-installation-and-configuration-guide/mkdocs.yml"
   - UNIX Installation: "!include ./unix-installation-and-configuration-guide/mkdocs.yml"
