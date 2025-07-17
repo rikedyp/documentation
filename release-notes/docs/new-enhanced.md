@@ -156,8 +156,8 @@ When the cursor is placed in a line in the Session:
     - the six space prompt (except when in the **Editor**, in which case this is skipped)
     - the left edge of the session
 - <kbd>End</kbd> moves the cursor right to whichever of these it encounters first from its starting position:
-	- the end of the content of the line excluding space characters
-    - the end of the content of the line including space characters
+	- the end of the content of the line excluding trailing space characters
+    - the end of the content of the line including trailing space characters
     - the six space prompt (only when the cursor is on a blank line)
 
 Pressing <kbd>Home</kbd> or <kbd>End</kbd> multiple times progresses through the list in the order shown.
@@ -200,6 +200,6 @@ The Perl Compatible Regular Expressions (PCRE) library used by the interpreter h
 
 In .NET, a _generic_ class is a class that has type parameters which must be given values to create a concrete version of the class. Similarly, a generic method has type parameters which must be specified before the method can be called. 
 
-The introduction of [`43⌶632`](../../language-reference-guide/the-i-beam-operator/monadic-operator-generator/) means that the .NET interface now supports creating concrete versions of generic classes, instantiating them, and calling generic methods. For more information, see the [_.NET Interface Guide_](https://docs.dyalog.com/20.0/dotNET_Interface_Guide.pdf).
+The introduction of [`43⌶632`](../../language-reference-guide/the-i-beam-operator/monadic-operator-generator/) means that the .NET interface now supports creating concrete versions of generic classes, instantiating them, and calling generic methods. For more information, see the [_.NET Interface Guide_](https://docs.dyalog.com/20.0/files/dotNET_Interface_Guide.pdf).
 
 The .NET Framework interface does not support generic classes.
