@@ -521,6 +521,7 @@ def convert_to_html(
 
         body = fix_links_html(body)
         body = remove_footnote_links(body)
+        body = fix_external_links(body)
 
         # Extract the H1 content for use in the title tag, setting for_title=True
         # to only extract the name part (excluding command span)
@@ -958,6 +959,30 @@ def remove_footnote_links(html: str) -> str:
     for a_tag in soup.find_all("a", class_="footnote-backref"):
         # Simply remove the backlink
         a_tag.decompose()
+    
+    return str(soup)
+
+
+def fix_external_links(html: str) -> str:
+    """
+    Fix external links for CHM compatibility.
+    The Windows CHM viewer can open external links with target="_blank".
+    This function adds the target attribute to all external HTTP/HTTPS links.
+    
+    Parameters:
+        html (str): The HTML content as a string.
+        
+    Returns:
+        str: The modified HTML content.
+    """
+    soup = BeautifulSoup(html, "html.parser")
+    
+    # Find all external links
+    for a_tag in soup.find_all("a", href=True):
+        href = a_tag.get("href")
+        if href and href.startswith(("http://", "https://")):
+            # Add target="_blank" to open in external browser
+            a_tag["target"] = "_blank"
     
     return str(soup)
 
