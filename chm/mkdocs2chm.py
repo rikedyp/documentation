@@ -520,6 +520,7 @@ def convert_to_html(
         body = body.replace("``", "")  # Empty code blocks aren't rendered correctly
 
         body = fix_links_html(body)
+        body = remove_footnote_links(body)
 
         # Extract the H1 content for use in the title tag, setting for_title=True
         # to only extract the name part (excluding command span)
@@ -926,6 +927,38 @@ def fix_links_html(html: str) -> str:
         a_tag["href"] = transform_link(original_href)
 
     # Return the modified HTML as a string
+    return str(soup)
+
+
+def remove_footnote_links(html: str) -> str:
+    """
+    Remove linking aspects from footnotes:
+    1. Convert footnote reference links to plain superscript text
+    2. Remove backlinks from footnote text
+    
+    Parameters:
+        html (str): The HTML content as a string.
+        
+    Returns:
+        str: The modified HTML content.
+    """
+    soup = BeautifulSoup(html, "html.parser")
+    
+    # Find all footnote reference links and replace with plain superscript text
+    for a_tag in soup.find_all("a", class_="footnote-ref"):
+        # Get the footnote number/text
+        footnote_text = a_tag.get_text()
+        # Create a superscript element
+        sup_tag = soup.new_tag("sup")
+        sup_tag.string = footnote_text
+        # Replace the link with the superscript
+        a_tag.replace_with(sup_tag)
+    
+    # Find all footnote backlinks and remove them
+    for a_tag in soup.find_all("a", class_="footnote-backref"):
+        # Simply remove the backlink
+        a_tag.decompose()
+    
     return str(soup)
 
 
