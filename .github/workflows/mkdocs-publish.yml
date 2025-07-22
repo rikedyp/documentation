@@ -51,7 +51,8 @@ jobs:
           mkdocs-monorepo-plugin \
           mkdocs-site-urls \
           mkdocs-caption \
-          markdown-tables-extended
+          markdown-tables-extended \
+          mkdocs-minify-plugin
 
     - name: Get Git Info
       id: git-info
