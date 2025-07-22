@@ -140,7 +140,7 @@ nav:
           - Index Generator: primitive-functions/index-generator.md
           - Grade Up: primitive-functions/grade-up-monadic.md
           - Grade Down: primitive-functions/grade-down-monadic.md
-          - Index: primitive-functions/indexing.md
+          - Indexing: primitive-functions/indexing.md
           - Index with Axes: primitive-functions/index-with-axes.md
           - Index Of: primitive-functions/index-of.md
           - Interval Index: primitive-functions/interval-index.md
@@ -381,7 +381,7 @@ nav:
       - '8415: Singular Value Decomposition': the-i-beam-operator/singular-value-decomposition.md
       - '16808: Sample Probability Distribution': the-i-beam-operator/sample-probability-distribution.md
       - '50100: Line Count': the-i-beam-operator/line-count.md
-      - Ride and Experimental Features-related I-Beams: the-i-beam-operator/supplementary-i-beam-functions.md
+      - Other I-Beams: the-i-beam-operator/supplementary-i-beam-functions.md
   - System Functions:
       - Introduction: system-functions/introduction.md
       - System Functions Categorised:

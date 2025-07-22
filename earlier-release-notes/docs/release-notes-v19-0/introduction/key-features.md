@@ -1,6 +1,6 @@
 <h1 class="heading"><span class="name">Key Features</span></h1>
 
-## Upgrading from Version 17.1 to Version 19.0}
+## Upgrading from Version 17.1 to Version 19.0
 
 Please note that if you are upgrading from Version 17.1 to Version 19.0, you should read the [Release Notes for Version 18.0](https://help.dyalog.com/19.0/index.htm#RelNotes18.0/Key%20Features.htm) and the [Release Notes for Version 18.2](https://help.dyalog.com/19.0/index.htm#RelNotes18.2/Key%20Features.htm) in conjunction with this document.
 
