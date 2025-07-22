@@ -213,7 +213,7 @@ nav:
   - Shell Scripts: shell-scripts.md
   - Creating Executables: creating-executables.md
   - Run-Time Applications and Components: runtime-applications-and-components.md
-  - Run-Time Applications Additonal Considerations: runtime-applications-addional.md
+  - Run-Time Applications Additional Considerations: runtime-applications-additional.md
   - COM Objects and the Dyalog APL DLL: com-objects-and-the-dyalog-dll.md
   - APL Application as a Service: apl-application-as-a-service.md
   - APLService Logging Events: aplservice-logging-events.md

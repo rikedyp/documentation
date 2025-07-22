@@ -139,21 +139,21 @@ With the exception of the following all these files may be distributed as part o
 
 ## File Naming Conventions
 
-The following file naming conventions have been adopted for the various files distributed with and used by Dyalog APL.
+The following file naming conventions have been adopted for the various files distributed with, and used by, Dyalog.
 
 |Extension|Description                     |
 |---------|--------------------------------|
-|.dws     |Dyalog APL Workspace            |
-|.dse     |Dyalog APL Session              |
-|.dcf     |Dyalog APL Component File       |
-|.DXV     |Dyalog APL External Variable    |
-|.din     |Dyalog APL Input Table          |
-|.dot     |Dyalog APL Output Table         |
-|.dft     |Dyalog APL Format File          |
-|.DXF     |Dyalog APL Transfer File        |
-|.dlf     |Dyalog APL Session Log File     |
-|.dyalog  |Dyalog APL SALT file            |
-|.dyapp   |Dyalog APL SALT application file|
+|**.dws**     |Dyalog workspace            |
+|**.dse**     |Dyalog Session              |
+|**.dcf**     |Dyalog component file       |
+|**.DXV**     |Dyalog external variable    |
+|**.din**     |Dyalog input table          |
+|**.dot**     |Dyalog output table         |
+|**.dft**     |Dyalog format file          |
+|**.DXF**     |Dyalog transfer file        |
+|**.dlf**     |Dyalog Session log file     |
+|**.dyalog**  |Dyalog SALT file            |
+|**.dyapp**   |Dyalog SALT application file|
 
-!!! note
-    Some of these extensions, notably .dcf, .dlf, .dot and .DXF, are not unique to Dyalog and conflict with the same extensions used by other software applications. Although all the above file extensions are associated with Dyalog during its installation, these associations may subsequently be changed by the installation of other software or by a Windows System restore.
+!!! Info "Information"
+    Some of these extensions (notably **.dcf**, **.dlf**, **.dot**, and **.DXF**) are not unique to Dyalog, and conflict with the same extensions used by other software applications. Although all the above file extensions are associated with Dyalog during its installation, these associations could subsequently be changed by the installation of other software or by a Microsoft Windows System restore.
