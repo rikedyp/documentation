@@ -30,6 +30,8 @@ plugins:
   - search
   - macros
   - monorepo
+  - minify:
+      minify_html: true
   - caption:
       table: 
         enable: true
