@@ -98,7 +98,7 @@ jobs:
         git checkout gh-pages
         
         # Copy Jenkins files from the source branch
-        git checkout ${{ github.sha }} -- tools/jenkins/Jenkinsfile tools/jenkins/service.yml tools/jenkins/.rsync-exclude
+        git checkout ${{ github.sha }} -- tools/jenkins/Jenkinsfile tools/jenkins/service.yml tools/jenkins/.rsync-exclude tools/jenkins/get_svn_docbin
         
         # Move them to root of gh-pages and update staging
         mv tools/jenkins/Jenkinsfile .
