@@ -104,10 +104,11 @@ jobs:
         mv tools/jenkins/Jenkinsfile .
         mv tools/jenkins/service.yml .
         mv tools/jenkins/.rsync-exclude .
+        mv tools/jenkins/get_svn_docs .
         
         # Remove from staging in old location and add to staging in new location
         git rm -r tools
-        git add Jenkinsfile service.yml .rsync-exclude
+        git add Jenkinsfile service.yml .rsync-exclude get_svn_docs
         
         # Commit if there are changes
         if git diff --staged --quiet; then
