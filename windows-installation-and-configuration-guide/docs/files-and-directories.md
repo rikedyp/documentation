@@ -4,14 +4,12 @@
 
 Dyalog is available in two separate editions:  
 
+* The _Unicode_ edition is Dyalog’s strategic edition; it is the edition that is generally available, and the only one available to new users. It is compatible with many third-party applications and tools, is capable of handling data from third-party tools and websites, and can be used with source code management systems (such as Git) to store APL code.
 * The _Classic_ edition is only available for existing customers who have been using Dyalog for a long time and for whom moving to the Unicode edition would involve considerable effort.
-* The _Unicode_ edition is Dyalog’s strategic edition, and is the edition that is generally available. It is much more amenable to being used with third-party applications and tools, especially handling data from third-party tools and websites, and when using source code management systems (such as Git) to store APL code.
-
-New users are only offered the Unicode edition.
 
 ## 32-Bit and 64-Bit Widths
 
-Two separate widths of Dyalog for Microsoft Windows are available. The 32-bit version will run on both 32-bit and 64-bit operating systems; the 64-bit version will only run on a 64-bit operating system.
+Two separate widths of Dyalog for Microsoft Windows are available. The 32-bit width  will run on both 32-bit and 64-bit operating systems; the 64-bit width will only run on a 64-bit operating system.
 
 ## Files
 
