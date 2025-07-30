@@ -23,9 +23,9 @@ In addition, in the Microsoft Windows IDE, array notation can be accessed in the
 
 When using array notation in the Editor, the _Reformat_ command (**&lt;RD>**) evaluates the Editor's content and regenerates it using array notation.
 
-Setting the `APLAN_FOR_OUTPUT` configuration parameter to `1` sets use of array notation for output to be on; this is equivalent to setting `]APLAN.Session on`. In the Microsoft Windows IDE, this can be overridden by toggling it off using the toolbar icons/menu items.
+Setting the `APLAN_FOR_OUTPUT` configuration parameter to `1` sets use of array notation for output to be on; this is equivalent to setting `]APLAN.Session on` at start-up time. In the Microsoft Windows IDE, this can be overridden using the toolbar icons/menu items.
 
-Setting the `APLAN_FOR_EDITORS` configuration parameter to `1` sets use of array notation for editors to be on; this is equivalent to setting `]APLAN.Editors on`.
+Setting the `APLAN_FOR_EDITORS` configuration parameter to `1` sets use of array notation for editors to be on; this is equivalent to setting `]APLAN.Editors on` at start-up time.
 
 ## Language Changes
 
