@@ -23,7 +23,9 @@ In addition, in the Microsoft Windows IDE, array notation can be accessed in the
 
 When using array notation in the Editor, the _Reformat_ command (**&lt;RD>**) evaluates the Editor's content and regenerates it using array notation.
 
-Setting the `APLAN_FOR_OUTPUT` configuration parameter to `1` sets use of array notation for output to be on; in the Microsoft Windows IDE, this can be overridden by toggling it off using the toolbar icons/menu items.
+Setting the `APLAN_FOR_OUTPUT` configuration parameter to `1` sets use of array notation for output to be on; this is equivalent to setting `]APLAN.Session on` at start-up time. In the Microsoft Windows IDE, this can be overridden using the toolbar icons/menu items.
+
+Setting the `APLAN_FOR_EDITORS` configuration parameter to `1` sets use of array notation for editors to be on; this is equivalent to setting `]APLAN.Editors on` at start-up time.
 
 ## Language Changes
 
@@ -133,6 +135,8 @@ In addition, in the Microsoft Windows IDE, inline tracing can be initiated in th
 
 The following configuration parameters have been added:
 
+- `APLAN_FOR_EDITORS`  
+This initialises editors using array notation when possible (unless it is overridden within the session). The default is `0` (array notation is not in use). 
 - `APLAN_FOR_OUTPUT`  
 This displays session output using array notation when possible (unless it is overridden within the session). The default is `0` (array notation is not in use).
 - `DYALOG_SHELL_SUBPROCESS`  
@@ -199,6 +203,6 @@ The new version of PCRE is not 100% compatible with the previous version. Althou
 
 In .NET, a _generic_ class is a class that has type parameters which must be given values to create a concrete version of the class. Similarly, a generic method has type parameters which must be specified before the method can be called. 
 
-The introduction of [`43⌶632`](../../language-reference-guide/the-i-beam-operator/monadic-operator-generator/) means that the .NET interface now supports creating concrete versions of generic classes, instantiating them, and calling generic methods. For more information, see the [_.NET Interface Guide_](/files/dotNET_Interface_Guide.pdf).
+The introduction of [`43⌶632`](../../language-reference-guide/the-i-beam-operator/monadic-operator-generator/) means that the .NET interface now supports creating concrete versions of generic classes, instantiating them, and calling generic methods. For more information, see the [_.NET Interface Guide_](/20.0/files/dotNET_Interface_Guide.pdf).
 
 The .NET Framework interface does not support generic classes.
