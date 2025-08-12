@@ -7,11 +7,11 @@
 
 `)ED` invokes the Dyalog editor and opens an Edit window for each of the objects specified in `nms`.
 
-If a name includes the slash character  ("\" or "/") it is taken to be the name of a file. See [Editing Scripts and Text Files](../../../windows-ui-guide/editing-scripts-and-text-files).
+If a name includes the slash character  (`\` or `/`) it is taken to be the name of a file. See [Editing Scripts and Text Files](../../../windows-ui-guide/editing-scripts-and-text-files).
 
-If a name is followed by a line number specified in square brackets, the Editor positions the cursor in the corresponding line. There must not be a space between the last character of the name and the "[".
+If a name is followed by a line number specified in square brackets, the Editor positions the cursor in the corresponding line. There must not be a space between the last character of the name and the `[`.
 
-If a name is not already defined it is taken to be a function or operator unless `type` is also specified.
+If a name is not already defined, it is assumed to be a function or operator unless `type` is also specified.
 
 You can specify the type of a new object by prefixing its name with a single symbol:
 
@@ -25,9 +25,9 @@ You can specify the type of a new object by prefixing its name with a single sym
 |`-`|character matrix           |
 |`⋄`|array: use array notation  |
 
-Where the command names an existing object, any type specification is ignored for that name, unless the type is `⋄`.
+If an existing object is named, any type specification in the command is ignored unless the type is `⋄`.
 
-Where the type is  `⋄` and the name is either undefined or of an array, the Editor opens in array-notation mode.
+If the type is `⋄` and the name is either undefined or of an array, the Editor opens in array-notation mode.
 The resulting array can be of any type or structure.
 
 

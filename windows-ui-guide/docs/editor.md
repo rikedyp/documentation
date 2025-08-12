@@ -185,9 +185,7 @@ Once displayed, each of the two dialog boxes remains on the screen until it is e
 
 ### The Syntax Menu
 
-The *Syntax* menu provides options to specify  how the data displayed in the Editor window is to be syntax coloured. For workspace objects, the default is *APL* for functions and operators, and *Nothing* for variables.
-
-A last item toggles how arrays are displayed in the Editor.
+The *Syntax* menu provides options related to the display of data in the *Edit* window. The initial items are concerned with syntax colouring; for workspace objects, the default is *APL* for functions and operators, and *Nothing* for variables. The final item toggles how arrays are displayed in the Editor.
 
 |Item                    |
 |------------------------|
@@ -390,22 +388,22 @@ The Editor allows you to edit arbitrary arrays using [array notation](../../prog
 
 Any of the following invokes it:
 
--   Within the **Editor**, invoke the _Edit_ command (`<ED>`) when the cursor is not over any name.
+-   Within the **Editor**, invoke the _Edit_ command (**<ED>**) when the cursor is not over any name.
 -   In the **session**, call the system command `)ED` and prefix the variable name with a diamond character, for example, `)ED ⋄foo`.
 -   In the **session**, call the system function `⎕ED` with a left argument `'⋄'`, for example, `'⋄' ⎕ED 'foo'`.
--   In the **Object** toolbar click the ![Edit Array Icon](img/edit-array-icon.png) button when the cursor is over the name of an array. It opens the array in the Editor in the same way as `)ED ⋄foo`.
--   In the **Editor’s toolbar** click the ![Edit Array Icon](img/edit-array-icon.png) button. It toggles the display of the Editor contents to and from array notation.
--   From the **Editor’s _Syntax_ menu** select _Show as Array Notation_.
+-   In the **Object** toolbar, click the ![Edit Array Icon](img/edit-array-icon.png) button when the cursor is over the name of an array. This opens the array in the Editor in the same way as `)ED ⋄foo`.
+-   In the **Editor**’s toolbar, click the ![Edit Array Icon](img/edit-array-icon.png) button. This toggles whether the **Editor** contents are displayed using array notation.
+-   From the **Editor**’s **Syntax** menu select _Show as Array Notation_.
 
 The Editor presents the array for you to edit in array notation.
 
 ![Editing in array notation](img/array-editor.png)
 
-When using array notation in the Editor, the Reformat command (`<RD>`) evaluates the Editor’s content and regenerates it using array notation.
+When using array notation in the **Editor**, the _Reformat_ command (**<RD>**) evaluates the content and regenerates it using array notation.
 
 You can include APL expressions:
 the Editor will evaluate them when you fix or format the array.
-This allows you to insert the value of one array into another simply by typing its name and pressing `<RD>`.
+This allows you to insert the value of one array into another by typing its name and pressing **<RD>**.
 
 For example, in the session:
 ```apl
