@@ -23,9 +23,9 @@ In addition, in the Microsoft Windows IDE, array notation can be accessed in the
 
 When using array notation in the Editor, the _Reformat_ command (**&lt;RD>**) evaluates the Editor's content and regenerates it using array notation.
 
-Setting the `APLAN_FOR_OUTPUT` configuration parameter to `1` sets use of array notation for output to be on; this is equivalent to setting `]APLAN.Session on` at start-up time. In the Microsoft Windows IDE, this can be overridden using the toolbar icons/menu items.
+Setting the `APLAN_FOR_OUTPUT` configuration parameter to `1` sets use of array notation for output to be on; this is equivalent to setting `]APLAN.Output on` at start-up time. In the Microsoft Windows IDE, this can be overridden using the toolbar icons/menu items.
 
-Setting the `APLAN_FOR_EDITORS` configuration parameter to `1` sets use of array notation for editors to be on; this is equivalent to setting `]APLAN.Editors on` at start-up time.
+Setting the `APLAN_FOR_EDITOR` configuration parameter to `1` sets use of array notation for editors to be on; this is equivalent to setting `]APLAN.Editor on` at start-up time.
 
 ## Language Changes
 
@@ -68,7 +68,7 @@ The rules around whether a function can be fixed have been tightened to prevent 
 
     !!! Hint "Hints and Recommendations"
         If the enhanced restrictions on `⎕FX` cause problems for you, please contact [support@dyalog.com](mailto:support@dyalog.com) to discuss tools and techniques for mitigation.
-	
+
 - [`⎕MKDIR`](../../language-reference-guide/system-functions/mkdir/) – Make Directory  
 A new variant option, **Unique**, has been added. This specifies whether the base name in the right argument is modified so that the name is unique.
 - [`⎕NGET`](../../language-reference-guide/system-functions/nget/) – Read Text File  
@@ -86,9 +86,9 @@ The single/first element of `X` (which specifies `content`) can now be a matrix.
 ### I-beams
 
 !!! Warning "Warning"  
-    Any service provided using an I-Beam should be considered as "experimental" and subject to change – without notice - from one release to the next. Any use of I-Beams in applications should, therefore, be carefully isolated in cover-functions that can be adjusted if necessary.
+    Any service provided using an I&#8209;Beam should be considered as "experimental" and subject to change – without notice - from one release to the next. Any use of I&#8209;Beams in applications should, therefore, be carefully isolated in cover-functions that can be adjusted if necessary.
 
-The following I-beams have been added:
+The following I&#8209;beams have been added:
 
 - [`13⌶`](../../language-reference-guide/the-i-beam-operator/log-use-of-deprecated-features/) – Log Use of Deprecated Features  
 Records information in the log file set by `109⌶` about the specified deprecated feature names or keywords
@@ -135,7 +135,7 @@ In addition, in the Microsoft Windows IDE, inline tracing can be initiated in th
 
 The following configuration parameters have been added:
 
-- `APLAN_FOR_EDITORS`  
+- `APLAN_FOR_EDITOR`  
 This initialises editors using array notation when possible (unless it is overridden within the session). The default is `0` (array notation is not in use). 
 - `APLAN_FOR_OUTPUT`  
 This displays session output using array notation when possible (unless it is overridden within the session). The default is `0` (array notation is not in use).
