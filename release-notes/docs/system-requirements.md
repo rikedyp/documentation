@@ -42,18 +42,18 @@ Note: This includes support for the <code class="language-other">INotifyCollecti
 ## Chromium Embedded Framework (CEF)
 Dyalog v20.0 is supplied with CEF version 138 on all supported platforms.
 
-To minimise differences between Dyalog v19.0 and Dyalog v20.0 when using CEF, two temporary environment variables (not configuration parameters) have been introduced for Dyalog v20.0 only. These are:
+In versions of CEF supplied with earlier versions of Dyalog, pop-ups and light mode were enabled by default. This is no longer the situation. To minimise differences between Dyalog v19.0 and Dyalog v20.0 when using CEF-based applications, two temporary environment variables (not configuration parameters) have been introduced to preserve these settings for Dyalog v20.0 only. These are:
 
 - DYALOG_CEF_ALLOW_POPUPS<br />Specifies whether pop-ups are disabled for CEF-based applications (the default for CEF v138 depends on the operating system). Possible values are:
     - `1` : pop-ups are not disabled (equivalent to <code class="language-nonAPL">--disable-popup-blocking</code>)
-	- any other value is ignored and the operating system setting is used.  
+	- any other value is ignored, and CEF's default (as determined by the user's operating system preferences) is used.  
 	
 	The default is `1`.
 	
 - DYALOG_CEF_DARK_MODE<br />Specifies whether CEF-based applications are displayed in dark or light mode (the default for CEF v138 is dark mode). Possible values are:
     - `0` : display using light mode (equivalent to <code class="language-nonAPL">--force-light-mode</code>)
     - `1` : display using dark mode (equivalent to <code class="language-nonAPL">--force-dark-mode</code>)
-	- `2` : display using the operating system's settings  
+	- `2` : display using CEF's default (as determined by the user's operating system preferences)  
 
     The default is `2`.
 
