@@ -58,10 +58,10 @@ You can change parameters in the Registry in one of two ways:
 
 <div class="2col">
 
-[AddClassHeaders](./addclassheaders.md)
-[AplCoreName](./aplcorename.md)
 [APLAN_FOR_EDITOR](./aplan-for-editor.md)
 [APLAN_FOR_OUTPUT](./aplan-for-output.md)
+[AddClassHeaders](./addclassheaders.md)
+[AplCoreName](./aplcorename.md)
 [APLK](./aplk.md)
 [APLKeys](./aplkeys.md)
 [APLNID](./aplnid.md)
