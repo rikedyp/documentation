@@ -89,4 +89,4 @@ When the HTMLRenderer is displayed in its own window, the  window caption is set
 
 ![](../img/htmlrenderer1.png)
 
-For more information on the HTMLRenderer, see the [_HTMLRenderer User Guide_](/latest/files/HTMLRenderer_User_Guide.pdf).
+For more information on the HTMLRenderer, see the [_HTMLRenderer User Guide_](../../../files/HTMLRenderer_User_Guide.pdf).
