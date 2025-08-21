@@ -56,7 +56,7 @@ Functionality that is only available in the Unicode edition includes:
 
 Some behaviour is slightly different between Unicode and Classic editions. Specifically:  
 
-* sorting using the _Grade Up_ and _Grade Down_ functions produces different results (and results of `⎕NL` are sorted differently)
+* sorting using the _grade up_ and _grade down_ functions produces different results (and results of `⎕NL` are sorted differently)
 * internal representations and data types for character data differ (impacts `⎕DR` and `⎕MAP`)
 * the output from `⎕NA`
 * in the Classic edition, default keyboard mappings differ from the documentation on a few keys: `⌶`, `⍷`, `⍪`, `⍫`, `!`, and `⍨`

@@ -40,7 +40,7 @@ Each time `13⌶` is called, the new list of features replaces the existing list
 
 ```apl
 ⍝ Specify the name of the log file
-      'C:\Users\fiona\deprecated_log.txt'(109⌶)0
+      'C:/Users/fiona/deprecated_log.txt'(109⌶)0
 	  
 ⍝ Select the features to log
       13⌶ 'J0C0' 'S32'  
@@ -49,7 +49,7 @@ Each time `13⌶` is called, the new list of features replaces the existing list
 After logging has been enabled, every subsequent use of the specified deprecated features is logged. Each line in the log file contains a complete JSON5 object, which includes a description of the deprecated feature and the SI Stack at the point it was called. The log file can be examined using any text editor or from within a Dyalog Session. For example:
 
 ```apl
-      log_entries←0⎕JSON⍠'Dialect' 'JSON5'¨⊃⎕NGET 'C:\Users\fiona\deprecated_log.txt' 1
+      log_entries←0⎕JSON⍠'Dialect' 'JSON5'¨⊃⎕NGET 'C:/Users/fiona/deprecated_log.txt' 1
 	  '⋄'⎕ED'log_entries'
 ```
 If an error occurs when writing to the log file, further logging is suspended. The log file status can be queried at any time by calling `109⌶` with a right argument of `1`; the result is a numeric status code (`0` indicates no error) and a character vector describing the error that was encountered (empty if no error). For example:

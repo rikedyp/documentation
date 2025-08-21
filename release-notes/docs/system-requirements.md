@@ -29,7 +29,7 @@ Dyalog v20.0 is supported on the following platforms/operating systems:
     * Not supported on Raspberry Pi Pico
 ## External .NET Requirements  
 
-### .NET Interface
+### .NET
 The .NET interface requires version 8.0 of Microsoft .NET or higher.  
 
 ### Microsoft .NET Framework
@@ -37,7 +37,7 @@ The .NET Framework interface requires version 4.0 or greater of Microsoft .NET F
 
 * Microsoft .NET Framework version 4.5 is needed for full data binding support.  
 Note: This includes support for the <code class="language-other">INotifyCollectionChanged</code> interface, which is used by Dyalog to notify a data consumer when the contents of a variable that is data bound as a list of items changes.  
-* IIS (and ASP.NET) need to be installed before installing Dyalog. If these are not present when Dyalog is installed, the **[DYALOG]\Samples\asp.net** directory will not be installed.  
+* IIS (and ASP.NET) need to be installed before installing Dyalog. If these are not present when Dyalog is installed, the **[DYALOG]/Samples/asp.net** directory will not be installed.  
 
 ## Chromium Embedded Framework (CEF)
 Dyalog v20.0 is supplied with CEF version 138 on all supported platforms.
