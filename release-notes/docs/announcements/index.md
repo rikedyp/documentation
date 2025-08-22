@@ -100,7 +100,9 @@ To report an error or request a change in the documentation you can now:
 - send an email to [docs@dyalog.com](mailto:docs@dyalog.com) – this can be done for any Dyalog document.
 - [raise an issue](https://github.com/Dyalog/documentation/issues) directly in the GitHub project – this should only be done if the issue relates to a document that is in the GitHub project.
 
-The GitHub project's [readme file](https://github.com/Dyalog/documentation/blob/main/README.md) includes information on how to contribute by drafting amendments/enhancements.
+The GitHub project's [README file](https://github.com/Dyalog/documentation/blob/main/README.md) includes information on how to contribute by drafting amendments/enhancements.
+
+In addition, the URLs and filenames of the PDFs and other downloadable documentation have changed from the format used in previous releases. See the [Dyalog v20.0 Documentation Centre](https://www.dyalog.com/documentation_200.htm) for links to these files.
 
 ## Next Dyalog Version
 

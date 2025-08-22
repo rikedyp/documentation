@@ -69,7 +69,7 @@ However, with the nesting of holds comes the possibility of a "deadlock". For ex
 
 |Thread 1                                                                           |Thread 2                                                                           |
 |-----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-|```apl :Hold 'red'     ...     :Hold 'green'         ...     :EndHold :EndHold  ```|```apl :Hold 'green'     ...     :Hold 'red'          ...     :EndHold :EndHold ```|
+|<pre><code>:Hold 'red'<br/>     ...<br/>     :Hold 'green'<br/>         ...<br/>     :EndHold<br/> :EndHold</code></pre>|<pre><code>:Hold 'green'<br/>     ...<br/>     :Hold 'red'<br/>         ...<br/>     :EndHold<br/> :EndHold</code></pre>|
 
 
 In this case if both threads succeed in acquiring their first hold, they will both block waiting for the other to release its token.
@@ -89,7 +89,7 @@ Note that token acquisition for any particular `:Hold` is atomic, that is, eithe
 
 |Thread 1                                                                           |Thread 2                                              |
 |-----------------------------------------------------------------------------------|------------------------------------------------------|
-|```apl :Hold 'red'     ...     :Hold 'green'         ...     :EndHold :EndHold  ```|```apl  :Hold 'green' 'red'     ...     :EndHold   ```|
+|<pre><code>:Hold 'red'<br/>     ...<br/>     :Hold 'green'<br/>         ...<br/>     :EndHold<br/> :EndHold</code></pre>|<pre><code>:Hold 'green' 'red'<br/>     ...<br/>     :EndHold</code></pre>|
 
 <h2 class="example">Examples</h2>
 

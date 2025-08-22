@@ -941,12 +941,13 @@ def process_document(document_path):
     md_files = find_source_files(os.path.dirname(doc_mkdocs_file), yml_data["nav"])
 
     # Copy img dir for this document
+    img_src_dir = str(os.path.join(os.path.dirname(doc_mkdocs_file), "docs", "img"))
     img_dest_dir = str(os.path.join(args.project_dir, "img"))
-    if os.path.exists(img_dest_dir):
-        shutil.rmtree(img_dest_dir)
-    copy_directory(
-        str(os.path.join(os.path.dirname(doc_mkdocs_file), "docs", "img")), img_dest_dir
-    )
+    
+    if os.path.exists(img_src_dir):
+        if os.path.exists(img_dest_dir):
+            shutil.rmtree(img_dest_dir)
+        copy_directory(img_src_dir, img_dest_dir)
 
     # Convert each Markdown file to HTML, and concatenate to a single string
     source = f"{args.project_dir}/{document_path}.htm"

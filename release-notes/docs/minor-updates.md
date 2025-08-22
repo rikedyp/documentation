@@ -18,3 +18,9 @@ Microsoft Windows IDE
 
 .NET Framework v4.x  
 Dyalog no longer crashes if you call `⎕CLEAR` after creating a link and using `-watch=both`.
+
+[PrintToPDF](../../object-reference/methodorevents/printtopdf/) (Method 845, specific to the HTMLRenderer)  
+Additional arguments can now be supplied to tailor the generated PDF output.
+
+Memory Manager Performance  
+Prior to Dyalog v20.0, the performance of the memory manager was poor if there were namespaces that did not have a name referring to them but only continued to exist because they were parents of other namespaces. For example, using `⎕JSON` to create a namespace, then immediately extracting a child name space from that result using `records←(⎕JSON text).Data.Records`, creates a vector of namespaces that all have `Data` as their parent, but no name references `Data` itself. This has now been resolved, and the suggested workaround of assigning a name to the top-level namespace is no longer required.
