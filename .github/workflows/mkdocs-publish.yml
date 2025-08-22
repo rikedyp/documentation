@@ -79,7 +79,7 @@ jobs:
 
     - name: Move Styles into docs
       run: |
-        mv documentation-styles docs
+        mv documentation-assets docs
 
     - name: Deploy documentation
       run: |
